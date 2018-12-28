@@ -1,5 +1,54 @@
 /* ****** ****** ****** ****** ****** ****** ****** ****** ****** ****** 
- *  main.css ~ Contains styling for common elements throughout the 
+ *  main.css ~ Contains styling for elements throughout the 
  *             the website.
  * ****** ****** ****** ****** ****** ****** ****** ****** ****** ****** */
+/* **** COMMON VALUES **** */
 /* **** COMMON ELEMENTS **** */
+body {
+  margin: 2rem;
+  background-color: #fff; }
+
+header span {
+  display: block; }
+
+#header-name,
+#header-copy {
+  font-family: abril-text, Garamond, serif; }
+
+#header-intro,
+#header-name,
+#header-copy {
+  color: #51545b; }
+
+/* **** HEADER **** */
+header #header-intro {
+  font-family: abril-display, Garamond, serif;
+  font-weight: 800; }
+
+header #header-name {
+  font-size: 2.85rem; }
+  header #header-name span {
+    display: inline-block; }
+
+header #header-border {
+  background: #f6895b;
+  background: linear-gradient(90deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%); }
+
+header #header-copy {
+  font-size: 1.25rem;
+  font-weight: 300; }
+
+/* ********************************* 
+      CHROME - MOBILE - 980 x XXX
+   ********************************* */
+@media (max-width: 980px) {
+  header #header-intro span {
+    font-size: 1.25rem; }
+  header #header-intro #header-intro-welcome {
+    margin-bottom: 1.25rem;
+    font-style: italic; }
+  header #header-border {
+    width: 6.85rem;
+    height: 5px; }
+  header #header-copy p:first-of-type {
+    margin-top: 1rem; } }

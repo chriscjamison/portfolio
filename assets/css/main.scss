@@ -1,7 +1,121 @@
 /* ****** ****** ****** ****** ****** ****** ****** ****** ****** ****** 
- *  main.css ~ Contains styling for common elements throughout the 
+ *  main.css ~ Contains styling for elements throughout the 
  *             the website.
  * ****** ****** ****** ****** ****** ****** ****** ****** ****** ****** */
 
  
+/* **** COMMON VALUES **** */
+
+$base_font: abril-text, Garamond, serif;
+$display_font: abril-display, Garamond, serif;
+
+$base_font_weight: 400;
+$light_font_weight: 300;
+$bold_font_weight: 700;
+$ex_bold_font_weight: 800;
+
+$base_gray: #6d707c;
+$dark_gray: #51545b;
+$light_blue: #00afde;
+$dark_blue: #006fb9;
+$orange: #f6895b;
+$magenta: #ec1a63;
+$white: #fff;
+
+$sm_header_font_size: 1.6rem;
+$sm_name_font_size: 2rem;
+$sm_base_font_size: 1rem;
+
+$lg_base_font_size: 1.5rem;
+
+$sm_body_margin: 2rem;
+
+$sm_margin_spacer: 1.25rem;
+
+
 /* **** COMMON ELEMENTS **** */
+
+
+body {
+  margin: $sm_body_margin;
+  background-color: $white;
+}
+
+header {
+  span {
+    display: block;
+  }
+}
+
+#header-name, 
+#header-copy {
+  font-family: $base_font;
+}
+
+#header-intro, 
+#header-name, 
+#header-copy {
+  color: $base_gray;
+}
+
+
+
+/* **** HEADER **** */
+
+header {
+  #header-intro {
+    font-family: $display_font;
+    font-weight: $ex_bold_font_weight;
+  }
+  
+  #header-name {
+    font-size: 2.85rem;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  #header-border {
+    background: rgb(246,137,91);
+    background: linear-gradient(90deg, rgba(246,137,91,1) 0%, rgba(236,26,99,1) 26%, rgba(0,175,222,1) 26%, rgba(0,111,185,1) 100%);
+  }
+
+  #header-copy {
+    font-size: 1.25rem;
+    font-weight: $light_font_weight;
+  }
+}
+
+
+
+/* ********************************* 
+      CHROME - MOBILE - 980 x XXX
+   ********************************* */
+
+
+@media (max-width: 980px)  {
+  header {
+    #header-intro {
+      span {
+        font-size: 1.25rem;
+      }
+
+      #header-intro-welcome {
+        margin-bottom: $sm_margin_spacer;
+        font-style: italic;
+      }
+    }
+
+    #header-border {
+      width: 6.85rem;
+      height: 5px;
+    }  
+
+    #header-copy {
+      p:first-of-type {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
