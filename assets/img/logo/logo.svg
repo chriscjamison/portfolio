@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 403.92 347.05" style="enable-background:new 0 0 403.92 347.05;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:13.0194;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:url(#XMLID_3_);}
+</style>
+<g>
+	<g>
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="40.4254" y1="46.4825" x2="406.2641" y2="287.8587" gradientTransform="matrix(1 0 -0.0875 1 -6.8099 0)">
+			<stop  offset="0.1931" style="stop-color:#F6895B"/>
+			<stop  offset="0.7005" style="stop-color:#EC1A63"/>
+		</linearGradient>
+		<path class="st0" d="M36.34,347.05c1.44,0,267.91,0,267.91,0c45.26,0,48.62-42.08,48.62-42.08L400.01,0H89.97
+			c0,0-42.12-2.1-48.97,42.64C40.67,44.78,0.42,305.18,0.42,305.18S-6.57,347.05,36.34,347.05z"/>
+		
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="393.8106" y1="327.9659" x2="215.8315" y2="6.5858" gradientTransform="matrix(1 0 -0.0875 1 -6.8099 0)">
+			<stop  offset="0.0396" style="stop-color:#006FB9"/>
+			<stop  offset="0.7921" style="stop-color:#00AFDE"/>
+		</linearGradient>
+		<path class="st1" d="M168.49,346.86c62.17,0,139.71,0,139.71,0c45.25,0,48.61-42.08,48.61-42.08L403.92-0.18H221.26L168.49,346.86
+			z"/>
+	</g>
+	<line class="st2" x1="171.64" y1="346.49" x2="224.39" y2="0.19"/>
+	<g>
+		<polyline class="st3" points="143.94,99.48 67.62,175.81 144.1,252.29 		"/>
+		<g>
+			<polyline class="st3" points="251.26,99.48 327.58,175.81 251.1,252.29 			"/>
+			<linearGradient id="XMLID_3_" gradientUnits="userSpaceOnUse" x1="273.667" y1="120.0634" x2="250.8662" y2="100.9312">
+				<stop  offset="0" style="stop-color:#099CC8"/>
+				<stop  offset="1" style="stop-color:#00A7D3"/>
+			</linearGradient>
+			<path id="XMLID_1_" class="st4" d="M248.14,104.18c7.17,7.87,15.44,0.32,8.27-7.54l19.92,20.25c-6.96-6.85-15.2,0.62-8.22,7.46
+				L248.14,104.18z"/>
+		</g>
+	</g>
+</g>
+</svg>
