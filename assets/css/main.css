@@ -6,49 +6,266 @@
 /* **** COMMON ELEMENTS **** */
 body {
   margin: 2rem;
+  display: grid;
+  grid-row-gap: 1.25rem;
   background-color: #fff; }
 
-header span {
-  display: block; }
-
+/* For copy and page titles. */
+#header-intro-name,
 #header-name,
-#header-copy {
+#header-copy,
+.nav-links-text-a,
+h1,
+article p {
   font-family: abril-text, Garamond, serif; }
 
+/* Menu links, captions, and quotes */
+.nav-links-text-a,
+article figure span,
+q {
+  font-family: industry, Arial, Helvetica, sans-serif; }
+
+.nav-links-text-a {
+  color: #006fb9; }
+
+/* For text which appears on the landing page and page titles. */
 #header-intro,
 #header-name,
-#header-copy {
-  color: #51545b; }
+#header-copy,
+h1,
+article p {
+  color: #6d707c; }
+
+/* Page titles. */
+h1 {
+  margin-top: 0; }
+
+/* For all borders which use orange and magenta. */
+.border-red {
+  background: #ec1a63;
+  background: linear-gradient(90deg, #f6895b 0%, #ec1a63 100%); }
+
+/* For all borders which use light blue and dark blue. */
+.border-blue {
+  background: #006fb9;
+  background: linear-gradient(90deg, #00afde 0%, #006fb9 100%); }
+
+.figure-border {
+  width: 61%;
+  height: 5px;
+  margin: 0.5rem 0;
+  background-color: #00afde; }
+
+.figure-border-right {
+  margin: 0.5rem 0 1.75rem 39%; }
+
+/* **** MAIN NAVIGATION **** */
+nav {
+  /* For all text links within the menu and also the border which appears 
+     underneath those links. */
+  /* The main menu icon. */
+  /* The border which appears underneath the text links within the main menu. */ }
+  nav .nav-links-text-a,
+  nav #nav-border {
+    margin-bottom: 1.25rem;
+    display: none; }
+  nav #nav-link-menu {
+    display: block;
+    background-image: url("/assets/img/menu/main_menu.png");
+    background-repeat: no-repeat; }
+  nav #nav-border {
+    width: 2.25rem;
+    height: 5px;
+    margin-top: 1.25rem; }
 
 /* **** HEADER **** */
-header #header-intro {
-  font-family: abril-display, Garamond, serif;
-  font-weight: 800; }
+header {
+  /* For each line of text within the intro. */
+  /* For the salutation which appears on the landing page. */
+  /* For the intro which appears on the landing page. */
+  /* For the first and last name which appears on the landing page. */
+  /* The border which appears underneath the first name which appears on the landing page. */
+  /* The paragraphs which appear on the landing page. */
+  /* The border which appears underneath page titles. */ }
+  header span {
+    display: block; }
+  header #header-intro-welcome {
+    font-family: abril-display, Garamond, serif;
+    font-weight: 800; }
+  header #header-intro-name {
+    font-weight: 800; }
+  header #header-name {
+    font-size: 2.85rem; }
+    header #header-name span {
+      display: inline-block; }
+  header #header-border-name {
+    background: #ec1a63;
+    background: linear-gradient(90deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%); }
+  header #header-copy {
+    font-size: 1.25rem;
+    font-weight: 300; }
+  header .header-border-title {
+    height: 5px; }
 
-header #header-name {
-  font-size: 2.85rem; }
-  header #header-name span {
-    display: inline-block; }
+/* **** SOCIAL MEDIA LINKS **** */
+#section-social {
+  /* The red border which appears above the social media links 
+     on the landing page. */ }
+  #section-social #social-border {
+    width: 2.25rem;
+    height: 5px;
+    margin-bottom: 1.25rem; }
+  #section-social #social-links {
+    /* Sets the social media links to the same height, horizontal spacing, and background image. */
+    /* Removes the margin to the right of the last social media link. */
+    /* For the GitHub link which appears on the far left of the collection of links. */
+    /* For the Twitter link which appears in the center of the collection of links. */
+    /* For the LinkedIn link which appears on the far right of the collection of links. */ }
+    #section-social #social-links .social-links-a {
+      height: 2.25rem;
+      margin-right: 1rem;
+      display: inline-block;
+      background-image: url("/assets/img/social/social_links.png");
+      background-repeat: no-repeat; }
+    #section-social #social-links .social-links-a:last-of-type {
+      margin-right: 0; }
+    #section-social #social-links #social-link-a-github {
+      width: 2.28rem; }
+    #section-social #social-links #social-link-a-twitter {
+      width: 2.31rem;
+      background-position: 0px -36px; }
+    #section-social #social-links #social-link-a-linkedin {
+      width: 2.81rem;
+      background-position: 0px -72px; }
 
-header #header-border {
-  background: #f6895b;
-  background: linear-gradient(90deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%); }
-
-header #header-copy {
+/* **** ARTICLE **** */
+article p {
+  font-weight: 300;
   font-size: 1.25rem;
-  font-weight: 300; }
+  line-height: 1.5; }
+
+article p:first-of-type {
+  margin-top: 0.5rem; }
+
+article img {
+  display: block; }
+
+article figure span {
+  width: 90%;
+  margin: 0.5rem auto 1.5rem auto;
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f6895b;
+  text-align: center; }
+
+article figure #figure-bio-quote-div {
+  position: relative;
+  background-image: url("/assets/img/bio/bio_quote.jpg"); }
+
+article figure #figure-bio-quote-container-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #00afde;
+  opacity: 0.9; }
+  article figure #figure-bio-quote-container-div span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff; }
+
+article figure q {
+  width: 91%;
+  margin: 13% auto 5% auto;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  font-style: italic;
+  color: #fff;
+  text-align: center; }
 
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
    ********************************* */
 @media (max-width: 980px) {
-  header #header-intro span {
-    font-size: 1.25rem; }
-  header #header-intro #header-intro-welcome {
-    margin-bottom: 1.25rem;
-    font-style: italic; }
-  header #header-border {
-    width: 6.85rem;
-    height: 5px; }
-  header #header-copy p:first-of-type {
-    margin-top: 1rem; } }
+  header {
+    grid-column: 1 / span 2;
+    /* The salutation, intro, and name located on the landing page. */
+    /* The border underneath the first name on the landing page. */
+    /* The paragraphs located on the landing page. */
+    /* Page titles */ }
+    header #header-intro {
+      /* The word, 'Welcome', on the landing page. */ }
+      header #header-intro span {
+        font-size: 1.25rem; }
+      header #header-intro #header-intro-welcome {
+        margin-bottom: 1.25rem;
+        font-style: italic; }
+    header #header-border-name {
+      width: 6.85rem;
+      height: 5px; }
+    header #header-copy p {
+      line-height: 1.6; }
+    header #header-copy p:first-of-type {
+      margin-top: 1rem; }
+    header #header-copy p:last-of-type {
+      margin-bottom: 0; }
+    header h1 {
+      margin-bottom: 0.2rem;
+      grid-column: 1 / span 2;
+      font-size: 1.3rem; }
+    header #header-border-title-bio {
+      width: 2rem; }
+  /* For the social media links viewable below the copy on the front page. */
+  #section-social {
+    grid-column: 1 / span 2; }
+  /* The menu located at the bottom of the browser window. */
+  nav {
+    grid-column: 1 / span 0;
+    /* The link within the main menu, 'Read Bio'. */
+    /* The link within the main menu, 'View Resume'. */
+    /* The link within the main menu, 'View Case Studies'. */
+    /* The link within the main menu, 'Start a Conversation. */ }
+    nav .nav-links-text-a {
+      font-size: 1.25rem;
+      line-height: 1.4; }
+    nav #nav-link-menu {
+      width: 2.37rem;
+      height: 2.5rem;
+      margin-top: 0.5rem; }
+    nav #nav-link-text-a-bio {
+      width: 3rem; }
+    nav #nav-link-text-a-resume {
+      width: 4.6rem; }
+    nav #nav-link-text-a-case_study {
+      width: 6.5rem; }
+    nav #nav-link-text-a-conversation {
+      width: 7.5rem; }
+  #section-logo {
+    grid-column: 2 / span 1;
+    text-align: right; }
+    #section-logo a {
+      display: block; }
+      #section-logo a img {
+        width: 3.75rem;
+        height: auto; }
+  /* **** bio.htm **** */
+  article {
+    grid-column: 1 / span 2; }
+    article figure {
+      margin: 2rem auto; }
+    article img,
+    article #figure-bio-quote-div {
+      width: 18.5rem; }
+    article #figure-bio-quote-div {
+      height: 12.31rem;
+      background-size: 18.5rem; }
+    article #figure-bio-quote-container-div {
+      width: 13rem;
+      height: 8.5rem; }
+    article #figure-bio-quote-div,
+    article #figure-bio-portrait img {
+      margin-bottom: 1.75rem; } }
