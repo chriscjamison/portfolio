@@ -187,6 +187,11 @@ article figure q {
   color: #fff;
   text-align: center; }
 
+article .article-border-end {
+  width: 2.25rem;
+  height: 5px;
+  background-color: #ec1a63; }
+
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
    ********************************* */

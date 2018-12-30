@@ -283,7 +283,12 @@ article {
       color: $white;
       text-align: center;
     }
+  }
 
+  .article-border-end {
+    width: 2.25rem;
+    height: 5px;
+    background-color: $magenta;
   }
 }
 
