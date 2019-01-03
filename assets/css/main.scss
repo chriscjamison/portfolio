@@ -16,6 +16,7 @@ $bold_font_weight: 700;
 $ex_bold_font_weight: 800;
 
 $base_gray: #6d707c;
+$light_gray: #c1c6db;
 $dark_gray: #51545b;
 $light_blue: #00afde;
 $dark_blue: #006fb9;
@@ -51,6 +52,9 @@ body {
 #header-copy, 
 .nav-links-text-a, 
 h1, 
+h2, 
+h3, 
+h4, 
 article p {
   font-family: $base_font;
 }
@@ -58,11 +62,13 @@ article p {
 /* Menu links, captions, and quotes */
 .nav-links-text-a, 
 article figure span, 
+article a, 
 q {
   font-family: $link_font;
 }
 
-.nav-links-text-a {
+.nav-links-text-a, 
+article a {
   color: $dark_blue;
 }
 
@@ -71,6 +77,9 @@ q {
 #header-name, 
 #header-copy, 
 h1, 
+h2, 
+h3, 
+h4, 
 article p {
   color: $base_gray;
 }
@@ -409,34 +418,100 @@ article {
     }
   }
 
-
   /* **** bio.htm **** */
 
   article {
-    // grid-column-start: 1;
+    // The copy and content takes up the width of the mobile browser.
     grid-column: 1 / span 2;
+    
+    // For images describing commenting contained within the copy.
     figure {
       margin: 2rem auto;
     }
 
+    // For images located within the content.
     img, 
     #figure-bio-quote-div {
       width: 18.5rem;
     }
 
+    // Houses the image which displays the quote.
     #figure-bio-quote-div {
-      height: 12.31rem;
-      background-size: 18.5rem;
+      height: 12.31rem; // 197px
+      background-size: 18.5rem; // 297px
     }
     
+    // Holds the text of the quote
     #figure-bio-quote-container-div {
-      width: 13rem;
-      height: 8.5rem;
+      width: 13rem; // 208px
+      height: 8.5rem; // 136px
     }
 
+    // Adds a space between the bottom of the image of the quote and the portrait 
+    // and the top of the blue line.
     #figure-bio-quote-div, 
     #figure-bio-portrait img {
       margin-bottom: 1.75rem;
+    }
+  }
+
+  /* **** resume.htm **** */
+
+  article {
+    // Holds the gray vertical spacers
+    .resume-spacer-vertical-div {
+      width: 1.56rem; // 25px
+      display: inline-block;
+
+      // For each gray vertical line
+      .resume-spacer-vertical-gray {
+        width: 0.13rem; // 2px
+        height: 0.81rem; // 13px
+        display: inline-block;
+        background-color: $light_gray;
+      }
+
+      // For the left vertical line within a pair of lines
+      .resume-spacer-vertical-gray:nth-child(1) {
+        margin-left: 0.55rem; // 9px
+      }
+    }
+
+    // Holds the gray horizontal spacers.
+    .resume-spacer-horizontal-div {
+      width: 11.63rem; // 186px
+      margin: 2rem auto; // 2rem = 32px
+    
+      .resume-spacer-horizontal-gray {
+        height: 0.13rem; // 2px
+        background-color: $light_gray;
+      }
+
+      .resume-spacer-horizontal-gray:nth-child(1) {
+        margin-bottom: 0.25rem; // 4px
+      }
+    }
+
+    // Holds the links to allow a visitor to download a copy 
+    // of the resume.
+    .resume-links-div {
+      width: 7.75rem; // 124px
+      margin: 0 auto;
+    }
+
+    // Holds all content relating to the downloading of a resume
+    #section-resume-download { 
+      // The title of the section, 'Download Resume'.
+      h2 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      // The text links.
+      a {
+        display: inline-block;
+        font-size: 1.25rem;
+      }
     }
   }
 }

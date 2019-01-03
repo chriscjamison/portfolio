@@ -16,16 +16,21 @@ body {
 #header-copy,
 .nav-links-text-a,
 h1,
+h2,
+h3,
+h4,
 article p {
   font-family: abril-text, Garamond, serif; }
 
 /* Menu links, captions, and quotes */
 .nav-links-text-a,
 article figure span,
+article a,
 q {
   font-family: industry, Arial, Helvetica, sans-serif; }
 
-.nav-links-text-a {
+.nav-links-text-a,
+article a {
   color: #006fb9; }
 
 /* For text which appears on the landing page and page titles. */
@@ -33,6 +38,9 @@ q {
 #header-name,
 #header-copy,
 h1,
+h2,
+h3,
+h4,
 article p {
   color: #6d707c; }
 
@@ -273,4 +281,32 @@ article .article-border-end {
       height: 8.5rem; }
     article #figure-bio-quote-div,
     article #figure-bio-portrait img {
-      margin-bottom: 1.75rem; } }
+      margin-bottom: 1.75rem; }
+  /* **** resume.htm **** */
+  article .resume-spacer-vertical-div {
+    width: 1.56rem;
+    display: inline-block; }
+    article .resume-spacer-vertical-div .resume-spacer-vertical-gray {
+      width: 0.13rem;
+      height: 0.81rem;
+      display: inline-block;
+      background-color: #c1c6db; }
+    article .resume-spacer-vertical-div .resume-spacer-vertical-gray:nth-child(1) {
+      margin-left: 0.55rem; }
+  article .resume-spacer-horizontal-div {
+    width: 11.63rem;
+    margin: 2rem auto; }
+    article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray {
+      height: 0.13rem;
+      background-color: #c1c6db; }
+    article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray:nth-child(1) {
+      margin-bottom: 0.25rem; }
+  article .resume-links-div {
+    width: 7.75rem;
+    margin: 0 auto; }
+  article #section-resume-download h2 {
+    font-size: 1.5rem;
+    text-align: center; }
+  article #section-resume-download a {
+    display: inline-block;
+    font-size: 1.25rem; } }
