@@ -24,16 +24,18 @@ $orange: #f6895b;
 $magenta: #ec1a63;
 $white: #fff;
 
-$sm_header_font_size: 1.6rem;
-$sm_name_font_size: 2rem;
-$sm_base_font_size: 1.25rem;
+$sm_header_font_size: 1.6rem; // 20pt
+$sm_h2_font_size: 1.5rem; // 18pt
+$sm_name_font_size: 2rem; // 24pt
+$sm_base_font_size: 1.25rem; // 15pt
+$sm_info_font_size: 1rem; // 12pt
 
-$lg_base_font_size: 1.5rem;
+$lg_base_font_size: 1.5rem; // 18pt
 
-$sm_body_margin: 2rem;
+$sm_body_margin: 2rem; // 24pt
 
-$sm_margin_spacer: 1.25rem;
-$sm_title_bottom_spacer: 0.2rem;
+$sm_margin_spacer: 1.25rem; // 15pt
+$sm_title_bottom_spacer: 0.2rem; // 3px
 
 
 /* **** COMMON ELEMENTS **** */
@@ -55,7 +57,10 @@ h1,
 h2, 
 h3, 
 h4, 
-article p {
+article p, 
+#section-resume-info span, 
+#section-resume-tech_knowledge span, 
+#section-resume-soft_knowledge span {
   font-family: $base_font;
 }
 
@@ -80,7 +85,8 @@ h1,
 h2, 
 h3, 
 h4, 
-article p {
+article p, 
+#section-resume-info span {
   color: $base_gray;
 }
 
@@ -232,24 +238,28 @@ header {
 }
 
 
-/* **** ARTICLE **** */
+/* **** bio.htm **** */
 
 article {
   p {
     font-weight: $light_font_weight;
     font-size: $sm_base_font_size;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
-  p:first-of-type {
+  // The first paragraph of the page
+  .bio-first-p {
     margin-top: 0.5rem;
   }
 
+  // For all images
   img {
     display: block;
   }
 
+  // For the images referencing commenting or documenting
   figure {
+    // For captions underneath images
     span {
       width: 90%;
       margin: 0.5rem auto 1.5rem auto;
@@ -260,11 +270,13 @@ article {
       text-align: center;
     }
 
+    // The background of the image holding a quote
     #figure-bio-quote-div {
       position: relative;
       background-image: url('/assets/img/bio/bio_quote.jpg');
     }
 
+    // Centers the image holding a quote within the browser window
     #figure-bio-quote-container-div {
       position: absolute;
       top: 50%;
@@ -274,6 +286,7 @@ article {
       background-color: $light-blue;
       opacity: 0.9;
 
+      // For the author of the quote
       span {
         font-size: 0.8rem;
         font-weight: $base_font_weight;
@@ -282,6 +295,7 @@ article {
       }
     }
 
+    // For the text of the quote
     q {
       width: 91%;
       margin: 13% auto 5% auto;
@@ -294,10 +308,42 @@ article {
     }
   }
 
+  // For the magenta accent mark at the bottom of the page
   .article-border-end {
     width: 2.25rem;
     height: 5px;
     background-color: $magenta;
+  }
+}
+
+
+/* **** resume.htm **** */
+
+article {
+  h2, 
+  h3 {
+    font-family: $display_font;
+  }
+
+  // Holds the logo and contact info for the resume
+  #section-resume-info {
+    // For the logo above the contact links
+    img {
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    // For the city below the logo
+    span {
+      display: block;
+      margin: 0.5rem auto; // 0.5rem = 8px
+    }
+
+    // For the rows of contact links
+    .resume-info-row-div {
+      margin: 0.6rem auto; // 0.6rem = 10px
+    }
   }
 }
 
@@ -477,6 +523,8 @@ article {
       }
     }
 
+    
+
     // Holds the gray horizontal spacers.
     .resume-spacer-horizontal-div {
       width: 11.63rem; // 186px
@@ -512,6 +560,36 @@ article {
         display: inline-block;
         font-size: 1.25rem;
       }
+    }
+
+    #section-resume-info {
+      img {
+        width: 15.31rem; // 245px
+      }
+
+      span {
+        width: 5.8rem; // 93px
+        font-size: $sm_info_font_size;
+      }
+
+      #resume-info-row-1 {
+        width: 7.5rem; // 120px
+      }
+    
+      #resume-info-row-2 {
+        width: 14.1rem; // 226px
+      }    
+    }
+
+    #section-resume-objective {
+      margin-top: 1.3rem; // 21px
+    }
+
+    #section-resume-education h2, 
+    #section-resume-education p, 
+    #section-resume-tech_knowledge h2, 
+    #section-resume-tech_knowledge h3 {
+      text-align: center;
     }
   }
 }

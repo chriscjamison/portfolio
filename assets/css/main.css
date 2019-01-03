@@ -19,7 +19,8 @@ h1,
 h2,
 h3,
 h4,
-article p {
+article p,
+#section-resume-info span {
   font-family: abril-text, Garamond, serif; }
 
 /* Menu links, captions, and quotes */
@@ -41,7 +42,8 @@ h1,
 h2,
 h3,
 h4,
-article p {
+article p,
+#section-resume-info span {
   color: #6d707c; }
 
 /* Page titles. */
@@ -146,13 +148,13 @@ header {
       width: 2.81rem;
       background-position: 0px -72px; }
 
-/* **** ARTICLE **** */
+/* **** bio.htm **** */
 article p {
   font-weight: 300;
   font-size: 1.25rem;
-  line-height: 1.5; }
+  line-height: 1.6; }
 
-article p:first-of-type {
+article .bio-first-p {
   margin-top: 0.5rem; }
 
 article img {
@@ -199,6 +201,23 @@ article .article-border-end {
   width: 2.25rem;
   height: 5px;
   background-color: #ec1a63; }
+
+/* **** resume.htm **** */
+article h2,
+article h3 {
+  font-family: abril-display, Garamond, serif; }
+
+article #section-resume-info img {
+  height: auto;
+  margin: 0 auto;
+  display: block; }
+
+article #section-resume-info span {
+  display: block;
+  margin: 0.5rem auto; }
+
+article #section-resume-info .resume-info-row-div {
+  margin: 0.6rem auto; }
 
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
@@ -309,4 +328,18 @@ article .article-border-end {
     text-align: center; }
   article #section-resume-download a {
     display: inline-block;
-    font-size: 1.25rem; } }
+    font-size: 1.25rem; }
+  article #section-resume-info img {
+    width: 15.31rem; }
+  article #section-resume-info span {
+    width: 5.8rem;
+    font-size: 1rem; }
+  article #section-resume-info #resume-info-row-1 {
+    width: 7.5rem; }
+  article #section-resume-info #resume-info-row-2 {
+    width: 14.1rem; }
+  article #section-resume-objective {
+    margin-top: 1.3rem; }
+  article #section-resume-education h2,
+  article #section-resume-education p {
+    text-align: center; } }
