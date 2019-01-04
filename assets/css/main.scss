@@ -62,7 +62,8 @@ article p,
 #section-resume-info span, 
 #section-resume-tech_knowledge span, 
 #section-resume-soft_knowledge span, 
-#section-resume-work span {
+#section-resume-work span, 
+article #section-case_study-intro span {
   font-family: $base_font;
 }
 
@@ -91,7 +92,8 @@ article p,
 #section-resume-info span, 
 #section-resume-tech_knowledge span, 
 #section-resume-soft_knowledge span, 
-#section-resume-work span {
+#section-resume-work span, 
+article #section-case_study-intro span {
   color: $base_gray;
 }
 
@@ -442,6 +444,31 @@ article {
 }
 
 
+/* **** CASE STUDIES **** */
+
+article {
+  #section-case_study-intro {
+    h2 {
+      margin-bottom: 0;
+    }
+
+    span {
+      display: block;
+      font-weight: $light_font_weight;
+      font-size: $sm_base_font_size;
+    }
+
+    .case_study-intro-web_address {
+      padding-left: 0.5rem; // 8px
+      border-left: 3px solid $dark_blue;
+
+      a {
+        display: block;
+      }
+    }
+  }
+}
+
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
    ********************************* */
@@ -495,7 +522,15 @@ article {
     }
 
     #header-border-title-bio  {
-      width: 2rem;
+      width: 2rem; // 32px
+    }
+
+    #header-border-title-resume  {
+      width: 4.9rem; // 79px
+    }
+
+    #header-border-title-case_study  {
+      width: 6.8rem; // 109px
     }
   }
 

@@ -23,7 +23,8 @@ article p,
 #section-resume-info span,
 #section-resume-tech_knowledge span,
 #section-resume-soft_knowledge span,
-#section-resume-work span {
+#section-resume-work span,
+article #section-case_study-intro span {
   font-family: abril-text, Garamond, serif; }
 
 /* Menu links, captions, and quotes */
@@ -49,7 +50,8 @@ article p,
 #section-resume-info span,
 #section-resume-tech_knowledge span,
 #section-resume-soft_knowledge span,
-#section-resume-work span {
+#section-resume-work span,
+article #section-case_study-intro span {
   color: #6d707c; }
 
 /* Page titles. */
@@ -287,6 +289,21 @@ article #section-resume-work .resume-work-web_address {
 article #section-resume-download-bottom h2 {
   text-align: center; }
 
+/* **** CASE STUDIES **** */
+article #section-case_study-intro h2 {
+  margin-bottom: 0; }
+
+article #section-case_study-intro span {
+  display: block;
+  font-weight: 300;
+  font-size: 1.25rem; }
+
+article #section-case_study-intro .case_study-intro-web_address {
+  padding-left: 0.5rem;
+  border-left: 3px solid #006fb9; }
+  article #section-case_study-intro .case_study-intro-web_address a {
+    display: block; }
+
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
    ********************************* */
@@ -319,6 +336,10 @@ article #section-resume-download-bottom h2 {
       font-size: 1.3rem; }
     header #header-border-title-bio {
       width: 2rem; }
+    header #header-border-title-resume {
+      width: 4.9rem; }
+    header #header-border-title-case_study {
+      width: 6.8rem; }
   /* For the social media links viewable below the copy on the front page. */
   #section-social {
     grid-column: 1 / span 2; }
