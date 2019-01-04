@@ -20,7 +20,10 @@ h2,
 h3,
 h4,
 article p,
-#section-resume-info span {
+#section-resume-info span,
+#section-resume-tech_knowledge span,
+#section-resume-soft_knowledge span,
+#section-resume-work span {
   font-family: abril-text, Garamond, serif; }
 
 /* Menu links, captions, and quotes */
@@ -43,7 +46,10 @@ h2,
 h3,
 h4,
 article p,
-#section-resume-info span {
+#section-resume-info span,
+#section-resume-tech_knowledge span,
+#section-resume-soft_knowledge span,
+#section-resume-work span {
   color: #6d707c; }
 
 /* Page titles. */
@@ -200,12 +206,56 @@ article figure q {
 article .article-border-end {
   width: 2.25rem;
   height: 5px;
+  margin-top: 1.25rem;
   background-color: #ec1a63; }
 
 /* **** resume.htm **** */
 article h2,
 article h3 {
   font-family: abril-display, Garamond, serif; }
+
+article .resume-spacer-vertical-div,
+article .resume-spacer-vertical-list-div {
+  width: 1.56rem;
+  display: inline-block; }
+  article .resume-spacer-vertical-div .resume-spacer-vertical-gray,
+  article .resume-spacer-vertical-div .resume-spacer-vertical-list-magenta,
+  article .resume-spacer-vertical-list-div .resume-spacer-vertical-gray,
+  article .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta {
+    width: 0.13rem;
+    height: 0.81rem;
+    display: inline-block;
+    background-color: #c1c6db; }
+  article .resume-spacer-vertical-div .resume-spacer-vertical-list-magenta,
+  article .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta {
+    background-color: #ec1a63; }
+  article .resume-spacer-vertical-div .resume-spacer-vertical-gray:nth-child(1),
+  article .resume-spacer-vertical-div .resume-spacer-vertical-list-magenta:nth-child(1),
+  article .resume-spacer-vertical-list-div .resume-spacer-vertical-gray:nth-child(1),
+  article .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta:nth-child(1) {
+    margin-left: 0.55rem; }
+
+article .resume-spacer-horizontal-div {
+  width: 11.63rem;
+  margin: 2rem auto; }
+  article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray,
+  article .resume-spacer-horizontal-div .resume-spacer-horizontal-list-magenta {
+    height: 0.13rem;
+    background-color: #c1c6db; }
+  article .resume-spacer-horizontal-div .resume-spacer-horizontal-list-magenta {
+    background-color: #ec1a63; }
+  article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray:nth-child(1),
+  article .resume-spacer-horizontal-div .resume-spacer-horizontal-list-magenta:nth-child(1) {
+    margin-bottom: 0.25rem; }
+
+article .resume-spacer-horizontal-list-div {
+  width: 0.81rem;
+  margin: 1rem auto; }
+  article .resume-spacer-horizontal-list-div .resume-spacer-horizontal-list-magenta {
+    height: 0.13rem;
+    background-color: #ec1a63; }
+  article .resume-spacer-horizontal-list-div .resume-spacer-horizontal-list-magenta:nth-child(2) {
+    margin-top: 0.25rem; }
 
 article #section-resume-info img {
   height: auto;
@@ -218,6 +268,24 @@ article #section-resume-info span {
 
 article #section-resume-info .resume-info-row-div {
   margin: 0.6rem auto; }
+
+article #section-resume-work p,
+article #section-resume-work span {
+  text-align: center; }
+
+article #section-resume-work h3 {
+  margin-bottom: 0; }
+
+article #section-resume-work .resume-work-exp-span {
+  display: block; }
+
+article #section-resume-work .resume-work-job_titles,
+article #section-resume-work .resume-work-web_address {
+  padding-left: 0.5rem;
+  border-left: 3px solid #006fb9; }
+
+article #section-resume-download-bottom h2 {
+  text-align: center; }
 
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
@@ -302,24 +370,8 @@ article #section-resume-info .resume-info-row-div {
     article #figure-bio-portrait img {
       margin-bottom: 1.75rem; }
   /* **** resume.htm **** */
-  article .resume-spacer-vertical-div {
-    width: 1.56rem;
-    display: inline-block; }
-    article .resume-spacer-vertical-div .resume-spacer-vertical-gray {
-      width: 0.13rem;
-      height: 0.81rem;
-      display: inline-block;
-      background-color: #c1c6db; }
-    article .resume-spacer-vertical-div .resume-spacer-vertical-gray:nth-child(1) {
-      margin-left: 0.55rem; }
-  article .resume-spacer-horizontal-div {
-    width: 11.63rem;
-    margin: 2rem auto; }
-    article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray {
-      height: 0.13rem;
-      background-color: #c1c6db; }
-    article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray:nth-child(1) {
-      margin-bottom: 0.25rem; }
+  article .resume-spacer-vertical-list-div {
+    display: none; }
   article .resume-links-div {
     width: 7.75rem;
     margin: 0 auto; }
@@ -341,5 +393,31 @@ article #section-resume-info .resume-info-row-div {
   article #section-resume-objective {
     margin-top: 1.3rem; }
   article #section-resume-education h2,
-  article #section-resume-education p {
-    text-align: center; } }
+  article #section-resume-education p,
+  article #section-resume-tech_knowledge h2,
+  article #section-resume-tech_knowledge h3,
+  article #section-resume-tech_knowledge span,
+  article #section-resume-soft_knowledge h2,
+  article #section-resume-soft_knowledge h3,
+  article #section-resume-soft_knowledge span {
+    text-align: center; }
+  article #section-resume-tech_knowledge span,
+  article #section-resume-soft_knowledge span {
+    display: block; }
+  article #section-resume-tech_knowledge .resume-list span:last-of-type,
+  article #section-resume-soft_knowledge .resume-list span:last-of-type {
+    margin-bottom: 2rem; }
+  #section-resume-work p,
+  #section-resume-work span {
+    text-align: center; }
+  #section-resume-work h2 {
+    margin-bottom: 0.5rem; }
+  #section-resume-work p {
+    margin: 0.5rem 0 0.25rem 0; }
+  #section-resume-work .resume-work-web_address {
+    margin-bottom: 1rem; }
+    #section-resume-work .resume-work-web_address a {
+      display: block;
+      font-size: 0.9rem; }
+  #section-resume-download-bottom a {
+    font-size: 1.25rem; } }
