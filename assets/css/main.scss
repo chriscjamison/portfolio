@@ -12,6 +12,7 @@ $link_font: industry, Arial, Helvetica, sans-serif;
 
 $base_font_weight: 400;
 $light_font_weight: 300;
+$semibold_font_weight: 600;
 $bold_font_weight: 700;
 $ex_bold_font_weight: 800;
 
@@ -448,19 +449,30 @@ article {
 
 article {
   #section-case_study-intro {
-    h2 {
+    h2, 
+    h3 {
       margin-bottom: 0;
     }
 
     span {
       display: block;
       font-weight: $light_font_weight;
-      font-size: $sm_base_font_size;
+    }
+
+    h3 {
+      font-family: $base_font;
+      font-weight: $semibold_font_weight;
     }
 
     .case_study-intro-web_address {
       padding-left: 0.5rem; // 8px
       border-left: 3px solid $dark_blue;
+
+      span, 
+      a {
+        margin-top: 0.2rem; // 3px
+        font-size: $sm_web_address_font_size;
+      }
 
       a {
         display: block;
@@ -701,36 +713,44 @@ article {
     #section-resume-soft_knowledge .resume-list span:last-of-type, {
       margin-bottom: 2rem // 32px
     }
-  }
 
-  #section-resume-work {
-    p, 
-    span {
-      text-align: center;
-    }
-
-    h2 {
-      margin-bottom: 0.5rem; // 8px
-    }
-
-    p {
-      margin: 0.5rem 0 0.25rem 0; // 8px 0px 4px 0px
-    }
-    
-    // For the link underneath the heading listed as 'Web Address'.
-    .resume-work-web_address {
-      margin-bottom: 1rem; // 32px
+    #section-resume-work {
+      p, 
+      span {
+        text-align: center;
+      }
+  
+      h2 {
+        margin-bottom: 0.5rem; // 8px
+      }
+  
+      p {
+        margin: 0.5rem 0 0.25rem 0; // 8px 0px 4px 0px
+      }
       
+      // For the link underneath the heading listed as 'Web Address'.
+      .resume-work-web_address {
+        margin-bottom: 1rem; // 32px
+        
+        a {
+          display: block;
+          font-size: $sm_web_address_font_size; // 11pt
+        }
+      }
+    }
+  
+    #section-resume-download-bottom {
       a {
-        display: block;
-        font-size: $sm_web_address_font_size; // 11pt
+        font-size: $sm_base_font_size; //15pt
       }
     }
   }
 
-  #section-resume-download-bottom {
-    a {
-      font-size: $sm_base_font_size; //15pt
-    }
+  
+  /* **** CASE STUDY **** */
+
+  article {
+
   }
+
 }
