@@ -27,6 +27,7 @@ $white: #fff;
 
 $sm_header_font_size: 1.6rem; // 20pt
 $sm_h2_font_size: 1.5rem; // 18pt
+$sm_resume_p_font_size: 1.1rem;
 $sm_name_font_size: 2rem; // 24pt
 $sm_base_font_size: 1.25rem; // 15pt
 $sm_info_font_size: 1rem; // 12pt
@@ -423,17 +424,16 @@ article {
   }
 
   #section-resume-work {
-    p, 
-    span {
-      text-align: center;
-    }
-
     h3 {
       margin-bottom: 0;
     }
 
     .resume-work-exp-span {
       display: block;
+    }
+
+    .resume-work-web_address h3 {
+      font-family: $base_font;
     }
 
     .resume-work-job_titles, 
@@ -637,6 +637,10 @@ article {
     #header-border-title-case_study  {
       width: 6.8rem; // 109px
     }
+
+    #header-border-title-conversation  {
+      width: 12.8rem; // 205px
+    }
   }
 
   /* For the social media links viewable below the copy on the front page. */
@@ -737,10 +741,6 @@ article {
   /* **** resume.htm **** */
 
   article {
-    .resume-spacer-vertical-list-div {
-      display: none;
-    }
-
     // Holds the links to allow a visitor to download a copy 
     // of the resume.
     .resume-links-div {
@@ -786,15 +786,34 @@ article {
       margin-top: 1.3rem; // 21px
     }
 
+    #section-resume-education p, 
+    #section-resume-tech_knowledge span,
+    #section-resume-tech_knowledge p, 
+    #section-resume-soft_knowledge span, 
+    #section-resume-soft_knowledge p, 
+    .resume-work-responsibilities p {
+      font-size: $sm_resume_p_font_size;
+      line-height: 1.8;
+    }
+
     #section-resume-education h2, 
     #section-resume-education p, 
     #section-resume-tech_knowledge h2, 
     #section-resume-tech_knowledge h3, 
     #section-resume-tech_knowledge span, 
+    #section-resume-tech_knowledge p, 
     #section-resume-soft_knowledge h2, 
     #section-resume-soft_knowledge h3, 
-    #section-resume-soft_knowledge span {
+    #section-resume-soft_knowledge span, 
+    #section-resume-soft_knowledge p {
       text-align: center;
+    }
+
+    #section-resume-tech_knowledge, 
+    #section-resume-soft_knowledge {
+      .resume-spacer-vertical-list-div {
+        display: none;
+      }
     }
 
     #section-resume-tech_knowledge span, 
@@ -808,13 +827,13 @@ article {
     }
 
     #section-resume-work {
-      p, 
-      span {
-        text-align: center;
-      }
-  
       h2 {
         margin-bottom: 0.5rem; // 8px
+      }
+
+      #p-resume-work-title, 
+      .resume-work-exp-span {
+        text-align: center;
       }
   
       p {
@@ -825,9 +844,38 @@ article {
       .resume-work-web_address {
         margin-bottom: 1rem; // 32px
         
+        h3 {
+          font-size: $sm_info_font_size;
+        }
+        
         a {
           display: block;
           font-size: $sm_web_address_font_size; // 11pt
+        }
+      }
+
+      .resume-work-jobs:first-of-type {
+        margin-bottom: $sm_body_margin;
+      }
+
+      .resume-work-responsibilities {
+       .resume-spacer-vertical-list-div {
+          margin-top: 0.45rem;
+          vertical-align: top;
+        
+          .resume-spacer-vertical-list-magenta:nth-child(1) {
+            margin-left: $sm_indent_spacer;
+          }
+        }
+
+        p {
+          width: 16.25rem; // 260px
+          margin: 0 0 $sm_margin_spacer 0; // 0 0 20px 0
+          display: inline-block;
+        }
+
+        p:last-of-type {
+          margin-bottom: 0;
         }
       }
     }
@@ -962,4 +1010,9 @@ article {
       }
     }
   }
+  
+  
+  /* **** START A CONVERSATION **** */
+
+
 }
