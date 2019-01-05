@@ -31,13 +31,14 @@ $sm_name_font_size: 2rem; // 24pt
 $sm_base_font_size: 1.25rem; // 15pt
 $sm_info_font_size: 1rem; // 12pt
 $sm_web_address_font_size: 0.9rem; // 11pt
+$sm_h4_font_size: 1.2rem;
 
 $lg_base_font_size: 1.5rem; // 18pt
 
-$sm_body_margin: 2rem; // 24pt
-
+$sm_body_margin: 2rem; // 24px
 $sm_margin_spacer: 1.25rem; // 15pt
 $sm_title_bottom_spacer: 0.2rem; // 3px
+$sm_indent_spacer: 0.75rem; // 12px
 
 
 /* **** COMMON ELEMENTS **** */
@@ -64,7 +65,9 @@ article p,
 #section-resume-tech_knowledge span, 
 #section-resume-soft_knowledge span, 
 #section-resume-work span, 
-article #section-case_study-intro span {
+article #section-case_study-intro span, 
+article .div-case_study-asset-color-info-desc-color span, 
+article .div-case_study-tech_used-info-list-item span {
   font-family: $base_font;
 }
 
@@ -72,7 +75,8 @@ article #section-case_study-intro span {
 .nav-links-text-a, 
 article figure span, 
 article a, 
-q {
+q, 
+.div-case_study-assets-background span {
   font-family: $link_font;
 }
 
@@ -94,7 +98,9 @@ article p,
 #section-resume-tech_knowledge span, 
 #section-resume-soft_knowledge span, 
 #section-resume-work span, 
-article #section-case_study-intro span {
+article #section-case_study-intro span, 
+article .div-case_study-asset-color-info-desc-color span, 
+article .div-case_study-tech_used-info-list-item span {
   color: $base_gray;
 }
 
@@ -479,6 +485,93 @@ article {
       }
     }
   }
+
+  .section-case_study-assets {
+    h3 {
+      border-left: 3px solid $dark_blue;
+      font-family: $base_font;
+      font-size: $sm_base_font_size;
+    }
+
+    h4, 
+    .div-case_study-assets-fonts-desc span {
+      display: block;
+    }
+
+    .resume-spacer-vertical-list-div, 
+    .div-case_study-assets-fonts-info-desc, 
+    .div-case_study-asset-color-info-square, 
+    .div-case_study-asset-color-info-desc, 
+    .div-case_study-asset-color-info-desc-codes {
+      display: inline-block;
+    }
+
+    h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: $sm_h4_font_size;
+    }
+
+    .div-case_study-assets-fonts-info {
+      margin: 0 0 $sm_margin_spacer 0.2rem; // 0 0 20px 3px
+    }
+
+    .resume-spacer-vertical-list-div {
+      margin: 0.5rem 0 0.75rem 0; // 8px 0 12px 0
+      vertical-align: top;
+    }
+
+    #div-case_study-asset-font-amboy span, 
+    #div-case_study-asset-font-cholla_wide span, 
+    #div-case_study-asset-font-korolev_military_stencil span {
+      font-size: $sm_h2_font_size;
+    }
+
+    #div-case_study-asset-font-amboy span {
+      font-family: amboy;
+    }
+
+    #div-case_study-asset-font-cholla_wide span {
+      font-family: cholla-wide;
+    }
+
+    #div-case_study-asset-font-korolev_military_stencil span {
+      font-family: korolev-military-stencil;
+      // font-size: $sm_info_font_size;
+    }
+
+    .div-case_study-asset-color-info-square {
+     border: 1px solid $light_gray;
+      vertical-align: top;
+    }
+
+    #div-case_study-asset-color-info-square-yellow {
+      background-color: #fff113;
+    }
+
+    #div-case_study-asset-color-info-square-blue {
+      background-color: #00a1e1;
+    }
+
+    .div-case_study-asset-color-info-desc-codes h4 {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .section-case_study-tech_used {
+    h3 {
+      border-left: 3px solid $dark_blue;
+      font-family: $base_font;
+      font-size: $sm_base_font_size;
+    }
+  }
+
+  .section-case_study-takeaways {
+    h3 {
+      border-left: 3px solid $dark_blue;
+      font-family: $base_font;
+      font-size: $sm_base_font_size;
+    }
+  }
 }
 
 /* ********************************* 
@@ -750,7 +843,123 @@ article {
   /* **** CASE STUDY **** */
 
   article {
+    #figure-case_study-intial-landing_page, 
+    #figure-case_study-revised-landing_page {
+      margin-bottom: 1.5rem; // 24px
+    }
 
+    #figure-case_study-intial-employment, 
+    #figure-case_study-revised-employment {
+      margin-top: 1.5rem; // 24px
+    }
+
+    #figure-case_study-revised-employment span {
+      width: 94%;
+    }
+
+    .section-case_study-assets {
+      margin: $sm_body_margin 0; // 32px 0
+
+      .div-case_study-assets-fonts, 
+      .div-case_study-assets-background {
+        margin-bottom: 1.75rem; // 28px
+      }
+
+      h3 {
+        padding-left: 0.5rem; // 8px
+      }
+    
+      .div-case_study-assets-background {
+        span {
+          width: 90%;
+          margin: 0.5rem auto 1.5rem auto;
+          display: block;
+          font-size: $sm_info_font_size;
+          font-weight: $ex_bold_font_weight;
+          color: $orange;
+          text-align: center;
+        }
+
+        img {
+          width: 17.1rem;
+          margin-left: $sm_indent_spacer; // 12px
+        }
+      }
+ 
+      .div-case_study-asset-color-info-desc-color {
+        margin-bottom: $sm_margin_spacer; // 20px
+      }
+
+      .div-case_study-asset-color-info {
+        margin: 0 0 $sm_body_margin $sm_indent_spacer; // 0 0 20px 12px
+      }
+
+      .div-case_study-asset-color-info-desc-color span {
+        font-size: $sm_base_font_size;
+      }
+
+      .div-case_study-asset-color-info-square {
+        width: 9.75rem;
+        height: 9.75rem;
+      }
+    }
+
+    .section-case_study-tech_used {
+      margin: $sm_body_margin 0; // 32px 0
+
+      h3 {
+        padding-left: 0.5rem; // 8px
+      }
+
+      h4 {
+        margin: 2.5rem 0 1.25rem $sm_indent_spacer; // 40px 0 20px 12px
+        font-size: $sm_h4_font_size;
+      }
+
+      h4:first-of-type {
+        margin-top: 0;
+      }
+
+      .div-case_study-tech_used-info-list-item {
+        margin: 0 0 $sm_margin_spacer  0.25rem; // 0 0 20px 4px
+      }
+
+      .resume-spacer-vertical-list-div, 
+      .div-case_study-tech_used-info-list-item span {
+        display: inline-block;
+      }
+
+      .div-case_study-tech_used-info-list-item span {
+        font-size: $sm_base_font_size;
+      }
+    }
+
+    .section-case_study-takeaways {
+      margin: $sm_body_margin 0; // 32px 0
+
+      h3 {
+        padding-left: 0.5rem; // 8px
+      }
+
+      .resume-spacer-vertical-list-div, 
+      .div-case_study-takeaways-list-copy {
+        display: inline-block;
+      }
+
+      .div-case_study-takeaways-list-item {
+        .resume-spacer-vertical-list-div {
+          margin: 0.5rem 0 0 0.25rem; // 8px
+          vertical-align: top; // Used to vertically align the bullet point along the top line of copy.
+        }
+
+        .div-case_study-takeaways-list-copy { 
+          width: 16.25rem; // 260px
+          
+          p:first-of-type {
+            margin-top: 0;
+          }
+        }
+      }
+    }
   }
-
 }
