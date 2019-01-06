@@ -68,7 +68,10 @@ article p,
 #section-resume-work span, 
 article #section-case_study-intro span, 
 article .div-case_study-asset-color-info-desc-color span, 
-article .div-case_study-tech_used-info-list-item span {
+article .div-case_study-tech_used-info-list-item span, 
+form .label-conversation, 
+form .input-conversation, 
+form .textarea-conversation {
   font-family: $base_font;
 }
 
@@ -77,7 +80,8 @@ article .div-case_study-tech_used-info-list-item span {
 article figure span, 
 article a, 
 q, 
-.div-case_study-assets-background span {
+.div-case_study-assets-background span, 
+form #input-conversation-submit {
   font-family: $link_font;
 }
 
@@ -101,7 +105,8 @@ article p,
 #section-resume-work span, 
 article #section-case_study-intro span, 
 article .div-case_study-asset-color-info-desc-color span, 
-article .div-case_study-tech_used-info-list-item span {
+article .div-case_study-tech_used-info-list-item span, 
+form .label-conversation {
   color: $base_gray;
 }
 
@@ -574,6 +579,46 @@ article {
   }
 }
 
+
+/* **** START A CONVERSATION **** */
+
+article {
+  #section-conversation-links {
+    margin: 0 auto;
+
+    a {
+      display: inline-block;
+      font-size: $sm_base_font_size;
+    }
+  }
+}
+
+#form-conversation {
+  .label-conversation {
+    display: block;
+    margin-bottom: 0.25rem; // 4px
+    font-weight: $bold_font_weight;
+  }
+
+  .input-conversation, 
+  .textarea-conversation {
+    padding: 0.5rem; // 8px
+    color: $dark_gray;
+    border: 3px solid $light_gray;
+  }
+
+  #input-conversation-submit {
+    width: 17.5rem;
+    padding: 0.8rem 0.5rem; // 13px 8px
+    border: 3px solid $magenta;
+    font-size: $sm_info_font_size;
+    font-size: $semibold_font_weight;
+    color: $magenta;
+    text-align: center;
+  }
+}
+
+
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
    ********************************* */
@@ -651,7 +696,7 @@ article {
 
   /* The menu located at the bottom of the browser window. */
   nav {
-    grid-column: 1 / span 0;
+    grid-column: 1 / span 1;
     // grid-column-end: 1;
 
     .nav-links-text-a {
@@ -847,7 +892,7 @@ article {
         h3 {
           font-size: $sm_info_font_size;
         }
-        
+
         a {
           display: block;
           font-size: $sm_web_address_font_size; // 11pt
@@ -1014,5 +1059,18 @@ article {
   
   /* **** START A CONVERSATION **** */
 
+  #form-conversation {
+    grid-column: 1 / span 2;
+  
+    .input-conversation, 
+    .textarea-conversation {
+      width: 17.5rem; // 280px
+      margin-bottom: $sm_margin_spacer;
+      font-size: $sm_base_font_size;
+    }
 
+    .textarea-conversation {
+      height: 10.8rem; // 173px
+    }
+  }
 }

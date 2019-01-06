@@ -26,7 +26,10 @@ article p,
 #section-resume-work span,
 article #section-case_study-intro span,
 article .div-case_study-asset-color-info-desc-color span,
-article .div-case_study-tech_used-info-list-item span {
+article .div-case_study-tech_used-info-list-item span,
+form .label-conversation,
+form .input-conversation,
+form .textarea-conversation {
   font-family: abril-text, Garamond, serif; }
 
 /* Menu links, captions, and quotes */
@@ -34,7 +37,8 @@ article .div-case_study-tech_used-info-list-item span {
 article figure span,
 article a,
 q,
-.div-case_study-assets-background span {
+.div-case_study-assets-background span,
+form #input-conversation-submit {
   font-family: industry, Arial, Helvetica, sans-serif; }
 
 .nav-links-text-a,
@@ -56,7 +60,8 @@ article p,
 #section-resume-work span,
 article #section-case_study-intro span,
 article .div-case_study-asset-color-info-desc-color span,
-article .div-case_study-tech_used-info-list-item span {
+article .div-case_study-tech_used-info-list-item span,
+form .label-conversation {
   color: #6d707c; }
 
 /* Page titles. */
@@ -380,6 +385,33 @@ article .section-case_study-takeaways h3 {
   font-family: abril-text, Garamond, serif;
   font-size: 1.25rem; }
 
+/* **** START A CONVERSATION **** */
+article #section-conversation-links {
+  margin: 0 auto; }
+  article #section-conversation-links a {
+    display: inline-block;
+    font-size: 1.25rem; }
+
+#form-conversation .label-conversation {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 700; }
+
+#form-conversation .input-conversation,
+#form-conversation .textarea-conversation {
+  padding: 0.5rem;
+  color: #51545b;
+  border: 3px solid #c1c6db; }
+
+#form-conversation #input-conversation-submit {
+  width: 17.5rem;
+  padding: 0.8rem 0.5rem;
+  border: 3px solid #ec1a63;
+  font-size: 1rem;
+  font-size: 600;
+  color: #ec1a63;
+  text-align: center; }
+
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
    ********************************* */
@@ -423,7 +455,7 @@ article .section-case_study-takeaways h3 {
     grid-column: 1 / span 2; }
   /* The menu located at the bottom of the browser window. */
   nav {
-    grid-column: 1 / span 0;
+    grid-column: 1 / span 1;
     /* The link within the main menu, 'Read Bio'. */
     /* The link within the main menu, 'View Resume'. */
     /* The link within the main menu, 'View Case Studies'. */
@@ -612,4 +644,13 @@ article .section-case_study-takeaways h3 {
       width: 16.25rem; }
       article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy p:first-of-type {
         margin-top: 0; }
-  /* **** START A CONVERSATION **** */ }
+  /* **** START A CONVERSATION **** */
+  #form-conversation {
+    grid-column: 1 / span 2; }
+    #form-conversation .input-conversation,
+    #form-conversation .textarea-conversation {
+      width: 17.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem; }
+    #form-conversation .textarea-conversation {
+      height: 10.8rem; } }
