@@ -661,8 +661,11 @@ article #section-conversation-links {
    ********************************* */
 @media (max-width: 768px) {
   /* **** LANDING PAGE **** */
+  #body-landing {
+    row-gap: 11rem; }
   header {
-    margin-bottom: 4.25rem; }
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1; }
     header #header-intro span {
       font-size: 2rem; }
     header #header-name {
@@ -671,12 +674,27 @@ article #section-conversation-links {
       width: 12.1rem; }
     header #header-copy {
       font-size: 1.8rem; }
-  #section-social #social-links .social-links-a {
-    margin-right: 0;
-    margin-bottom: 1.5rem;
-    display: block; }
-  #section-social #social-links .social-links-a:first-of-type {
-    margin-top: 1.5rem; } }
+  #nav-other {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1; }
+    #nav-other #nav-link-menu {
+      transform: translate(210%, 0%); }
+  #nav-iphone {
+    display: none; }
+  #section-social {
+    grid-row: 2 / span 1; }
+    #section-social #social-links .social-links-a {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+      display: block; }
+    #section-social #social-links .social-links-a:first-of-type {
+      margin-top: 1.5rem; }
+    #section-social #social-links .social-links-a:last-of-type {
+      margin-bottom: 0; }
+  #section-logo {
+    grid-row: 2 / span 1; }
+    #section-logo a {
+      transform: translate(0%, 240%); } }
 
 /* ********************************* 
       iPHONE 6/7/8 PLUS - 414 x 736

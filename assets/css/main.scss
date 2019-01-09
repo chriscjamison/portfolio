@@ -1092,10 +1092,15 @@ article {
    
 @media (max-width: 768px)  {
   /* **** LANDING PAGE **** */
-  header {
-    margin-bottom: 4.25rem; // 68px
-    grid-column: 1 / span 1;
+  #body-landing {
+    row-gap: 11rem;
+  }
 
+  header {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+
+    
     #header-intro {
       span {
         font-size: $med_header_font_size;
@@ -1117,12 +1122,20 @@ article {
 
   #nav-other {
     grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+
+    #nav-link-menu {
+      transform: translate(210%, 0%);
+    }
   }
+
   #nav-iphone {
     display: none;
   }
 
   #section-social {
+    grid-row: 2 / span 1;
+
     #social-links {
       .social-links-a {
         margin-right: 0;
@@ -1133,8 +1146,19 @@ article {
       .social-links-a:first-of-type {
         margin-top: 1.5rem; // 24px
       }
-    }
 
+      .social-links-a:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #section-logo {
+    grid-row: 2 / span 1;
+
+    a {
+      transform: translate(0%, 240%);
+    }
   }
 }
 
