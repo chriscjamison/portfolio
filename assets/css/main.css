@@ -657,18 +657,67 @@ article #section-conversation-links {
       height: 10.8rem; } }
 
 /* ********************************* 
+      iPAD - 768 x 1024
+   ********************************* */
+@media (max-width: 768px) {
+  /* **** LANDING PAGE **** */
+  header {
+    margin-bottom: 4.25rem; }
+    header #header-intro span {
+      font-size: 2rem; }
+    header #header-name {
+      font-size: 5rem; }
+    header #header-border-name {
+      width: 12.1rem; }
+    header #header-copy {
+      font-size: 1.8rem; }
+  #section-social #social-links .social-links-a {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    display: block; }
+  #section-social #social-links .social-links-a:first-of-type {
+    margin-top: 1.5rem; } }
+
+/* ********************************* 
+      iPHONE 6/7/8 PLUS - 414 x 736
+   ********************************* */
+@media (max-width: 414px) {
+  /* **** LANDING PAGE **** */
+  header #header-name {
+    font-size: 3.4rem; }
+  header #header-border-name {
+    width: 8.1rem; }
+  /* **** BIOGRAPHY **** */
+  article p {
+    line-height: 1.7; }
+  article img,
+  article #figure-bio-quote-div {
+    width: 22rem; }
+  /* **** RESUME **** */
+  article .resume-spacer-horizontal-div {
+    width: 13.56rem; }
+  article #section-resume-work h2 {
+    text-align: center; }
+  article #section-resume-work .resume-work-responsibilities p {
+    width: 19rem; }
+  /* **** CASE STUDIES **** */
+  article .section-case_study-assets .div-case_study-assets-background img {
+    width: 20.5rem; }
+  article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
+    width: 19.75rem; }
+  /* **** START A CONVERSATION **** */
+  #form-conversation .input-conversation,
+  #form-conversation .textarea-conversation,
+  #form-conversation #input-conversation-submit {
+    width: 20rem; } }
+
+/* ********************************* 
       iPHONE 6/7/8 - 375 x 667
    ********************************* */
 @media (max-width: 375px) {
   /* **** LANDING PAGE **** */
   header #header-name {
     font-size: 3rem; }
-  /* **** CASE STUDIES **** */
-  article .section-case_study-assets .div-case_study-assets-background img {
-    width: 18rem; }
-  article .section-case_study-assets .div-case_study-asset-color-info-square {
-    width: 10.25rem;
-    height: 10.25rem; }
   /* **** BIOGRAPHY **** */
   article img,
   article #figure-bio-quote-div {
@@ -676,6 +725,12 @@ article #section-conversation-links {
   /* **** RESUME **** */
   article .resume-spacer-horizontal-div {
     width: 12.06rem; }
+  /* **** CASE STUDIES **** */
+  article .section-case_study-assets .div-case_study-assets-background img {
+    width: 18rem; }
+  article .section-case_study-assets .div-case_study-asset-color-info-square {
+    width: 10.25rem;
+    height: 10.25rem; }
   /* **** START A CONVERSATION **** */
   #form-conversation .input-conversation,
   #form-conversation .textarea-conversation,

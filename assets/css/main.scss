@@ -31,12 +31,15 @@ $ex_sm_resume_span_caption_font_size: 0.9rem; // 11pt
 
 $sm_header_font_size: 1.6rem; // 20pt
 $sm_h2_font_size: 1.5rem; // 18pt
-$sm_resume_p_font_size: 1.1rem;
+$sm_resume_p_font_size: 1.1rem; // 13pt
 $sm_name_font_size: 2rem; // 24pt
 $sm_base_font_size: 1.25rem; // 15pt
 $sm_info_font_size: 1rem; // 12pt
 $sm_web_address_font_size: 0.9rem; // 11pt
-$sm_h4_font_size: 1.2rem;
+$sm_h4_font_size: 1.2rem; // 14pt
+
+$med_header_font_size: 2rem; // 24pt
+$med_base_font_size: 1.8rem; // 22pt
 
 $lg_base_font_size: 1.5rem; // 18pt
 
@@ -1083,15 +1086,110 @@ article {
 
 
 /* ********************************* 
-      iPHONE 6/7/8 - 375 x 667
+      iPAD - 768 x 1024
    ********************************* */
 
    
-@media (max-width: 375px)  {
+@media (max-width: 768px)  {
+  /* **** LANDING PAGE **** */
+  header {
+    margin-bottom: 4.25rem; // 68px
+    grid-column: 1 / span 1;
+
+    #header-intro {
+      span {
+        font-size: $med_header_font_size;
+      }
+    }
+
+    #header-name {
+      font-size: 5rem; // 60pt
+    }
+
+    #header-border-name {
+      width: 12.1rem; // 194px
+    }
+
+    #header-copy {
+      font-size: $med_base_font_size;
+    }
+  }
+
+  #nav-other {
+    grid-column: 2 / span 1;
+  }
+  #nav-iphone {
+    display: none;
+  }
+
+  #section-social {
+    #social-links {
+      .social-links-a {
+        margin-right: 0;
+        margin-bottom: 1.5rem; // 24px
+        display: block;
+      }
+
+      .social-links-a:first-of-type {
+        margin-top: 1.5rem; // 24px
+      }
+    }
+
+  }
+}
+
+
+
+
+/* ********************************* 
+      iPHONE 6/7/8 PLUS - 414 x 736
+   ********************************* */
+
+   
+@media (max-width: 414px)  {
   /* **** LANDING PAGE **** */
   header {
     #header-name {
-      font-size: 3rem; // 36pt
+      font-size: 3.4rem; // 41pt
+    }
+
+    #header-border-name {
+      width: 8.1rem; // 130px
+    }
+  }
+
+
+  /* **** BIOGRAPHY **** */ 
+
+  article {
+    p {
+      line-height: 1.7;
+    }
+
+    img, 
+    #figure-bio-quote-div {
+      width: 22rem; // 352px
+    }
+  }
+
+
+  /* **** RESUME **** */ 
+
+  article {
+    .resume-spacer-horizontal-div {
+      width: 13.56rem; // 217px
+    }
+
+    #section-resume-work {
+      h2 {
+        text-align: center;
+      }
+
+      .resume-work-responsibilities {
+        p {
+          width: 19rem; // 304px
+        }
+      }
     }
   }
 
@@ -1101,13 +1199,40 @@ article {
   article {
     .section-case_study-assets {
       .div-case_study-assets-background img {
-        width: 18rem; // 288px
+        width: 20.5rem; // 328px
       }
+    }
+    
+    .section-case_study-takeaways {
+      .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
+        width: 19.75rem; // 316px
+      }
+    }
+  }
 
-      .div-case_study-asset-color-info-square {
-        width: 10.25rem; // 164px
-        height: 10.25rem; // 164px
-      }
+
+  /* **** START A CONVERSATION **** */ 
+
+  #form-conversation {
+    .input-conversation, 
+    .textarea-conversation, 
+    #input-conversation-submit {
+      width: 20rem;
+    }
+  }
+}
+
+
+/* ********************************* 
+      iPHONE 6/7/8 - 375 x 667
+   ********************************* */
+
+   
+@media (max-width: 375px)  {
+  /* **** LANDING PAGE **** */
+  header {
+    #header-name {
+      font-size: 3rem; // 36pt
     }
   }
 
@@ -1127,6 +1252,22 @@ article {
   article {
     .resume-spacer-horizontal-div {
       width: 12.06rem; // 193px
+    }
+  }
+
+
+  /* **** CASE STUDIES **** */ 
+  
+  article {
+    .section-case_study-assets {
+      .div-case_study-assets-background img {
+        width: 18rem; // 288px
+      }
+
+      .div-case_study-asset-color-info-square {
+        width: 10.25rem; // 164px
+        height: 10.25rem; // 164px
+      }
     }
   }
 
