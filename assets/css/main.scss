@@ -38,10 +38,15 @@ $sm_info_font_size: 1rem; // 12pt
 $sm_web_address_font_size: 0.9rem; // 11pt
 $sm_h4_font_size: 1.2rem; // 14pt
 
+$med_base_font_size: 1.5rem; // 18pt
+$med_h2_font_size: 1.75rem; // 21pt
 $med_header_font_size: 2rem; // 24pt
-$med_base_font_size: 1.8rem; // 22pt
+$med_header_copy_font_size: 1.8rem; // 22pt
 $med_quote_font_size: 1.5rem; // 18pt
 $med_quote_name_font_size: 1rem; // 12pt;
+$med_h3_font_size: 1.4rem; // 17pt
+$med_resume_span_font_size: 1.3rem; // 16pt
+
 
 $lg_base_font_size: 1.5rem; // 18pt
 
@@ -827,6 +832,11 @@ article {
         text-align: center;
       }
 
+      // The horizontal line which lies between the title and links.
+      .resume-documents-spacer-horizontal {
+        display: none;
+      }
+
       // The text links.
       a {
         display: inline-block;
@@ -1135,7 +1145,7 @@ article {
     }
 
     #header-copy {
-      font-size: $med_base_font_size;
+      font-size: $med_header_copy_font_size;
     }
   }
 
@@ -1209,6 +1219,7 @@ article {
     p {
       width: 61%;
       margin: $med_margin_spacer auto;
+      font-size: $med_base_font_size;
       line-height: 1.7;
     }
 
@@ -1276,10 +1287,115 @@ article {
 
   #section-logo-bio, 
   #section-logo-resume {
-    grid-row: 2 / span 1;
+    grid-row: 3 / span 1;
     
     a {
       transform: none;
+    }
+  }
+
+
+  /* **** RESUME **** */ 
+
+  article {
+    h2 {
+      font-size: $med_h2_font_size;
+    }
+
+    h3 {
+      font-size: $med_h3_font_size;
+    }
+
+    .section-resume-documents {
+      text-align: center;
+
+      h2, 
+      .resume-links-div {
+        display: inline-block;
+      }
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .resume-documents-spacer-horizontal {
+        width: 0.5rem; // 8px
+        height: 2px;
+        margin: 0.5rem; // 8px
+        display: inline-block;
+        background-color: $light_gray;
+        vertical-align: middle;
+      }
+    }
+
+    #section-resume-info {
+      img {
+        width: 24.88rem; // 398px
+      }
+
+      span {
+        width: 7.25rem; // 116px
+        font-size: 1.25rem;
+      }
+    }
+
+    #section-resume-education p, 
+    #section-resume-tech_knowledge span,
+    #section-resume-tech_knowledge p, 
+    #section-resume-soft_knowledge span, 
+    #section-resume-soft_knowledge p, 
+    .resume-work-responsibilities p {
+      font-size: $med_base_font_size;
+      line-height: 1.8;
+    }
+
+    #section-resume-education {
+      h2 {
+        margin-bottom: 0.75rem; // 12px
+      }
+    }
+
+    #section-resume-work {
+      h2 {
+        text-align: center;
+      }
+
+      #p-resume-work-title {
+        margin: 0 auto;
+      }
+
+      .resume-work-jobs {
+        width: 22rem; // 352px
+        margin: 2rem auto; // 32px auto
+      }
+
+      .resume-work-exp-span, 
+      .resume-work-job_titles span, 
+      .resume-work-web_address span {
+        font-size: $med_resume_span_font_size;
+      }
+
+      .resume-work-web_address {
+        h3, a {
+          font-size: 1.2rem; // 14pt
+        }
+      }
+
+      .resume-work-responsibilities {
+        margin-top: $med_margin_spacer;
+
+        .resume-spacer-vertical-list-div {
+          margin-top: 0.9rem; // 14px
+        }
+
+        p {
+          width: 20rem; // 320px
+        }
+      }
+    }
+
+    #article-border-end-resume {
+      margin-left: 8.9rem; // 142px
     }
   }
 }

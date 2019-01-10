@@ -519,6 +519,8 @@ article #section-conversation-links {
     margin-bottom: 0.75rem;
     font-size: 1.5rem;
     text-align: center; }
+  article .section-resume-documents .resume-documents-spacer-horizontal {
+    display: none; }
   article .section-resume-documents a {
     display: inline-block;
     font-size: 1.25rem; }
@@ -725,6 +727,7 @@ article #section-conversation-links {
     article p {
       width: 61%;
       margin: 1.25rem auto;
+      font-size: 1.5rem;
       line-height: 1.7; }
     article img {
       width: 25rem;
@@ -772,7 +775,62 @@ article #section-conversation-links {
     grid-row: 3 / span 1; }
     #section-logo-bio a,
     #section-logo-resume a {
-      transform: none; } }
+      transform: none; }
+  /* **** RESUME **** */
+  article h2 {
+    font-size: 1.75rem; }
+  article h3 {
+    font-size: 1.4rem; }
+  article .section-resume-documents {
+    text-align: center; }
+    article .section-resume-documents h2,
+    article .section-resume-documents .resume-links-div {
+      display: inline-block; }
+    article .section-resume-documents h2 {
+      margin-bottom: 0; }
+    article .section-resume-documents .resume-documents-spacer-horizontal {
+      width: 0.5rem;
+      height: 2px;
+      margin: 0.5rem;
+      display: inline-block;
+      background-color: #c1c6db;
+      vertical-align: middle; }
+  article #section-resume-info img {
+    width: 24.88rem; }
+  article #section-resume-info span {
+    width: 7.25rem;
+    font-size: 1.25rem; }
+  article #section-resume-education p,
+  article #section-resume-tech_knowledge span,
+  article #section-resume-tech_knowledge p,
+  article #section-resume-soft_knowledge span,
+  article #section-resume-soft_knowledge p,
+  article .resume-work-responsibilities p {
+    font-size: 1.5rem;
+    line-height: 1.8; }
+  article #section-resume-education h2 {
+    margin-bottom: 0.75rem; }
+  article #section-resume-work h2 {
+    text-align: center; }
+  article #section-resume-work #p-resume-work-title {
+    margin: 0 auto; }
+  article #section-resume-work .resume-work-jobs {
+    width: 22rem;
+    margin: 2rem auto; }
+  article #section-resume-work .resume-work-exp-span,
+  article #section-resume-work .resume-work-job_titles span,
+  article #section-resume-work .resume-work-web_address span {
+    font-size: 1.3rem; }
+  article #section-resume-work .resume-work-web_address h3, article #section-resume-work .resume-work-web_address a {
+    font-size: 1.2rem; }
+  article #section-resume-work .resume-work-responsibilities {
+    margin-top: 1.25rem; }
+    article #section-resume-work .resume-work-responsibilities .resume-spacer-vertical-list-div {
+      margin-top: 0.9rem; }
+    article #section-resume-work .resume-work-responsibilities p {
+      width: 20rem; }
+  article #article-border-end-resume {
+    margin-left: 8.9rem; } }
 
 /* ********************************* 
       iPHONE 6/7/8 PLUS - 414 x 736
