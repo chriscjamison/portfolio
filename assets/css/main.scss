@@ -40,13 +40,17 @@ $sm_h4_font_size: 1.2rem; // 14pt
 
 $med_header_font_size: 2rem; // 24pt
 $med_base_font_size: 1.8rem; // 22pt
+$med_quote_font_size: 1.5rem; // 18pt
+$med_quote_name_font_size: 1rem; // 12pt;
 
 $lg_base_font_size: 1.5rem; // 18pt
 
 $sm_body_margin: 2rem; // 24px
-$sm_margin_spacer: 1.25rem; // 15pt
+$sm_margin_spacer: 1.25rem; // 15px
 $sm_title_bottom_spacer: 0.2rem; // 3px
 $sm_indent_spacer: 0.75rem; // 12px
+
+$med_margin_spacer: 1.25rem; // 15px
 
 
 /* **** COMMON ELEMENTS **** */
@@ -134,15 +138,29 @@ h1 {
   background: linear-gradient(90deg, $light_blue 0%, $dark_blue 100%);
 }
 
-.figure-border {
+.figure-border-right {
+  margin: 0.5rem 0 1.75rem 39%;
+}
+
+.figure-border-left {
+  margin: 0.5rem 61% 1.75rem 0;
+}
+
+.figure-border-long {
   width: 61%;
   height: 5px;
-  margin: 0.5rem 0;
   background-color: $light_blue;
 }
 
-.figure-border-right {
-  margin: 0.5rem 0 1.75rem 39%;
+.figure-border-short {
+  width: 38%;
+  height: 5px;
+  margin-bottom: 0.5rem;
+  background-color: $orange;
+}
+
+.figure-border-left.figure-border-short {
+  margin: 1.5rem 0 0.5rem 23%;
 }
 
 /* **** MAIN NAVIGATION **** */
@@ -738,7 +756,7 @@ article {
     }
   }
 
-  #section-logo {
+  .section-logo {
     grid-column: 2 / span 1;
     // grid-column-end: 3;
     text-align: right;
@@ -1091,6 +1109,7 @@ article {
 
    
 @media (max-width: 768px)  {
+
   /* **** LANDING PAGE **** */
   #body-landing {
     row-gap: 11rem;
@@ -1120,7 +1139,7 @@ article {
     }
   }
 
-  #nav-other {
+  .nav-other {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
 
@@ -1129,7 +1148,7 @@ article {
     }
   }
 
-  #nav-iphone {
+  .nav-iphone {
     display: none;
   }
 
@@ -1153,11 +1172,114 @@ article {
     }
   }
 
-  #section-logo {
+  .section-logo {
     grid-row: 2 / span 1;
 
     a {
       transform: translate(0%, 240%);
+    }
+  }
+
+
+  /* **** BIOGRAPHY **** */ 
+
+  .body-content {
+    grid-template-columns: auto 2.37rem; // auto 37px
+    margin: 3rem 4rem; // 48px 64px
+  }
+
+  #header-bio, 
+  #header-resume {
+    grid-column: 1 / span 1;
+  }
+
+  #nav-other-bio, 
+  #nav-other-resume {
+    grid-column: 2 / span 1;
+
+    #nav-link-menu {
+      transform: none;
+      margin-top: 0;
+    }
+  }
+
+  article {
+    grid-column: 1 / span 2;
+
+    p {
+      width: 61%;
+      margin: $med_margin_spacer auto;
+      line-height: 1.7;
+    }
+
+    img {
+      width: 25rem; // 352px
+      display: inline-block;
+    }
+
+    #figure-bio-quote-div, 
+    #figure-bio-portrait img {
+      margin-bottom: 0;
+    }
+
+    figure {
+      width: 80%;
+      margin: 3rem auto; // 32px auto
+
+      span {
+        width: 19%;
+        margin: 0 0 1.5rem 0.5rem; // 0 0 24px 8px
+        padding-left: 0.69rem; // 11px
+        display: inline-block;
+        border-left: 5px solid $orange;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      #figure-bio-quote-div {
+        width: 33.31rem; // 533px
+        height: 20.6rem; // 356px
+        margin-bottom: 0;
+        background-size: 33.31rem 20.6rem; // 533px x 356px
+      }
+
+      #figure-bio-quote-container-div {
+        width: 20.6rem; // 331px
+        height: 12.8rem; // 205px
+
+        q {
+          margin: 13% auto 4% auto;
+          font-size: $med_quote_font_size;
+        }
+
+        span {
+          width: 7rem; // 112px
+          margin: 0 auto;
+          padding-left: 0;
+          display: block;
+          border-left: none;
+          font-size: $med_quote_name_font_size;
+          text-align: center;
+        }
+      }
+    }
+
+    #figure-bio-portrait img {
+      width: 33.31rem; // 533px
+      display: block;
+    }
+
+    .article-border-end {
+      margin-left: 19.5%;
+    }
+  }
+
+  #section-logo-bio, 
+  #section-logo-resume {
+    grid-row: 2 / span 1;
+    
+    a {
+      transform: none;
     }
   }
 }

@@ -78,14 +78,25 @@ h1 {
   background: #006fb9;
   background: linear-gradient(90deg, #00afde 0%, #006fb9 100%); }
 
-.figure-border {
-  width: 61%;
-  height: 5px;
-  margin: 0.5rem 0;
-  background-color: #00afde; }
-
 .figure-border-right {
   margin: 0.5rem 0 1.75rem 39%; }
+
+.figure-border-left {
+  margin: 0.5rem 61% 1.75rem 0; }
+
+.figure-border-long {
+  width: 61%;
+  height: 5px;
+  background-color: #00afde; }
+
+.figure-border-short {
+  width: 38%;
+  height: 5px;
+  margin-bottom: 0.5rem;
+  background-color: #f6895b; }
+
+.figure-border-left.figure-border-short {
+  margin: 1.5rem 0 0.5rem 23%; }
 
 /* **** MAIN NAVIGATION **** */
 nav {
@@ -475,12 +486,12 @@ article #section-conversation-links {
       width: 6.5rem; }
     nav #nav-link-text-a-conversation {
       width: 7.5rem; }
-  #section-logo {
+  .section-logo {
     grid-column: 2 / span 1;
     text-align: right; }
-    #section-logo a {
+    .section-logo a {
       display: block; }
-      #section-logo a img {
+      .section-logo a img {
         width: 3.75rem;
         height: auto; }
   /* **** bio.htm **** */
@@ -674,12 +685,12 @@ article #section-conversation-links {
       width: 12.1rem; }
     header #header-copy {
       font-size: 1.8rem; }
-  #nav-other {
+  .nav-other {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1; }
-    #nav-other #nav-link-menu {
+    .nav-other #nav-link-menu {
       transform: translate(210%, 0%); }
-  #nav-iphone {
+  .nav-iphone {
     display: none; }
   #section-social {
     grid-row: 2 / span 1; }
@@ -691,10 +702,77 @@ article #section-conversation-links {
       margin-top: 1.5rem; }
     #section-social #social-links .social-links-a:last-of-type {
       margin-bottom: 0; }
-  #section-logo {
+  .section-logo {
     grid-row: 2 / span 1; }
-    #section-logo a {
-      transform: translate(0%, 240%); } }
+    .section-logo a {
+      transform: translate(0%, 240%); }
+  /* **** BIOGRAPHY **** */
+  .body-content {
+    grid-template-columns: auto 2.37rem;
+    margin: 3rem 4rem; }
+  #header-bio,
+  #header-resume {
+    grid-column: 1 / span 1; }
+  #nav-other-bio,
+  #nav-other-resume {
+    grid-column: 2 / span 1; }
+    #nav-other-bio #nav-link-menu,
+    #nav-other-resume #nav-link-menu {
+      transform: none;
+      margin-top: 0; }
+  article {
+    grid-column: 1 / span 2; }
+    article p {
+      width: 61%;
+      margin: 1.25rem auto;
+      line-height: 1.7; }
+    article img {
+      width: 25rem;
+      display: inline-block; }
+    article #figure-bio-quote-div,
+    article #figure-bio-portrait img {
+      margin-bottom: 0; }
+    article figure {
+      width: 80%;
+      margin: 3rem auto; }
+      article figure span {
+        width: 19%;
+        margin: 0 0 1.5rem 0.5rem;
+        padding-left: 0.69rem;
+        display: inline-block;
+        border-left: 5px solid #f6895b;
+        text-align: left;
+        vertical-align: top; }
+      article figure #figure-bio-quote-div {
+        width: 33.31rem;
+        height: 20.6rem;
+        margin-bottom: 0;
+        background-size: 33.31rem 20.6rem; }
+      article figure #figure-bio-quote-container-div {
+        width: 20.6rem;
+        height: 12.8rem; }
+        article figure #figure-bio-quote-container-div q {
+          margin: 13% auto 4% auto;
+          font-size: 1.5rem; }
+        article figure #figure-bio-quote-container-div span {
+          width: 7rem;
+          margin: 0 auto;
+          padding-left: 0;
+          display: block;
+          border-left: none;
+          font-size: 1rem;
+          text-align: center; }
+    article #figure-bio-portrait img {
+      width: 33.31rem;
+      display: block; }
+    article .article-border-end {
+      margin-left: 19.5%; }
+  #section-logo-bio,
+  #section-logo-resume {
+    grid-row: 3 / span 1; }
+    #section-logo-bio a,
+    #section-logo-resume a {
+      transform: none; } }
 
 /* ********************************* 
       iPHONE 6/7/8 PLUS - 414 x 736

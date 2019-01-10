@@ -11,7 +11,7 @@
 <!-- STYLESHEET REFERENCES -->
     <link href="assets/css/main.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="body-content">
 
 <!-- HEADER -->
     <header id="header-resume">
@@ -21,10 +21,23 @@
       </div>
     </header>
 
+<!-- MAIN NAVIGATION FOR DISPLAYS GREATER THAN 414px -->
+    <nav class="nav-other" id="nav-other-resume">
+      <a href="#" title="Main Menu" id="nav-link-menu"></a>
+      <a href="#bio" title="Read Bio" class="nav-links-text-a" id="nav-link-text-a-bio">Read Bio</a>
+      <a href="#resume" title="View Resume" class="nav-links-text-a" id="nav-link-text-a-resume">View Resume</a>
+      <a href="#case_study" title="View Case Study" class="nav-links-text-a" id="nav-link-text-a-case_study">View<br>Case Study</a>
+      <a href="#conversation" title="Start a Conversation" class="nav-links-text-a" id="nav-link-text-a-conversation">Start a Conversation</a>
+      <div class="border-blue" id="nav-border">
+        &nbsp;
+      </div>
+    </nav>
+
 <!-- BODY COPY -->
     <article>
       <section class="section-resume-documents" id="section-resume-download">
         <h2>Download Resum&#233;</h2>
+        <div class="resume-download-spacer-horizontal">&nbsp;</div>
         <div class="resume-links-div">
           <a href="/assets/resume/Resume of Chris Jamison - 2019.pdf" title="Resum&233; of Chris Jamison - 2019 (PDF)">PDF</a>
           <div class="resume-spacer-vertical-div">
@@ -337,8 +350,8 @@
       <div class="article-border-end">&nbsp;</div>
     </article>
 
-<!-- MAIN NAVIGATION -->
-    <nav>
+<!-- MAIN NAVIGATION FOR DISPLAYS UNDER 414px -->
+    <nav class="nav-iphone">
       <a href="#" title="Main Menu" id="nav-link-menu"></a>
       <a href="#bio" title="Read Bio" class="nav-links-text-a" id="nav-link-text-a-bio">Read Bio</a>
       <a href="#resume" title="View Resume" class="nav-links-text-a" id="nav-link-text-a-resume">View Resume</a>
@@ -350,7 +363,7 @@
     </nav>
 
 <!-- LOGO -->
-    <section id="section-logo">
+    <section class="section-logo" id="section-logo-resume">
       <a href="#" title="Home"><img src="/assets/img/logo/logo.svg" alt="Home"></a>
     </section>
 <!-- TypeKit Reference -->
