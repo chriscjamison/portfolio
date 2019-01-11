@@ -46,6 +46,9 @@ $med_quote_font_size: 1.5rem; // 18pt
 $med_quote_name_font_size: 1rem; // 12pt;
 $med_h3_font_size: 1.4rem; // 17pt
 $med_resume_span_font_size: 1.3rem; // 16pt
+$med_a_web_address_font_size: 1.2rem; // 14pt
+$med_h4_font_size: 1.25rem; // 15pt
+
 
 
 $lg_base_font_size: 1.5rem; // 18pt
@@ -153,19 +156,19 @@ h1 {
 
 .figure-border-long {
   width: 61%;
-  height: 5px;
+  height: 0.31rem; // 5px
   background-color: $light_blue;
 }
 
 .figure-border-short {
-  width: 38%;
-  height: 5px;
+  width: 30%;
+  height: 0.31rem; // 5px
   margin-bottom: 0.5rem;
   background-color: $orange;
 }
 
 .figure-border-left.figure-border-short {
-  margin: 1.5rem 0 0.5rem 23%;
+  margin: 1.5rem 0 0.5rem 31%;
 }
 
 /* **** MAIN NAVIGATION **** */
@@ -189,7 +192,7 @@ nav {
   /* The border which appears underneath the text links within the main menu. */
   #nav-border {
     width: 2.25rem;
-    height: 5px;
+    height: 0.31rem; // 5px
     margin-top: $sm_margin_spacer;
   }
 }
@@ -237,7 +240,7 @@ header {
 
   /* The border which appears underneath page titles. */
   .header-border-title {
-    height: 5px;
+    height: 0.31rem; // 5px
   }
 }
 
@@ -249,7 +252,7 @@ header {
      on the landing page. */
   #social-border {
     width: 2.25rem;
-    height: 5px;
+    height: 0.31rem; // 5px
     margin-bottom: $sm_margin_spacer;
   }
 
@@ -361,7 +364,7 @@ article {
   // For the magenta accent mark at the bottom of the page
   .article-border-end {
     width: 2.25rem; // 36px
-    height: 5px;
+    height: 0.31rem; // 5px
     margin-top: $sm_margin_spacer; // 20px
     background-color: $magenta;
   }
@@ -408,7 +411,8 @@ article {
     margin: 2rem auto; // 2rem = 32px
   
     .resume-spacer-horizontal-gray, 
-    .resume-spacer-horizontal-list-magenta {
+    .resume-spacer-horizontal-list-magenta, 
+    .resume-spacer-horizontal-orange {
       height: 0.13rem; // 2px
       background-color: $light_gray;
     }
@@ -416,9 +420,15 @@ article {
     .resume-spacer-horizontal-list-magenta { 
       background-color: $magenta;
     }
+
+    .resume-spacer-horizontal-orange {
+      height: 0.31rem; // 5px
+      background-color: $orange;
+    }
     
     .resume-spacer-horizontal-gray:nth-child(1), 
-    .resume-spacer-horizontal-list-magenta:nth-child(1) {
+    .resume-spacer-horizontal-list-magenta:nth-child(1), 
+    .resume-spacer-horizontal-orange:nth-child(1) {
       margin-bottom: 0.25rem; // 4px
     }
   }
@@ -675,7 +685,7 @@ article {
     /* The border underneath the first name on the landing page. */
     #header-border-name {
       width: 6.85rem;
-      height: 5px;
+      height: 0.31rem; // 5px
     }  
 
     /* The paragraphs located on the landing page. */
@@ -1199,12 +1209,14 @@ article {
   }
 
   #header-bio, 
-  #header-resume {
+  #header-resume, 
+  #header-case_study {
     grid-column: 1 / span 1;
   }
 
   #nav-other-bio, 
-  #nav-other-resume {
+  #nav-other-resume, 
+  #nav-other-case_study {
     grid-column: 2 / span 1;
 
     #nav-link-menu {
@@ -1238,11 +1250,11 @@ article {
       margin: 3rem auto; // 32px auto
 
       span {
-        width: 19%;
+        width: 5rem;
         margin: 0 0 1.5rem 0.5rem; // 0 0 24px 8px
         padding-left: 0.69rem; // 11px
         display: inline-block;
-        border-left: 5px solid $orange;
+        border-left: 0.31rem solid $orange; // 5px
         text-align: left;
         vertical-align: top;
       }
@@ -1286,7 +1298,8 @@ article {
   }
 
   #section-logo-bio, 
-  #section-logo-resume {
+  #section-logo-resume, 
+  #section-logo-case_study {
     grid-row: 3 / span 1;
     
     a {
@@ -1377,7 +1390,7 @@ article {
 
       .resume-work-web_address {
         h3, a {
-          font-size: 1.2rem; // 14pt
+          font-size: $med_a_web_address_font_size;
         }
       }
 
@@ -1396,6 +1409,144 @@ article {
 
     #article-border-end-resume {
       margin-left: 8.9rem; // 142px
+    }
+  }
+
+
+  /* **** CASE STUDY **** */ 
+
+  article {
+    #section-case_study-intro {
+      width: 23.5rem; // 376px
+      margin: 0 auto;
+      
+      span, 
+      .case_study-intro-web_address span {
+        font-size: $med_a_web_address_font_size;
+      }
+
+      // For the bullet point to the left of the Web Address block
+      .resume-spacer-vertical-list-div {
+        width: 1rem; // 16px
+        margin-top: 1.5rem; // 24px
+        display: inline-block;
+        vertical-align: top;
+
+        .resume-spacer-vertical-list-magenta:nth-child(1) {
+          margin-left: 0;
+        }
+      }
+
+      .case_study-intro-web_address {
+        padding-left: 0;
+        display: inline-block;
+        border-left: none;
+
+        a {
+          font-size: $med_a_web_address_font_size;
+        }
+      }
+    }
+
+    .section-case_study-assets h3, 
+    .section-case_study-tech_used h3, 
+    .section-case_study-takeaways h3 {
+      font-size: $med_h3_font_size;
+    }
+
+    .section-case_study-assets h4, 
+    .section-case_study-tech_used h4 {
+      font-size: $med_h4_font_size;
+    }
+
+    .section-case_study-assets .div-case_study-asset-color-info-desc-color span, 
+    .section-case_study-tech_used .div-case_study-tech_used-info-list-item span {
+      font-size: 1.4rem;
+    }
+
+    .section-case_study-assets, 
+    .section-case_study-tech_used, 
+    .section-case_study-takeaways {
+      width: 61%;
+      margin: 2rem auto;
+    }
+
+    .figure-case_study {
+      width: 36.88rem;  // 590px
+      
+      img {
+        width: 28rem; // 448px
+      }
+
+      span {
+        width: 7rem; // 112px
+      }
+
+      .figure-border {
+        display: none;
+      }
+    }
+
+    .figure-case_study + .figure-case_study {
+      span {
+        margin: 0 0.75rem 0 0; // 0 12px 0 0 
+        padding-left: 0;
+        padding-right: 0.69rem;
+        float: left;
+        border-left: none;
+        border-right: 0.31rem solid $orange; // 5px
+        text-align: right;
+      }
+    }
+
+    #figure-case_study-revised-employment span {
+      width: 7rem; // 112px;
+    }
+
+    .section-case_study-assets {
+      h3 {
+        font-size: $med_h3_font_size;
+      }
+
+      h4 {
+        font-size: $med_h4_font_size;
+      }
+
+      #div-case_study-asset-font-amboy span, 
+      #div-case_study-asset-font-cholla_wide span, 
+      #div-case_study-asset-font-korolev_military_stencil span {
+        font-size: $med_header_font_size;
+      }
+
+      .div-case_study-assets-background {
+        img {
+          width: 23.5rem; // 376px
+        }
+      }
+    }
+
+    .section-case_study-takeaways { 
+      .div-case_study-takeaways-list-item { 
+        .div-case_study-takeaways-list-copy {
+          width: 21.5rem; // 344px
+        }
+
+        p {
+          width: 100%;
+        }
+      }
+
+      .div-case_study-takeaways-list-item:last-of-type {
+        .div-case_study-takeaways-list-copy:last-of-type {
+          p:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    #article-border-end-case_study {
+      margin-left: 24.5%;
     }
   }
 }
