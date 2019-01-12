@@ -49,9 +49,9 @@ $med_resume_span_font_size: 1.3rem; // 16pt
 $med_a_web_address_font_size: 1.2rem; // 14pt
 $med_h4_font_size: 1.25rem; // 15pt
 
-
-
 $lg_base_font_size: 1.5rem; // 18pt
+$lg_header_font_size: 2.5rem; // 30pt
+$lg_header_copy_font_size: 1.75rem; // 21pt
 
 $sm_body_margin: 2rem; // 24px
 $sm_margin_spacer: 1.25rem; // 15px
@@ -656,6 +656,115 @@ article {
     color: $magenta;
     text-align: center;
   }
+}
+
+
+
+
+/* ********************************* 
+      DESKTOP - 1920 x XXXX
+   ********************************* */
+
+@media (max-width: 1920px)  {
+
+  /* **** LANDING PAGE **** */
+  #body-landing {
+    grid-template-columns: auto 9.25rem; // auto 148px
+    row-gap: 5rem; // 80px
+    margin: 6rem 6rem 0 6rem; // 96px 96px 0 96px
+  }
+
+  header {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+
+    #header-intro {
+      span {
+        font-size: $med_header_font_size;
+      }
+
+      #header-intro-name {
+        margin-top: 1rem; // 16px
+      }
+    }
+
+    #header-name {
+      margin-top: 1rem; // 16px
+      font-size: 4.75rem; // 57pt
+
+      // The names are split onto two rows
+      span {
+        display: block;
+        line-height: 5rem; // 80px
+      }
+    }
+
+    #header-border-name {
+      width: 11.5rem; // 184px
+      height: 0.31rem; // 5px
+      margin-top: 0.75rem; // 12px
+    }
+
+    #header-copy {
+      width: 30rem; // 480px
+      transform: translate(130%, -106%);
+      font-size: $lg_header_copy_font_size;
+      line-height: 1.7;
+    }
+  }
+
+  .nav-other {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+
+    #nav-link-menu {
+      display: none;
+      transform: none;
+    }
+
+    .nav-links-text-a {
+      display: block;
+      font-size: $lg_base_font_size;
+    }
+
+    #nav-border {
+      display: block;
+      margin-top: 1.75rem; // 28px
+    }
+  }
+
+  .nav-iphone {
+    display: none;
+  }
+
+  #section-social {
+    grid-row: 2 / span 1;
+
+    #social-links {
+      .social-links-a {
+        margin-right: 1.25rem; // 20px
+        margin-bottom: 0;
+        display: inline-block;
+      }
+
+      .social-links-a:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  #section-logo-landing {
+    grid-row: 2 / span 1;
+
+    a {
+      width: 3.75rem; // 60px
+      margin: 0 auto;
+      display: block;
+      transform: translate(0%, 10%);
+    }
+  }
+
+
 }
 
 
@@ -1599,7 +1708,6 @@ article {
     grid-row: 4 / span 1;
   }
 }
-
 
 
 
