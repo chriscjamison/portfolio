@@ -590,13 +590,28 @@ article #section-conversation-links {
     #section-logo-conversation a {
       transform: none; }
   /* **** RESUME **** */
+  article .section-resume-documents h2,
+  article #section-resume-education h2,
+  article #section-resume-tech_knowledge h2,
+  article #section-resume-soft_knowledge h2,
+  article #section-resume-work h2,
+  article #section-resume-work .resume-work-jobs h2 {
+    font-size: 2rem;
+    text-align: center; }
+  article .section-resume-documents h2 {
+    margin: 1.25rem 0 0.75rem 0; }
+  article #section-resume-tech_knowledge h3,
+  article #section-resume-soft_knowledge h3,
+  article #section-resume-work .resume-work-jobs h3 {
+    font-size: 1.75rem;
+    text-align: center; }
+  article .resume-spacer-horizontal-list-div {
+    display: none; }
   article .resume-links-div {
     width: 8.75rem;
     margin: 0 auto; }
   article .section-resume-documents h2 {
-    margin-bottom: 0.75rem;
-    font-size: 2rem;
-    text-align: center; }
+    margin-bottom: 0.75rem; }
   article .section-resume-documents .resume-documents-spacer-horizontal {
     display: none; }
   article .section-resume-documents a {
@@ -627,15 +642,83 @@ article #section-conversation-links {
   article #section-resume-education {
     margin: 2.25rem 0 0 0;
     float: left; }
-    article #section-resume-education h2 {
-      margin: 0.5rem 0 0 0;
-      text-align: center; }
     article #section-resume-education p {
       width: 100%;
       margin: 0.5rem auto;
       text-align: center; }
+  article #section-resume-tech_knowledge h2,
+  article #section-resume-soft_knowledge h2 {
+    margin-bottom: 0.75rem; }
+  article #section-resume-tech_knowledge .resume-spacer-vertical-list-div,
+  article #section-resume-soft_knowledge .resume-spacer-vertical-list-div {
+    margin: 0.6rem 0.25rem 0 1rem;
+    float: left; }
+  article #section-resume-tech_knowledge span,
+  article #section-resume-soft_knowledge p {
+    margin-bottom: 1.25rem;
+    display: block;
+    font-size: 1.5rem; }
+  article #section-resume-tech_knowledge span:last-of-type,
+  article #section-resume-soft_knowledge p:last-of-type {
+    margin-bottom: 2.25rem; }
   article #section-resume-tech_knowledge {
-    clear: both; } }
+    width: 19.25rem;
+    margin: 0 14.5% 2.25rem 24%;
+    float: left; }
+  article #section-resume-soft_knowledge {
+    width: 21.75rem;
+    margin: 0;
+    float: left; }
+    article #section-resume-soft_knowledge p {
+      width: 18.75rem;
+      margin-top: 0;
+      float: left; }
+  article #section-resume-work {
+    margin-top: 2.5rem; }
+    article #section-resume-work h2 {
+      margin-bottom: 0; }
+    article #section-resume-work #p-resume-work-title {
+      margin: 0.5rem auto 0.25rem auto;
+      text-align: center; }
+    article #section-resume-work .resume-work-exp-span {
+      font-size: 1.3rem;
+      text-align: center; }
+    article #section-resume-work .resume-work-jobs {
+      width: 25.75rem;
+      float: left; }
+      article #section-resume-work .resume-work-jobs h2,
+      article #section-resume-work .resume-work-jobs h3 {
+        text-align: left; }
+      article #section-resume-work .resume-work-jobs span {
+        margin-bottom: 0.25rem;
+        display: block;
+        font-size: 1.3rem; }
+      article #section-resume-work .resume-work-jobs a {
+        font-size: 1.3rem; }
+      article #section-resume-work .resume-work-jobs .resume-spacer-vertical-list-div {
+        margin: 0.6rem 0.25rem 0 0.1rem;
+        float: left; }
+      article #section-resume-work .resume-work-jobs .resume-work-web_address h3 {
+        font-size: 1.25rem; }
+    article #section-resume-work #resume-work-job-lvusl {
+      margin: 2.25rem 5% 2.25rem 24%; }
+    article #section-resume-work #resume-work-job-la {
+      margin: 2.25rem 0 0 0; }
+    article #section-resume-work .resume-work-responsibilities {
+      margin-top: 1.25rem; }
+      article #section-resume-work .resume-work-responsibilities .resume-spacer-vertical-list-div {
+        margin: 0.6rem 0.25rem 0 0.1rem;
+        float: left; }
+      article #section-resume-work .resume-work-responsibilities p {
+        width: 23rem;
+        margin: 0 0 2.25rem 0;
+        float: left; }
+      article #section-resume-work .resume-work-responsibilities p:last-of-type {
+        margin: 0; }
+  article #section-resume-download-bottom {
+    margin-top: 2.5rem; }
+  article #article-border-end-resume {
+    margin-left: 45.19rem; } }
 
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX

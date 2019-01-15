@@ -53,6 +53,9 @@ $lg_base_font_size: 1.5rem; // 18pt
 $lg_header_font_size: 2.5rem; // 30pt
 $lg_header_copy_font_size: 1.75rem; // 21pt
 $lg_h2_font_size: 2rem; // 24pt
+$lg_h3_font_size: 1.75rem; // 21pt
+$lg_h3_resume_job_font_size: 1.25rem; // 15pt
+$lg_work_exp_span_font_size: 1.3rem; // 16pt
 
 $sm_body_margin: 2rem; // 24px
 $sm_margin_spacer: 1.25rem; // 15px
@@ -62,6 +65,7 @@ $sm_indent_spacer: 0.75rem; // 12px
 $med_margin_spacer: 1.25rem; // 15px
 
 $lg_margin_spacer: 2.25rem; // 36px
+$lg_margin_spacer_2: 2.5rem; // 40px
 
 
 /* **** COMMON ELEMENTS **** */
@@ -934,18 +938,42 @@ article {
   /* **** RESUME **** */
   
   article {
+    .section-resume-documents h2, 
+    #section-resume-education h2, 
+    #section-resume-tech_knowledge h2, 
+    #section-resume-soft_knowledge h2, 
+    #section-resume-work h2, 
+    #section-resume-work .resume-work-jobs h2 {
+      font-size: $lg_h2_font_size;
+      text-align: center;
+    }
+
+    .section-resume-documents h2 {
+      margin: 1.25rem 0 0.75rem 0;      
+    }
+
+    #section-resume-tech_knowledge h3, 
+    #section-resume-soft_knowledge h3, 
+    #section-resume-work .resume-work-jobs h3 {
+      font-size: $lg_h3_font_size;
+      text-align: center;
+    }
+    
+    // The red horizontal spacers seperating individual technologies are made invisible.
+    .resume-spacer-horizontal-list-div {
+      display: none;
+    }
+
     .resume-links-div {
       width: 8.75rem; // 140px
       margin: 0 auto;
     }
-    
+
     // Holds all content relating to the downloading of a resume
     .section-resume-documents { 
       // The title of the section, 'Download Resume'.
       h2 {
         margin-bottom: 0.75rem; // 12px
-        font-size: $lg_h2_font_size;
-        text-align: center;
       }
 
       // The horizontal line which lies between the title and links.
@@ -1008,11 +1036,6 @@ article {
       margin: $lg_margin_spacer 0 0 0;
       float: left;
 
-      h2 {
-        margin: 0.5rem 0 0 0;
-        text-align: center;
-      }
-
       p {
         width: 100%;
         margin: 0.5rem auto; // 8px auto
@@ -1020,11 +1043,132 @@ article {
       }
     }
 
+    #section-resume-tech_knowledge, 
+    #section-resume-soft_knowledge {
+      h2 {
+        margin-bottom: 0.75rem; // 12px
+      }
+
+      .resume-spacer-vertical-list-div {
+        margin: 0.6rem 0.25rem 0 1rem; // 26px 4px 0 16px
+        float: left;
+      }
+    }
+    
+    #section-resume-tech_knowledge span, 
+    #section-resume-soft_knowledge p {
+      margin-bottom: 1.25rem;
+      display: block;
+      font-size: $lg_base_font_size;
+    }
+
+    #section-resume-tech_knowledge span:last-of-type, 
+    #section-resume-soft_knowledge p:last-of-type {
+      margin-bottom: $lg_margin_spacer;
+    }
+
     #section-resume-tech_knowledge {
-      clear: both;
+      width: 19.25rem; // 308px
+      margin: 0 14.5% $lg_margin_spacer 24%;
+      float: left;
+    }
+
+    #section-resume-soft_knowledge {
+      width: 21.75rem; // 348px
+      margin: 0;
+      float: left;
+
+      p {
+        width: 18.75rem; // 300px
+        margin-top: 0;
+        float: left;
+      }
+    }
+
+    #section-resume-work {
+      margin-top: $lg_margin_spacer_2;
+      
+      h2 {
+        margin-bottom: 0;
+      }
+
+      #p-resume-work-title {
+        margin: 0.5rem auto 0.25rem auto; // 8px auto 4px auto
+        text-align: center;
+      }
+
+      .resume-work-exp-span {
+        font-size: $lg_work_exp_span_font_size;
+        text-align: center;
+      }
+
+      .resume-work-jobs {
+        width: 25.75rem; // 408px
+        float: left;
+
+        h2, 
+        h3 {
+          text-align: left;
+        }
+
+        span {
+          margin-bottom: 0.25rem;
+          display: block;
+          font-size: $lg_work_exp_span_font_size;
+        }
+
+        a {
+          font-size: $lg_work_exp_span_font_size;
+        }
+ 
+        .resume-spacer-vertical-list-div {
+          margin: 0.6rem 0.25rem 0 0.1rem; // 26px 4px 0 16px
+          float: left;
+        }
+
+        .resume-work-web_address {  
+          h3 {
+            font-size: $lg_h3_resume_job_font_size;
+          }
+        }
+      }
+
+      #resume-work-job-lvusl {
+        margin: $lg_margin_spacer 5% $lg_margin_spacer 24%;
+      }
+
+      #resume-work-job-la {
+        margin: $lg_margin-spacer 0 0 0;
+      }
+
+      .resume-work-responsibilities {
+        margin-top: 1.25rem;
+
+        .resume-spacer-vertical-list-div {
+          margin: 0.6rem 0.25rem 0 0.1rem;
+          float: left;
+        }
+
+        p {
+          width: 23rem; // 368px
+          margin: 0 0 $lg_margin_spacer 0;
+          float: left;
+        }
+
+        p:last-of-type {
+          margin: 0;
+        }
+      }
+    }
+
+    #section-resume-download-bottom {
+      margin-top: $lg_margin_spacer_2;
+    }
+
+    #article-border-end-resume {
+      margin-left: 45.19rem; // 723px
     }
   }
-
 }
 
 
@@ -1417,7 +1561,7 @@ article {
       }
 
       h4 {
-        margin: 2.5rem 0 1.25rem $sm_indent_spacer; // 40px 0 20px 12px
+        margin: $lg_margin_spacer_2 0 1.25rem $sm_indent_spacer; // 40px 0 20px 12px
         font-size: $sm_h4_font_size;
       }
 
