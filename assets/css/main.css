@@ -177,7 +177,7 @@ header {
       width: 2.81rem;
       background-position: 0px -72px; }
 
-/* **** bio.htm **** */
+/* **** BIO **** */
 article p {
   font-weight: 300;
   font-size: 1.25rem;
@@ -232,7 +232,7 @@ article .article-border-end {
   margin-top: 1.25rem;
   background-color: #ec1a63; }
 
-/* **** resume.htm **** */
+/* **** RESUME **** */
 article h2,
 article h3 {
   font-family: abril-display, Garamond, serif; }
@@ -463,8 +463,8 @@ article #section-conversation-links {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1; }
     #nav-other-landing #nav-link-menu {
-      display: none;
-      transform: none; }
+      display: none !important;
+      transform: none !important; }
     #nav-other-landing .nav-links-text-a {
       display: block;
       font-size: 1.5rem; }
@@ -501,6 +501,14 @@ article #section-conversation-links {
     margin-bottom: 0.5rem; }
   header #header-border-title-bio {
     width: 3rem; }
+  header #header-border-title-resume {
+    width: 7.25rem; }
+  header #header-border-title-case_study {
+    width: 6.8rem; }
+  header #header-border-title-conversation {
+    width: 12.8rem; }
+  a {
+    font-size: 1.5rem; }
   #nav-other-bio,
   #nav-other-resume,
   #nav-other-case_study,
@@ -524,6 +532,8 @@ article #section-conversation-links {
       margin: 2rem auto;
       font-size: 1.5rem;
       line-height: 1.7; }
+    article .bio-first-p::first-line {
+      font-weight: 700; }
     article .p-column-1 {
       transform: translate(-85%, 0%); }
     article figure {
@@ -578,25 +588,66 @@ article #section-conversation-links {
     #section-logo-resume a,
     #section-logo-case_study a,
     #section-logo-conversation a {
-      transform: none; } }
+      transform: none; }
+  /* **** RESUME **** */
+  article .resume-links-div {
+    width: 8.75rem;
+    margin: 0 auto; }
+  article .section-resume-documents h2 {
+    margin-bottom: 0.75rem;
+    font-size: 2rem;
+    text-align: center; }
+  article .section-resume-documents .resume-documents-spacer-horizontal {
+    display: none; }
+  article .section-resume-documents a {
+    display: inline-block;
+    font-size: 1.5rem; }
+  article #section-resume-info img {
+    width: 32rem; }
+  article #section-resume-info span {
+    width: 8.75rem;
+    font-size: 1.5rem; }
+  article #section-resume-info #resume-info-links-div {
+    margin: 1.25rem auto; }
+  article #section-resume-info #resume-info-row-1 {
+    width: 10.25rem; }
+  article #section-resume-info #resume-info-row-2 {
+    width: 19rem; }
+  article #section-resume-objective {
+    width: 28rem;
+    margin: 2.25rem 11% 2.25rem 24%;
+    float: left; }
+    article #section-resume-objective p {
+      width: 100%;
+      margin: 0; }
+  article .resume-spacer-not_visible-div {
+    display: none; }
+  article .resume-spacer-clear-div {
+    clear: both; }
+  article #section-resume-education {
+    margin: 2.25rem 0 0 0;
+    float: left; }
+    article #section-resume-education h2 {
+      margin: 0.5rem 0 0 0;
+      text-align: center; }
+    article #section-resume-education p {
+      width: 100%;
+      margin: 0.5rem auto;
+      text-align: center; }
+  article #section-resume-tech_knowledge {
+    clear: both; } }
 
 /* ********************************* 
       CHROME - MOBILE - 980 x XXX
    ********************************* */
 @media (max-width: 980px) {
   header {
-    grid-column: 1 / span 2;
-    /* The salutation, intro, and name located on the landing page. */
-    /* The border underneath the first name on the landing page. */
-    /* The paragraphs located on the landing page. */
-    /* Page titles */ }
-    header #header-intro {
-      /* The word, 'Welcome', on the landing page. */ }
-      header #header-intro span {
-        font-size: 1.25rem; }
-      header #header-intro #header-intro-welcome {
-        margin-bottom: 1.25rem;
-        font-style: italic; }
+    grid-column: 1 / span 2; }
+    header #header-intro span {
+      font-size: 1.25rem; }
+    header #header-intro #header-intro-welcome {
+      margin-bottom: 1.25rem;
+      font-style: italic; }
     header #header-border-name {
       width: 6.85rem;
       height: 0.31rem; }
@@ -618,16 +669,10 @@ article #section-conversation-links {
       width: 6.8rem; }
     header #header-border-title-conversation {
       width: 12.8rem; }
-  /* For the social media links viewable below the copy on the front page. */
   #section-social {
     grid-column: 1 / span 2; }
-  /* The menu located at the bottom of the browser window. */
   nav {
-    grid-column: 1 / span 1;
-    /* The link within the main menu, 'Read Bio'. */
-    /* The link within the main menu, 'View Resume'. */
-    /* The link within the main menu, 'View Case Studies'. */
-    /* The link within the main menu, 'Start a Conversation. */ }
+    grid-column: 1 / span 1; }
     nav .nav-links-text-a {
       font-size: 1.25rem;
       line-height: 1.4; }
@@ -651,7 +696,7 @@ article #section-conversation-links {
       .section-logo a img {
         width: 3.75rem;
         height: auto; }
-  /* **** bio.htm **** */
+  /* **** BIO **** */
   article {
     grid-column: 1 / span 2; }
     article figure {
@@ -668,7 +713,7 @@ article #section-conversation-links {
     article #figure-bio-quote-div,
     article #figure-bio-portrait img {
       margin-bottom: 1.75rem; }
-  /* **** resume.htm **** */
+  /* **** RESUME **** */
   article .resume-links-div {
     width: 7.75rem;
     margin: 0 auto; }
@@ -825,6 +870,126 @@ article #section-conversation-links {
       font-size: 1.25rem; }
     #form-conversation .textarea-conversation {
       height: 10.8rem; } }
+
+/* ********************************* 
+      iPHONE 5 - 320 x 568
+   ********************************* */
+@media (max-width: 320px) {
+  /* **** LANDING PAGE **** */
+  header #header-name {
+    font-size: 2.49rem; }
+  /* **** BIOGRAPHY **** */
+  article img,
+  article #figure-bio-quote-div {
+    width: 16rem; }
+  /* **** RESUME **** */
+  article h2 {
+    font-size: 1.3rem; }
+  article p {
+    font-size: 1.1rem;
+    line-height: 1.7; }
+  article .resume-spacer-horizontal-div {
+    width: 9.31rem; }
+  article .resume-links-div {
+    width: 7rem; }
+    article .resume-links-div a {
+      font-size: 1.1rem; }
+  article #section-resume-work .resume-work-job_titles span,
+  article #section-resume-work .resume-work-caption {
+    font-size: 0.9rem; }
+  article #section-resume-work .resume-work-responsibilities p {
+    width: 14rem; }
+  /* **** CASE STUDIES **** */
+  article .section-case_study-assets h4,
+  article .section-case_study-assets .div-case_study-asset-color-info-desc-color span {
+    font-size: 1.1rem; }
+  article .section-case_study-assets .div-case_study-assets-fonts-info-desc {
+    font-size: 1.45rem; }
+  article .section-case_study-assets .div-case_study-assets-background img {
+    width: 15.5rem; }
+  article .section-case_study-assets .div-case_study-asset-color-info-square {
+    width: 7.75rem;
+    height: 7.75rem; }
+  article .section-case_study-tech_used h3 {
+    font-size: 1.1rem; }
+  article .section-case_study-tech_used h4,
+  article .section-case_study-tech_used .div-case_study-tech_used-info-list-item span {
+    font-size: 1rem; }
+  article .section-case_study-tech_used .div-case_study-tech_used-info-list-item {
+    margin: 0 0 0.9rem 0.25rem; }
+  article .section-case_study-takeaways h3 {
+    font-size: 1.1rem; }
+  article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
+    width: 14rem; }
+  /* **** START A CONVERSATION **** */
+  article #section-conversation-links a {
+    font-size: 1rem; }
+  #form-conversation .input-conversation,
+  #form-conversation .textarea-conversation,
+  #form-conversation #input-conversation-submit {
+    width: 15rem; }
+  #form-conversation .input-conversation,
+  #form-conversation .textarea-conversation {
+    font-size: 1.1rem; } }
+
+/* ********************************* 
+    iPHONE 6/7/8 - 375 x 667
+  ********************************* */
+@media (max-width: 375px) {
+  /* **** LANDING PAGE **** */
+  header #header-name {
+    font-size: 3rem; }
+  /* **** BIOGRAPHY **** */
+  article img,
+  article #figure-bio-quote-div {
+    width: 19.5rem; }
+  /* **** RESUME **** */
+  article .resume-spacer-horizontal-div {
+    width: 12.06rem; }
+  /* **** CASE STUDIES **** */
+  article .section-case_study-assets .div-case_study-assets-background img {
+    width: 18rem; }
+  article .section-case_study-assets .div-case_study-asset-color-info-square {
+    width: 10.25rem;
+    height: 10.25rem; }
+  /* **** START A CONVERSATION **** */
+  #form-conversation .input-conversation,
+  #form-conversation .textarea-conversation,
+  #form-conversation #input-conversation-submit {
+    width: 17.75rem; } }
+
+/* ********************************* 
+      iPHONE 6/7/8 PLUS - 414 x 736
+   ********************************* */
+@media (max-width: 414px) {
+  /* **** LANDING PAGE **** */
+  header #header-name {
+    font-size: 3.4rem; }
+  header #header-border-name {
+    width: 8.1rem; }
+  /* **** BIOGRAPHY **** */
+  article p {
+    line-height: 1.7; }
+  article img,
+  article #figure-bio-quote-div {
+    width: 22rem; }
+  /* **** RESUME **** */
+  article .resume-spacer-horizontal-div {
+    width: 13.56rem; }
+  article #section-resume-work h2 {
+    text-align: center; }
+  article #section-resume-work .resume-work-responsibilities p {
+    width: 19rem; }
+  /* **** CASE STUDIES **** */
+  article .section-case_study-assets .div-case_study-assets-background img {
+    width: 20.5rem; }
+  article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
+    width: 19.75rem; }
+  /* **** START A CONVERSATION **** */
+  #form-conversation .input-conversation,
+  #form-conversation .textarea-conversation,
+  #form-conversation #input-conversation-submit {
+    width: 20rem; } }
 
 /* ********************************* 
       iPAD - 768 x 1024
@@ -1093,123 +1258,3 @@ article #section-conversation-links {
       font-size: 1.25rem; }
   #section-logo-conversation {
     grid-row: 4 / span 1; } }
-
-/* ********************************* 
-      iPHONE 6/7/8 PLUS - 414 x 736
-   ********************************* */
-@media (max-width: 414px) {
-  /* **** LANDING PAGE **** */
-  header #header-name {
-    font-size: 3.4rem; }
-  header #header-border-name {
-    width: 8.1rem; }
-  /* **** BIOGRAPHY **** */
-  article p {
-    line-height: 1.7; }
-  article img,
-  article #figure-bio-quote-div {
-    width: 22rem; }
-  /* **** RESUME **** */
-  article .resume-spacer-horizontal-div {
-    width: 13.56rem; }
-  article #section-resume-work h2 {
-    text-align: center; }
-  article #section-resume-work .resume-work-responsibilities p {
-    width: 19rem; }
-  /* **** CASE STUDIES **** */
-  article .section-case_study-assets .div-case_study-assets-background img {
-    width: 20.5rem; }
-  article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
-    width: 19.75rem; }
-  /* **** START A CONVERSATION **** */
-  #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation,
-  #form-conversation #input-conversation-submit {
-    width: 20rem; } }
-
-/* ********************************* 
-      iPHONE 6/7/8 - 375 x 667
-   ********************************* */
-@media (max-width: 375px) {
-  /* **** LANDING PAGE **** */
-  header #header-name {
-    font-size: 3rem; }
-  /* **** BIOGRAPHY **** */
-  article img,
-  article #figure-bio-quote-div {
-    width: 19.5rem; }
-  /* **** RESUME **** */
-  article .resume-spacer-horizontal-div {
-    width: 12.06rem; }
-  /* **** CASE STUDIES **** */
-  article .section-case_study-assets .div-case_study-assets-background img {
-    width: 18rem; }
-  article .section-case_study-assets .div-case_study-asset-color-info-square {
-    width: 10.25rem;
-    height: 10.25rem; }
-  /* **** START A CONVERSATION **** */
-  #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation,
-  #form-conversation #input-conversation-submit {
-    width: 17.75rem; } }
-
-/* ********************************* 
-      iPHONE 5 - 320 x 568
-   ********************************* */
-@media (max-width: 320px) {
-  /* **** LANDING PAGE **** */
-  header #header-name {
-    font-size: 2.49rem; }
-  /* **** BIOGRAPHY **** */
-  article img,
-  article #figure-bio-quote-div {
-    width: 16rem; }
-  /* **** RESUME **** */
-  article h2 {
-    font-size: 1.3rem; }
-  article p {
-    font-size: 1.1rem;
-    line-height: 1.7; }
-  article .resume-spacer-horizontal-div {
-    width: 9.31rem; }
-  article .resume-links-div {
-    width: 7rem; }
-    article .resume-links-div a {
-      font-size: 1.1rem; }
-  article #section-resume-work .resume-work-job_titles span,
-  article #section-resume-work .resume-work-caption {
-    font-size: 0.9rem; }
-  article #section-resume-work .resume-work-responsibilities p {
-    width: 14rem; }
-  /* **** CASE STUDIES **** */
-  article .section-case_study-assets h4,
-  article .section-case_study-assets .div-case_study-asset-color-info-desc-color span {
-    font-size: 1.1rem; }
-  article .section-case_study-assets .div-case_study-assets-fonts-info-desc {
-    font-size: 1.45rem; }
-  article .section-case_study-assets .div-case_study-assets-background img {
-    width: 15.5rem; }
-  article .section-case_study-assets .div-case_study-asset-color-info-square {
-    width: 7.75rem;
-    height: 7.75rem; }
-  article .section-case_study-tech_used h3 {
-    font-size: 1.1rem; }
-  article .section-case_study-tech_used h4,
-  article .section-case_study-tech_used .div-case_study-tech_used-info-list-item span {
-    font-size: 1rem; }
-  article .section-case_study-tech_used .div-case_study-tech_used-info-list-item {
-    margin: 0 0 0.9rem 0.25rem; }
-  article .section-case_study-takeaways h3 {
-    font-size: 1.1rem; }
-  article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
-    width: 14rem; }
-  /* **** START A CONVERSATION **** */
-  article #section-conversation-links a {
-    font-size: 1rem; }
-  #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation,
-  #form-conversation #input-conversation-submit {
-    width: 15rem; }
-  #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation {
-    font-size: 1.1rem; } }
