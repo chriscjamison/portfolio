@@ -50,7 +50,7 @@ $med_a_web_address_font_size: 1.2rem; // 14pt
 $med_h4_font_size: 1.25rem; // 15pt
 
 $lg_base_font_size: 1.5rem; // 18pt
-$lg_header_font_size: 2.5rem; // 30pt
+$lg_header_font_size: 2rem; // 24pt
 $lg_header_copy_font_size: 1.75rem; // 21pt
 $lg_h2_font_size: 2rem; // 24pt
 $lg_h3_font_size: 1.75rem; // 21pt
@@ -66,10 +66,14 @@ $med_margin_spacer: 1.25rem; // 15px
 
 $lg_margin_spacer: 2.25rem; // 36px
 $lg_margin_spacer_2: 2.5rem; // 40px
+$lg_resume_margin_left_1366: 13rem; // 208px
+$lg_resume_margin_left_1920: 24.5rem; // 392px
+$lg_resume_margin_right_1920: 16.75rem; // 268px
+
+$lg_line_height: 1.8;
 
 
 /* **** COMMON ELEMENTS **** */
-
 
 body {
   margin: $sm_body_margin;
@@ -667,17 +671,15 @@ article {
 
 
 /* ********************************* 
-      DESKTOP - 1920 x XXXX
+      DESKTOP - 981 - 1920
    ********************************* */
 
-@media (max-width: 1920px)  {
-
+@media (min-width: 981px) and (max-width: 1920px)  {
+  
   /* **** LANDING PAGE **** */
 
   #body-landing {
     grid-template-columns: auto 9.25rem; // auto 148px
-    row-gap: 5rem; // 80px
-    margin: 6rem 6rem 0 6rem; // 96px 96px 0 96px
   }
 
   header {
@@ -685,22 +687,17 @@ article {
     grid-row: 1 / span 1;
 
     #header-intro {
-      span {
-        font-size: $med_header_font_size;
-      }
-
-      #header-intro-name {
-        margin-top: 1rem; // 16px
-      }
+      font-size: $lg_header_copy_font_size;
     }
 
     #header-name {
       margin-top: 1rem; // 16px
-      font-size: 4.75rem; // 57pt
+      font-size: 4.75rem;
 
       // The names are split onto two rows
       span {
         display: block;
+        // font-size: $med_header_font_size;
         line-height: 5rem; // 80px
       }
     }
@@ -708,17 +705,18 @@ article {
     #header-border-name {
       width: 11.5rem; // 184px
       height: 0.31rem; // 5px
-      margin-top: 0.75rem; // 12px
+      margin-top: 1rem; // 16px
     }
 
     #header-copy {
       width: 30rem; // 480px
-      transform: translate(130%, -106%);
+      height: 19rem; // 304px
+      position: absolute;
       font-size: $lg_header_copy_font_size;
       line-height: 1.7;
     }
-  }
-
+  }  
+  
   #nav-other-landing {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
@@ -769,13 +767,12 @@ article {
       transform: translate(0%, 10%);
     }
   }  
-  
+
   
   /* **** BIO **** */
 
-  .body-content {
+  #body-content {
     grid-template-columns: auto 2.37rem; // auto 37px
-    margin: 6rem; // 96px
   }
 
   header {
@@ -799,18 +796,17 @@ article {
     }
 
     #header-border-title-case_study  {
-      width: 6.8rem; // 109px
+      width: 10.4rem; // 109px
     }
 
     #header-border-title-conversation  {
       width: 12.8rem
     }
   }
-
+  
   a {
     font-size: $lg_base_font_size;
   }
-  
 
   #nav-other-bio, 
   #nav-other-resume, 
@@ -842,66 +838,13 @@ article {
     grid-column: 1 / span 2;
 
     p {
-      width: 25%;
-      margin: 2rem auto;
+      margin: $lg_margin_spacer auto;
       font-size: $lg_base_font_size;
-      line-height: 1.7;
+      line-height: $lg_line_height;
     }
 
     .bio-first-p::first-line {
       font-weight: $bold_font_weight;
-    }
-
-    .p-column-1 {
-      transform: translate(-85%, 0%);
-    }
-
-    // For images describing commenting contained within the copy.
-    figure {
-      width: 67%;
-      margin: 3rem auto; // 48px auto
-
-      img {
-        margin-left: 9.25rem;
-        display: inline-block;
-      }
-
-      span {
-        width: 5rem;
-        margin: 0 0 1.5rem 0.5rem; // 0 0 24px 8px
-        padding-left: 0.69rem; // 11px
-        display: inline-block;
-        border-left: 0.31rem solid $orange; // 5px
-        text-align: left;
-        vertical-align: top;
-      }
-
-      #figure-bio-quote-div {
-        width: 45rem; // 720px
-        height: 27.81rem; // 445px
-        margin: 0 auto;
-        background-size: 45rem 27.81rem; // 720px x 445px
-      }
-
-      #figure-bio-quote-container-div {
-        width: 20.6rem; // 331px
-        height: 12.8rem; // 205px
-
-        q {
-          margin: 13% auto 4% auto;
-          font-size: $med_quote_font_size;
-        }
-
-        span {
-          width: 7rem; // 112px
-          margin: 0 auto;
-          padding-left: 0;
-          display: block;
-          border-left: none;
-          font-size: $med_quote_name_font_size;
-          text-align: center;
-        }
-      }
     }
 
     // For images located within the content.
@@ -910,17 +853,57 @@ article {
       width: 45rem; // 720px
     }
 
-    // Houses the image which displays the quote.
-    #figure-bio-quote-div {
-      height: 12.31rem; // 197px
-      background-size: 18.5rem; // 297px
+    figure {
+      width: 52.5rem; // 840px
+      margin: 3rem auto; // 48px auto
+
+      img {
+        display: inline-block;
+      }
+
+      span {
+        width: 5rem; // 80px
+        margin: 0 0 1.5rem 0.5rem; // 0 0 24px 8px
+        padding-left: 0.69rem; // 11px
+        display: inline-block;
+        border-left: 0.31rem solid $orange; // 5px
+        text-align: left;
+        vertical-align: top;
+      }
     }
+
+    #figure-bio-quote-div {
+      margin: 0 auto;
+    }
+
+    #figure-bio-quote-container-div {
+      width: 20.6rem; // 331px
+      height: 12.8rem; // 205px
+
+      q {
+        margin: 13% auto 4% auto;
+        font-size: $med_quote_font_size;
+      }
+
+      span {
+        width: 7rem; // 112px
+        margin: 0 auto;
+        padding-left: 0;
+        display: block;
+        border-left: none;
+        font-size: $med_quote_name_font_size;
+        text-align: center;
+      }
+    } 
     
-    .article-border-end {
-      margin-left: 59%;
+    #figure-bio-portrait { 
+      img {
+        margin: 0 auto;
+        display: block;
+      }
     }
   }
-
+  
   #section-logo-bio, 
   #section-logo-resume, 
   #section-logo-case_study, 
@@ -938,6 +921,16 @@ article {
   /* **** RESUME **** */
   
   article {
+    // Hides the horizontal spacer which normally appears in between the objective and Education.
+    .resume-spacer-not_visible-div {
+      display: none;
+    }
+
+    // Position of horizontal spacer is reset. The spacer now appears in the center of the browser.
+    .resume-spacer-clear-div {
+      clear: both;
+    }
+
     .section-resume-documents h2, 
     #section-resume-education h2, 
     #section-resume-tech_knowledge h2, 
@@ -949,12 +942,13 @@ article {
     }
 
     .section-resume-documents h2 {
-      margin: 1.25rem 0 0.75rem 0;      
+      margin: 0 0 0.75rem 0; // 0 0 12px 0      
     }
 
     #section-resume-tech_knowledge h3, 
     #section-resume-soft_knowledge h3, 
     #section-resume-work .resume-work-jobs h3 {
+      margin-bottom: 1rem; // 16px
       font-size: $lg_h3_font_size;
       text-align: center;
     }
@@ -1013,7 +1007,6 @@ article {
 
     #section-resume-objective {
       width: 28rem; // 448px
-      margin: $lg_margin_spacer 11% $lg_margin_spacer 24%;
       float: left;
 
       p {
@@ -1022,19 +1015,13 @@ article {
       }
     }
 
-    // Hides the horizontal spacer which normally appears in between the objective and Education.
-    .resume-spacer-not_visible-div {
-      display: none;
-    }
-
-    // Position of horizontal spacer is reset. The spacer now appears in the center of the browser.
-    .resume-spacer-clear-div {
-      clear: both;
-    }
-
     #section-resume-education {
       margin: $lg_margin_spacer 0 0 0;
       float: left;
+
+      h2 {
+        margin: 0.75rem 0; // 12px 0
+      }
 
       p {
         width: 100%;
@@ -1050,8 +1037,14 @@ article {
       }
 
       .resume-spacer-vertical-list-div {
-        margin: 0.6rem 0.25rem 0 1rem; // 26px 4px 0 16px
+        margin: 1rem 0.25rem 0 1rem; // 16px 4px 0 16px
         float: left;
+      }
+    }
+
+    #section-resume-tech_knowledge {
+      .resume-spacer-vertical-list-div {
+        margin: 0.7rem 0.25rem 0 1rem; // 11px 4px 0 16px
       }
     }
     
@@ -1069,7 +1062,6 @@ article {
 
     #section-resume-tech_knowledge {
       width: 19.25rem; // 308px
-      margin: 0 14.5% $lg_margin_spacer 24%;
       float: left;
     }
 
@@ -1103,11 +1095,12 @@ article {
       }
 
       .resume-work-jobs {
-        width: 25.75rem; // 408px
+        width: 21rem; // 336px
         float: left;
 
         h2, 
         h3 {
+          margin-bottom: 0.25rem; // 4px
           text-align: left;
         }
 
@@ -1122,7 +1115,7 @@ article {
         }
  
         .resume-spacer-vertical-list-div {
-          margin: 0.6rem 0.25rem 0 0.1rem; // 26px 4px 0 16px
+          margin: 1rem 0.25rem 0 0.1rem; // 16px 4px 0 1px
           float: left;
         }
 
@@ -1131,10 +1124,6 @@ article {
             font-size: $lg_h3_resume_job_font_size;
           }
         }
-      }
-
-      #resume-work-job-lvusl {
-        margin: $lg_margin_spacer 5% $lg_margin_spacer 24%;
       }
 
       #resume-work-job-la {
@@ -1150,7 +1139,7 @@ article {
         }
 
         p {
-          width: 23rem; // 368px
+          width: 19rem; // 304px
           margin: 0 0 $lg_margin_spacer 0;
           float: left;
         }
@@ -1169,6 +1158,174 @@ article {
       margin-left: 45.19rem; // 723px
     }
   }
+
+
+  /* **** CASE STUDY **** */
+
+  article {
+    #section-case_study-intro {
+      width: 
+      .case_study-intro-job_title, 
+      .case_study-intro-web_address {
+        float: left;
+      }
+
+      .resume-spacer-vertical-list-div {
+        display: none;
+      }
+    }
+
+    #figure-case_study-recap {
+      clear: both;
+    }
+  }
+}
+
+
+/* ********************************* 
+      DESKTOP - 1920 x XXXX
+   ********************************* */
+
+@media (max-width: 1920px)  {
+
+  /* **** LANDING PAGE **** */
+
+  #body-landing {
+    margin: 6rem 6rem 0 6rem; // 96px 96px 0 96px
+  }
+
+  header {
+    #header-copy {
+      // transform: translate(130%, -106%);
+    }
+  }
+
+  
+  /* **** BIO **** */
+
+  #body-content {
+    row-gap: 6rem; // 48px
+    margin: 6rem; // 96px
+  }
+
+  article {
+    grid-column: 1 / span 2;
+
+    p {
+      width: 25%;
+    }
+
+    .p-column-1 {
+      transform: translate(-85%, 0%);
+    }
+
+    // For images describing commenting contained within the copy.
+    figure {
+      img {
+        margin-left: 9.25rem;
+        display: inline-block;
+      }
+    }
+
+    #figure-bio-quote-div {
+      width: 45rem; // 720px
+      height: 27.81rem; // 445px
+      background-size: 45rem 27.81rem; // 720px x 445px
+    }
+    
+    #article-border-end-bio {
+      margin-left: 59%;
+    }
+  }
+
+
+  /* **** RESUME **** */
+  
+  article {
+    #section-resume-objective {
+      margin: $lg_margin_spacer 13rem $lg_margin_spacer $lg_resume_margin_left_1920;
+    }
+    
+    #section-resume-tech_knowledge {
+      margin: 0 $lg_resume_margin_right_1920 $lg_margin_spacer $lg_resume_margin_left_1920;
+    }
+
+    #section-resume-work {
+      #resume-work-job-lvusl {
+        margin: $lg_margin_spacer $lg_resume_margin_right_1920 $lg_margin_spacer $lg_resume_margin_left_1920;
+      }
+    }
+    
+  }
+}
+
+
+/* ********************************* 
+      DESKTOP - 1366 x XXXX
+   ********************************* */
+
+@media (max-width: 1366px)  {
+
+  /* **** LANDING PAGE **** */
+
+  #body-landing {
+    margin: 3rem 3rem 0 3rem; // 48px 48px 0 48px
+    row-gap: 9.25rem; // 148px
+  }
+
+  header {
+    #header-copy {
+      top: 0.55rem; // 9px
+      left: 32rem; // 512px
+    }
+  }
+
+
+  /* **** BIO **** */
+
+  #body-content {
+    row-gap: 3rem; // 80px
+    margin: 3rem; // 96px
+  }
+
+  article {
+    p {
+      width: 29.69rem; // 475px
+    }
+
+    .p-column-1 {
+      transform: translate(-38%, 0%);
+    }
+
+    figure {
+      img {
+        margin-left: 0;
+      }
+    }
+
+    #article-border-end-bio {
+      margin-left: 50.88rem; // 814px
+    }
+  }
+
+  
+  /* **** RESUME **** */
+
+  article {
+    #section-resume-objective {
+      margin: $lg_margin_spacer 7.25rem $lg_margin_spacer $lg_resume_margin_left_1366;
+    }
+
+    #section-resume-tech_knowledge {
+      margin: 0 11rem $lg_margin_spacer $lg_resume_margin_left_1366;
+    }
+
+    #section-resume-work {
+      #resume-work-job-lvusl {
+        margin: $lg_margin_spacer 10rem $lg_margin_spacer $lg_resume_margin_left_1366;
+      }
+    }
+  }
 }
 
 
@@ -1178,6 +1335,9 @@ article {
 
 
 @media (max-width: 980px)  {
+
+  /* **** LANDING PAGE **** */
+
   header {
     grid-column: 1 / span 2;
 
@@ -1633,205 +1793,6 @@ article {
 
 
 /* ********************************* 
-      iPHONE 5 - 320 x 568
-   ********************************* */
-
-
- @media (max-width: 320px)  {
-  /* **** LANDING PAGE **** */
-  header {
-    #header-name {
-      font-size: 2.49rem; // 30pt
-    }
-  } 
-
-
-  /* **** BIOGRAPHY **** */ 
-
-  article {
-    img, 
-    #figure-bio-quote-div {
-      width: 16rem; // 256px
-    }
-  } 
-
-
-  /* **** RESUME **** */ 
-
-  article {
-    h2 {
-      font-size: $ex_sm_h2_font_size;
-    }
-
-    p {
-      font-size: $ex_sm_resume_p_font_size;
-      line-height: 1.7;
-    }
-
-    .resume-spacer-horizontal-div {
-      width: 9.31rem; // 149px
-    }
-
-    .resume-links-div {
-      width: 7rem; // 112px
-
-      a {
-        font-size: $ex_sm_resume_p_font_size;
-      }
-    }
-    
-
-    #section-resume-work {
-      .resume-work-job_titles span, 
-      .resume-work-caption {
-        font-size: $ex_sm_resume_span_caption_font_size;
-      }
-
-      .resume-work-responsibilities {
-        p {
-          width: 14rem; // 224px
-        }
-      }
-    }
-  } 
-  
-
-  /* **** CASE STUDIES **** */ 
-
-  article {
-    .section-case_study-assets {
-      h4, 
-      .div-case_study-asset-color-info-desc-color span {
-        font-size: $ex_sm_resume_p_font_size;
-      }
-
-      .div-case_study-assets-fonts-info-desc {
-        font-size: 1.45rem; // 18pt
-      }
-
-      .div-case_study-assets-background img {
-        width: 15.5rem; // 248px
-      }
-
-      .div-case_study-asset-color-info-square {
-        width: 7.75rem; // 124px
-        height: 7.75rem; // 124px
-      }
-    }
-
-    .section-case_study-tech_used {
-      h3 {
-        font-size: $ex_sm_resume_p_font_size;
-      }
-
-      h4, 
-      .div-case_study-tech_used-info-list-item span {
-        font-size: $sm_info_font_size;
-      }
-
-      .div-case_study-tech_used-info-list-item {
-        margin: 0 0 0.9rem 0.25rem; // 0 0 14px 4px
-      }
-    }
-
-    .section-case_study-takeaways {
-      h3 {
-        font-size: $ex_sm_resume_p_font_size;
-      }
-
-      .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
-        width: 14rem; // 224px
-      }
-    }
-  } 
-  
-
-  /* **** START A CONVERSATION **** */ 
-
-  article {
-    #section-conversation-links {
-      a {
-        font-size: $sm_info_font_size;
-      }
-    }
-  } 
-
-  #form-conversation {
-    .input-conversation, 
-    .textarea-conversation, 
-    #input-conversation-submit {
-      width: 15rem;
-    }
-
-    .input-conversation, 
-    .textarea-conversation {
-      font-size: $ex_sm_resume_p_font_size;
-    }
-  } 
-}
-    
- 
-/* ********************************* 
-    iPHONE 6/7/8 - 375 x 667
-  ********************************* */
-
-@media (max-width: 375px)  {
-  /* **** LANDING PAGE **** */
-  header {
-    #header-name {
-      font-size: 3rem; // 36pt
-    }
-  }
-
-
-  /* **** BIOGRAPHY **** */ 
-
-  article {
-    img, 
-    #figure-bio-quote-div {
-      width: 19.5rem; // 312px
-    }
-  }
-
-
-  /* **** RESUME **** */ 
-
-  article {
-    .resume-spacer-horizontal-div {
-      width: 12.06rem; // 193px
-    }
-  }
-
-
-  /* **** CASE STUDIES **** */ 
-  
-  article {
-    .section-case_study-assets {
-      .div-case_study-assets-background img {
-        width: 18rem; // 288px
-      }
-
-      .div-case_study-asset-color-info-square {
-        width: 10.25rem; // 164px
-        height: 10.25rem; // 164px
-      }
-    }
-  }
-
-
-  /* **** START A CONVERSATION **** */ 
-
-  #form-conversation {
-    .input-conversation, 
-    .textarea-conversation, 
-    #input-conversation-submit {
-      width: 17.75rem;
-    }
-  } 
-}
-
-
-/* ********************************* 
       iPHONE 6/7/8 PLUS - 414 x 736
    ********************************* */
 
@@ -1913,14 +1874,12 @@ article {
     }
   }
 }
-
-
-    
+  
+   
 /* ********************************* 
       iPAD - 768 x 1024
-   ********************************* */
-
-   
+    ********************************* */  
+     
 @media (max-width: 768px)  {
 
   /* **** LANDING PAGE **** */
@@ -1997,7 +1956,7 @@ article {
 
   /* **** BIOGRAPHY **** */ 
 
-  .body-content {
+  #body-content {
     grid-template-columns: auto 2.37rem; // auto 37px
     margin: 3rem 4rem; // 48px 64px
   }
@@ -2028,7 +1987,7 @@ article {
       width: 61%;
       margin: $med_margin_spacer auto;
       font-size: $med_base_font_size;
-      line-height: 1.7;
+      line-height: $lg_line_height;
     }
 
     img {
@@ -2217,7 +2176,7 @@ article {
       width: 23.5rem; // 376px
       margin: 0 auto;
       
-      span, 
+      .case_study-intro-job_title span, 
       .case_study-intro-web_address span {
         font-size: $med_a_web_address_font_size;
       }
@@ -2392,4 +2351,202 @@ article {
   #section-logo-conversation {
     grid-row: 4 / span 1;
   }
+}
+    
+ 
+/* ********************************* 
+    iPHONE 6/7/8 - 375 x 667
+  ********************************* */
+  
+@media (max-width: 375px)  {
+  /* **** LANDING PAGE **** */
+  header {
+    #header-name {
+      font-size: 3rem; // 36pt
+    }
+  }
+
+
+  /* **** BIOGRAPHY **** */ 
+
+  article {
+    img, 
+    #figure-bio-quote-div {
+      width: 19.5rem; // 312px
+    }
+  }
+
+
+  /* **** RESUME **** */ 
+
+  article {
+    .resume-spacer-horizontal-div {
+      width: 12.06rem; // 193px
+    }
+  }
+
+
+  /* **** CASE STUDIES **** */ 
+  
+  article {
+    .section-case_study-assets {
+      .div-case_study-assets-background img {
+        width: 18rem; // 288px
+      }
+
+      .div-case_study-asset-color-info-square {
+        width: 10.25rem; // 164px
+        height: 10.25rem; // 164px
+      }
+    }
+  }
+
+
+  /* **** START A CONVERSATION **** */ 
+
+  #form-conversation {
+    .input-conversation, 
+    .textarea-conversation, 
+    #input-conversation-submit {
+      width: 17.75rem;
+    }
+  } 
+}
+  
+  
+/* ********************************* 
+      iPHONE 5 - 320 x 568
+   ********************************* */
+
+@media (max-width: 320px)  {
+/* **** LANDING PAGE **** */
+header {
+  #header-name {
+    font-size: 2.49rem; // 30pt
+  }
+} 
+
+
+/* **** BIOGRAPHY **** */ 
+
+article {
+  img, 
+  #figure-bio-quote-div {
+    width: 16rem; // 256px
+  }
+} 
+
+
+/* **** RESUME **** */ 
+
+article {
+  h2 {
+    font-size: $ex_sm_h2_font_size;
+  }
+
+  p {
+    font-size: $ex_sm_resume_p_font_size;
+    line-height: $lg_line_height;
+  }
+
+  .resume-spacer-horizontal-div {
+    width: 9.31rem; // 149px
+  }
+
+  .resume-links-div {
+    width: 7rem; // 112px
+
+    a {
+      font-size: $ex_sm_resume_p_font_size;
+    }
+  }
+  
+
+  #section-resume-work {
+    .resume-work-job_titles span, 
+    .resume-work-caption {
+      font-size: $ex_sm_resume_span_caption_font_size;
+    }
+
+    .resume-work-responsibilities {
+      p {
+        width: 14rem; // 224px
+      }
+    }
+  }
+} 
+
+
+/* **** CASE STUDIES **** */ 
+
+article {
+  .section-case_study-assets {
+    h4, 
+    .div-case_study-asset-color-info-desc-color span {
+      font-size: $ex_sm_resume_p_font_size;
+    }
+
+    .div-case_study-assets-fonts-info-desc {
+      font-size: 1.45rem; // 18pt
+    }
+
+    .div-case_study-assets-background img {
+      width: 15.5rem; // 248px
+    }
+
+    .div-case_study-asset-color-info-square {
+      width: 7.75rem; // 124px
+      height: 7.75rem; // 124px
+    }
+  }
+
+  .section-case_study-tech_used {
+    h3 {
+      font-size: $ex_sm_resume_p_font_size;
+    }
+
+    h4, 
+    .div-case_study-tech_used-info-list-item span {
+      font-size: $sm_info_font_size;
+    }
+
+    .div-case_study-tech_used-info-list-item {
+      margin: 0 0 0.9rem 0.25rem; // 0 0 14px 4px
+    }
+  }
+
+  .section-case_study-takeaways {
+    h3 {
+      font-size: $ex_sm_resume_p_font_size;
+    }
+
+    .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
+      width: 14rem; // 224px
+    }
+  }
+} 
+
+
+/* **** START A CONVERSATION **** */ 
+
+article {
+  #section-conversation-links {
+    a {
+      font-size: $sm_info_font_size;
+    }
+  }
+} 
+
+#form-conversation {
+  .input-conversation, 
+  .textarea-conversation, 
+  #input-conversation-submit {
+    width: 15rem;
+  }
+
+  .input-conversation, 
+  .textarea-conversation {
+    font-size: $ex_sm_resume_p_font_size;
+  }
+} 
 }
