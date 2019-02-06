@@ -470,6 +470,8 @@ article .section-case_study-takeaways h3 {
     grid-row: 1 / span 1; }
     header #header-intro {
       font-size: 1.75rem; }
+      header #header-intro span {
+        margin-bottom: 1rem; }
     header #header-name {
       margin-top: 1rem;
       font-size: 4.75rem; }
@@ -486,7 +488,7 @@ article .section-case_study-takeaways h3 {
       padding-left: 9.25rem;
       position: relative;
       font-size: 1.75rem;
-      line-height: 1.7; }
+      line-height: 1.6; }
       header .header-copy #header-copy-iphone,
       header .header-copy #header-copy-ipad {
         display: none; }
@@ -1003,13 +1005,18 @@ article .section-case_study-takeaways h3 {
 /* ********************************* 
       DESKTOP - 1366 x XXXX
    ********************************* */
-@media (min-width: 1026px) and (max-width: 1366px) {
+@media (min-width: 1025px) and (max-width: 1366px) {
   /* **** LANDING PAGE **** */
   #body-landing {
     margin: 3rem 3rem 0 3rem;
     row-gap: 9.25rem; }
+  header #header-intro {
+    position: relative;
+    top: 0.2rem; }
   header .header-copy {
-    top: 0.55rem;
+    padding-left: 0;
+    position: absolute;
+    top: 2.5rem;
     left: 32rem; }
   #section-logo-landing a img {
     transform: none; }
@@ -1579,7 +1586,7 @@ article .section-case_study-takeaways h3 {
     width: 8.1rem; }
   /* **** BIOGRAPHY **** */
   article p {
-    line-height: 1.7; }
+    line-height: 1.6; }
   article img,
   article #figure-bio-quote-div {
     width: 22rem; }

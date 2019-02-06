@@ -742,6 +742,10 @@ article {
 
     #header-intro {
       font-size: $lg_header_copy_font_size;
+
+      span {
+        margin-bottom: 1rem; // 16px
+      }
     }
 
     #header-name {
@@ -768,7 +772,7 @@ article {
       padding-left: 9.25rem; // 148px **** Centers the copy in the horizonal center of the browser.
       position: relative;
       font-size: $lg_header_copy_font_size;
-      line-height: 1.7;
+      line-height: 1.6;
 
       #header-copy-iphone, 
       #header-copy-ipad {
@@ -1717,7 +1721,7 @@ article {
       DESKTOP - 1366 x XXXX
    ********************************* */
 
-@media (min-width: 1026px) and (max-width: 1366px)  {
+@media (min-width: 1025px) and (max-width: 1366px)  {
 
   /* **** LANDING PAGE **** */
 
@@ -1727,8 +1731,15 @@ article {
   }
 
   header {
+    #header-intro {
+      position: relative;
+      top: 0.2rem; // 4px
+    }
+
     .header-copy {
-      top: 0.55rem; // 9px
+      padding-left: 0;
+      position: absolute;
+      top: 2.5rem; // 36px
       left: 32rem; // 512px
     }
   }
@@ -2821,7 +2832,7 @@ article {
   
     article {
       p {
-        line-height: 1.7;
+        line-height: 1.6;
       }
   
       img, 
