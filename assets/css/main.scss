@@ -28,6 +28,8 @@ $white: #fff;
 $border_left_orange_5px: 0.31rem solid $orange; // 5px
 $border_left_orange_3px: 0.188rem solid $orange; // 3px
 $border_left_magenta_3px: 0.188rem solid $magenta; // 3px
+$border_left_dark_blue_3px: 0.188rem solid $dark_blue; // 3px
+$border_left_light_blue_3px: 0.188rem solid $light_blue; // 3px
 
 $ex_sm_h2_font_size: 1.3rem; // 21pt
 $ex_sm_resume_p_font_size: 1.1rem; // 13pt
@@ -70,10 +72,13 @@ $med_margin_spacer: 1.25rem; // 15px
 
 $lg_margin_spacer: 2.25rem; // 36px
 $lg_margin_spacer_2: 2.5rem; // 40px
+$lg_margin_spacer_3: 1.5rem; // 24px
 $lg_resume_margin_left_1366: 13rem; // 208px
 $lg_resume_margin_left_1600: 18rem; // 208px
 $lg_resume_margin_left_1920: 24.5rem; // 392px
 $lg_resume_margin_right_1920: 16.75rem; // 268px
+
+$lg_padding_left_p: 1rem; // 16px
 $lg_padding_column_1920: 21.5rem; // 344px
 
 $lg_line_height: 1.6;
@@ -98,6 +103,7 @@ h2,
 h3, 
 h4, 
 article p, 
+article a, 
 #section-resume-info span, 
 #section-resume-tech_knowledge span, 
 #section-resume-soft_knowledge span, 
@@ -110,12 +116,12 @@ form .label-conversation,
 form .input-conversation, 
 form .textarea-conversation {
   font-family: $base_font;
+  font-weight: $light_font_weight;
 }
 
 /* Menu links, captions, and quotes */
 .nav-links-text-a, 
-article figure span, 
-article a, 
+article figure span,
 q, 
 .div-case_study-assets-background span, 
 #section-conversation-links a, 
@@ -148,6 +154,13 @@ article .div-case_study-tech_used-info-list-item span,
 #div-conversation-copy p, 
 form .label-conversation {
   color: $base_gray;
+}
+
+h1, 
+h2, 
+h3, 
+h4 {
+  font-weight: $bold_font_weight;
 }
 
 /* Page titles. */
@@ -396,75 +409,70 @@ article {
 /* **** RESUME **** */
 
 article {
-  h2, 
-  h3 {
-    font-family: $display_font;
-  }
-
   // Holds the gray vertical spacers
-  .resume-spacer-vertical-div, 
-  .resume-spacer-vertical-list-div {
+  .div-spacer-vertical,
+  .div-spacer-vertical-list{
     width: 1.56rem; // 25px
     display: inline-block;
 
     // For each gray vertical line
-    .resume-spacer-vertical-gray, 
-    .resume-spacer-vertical-list-magenta {
+    .div-spacer-vertical-gray, 
+    .div-spacer-vertical-list-magenta {
       width: 0.13rem; // 2px
       height: 0.81rem; // 13px
       display: inline-block;
       background-color: $light_gray;
     }
 
-    .resume-spacer-vertical-list-magenta {
+    .div-spacer-vertical-list-magenta {
       background-color: $magenta;
     }
 
     // For the left vertical line within a pair of lines
-    .resume-spacer-vertical-gray:nth-child(1), 
-    .resume-spacer-vertical-list-magenta:nth-child(1) {
+    .div-spacer-vertical-gray:nth-child(1), 
+    .div-spacer-vertical-list-magenta:nth-child(1) {
       margin-left: 0.55rem; // 9px
     }
   }
   
   // Holds the gray horizontal spacers.
-  .resume-spacer-horizontal-div {
+  .div-spacer-horizontal{
     width: 11.63rem; // 186px
     margin: 2rem auto; // 2rem = 32px
   
-    .resume-spacer-horizontal-gray, 
-    .resume-spacer-horizontal-list-magenta, 
-    .resume-spacer-horizontal-orange {
+    .div-spacer-horizontal-gray, 
+    .div-spacer-horizontal-list-magenta, 
+    .div-spacer-horizontal-orange {
       height: 0.13rem; // 2px
       background-color: $light_gray;
     }
 
-    .resume-spacer-horizontal-list-magenta { 
+    .div-spacer-horizontal-list-magenta { 
       background-color: $magenta;
     }
 
-    .resume-spacer-horizontal-orange {
+    .div-spacer-horizontal-orange {
       height: 0.31rem; // 5px
       background-color: $orange;
     }
     
-    .resume-spacer-horizontal-gray:nth-child(1), 
-    .resume-spacer-horizontal-list-magenta:nth-child(1), 
-    .resume-spacer-horizontal-orange:nth-child(1) {
+    .div-spacer-horizontal-gray:nth-child(1), 
+    .div-spacer-horizontal-list-magenta:nth-child(1), 
+    .div-spacer-horizontal-orange:nth-child(1) {
       margin-bottom: 0.25rem; // 4px
     }
   }
 
-  .resume-spacer-horizontal-list-div {
+  .div-spacer-horizontal-list{
     width: 0.81rem; // 13px
     margin: 1rem auto; // 2rem = 32px
 
-    .resume-spacer-horizontal-list-magenta {
+    .div-spacer-horizontal-list-magenta {
       height: 0.13rem; // 2px
       background-color: $magenta;
     }
 
-    .resume-spacer-horizontal-list-magenta:nth-child(2) {
+    .div-spacer-horizontal-list-magenta:nth-child(2) {
       margin-top: 0.25rem; // 4px
     }
   }
@@ -474,7 +482,6 @@ article {
     // For the logo above the contact links
     img {
       height: auto;
-      margin: 0 auto;
       display: block;
     }
     
@@ -485,7 +492,7 @@ article {
     }
 
     // For the rows of contact links
-    .resume-info-row-div {
+    .resume-info-row{
       margin: 0.6rem auto; // 0.6rem = 10px
     }
   }
@@ -565,7 +572,7 @@ article {
       display: block;
     }
 
-    .resume-spacer-vertical-list-div, 
+    .div-spacer-vertical-list,
     .div-case_study-assets-fonts-info-desc, 
     .div-case_study-asset-color-info-square, 
     .div-case_study-asset-color-info-desc, 
@@ -582,7 +589,7 @@ article {
       margin: 0 0 $sm_margin_spacer 0.2rem; // 0 0 20px 3px
     }
 
-    .resume-spacer-vertical-list-div {
+    .div-spacer-vertical-list{
       margin: 0.5rem 0 0.75rem 0; // 8px 0 12px 0
       vertical-align: top;
     }
@@ -664,12 +671,12 @@ article {
   }
 
   // Holds the gray vertical spacers
-  .resume-spacer-vertical-div {
+  .div-spacer-vertical{
     width: 1.56rem; // 25px
     display: inline-block;
 
     // For each gray vertical line
-    .resume-spacer-vertical-gray {
+    .div-spacer-vertical-gray {
       width: 0.13rem; // 2px
       height: 0.81rem; // 13px
       display: inline-block;
@@ -677,23 +684,23 @@ article {
     }
 
     // For the left vertical line within a pair of lines
-    .resume-spacer-vertical-gray:nth-child(1) {
+    .div-spacer-vertical-gray:nth-child(1) {
       margin-left: 0.55rem; // 9px
     }
   }
 }
 
 // Holds the gray horizontal spacers.
-.resume-spacer-horizontal-div {
+.div-spacer-horizontal{
   width: 11.63rem; // 186px
   margin: 2rem auto; // 2rem = 32px
 
-  .resume-spacer-horizontal-gray {
+  .div-spacer-horizontal-gray {
     height: 0.13rem; // 2px
     background-color: $light_gray;
   }
   
-  .resume-spacer-horizontal-gray:nth-child(1) {
+  .div-spacer-horizontal-gray:nth-child(1) {
     margin-bottom: 0.25rem; // 4px
   }
 }
@@ -1013,44 +1020,46 @@ article {
   /* **** RESUME **** */
   
   article {
+    .section-resume {
+      width: 45rem; // 720px
+      margin: 3rem auto;
+    }
+
     // Hides the horizontal spacer which normally appears in between the objective and Education.
-    .resume-spacer-not_visible-div {
+    .div-spacer-not_visible{
       display: none;
     }
 
     // Position of horizontal spacer is reset. The spacer now appears in the center of the browser.
-    .resume-spacer-clear-div {
+    .div-spacer-clear{
       clear: both;
     }
 
-    .section-resume-documents h2, 
-    #section-resume-education h2, 
-    #section-resume-tech_knowledge h2, 
-    #section-resume-soft_knowledge h2, 
-    #section-resume-work h2, 
-    #section-resume-work .resume-work-jobs h2 {
+    .section-resume h2 {
       font-size: $lg_h2_font_size;
-      text-align: center;
     }
 
     .section-resume-documents h2 {
       margin: 0 0 0.75rem 0; // 0 0 12px 0      
     }
 
-    #section-resume-tech_knowledge h3, 
-    #section-resume-soft_knowledge h3, 
-    #section-resume-work .resume-work-jobs h3 {
+    .section-resume h3 {
       margin-bottom: 1rem; // 16px
-      font-size: $lg_h3_font_size;
-      text-align: center;
+      padding-left: $lg_padding_left_p;
+      font-size: $lg_base_font_size;
     }
     
     // The red horizontal spacers seperating individual technologies are made invisible.
-    .resume-spacer-horizontal-list-div {
+    .div-spacer-horizontal-list {
       display: none;
     }
 
-    .resume-links-div {
+    .div-spacer-horizontal {
+      width: 27.94rem;
+      margin: 4rem 0 3rem 34rem;
+    }
+
+    .resume-links {
       width: 8.75rem; // 140px
       margin: 0 auto;
     }
@@ -1075,35 +1084,29 @@ article {
     }
 
     #section-resume-info {
+      margin: 0 auto 3rem auto;
+
       img {
         width: 32rem; // 512px
       }
 
-      span {
-        width: 8.75rem; // 140px
-        font-size: $lg_base_font_size;
+      #resume-info-links {
+        margin: 0 auto; // 0 auto
+        position: relative;
+        left: 9.5rem; // 152px
       }
-
-      #resume-info-links-div {
-        margin: 1.25rem auto; // 20px auto
-      }
-
-      #resume-info-row-1 {
-        width: 10.25rem; // 164px
-      }
-    
-      #resume-info-row-2 {
-        width: 19rem; // 304px
-      }    
     }
 
     #section-resume-objective {
-      width: 28rem; // 448px
-      float: left;
+      border-left: $border_left_dark_blue_3px;
 
       p {
-        width: 100%;
-        margin: 0;
+        margin: 0 0 $lg_margin_spacer_3 0;
+        padding-left: $lg_padding_left_p;
+      }
+
+      p:last-of-type {
+        padding-bottom: 0.5rem;
       }
     }
 
@@ -1122,39 +1125,43 @@ article {
       }
     }
 
+    .div-resume-list {
+      border-left: $border_left_dark_blue_3px;
+
+      .div-resume-list-items {
+        margin-left: 0.5rem; // 8px
+        padding-left: $lg_padding_left_p;
+      }
+    }
+    
     #section-resume-tech_knowledge, 
     #section-resume-soft_knowledge {
-      h2 {
-        margin-bottom: 0.75rem; // 12px
+      h2, 
+      h3 {
+        margin-bottom: 0.25rem; // 4px
+        padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
+        border-left: $border_left_orange_3px;
       }
 
-      .resume-spacer-vertical-list-div {
+      h3 {
+        border-left: none;
+      }
+
+      .div-spacer-vertical-list {
         margin: 1rem 0.25rem 0 1rem; // 16px 4px 0 16px
-        float: left;
       }
     }
 
     #section-resume-tech_knowledge {
-      .resume-spacer-vertical-list-div {
-        margin: 0.7rem 0.25rem 0 1rem; // 11px 4px 0 16px
+      .div-spacer-vertical-list {
+        margin: 0.5rem 0.4rem 0 0.4rem; // 8px 6px 0 6px
+        vertical-align: top;
       }
     }
     
     #section-resume-tech_knowledge span, 
     #section-resume-soft_knowledge p {
-      margin-bottom: 1.25rem;
-      display: block;
       font-size: $lg_base_font_size;
-    }
-
-    #section-resume-tech_knowledge span:last-of-type, 
-    #section-resume-soft_knowledge p:last-of-type {
-      margin-bottom: $lg_margin_spacer;
-    }
-
-    #section-resume-tech_knowledge {
-      width: 19.25rem; // 308px
-      float: left;
     }
 
     #section-resume-soft_knowledge {
@@ -1206,7 +1213,7 @@ article {
           font-size: $lg_work_exp_span_font_size;
         }
  
-        .resume-spacer-vertical-list-div {
+        .div-spacer-vertical-list {
           margin: 1rem 0.25rem 0 0.1rem; // 16px 4px 0 1px
           float: left;
         }
@@ -1225,7 +1232,7 @@ article {
       .resume-work-responsibilities {
         margin-top: 1.25rem;
 
-        .resume-spacer-vertical-list-div {
+        .div-spacer-vertical-list {
           margin: 0.6rem 0.25rem 0 0.1rem;
           float: left;
         }
@@ -1293,7 +1300,7 @@ article {
         font-size: $lg_base_font_size;
       }
       
-      .resume-spacer-vertical-list-div {
+      .div-spacer-vertical-list {
         display: none;
       }
     }
@@ -1421,7 +1428,7 @@ article {
         font-size: $lg_h3_font_size;
       }
 
-      .resume-spacer-vertical-list-div {
+      .div-spacer-vertical-list{
         margin: 1rem 0 0 0.4rem; // 16px 0 0 6px
         vertical-align: top;
       }
@@ -1544,22 +1551,6 @@ article {
 
 
   /* **** RESUME **** */
-  
-  article {
-    #section-resume-objective {
-      margin: $lg_margin_spacer 13rem $lg_margin_spacer $lg_resume_margin_left_1920;
-    }
-    
-    #section-resume-tech_knowledge {
-      margin: 0 $lg_resume_margin_right_1920 $lg_margin_spacer $lg_resume_margin_left_1920;
-    }
-
-    #section-resume-work {
-      #resume-work-job-lvusl {
-        margin: $lg_margin_spacer $lg_resume_margin_right_1920 $lg_margin_spacer $lg_resume_margin_left_1920;
-      }
-    }
-  }
 
 
   /* **** CASE STUDY **** */
@@ -1758,11 +1749,7 @@ article {
 
   article {
     p {
-      width: 29.69rem; // 475px
-    }
-
-    .p-column-1 {
-      transform: translate(-38%, 0%);
+      width: 45rem; // 720px
     }
 
     figure {
@@ -1772,7 +1759,7 @@ article {
     }
 
     #article-border-end-bio {
-      margin-left: 50.88rem; // 814px
+      margin-left: 58.7rem; // 939px
     }
   }
 
@@ -1783,21 +1770,6 @@ article {
   
   /* **** RESUME **** */
 
-  article {
-    #section-resume-objective {
-      margin: $lg_margin_spacer 7.25rem $lg_margin_spacer $lg_resume_margin_left_1366;
-    }
-
-    #section-resume-tech_knowledge {
-      margin: 0 11rem $lg_margin_spacer $lg_resume_margin_left_1366;
-    }
-
-    #section-resume-work {
-      #resume-work-job-lvusl {
-        margin: $lg_margin_spacer 10rem $lg_margin_spacer $lg_resume_margin_left_1366;
-      }
-    }
-  }
 
   
   /* **** CASE STUDY **** */
@@ -2003,7 +1975,7 @@ article {
   article {
     // Holds the links to allow a visitor to download a copy 
     // of the resume.
-    .resume-links-div {
+    .resume-links{
       width: 7.75rem; // 124px
       margin: 0 auto;
     }
@@ -2077,7 +2049,7 @@ article {
 
     #section-resume-tech_knowledge, 
     #section-resume-soft_knowledge {
-      .resume-spacer-vertical-list-div {
+      .div-spacer-vertical-list{
         display: none;
       }
     }
@@ -2125,11 +2097,11 @@ article {
       }
 
       .resume-work-responsibilities {
-       .resume-spacer-vertical-list-div {
+       .div-spacer-vertical-list{
           margin-top: 0.45rem;
           vertical-align: top;
         
-          .resume-spacer-vertical-list-magenta:nth-child(1) {
+          .div-spacer-vertical-list-magenta:nth-child(1) {
             margin-left: $sm_indent_spacer;
           }
         }
@@ -2232,7 +2204,7 @@ article {
         margin: 0 0 $sm_margin_spacer  0.25rem; // 0 0 20px 4px
       }
 
-      .resume-spacer-vertical-list-div, 
+      .div-spacer-vertical-list,
       .div-case_study-tech_used-info-list-item span {
         display: inline-block;
       }
@@ -2249,13 +2221,13 @@ article {
         padding-left: 0.5rem; // 8px
       }
 
-      .resume-spacer-vertical-list-div, 
+      .div-spacer-vertical-list,
       .div-case_study-takeaways-list-copy {
         display: inline-block;
       }
 
       .div-case_study-takeaways-list-item {
-        .resume-spacer-vertical-list-div {
+        .div-spacer-vertical-list{
           margin: 0.5rem 0 0 0.25rem; // 8px
           vertical-align: top; // Used to vertically align the bullet point along the top line of copy.
         }
@@ -2500,7 +2472,7 @@ article {
       text-align: center;
 
       h2, 
-      .resume-links-div {
+      .resume-links{
         display: inline-block;
       }
 
@@ -2574,7 +2546,7 @@ article {
       .resume-work-responsibilities {
         margin-top: $med_margin_spacer;
 
-        .resume-spacer-vertical-list-div {
+        .div-spacer-vertical-list{
           margin-top: 0.9rem; // 14px
         }
 
@@ -2603,13 +2575,13 @@ article {
       }
 
       // For the bullet point to the left of the Web Address block
-      .resume-spacer-vertical-list-div {
+      .div-spacer-vertical-list{
         width: 1rem; // 16px
         margin-top: 1.5rem; // 24px
         display: inline-block;
         vertical-align: top;
 
-        .resume-spacer-vertical-list-magenta:nth-child(1) {
+        .div-spacer-vertical-list-magenta:nth-child(1) {
           margin-left: 0;
         }
       }
@@ -2845,7 +2817,7 @@ article {
     /* **** RESUME **** */ 
   
     article {
-      .resume-spacer-horizontal-div {
+      .div-spacer-horizontal{
         width: 13.56rem; // 217px
       }
   
@@ -2923,7 +2895,7 @@ article {
   /* **** RESUME **** */ 
 
   article {
-    .resume-spacer-horizontal-div {
+    .div-spacer-horizontal{
       width: 12.06rem; // 193px
     }
   }
@@ -2992,11 +2964,11 @@ article {
       line-height: $lg_line_height;
     }
 
-    .resume-spacer-horizontal-div {
+    .div-spacer-horizontal{
       width: 9.31rem; // 149px
     }
 
-    .resume-links-div {
+    .resume-links{
       width: 7rem; // 112px
 
       a {

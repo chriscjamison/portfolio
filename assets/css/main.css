@@ -20,6 +20,7 @@ h2,
 h3,
 h4,
 article p,
+article a,
 #section-resume-info span,
 #section-resume-tech_knowledge span,
 #section-resume-soft_knowledge span,
@@ -31,12 +32,12 @@ article .div-case_study-tech_used-info-list-item span,
 form .label-conversation,
 form .input-conversation,
 form .textarea-conversation {
-  font-family: abril-text, Garamond, serif; }
+  font-family: abril-text, Garamond, serif;
+  font-weight: 300; }
 
 /* Menu links, captions, and quotes */
 .nav-links-text-a,
 article figure span,
-article a,
 q,
 .div-case_study-assets-background span,
 #section-conversation-links a,
@@ -67,6 +68,12 @@ article .div-case_study-tech_used-info-list-item span,
 #div-conversation-copy p,
 form .label-conversation {
   color: #6d707c; }
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700; }
 
 /* Page titles. */
 h1 {
@@ -236,68 +243,63 @@ article .article-border-end {
   background-color: #ec1a63; }
 
 /* **** RESUME **** */
-article h2,
-article h3 {
-  font-family: abril-display, Garamond, serif; }
-
-article .resume-spacer-vertical-div,
-article .resume-spacer-vertical-list-div {
+article .div-spacer-vertical,
+article .div-spacer-vertical-list {
   width: 1.56rem;
   display: inline-block; }
-  article .resume-spacer-vertical-div .resume-spacer-vertical-gray,
-  article .resume-spacer-vertical-div .resume-spacer-vertical-list-magenta,
-  article .resume-spacer-vertical-list-div .resume-spacer-vertical-gray,
-  article .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta {
+  article .div-spacer-vertical .div-spacer-vertical-gray,
+  article .div-spacer-vertical .div-spacer-vertical-list-magenta,
+  article .div-spacer-vertical-list .div-spacer-vertical-gray,
+  article .div-spacer-vertical-list .div-spacer-vertical-list-magenta {
     width: 0.13rem;
     height: 0.81rem;
     display: inline-block;
     background-color: #c1c6db; }
-  article .resume-spacer-vertical-div .resume-spacer-vertical-list-magenta,
-  article .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta {
+  article .div-spacer-vertical .div-spacer-vertical-list-magenta,
+  article .div-spacer-vertical-list .div-spacer-vertical-list-magenta {
     background-color: #ec1a63; }
-  article .resume-spacer-vertical-div .resume-spacer-vertical-gray:nth-child(1),
-  article .resume-spacer-vertical-div .resume-spacer-vertical-list-magenta:nth-child(1),
-  article .resume-spacer-vertical-list-div .resume-spacer-vertical-gray:nth-child(1),
-  article .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta:nth-child(1) {
+  article .div-spacer-vertical .div-spacer-vertical-gray:nth-child(1),
+  article .div-spacer-vertical .div-spacer-vertical-list-magenta:nth-child(1),
+  article .div-spacer-vertical-list .div-spacer-vertical-gray:nth-child(1),
+  article .div-spacer-vertical-list .div-spacer-vertical-list-magenta:nth-child(1) {
     margin-left: 0.55rem; }
 
-article .resume-spacer-horizontal-div {
+article .div-spacer-horizontal {
   width: 11.63rem;
   margin: 2rem auto; }
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray,
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-list-magenta,
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-orange {
+  article .div-spacer-horizontal .div-spacer-horizontal-gray,
+  article .div-spacer-horizontal .div-spacer-horizontal-list-magenta,
+  article .div-spacer-horizontal .div-spacer-horizontal-orange {
     height: 0.13rem;
     background-color: #c1c6db; }
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-list-magenta {
+  article .div-spacer-horizontal .div-spacer-horizontal-list-magenta {
     background-color: #ec1a63; }
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-orange {
+  article .div-spacer-horizontal .div-spacer-horizontal-orange {
     height: 0.31rem;
     background-color: #f6895b; }
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-gray:nth-child(1),
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-list-magenta:nth-child(1),
-  article .resume-spacer-horizontal-div .resume-spacer-horizontal-orange:nth-child(1) {
+  article .div-spacer-horizontal .div-spacer-horizontal-gray:nth-child(1),
+  article .div-spacer-horizontal .div-spacer-horizontal-list-magenta:nth-child(1),
+  article .div-spacer-horizontal .div-spacer-horizontal-orange:nth-child(1) {
     margin-bottom: 0.25rem; }
 
-article .resume-spacer-horizontal-list-div {
+article .div-spacer-horizontal-list {
   width: 0.81rem;
   margin: 1rem auto; }
-  article .resume-spacer-horizontal-list-div .resume-spacer-horizontal-list-magenta {
+  article .div-spacer-horizontal-list .div-spacer-horizontal-list-magenta {
     height: 0.13rem;
     background-color: #ec1a63; }
-  article .resume-spacer-horizontal-list-div .resume-spacer-horizontal-list-magenta:nth-child(2) {
+  article .div-spacer-horizontal-list .div-spacer-horizontal-list-magenta:nth-child(2) {
     margin-top: 0.25rem; }
 
 article #section-resume-info img {
   height: auto;
-  margin: 0 auto;
   display: block; }
 
 article #section-resume-info span {
   display: block;
   margin: 0.5rem auto; }
 
-article #section-resume-info .resume-info-row-div {
+article #section-resume-info .resume-info-row {
   margin: 0.6rem auto; }
 
 article #section-resume-work h3 {
@@ -349,7 +351,7 @@ article .section-case_study-assets h4,
 article .section-case_study-assets .div-case_study-assets-fonts-desc span {
   display: block; }
 
-article .section-case_study-assets .resume-spacer-vertical-list-div,
+article .section-case_study-assets .div-spacer-vertical-list,
 article .section-case_study-assets .div-case_study-assets-fonts-info-desc,
 article .section-case_study-assets .div-case_study-asset-color-info-square,
 article .section-case_study-assets .div-case_study-asset-color-info-desc,
@@ -363,7 +365,7 @@ article .section-case_study-assets h4 {
 article .section-case_study-assets .div-case_study-assets-fonts-info {
   margin: 0 0 1.25rem 0.2rem; }
 
-article .section-case_study-assets .resume-spacer-vertical-list-div {
+article .section-case_study-assets .div-spacer-vertical-list {
   margin: 0.5rem 0 0.75rem 0;
   vertical-align: top; }
 
@@ -418,24 +420,24 @@ article .section-case_study-takeaways h3 {
   #section-conversation-links a {
     display: inline-block;
     font-size: 1.25rem; }
-  #section-conversation-links .resume-spacer-vertical-div {
+  #section-conversation-links .div-spacer-vertical {
     width: 1.56rem;
     display: inline-block; }
-    #section-conversation-links .resume-spacer-vertical-div .resume-spacer-vertical-gray {
+    #section-conversation-links .div-spacer-vertical .div-spacer-vertical-gray {
       width: 0.13rem;
       height: 0.81rem;
       display: inline-block;
       background-color: #c1c6db; }
-    #section-conversation-links .resume-spacer-vertical-div .resume-spacer-vertical-gray:nth-child(1) {
+    #section-conversation-links .div-spacer-vertical .div-spacer-vertical-gray:nth-child(1) {
       margin-left: 0.55rem; }
 
-.resume-spacer-horizontal-div {
+.div-spacer-horizontal {
   width: 11.63rem;
   margin: 2rem auto; }
-  .resume-spacer-horizontal-div .resume-spacer-horizontal-gray {
+  .div-spacer-horizontal .div-spacer-horizontal-gray {
     height: 0.13rem;
     background-color: #c1c6db; }
-  .resume-spacer-horizontal-div .resume-spacer-horizontal-gray:nth-child(1) {
+  .div-spacer-horizontal .div-spacer-horizontal-gray:nth-child(1) {
     margin-bottom: 0.25rem; }
 
 #form-conversation .label-conversation {
@@ -635,29 +637,27 @@ article .section-case_study-takeaways h3 {
     #section-logo-conversation a {
       transform: none; }
   /* **** RESUME **** */
-  article .resume-spacer-not_visible-div {
+  article .section-resume {
+    width: 45rem;
+    margin: 3rem auto; }
+  article .div-spacer-not_visible {
     display: none; }
-  article .resume-spacer-clear-div {
+  article .div-spacer-clear {
     clear: both; }
-  article .section-resume-documents h2,
-  article #section-resume-education h2,
-  article #section-resume-tech_knowledge h2,
-  article #section-resume-soft_knowledge h2,
-  article #section-resume-work h2,
-  article #section-resume-work .resume-work-jobs h2 {
-    font-size: 2rem;
-    text-align: center; }
+  article .section-resume h2 {
+    font-size: 2rem; }
   article .section-resume-documents h2 {
     margin: 0 0 0.75rem 0; }
-  article #section-resume-tech_knowledge h3,
-  article #section-resume-soft_knowledge h3,
-  article #section-resume-work .resume-work-jobs h3 {
+  article .section-resume h3 {
     margin-bottom: 1rem;
-    font-size: 1.75rem;
-    text-align: center; }
-  article .resume-spacer-horizontal-list-div {
+    padding-left: 1rem;
+    font-size: 1.5rem; }
+  article .div-spacer-horizontal-list {
     display: none; }
-  article .resume-links-div {
+  article .div-spacer-horizontal {
+    width: 27.94rem;
+    margin: 4rem 0 3rem 34rem; }
+  article .resume-links {
     width: 8.75rem;
     margin: 0 auto; }
   article .section-resume-documents h2 {
@@ -667,23 +667,21 @@ article .section-case_study-takeaways h3 {
   article .section-resume-documents a {
     display: inline-block;
     font-size: 1.5rem; }
-  article #section-resume-info img {
-    width: 32rem; }
-  article #section-resume-info span {
-    width: 8.75rem;
-    font-size: 1.5rem; }
-  article #section-resume-info #resume-info-links-div {
-    margin: 1.25rem auto; }
-  article #section-resume-info #resume-info-row-1 {
-    width: 10.25rem; }
-  article #section-resume-info #resume-info-row-2 {
-    width: 19rem; }
+  article #section-resume-info {
+    margin: 0 auto 3rem auto; }
+    article #section-resume-info img {
+      width: 32rem; }
+    article #section-resume-info #resume-info-links {
+      margin: 0 auto;
+      position: relative;
+      left: 9.5rem; }
   article #section-resume-objective {
-    width: 28rem;
-    float: left; }
+    border-left: 0.188rem solid #006fb9; }
     article #section-resume-objective p {
-      width: 100%;
-      margin: 0; }
+      margin: 0 0 1.5rem 0;
+      padding-left: 1rem; }
+    article #section-resume-objective p:last-of-type {
+      padding-bottom: 0.5rem; }
   article #section-resume-education {
     margin: 2.25rem 0 0 0;
     float: left; }
@@ -693,26 +691,30 @@ article .section-case_study-takeaways h3 {
       width: 100%;
       margin: 0.5rem auto;
       text-align: center; }
+  article .div-resume-list {
+    border-left: 0.188rem solid #006fb9; }
+    article .div-resume-list .div-resume-list-items {
+      margin-left: 0.5rem;
+      padding-left: 1rem; }
   article #section-resume-tech_knowledge h2,
-  article #section-resume-soft_knowledge h2 {
-    margin-bottom: 0.75rem; }
-  article #section-resume-tech_knowledge .resume-spacer-vertical-list-div,
-  article #section-resume-soft_knowledge .resume-spacer-vertical-list-div {
-    margin: 1rem 0.25rem 0 1rem;
-    float: left; }
-  article #section-resume-tech_knowledge .resume-spacer-vertical-list-div {
-    margin: 0.7rem 0.25rem 0 1rem; }
+  article #section-resume-tech_knowledge h3,
+  article #section-resume-soft_knowledge h2,
+  article #section-resume-soft_knowledge h3 {
+    margin-bottom: 0.25rem;
+    padding: 0.25rem 0 0.5rem 1rem;
+    border-left: 0.188rem solid #f6895b; }
+  article #section-resume-tech_knowledge h3,
+  article #section-resume-soft_knowledge h3 {
+    border-left: none; }
+  article #section-resume-tech_knowledge .div-spacer-vertical-list,
+  article #section-resume-soft_knowledge .div-spacer-vertical-list {
+    margin: 1rem 0.25rem 0 1rem; }
+  article #section-resume-tech_knowledge .div-spacer-vertical-list {
+    margin: 0.5rem 0.4rem 0 0.4rem;
+    vertical-align: top; }
   article #section-resume-tech_knowledge span,
   article #section-resume-soft_knowledge p {
-    margin-bottom: 1.25rem;
-    display: block;
     font-size: 1.5rem; }
-  article #section-resume-tech_knowledge span:last-of-type,
-  article #section-resume-soft_knowledge p:last-of-type {
-    margin-bottom: 2.25rem; }
-  article #section-resume-tech_knowledge {
-    width: 19.25rem;
-    float: left; }
   article #section-resume-soft_knowledge {
     width: 21.75rem;
     margin: 0;
@@ -744,7 +746,7 @@ article .section-case_study-takeaways h3 {
         font-size: 1.3rem; }
       article #section-resume-work .resume-work-jobs a {
         font-size: 1.3rem; }
-      article #section-resume-work .resume-work-jobs .resume-spacer-vertical-list-div {
+      article #section-resume-work .resume-work-jobs .div-spacer-vertical-list {
         margin: 1rem 0.25rem 0 0.1rem;
         float: left; }
       article #section-resume-work .resume-work-jobs .resume-work-web_address h3 {
@@ -753,7 +755,7 @@ article .section-case_study-takeaways h3 {
       margin: 2.25rem 0 0 0; }
     article #section-resume-work .resume-work-responsibilities {
       margin-top: 1.25rem; }
-      article #section-resume-work .resume-work-responsibilities .resume-spacer-vertical-list-div {
+      article #section-resume-work .resume-work-responsibilities .div-spacer-vertical-list {
         margin: 0.6rem 0.25rem 0 0.1rem;
         float: left; }
       article #section-resume-work .resume-work-responsibilities p {
@@ -790,7 +792,7 @@ article .section-case_study-takeaways h3 {
     article #section-case_study-intro .case_study-intro-web_address a {
       margin-top: 0.3rem;
       font-size: 1.5rem; }
-    article #section-case_study-intro .resume-spacer-vertical-list-div {
+    article #section-case_study-intro .div-spacer-vertical-list {
       display: none; }
   article .figure-case_study + .figure-case_study span {
     margin: 0 0.75rem 0 0;
@@ -860,7 +862,7 @@ article .section-case_study-takeaways h3 {
   article .section-case_study-takeaways h3 {
     padding-left: 0.69rem;
     font-size: 1.75rem; }
-  article .section-case_study-takeaways .resume-spacer-vertical-list-div {
+  article .section-case_study-takeaways .div-spacer-vertical-list {
     margin: 1rem 0 0 0.4rem;
     vertical-align: top; }
   article .section-case_study-takeaways .div-case_study-takeaways-list-copy {
@@ -927,12 +929,6 @@ article .section-case_study-takeaways h3 {
     article #article-border-end-bio {
       margin-left: 73rem; }
   /* **** RESUME **** */
-  article #section-resume-objective {
-    margin: 2.25rem 13rem 2.25rem 24.5rem; }
-  article #section-resume-tech_knowledge {
-    margin: 0 16.75rem 2.25rem 24.5rem; }
-  article #section-resume-work #resume-work-job-lvusl {
-    margin: 2.25rem 16.75rem 2.25rem 24.5rem; }
   /* **** CASE STUDY **** */
   .div-case_study-takeaways-list-copy p {
     width: 31rem; }
@@ -1025,22 +1021,14 @@ article .section-case_study-takeaways h3 {
     row-gap: 3rem;
     margin: 3rem; }
   article p {
-    width: 29.69rem; }
-  article .p-column-1 {
-    transform: translate(-38%, 0%); }
+    width: 45rem; }
   article figure img {
     margin-left: 0; }
   article #article-border-end-bio {
-    margin-left: 50.88rem; }
+    margin-left: 58.7rem; }
   .section-logo a img {
     transform: translate(-48%, 0%); }
   /* **** RESUME **** */
-  article #section-resume-objective {
-    margin: 2.25rem 7.25rem 2.25rem 13rem; }
-  article #section-resume-tech_knowledge {
-    margin: 0 11rem 2.25rem 13rem; }
-  article #section-resume-work #resume-work-job-lvusl {
-    margin: 2.25rem 10rem 2.25rem 13rem; }
   /* **** CASE STUDY **** */
   article #article-border-end-case_study {
     margin-left: 51.5rem; }
@@ -1135,7 +1123,7 @@ article .section-case_study-takeaways h3 {
     article #figure-bio-portrait img {
       margin-bottom: 1.75rem; }
   /* **** RESUME **** */
-  article .resume-links-div {
+  article .resume-links {
     width: 7.75rem;
     margin: 0 auto; }
   article .section-resume-documents h2 {
@@ -1177,8 +1165,8 @@ article .section-case_study-takeaways h3 {
   article #section-resume-soft_knowledge span,
   article #section-resume-soft_knowledge p {
     text-align: center; }
-  article #section-resume-tech_knowledge .resume-spacer-vertical-list-div,
-  article #section-resume-soft_knowledge .resume-spacer-vertical-list-div {
+  article #section-resume-tech_knowledge .div-spacer-vertical-list,
+  article #section-resume-soft_knowledge .div-spacer-vertical-list {
     display: none; }
   article #section-resume-tech_knowledge span,
   article #section-resume-soft_knowledge span {
@@ -1202,10 +1190,10 @@ article .section-case_study-takeaways h3 {
       font-size: 0.9rem; }
   article #section-resume-work .resume-work-jobs:first-of-type {
     margin-bottom: 2rem; }
-  article #section-resume-work .resume-work-responsibilities .resume-spacer-vertical-list-div {
+  article #section-resume-work .resume-work-responsibilities .div-spacer-vertical-list {
     margin-top: 0.45rem;
     vertical-align: top; }
-    article #section-resume-work .resume-work-responsibilities .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta:nth-child(1) {
+    article #section-resume-work .resume-work-responsibilities .div-spacer-vertical-list .div-spacer-vertical-list-magenta:nth-child(1) {
       margin-left: 0.75rem; }
   article #section-resume-work .resume-work-responsibilities p {
     width: 16.25rem;
@@ -1256,7 +1244,7 @@ article .section-case_study-takeaways h3 {
       margin-top: 0; }
     article .section-case_study-tech_used .div-case_study-tech_used-info-list-item {
       margin: 0 0 1.25rem 0.25rem; }
-    article .section-case_study-tech_used .resume-spacer-vertical-list-div,
+    article .section-case_study-tech_used .div-spacer-vertical-list,
     article .section-case_study-tech_used .div-case_study-tech_used-info-list-item span {
       display: inline-block; }
     article .section-case_study-tech_used .div-case_study-tech_used-info-list-item span {
@@ -1265,10 +1253,10 @@ article .section-case_study-takeaways h3 {
     margin: 2rem 0; }
     article .section-case_study-takeaways h3 {
       padding-left: 0.5rem; }
-    article .section-case_study-takeaways .resume-spacer-vertical-list-div,
+    article .section-case_study-takeaways .div-spacer-vertical-list,
     article .section-case_study-takeaways .div-case_study-takeaways-list-copy {
       display: inline-block; }
-    article .section-case_study-takeaways .div-case_study-takeaways-list-item .resume-spacer-vertical-list-div {
+    article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-spacer-vertical-list {
       margin: 0.5rem 0 0 0.25rem;
       vertical-align: top; }
     article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
@@ -1415,7 +1403,7 @@ article .section-case_study-takeaways h3 {
   article .section-resume-documents {
     text-align: center; }
     article .section-resume-documents h2,
-    article .section-resume-documents .resume-links-div {
+    article .section-resume-documents .resume-links {
       display: inline-block; }
     article .section-resume-documents h2 {
       margin-bottom: 0; }
@@ -1456,7 +1444,7 @@ article .section-case_study-takeaways h3 {
     font-size: 1.2rem; }
   article #section-resume-work .resume-work-responsibilities {
     margin-top: 1.25rem; }
-    article #section-resume-work .resume-work-responsibilities .resume-spacer-vertical-list-div {
+    article #section-resume-work .resume-work-responsibilities .div-spacer-vertical-list {
       margin-top: 0.9rem; }
     article #section-resume-work .resume-work-responsibilities p {
       width: 20rem; }
@@ -1469,12 +1457,12 @@ article .section-case_study-takeaways h3 {
     article #section-case_study-intro .case_study-intro-job_title span,
     article #section-case_study-intro .case_study-intro-web_address span {
       font-size: 1.2rem; }
-    article #section-case_study-intro .resume-spacer-vertical-list-div {
+    article #section-case_study-intro .div-spacer-vertical-list {
       width: 1rem;
       margin-top: 1.5rem;
       display: inline-block;
       vertical-align: top; }
-      article #section-case_study-intro .resume-spacer-vertical-list-div .resume-spacer-vertical-list-magenta:nth-child(1) {
+      article #section-case_study-intro .div-spacer-vertical-list .div-spacer-vertical-list-magenta:nth-child(1) {
         margin-left: 0; }
     article #section-case_study-intro .case_study-intro-web_address {
       padding-left: 0;
@@ -1591,7 +1579,7 @@ article .section-case_study-takeaways h3 {
   article #figure-bio-quote-div {
     width: 22rem; }
   /* **** RESUME **** */
-  article .resume-spacer-horizontal-div {
+  article .div-spacer-horizontal {
     width: 13.56rem; }
   article #section-resume-work h2 {
     text-align: center; }
@@ -1622,7 +1610,7 @@ article .section-case_study-takeaways h3 {
   article #figure-bio-quote-div {
     width: 19.5rem; }
   /* **** RESUME **** */
-  article .resume-spacer-horizontal-div {
+  article .div-spacer-horizontal {
     width: 12.06rem; }
   /* **** CASE STUDIES **** */
   article .section-case_study-assets .div-case_study-assets-background img {
@@ -1653,11 +1641,11 @@ article .section-case_study-takeaways h3 {
   article p {
     font-size: 1.1rem;
     line-height: 1.6; }
-  article .resume-spacer-horizontal-div {
+  article .div-spacer-horizontal {
     width: 9.31rem; }
-  article .resume-links-div {
+  article .resume-links {
     width: 7rem; }
-    article .resume-links-div a {
+    article .resume-links a {
       font-size: 1.1rem; }
   article #section-resume-work .resume-work-job_titles span,
   article #section-resume-work .resume-work-caption {
