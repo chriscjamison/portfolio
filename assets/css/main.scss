@@ -41,7 +41,6 @@ $sm_resume_p_font_size: 1.1rem; // 13pt
 $sm_name_font_size: 2rem; // 24pt
 $sm_base_font_size: 1.25rem; // 15pt
 $sm_info_font_size: 1rem; // 12pt
-$sm_web_address_font_size: 0.9rem; // 11pt
 $sm_h4_font_size: 1.2rem; // 14pt
 
 $med_base_font_size: 1.5rem; // 18pt
@@ -349,7 +348,7 @@ article {
   }
 
   // The first paragraph of the page
-  .bio-first-p {
+  .p-p-bio-first {
     margin-top: 0.5rem;
   }
 
@@ -551,7 +550,7 @@ article {
     span, 
       a {
         margin-top: 0.188rem; // 3px
-        font-size: $sm_web_address_font_size;
+        font-size: $sm_info_font_size;
       }
 
       a {
@@ -936,7 +935,7 @@ article {
       line-height: $lg_line_height;
     }
 
-    .bio-first-p {
+    .p-bio-first::first-line {
       font-weight: $bold_font_weight;
     }
 
@@ -1069,7 +1068,7 @@ article {
     }
 
     #section-resume-work .div-resume-work-jobs, 
-    #section-resume-education p, 
+    #section-resume-education .div-resume-education-schools, 
     #section-resume-documents .div-resume-documents-links {
       margin-bottom: $lg_margin_spacer_3;
       padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
@@ -1196,6 +1195,20 @@ article {
           h3 {
             font-size: $lg_h3_resume_job_font_size;
           }
+        }
+      }
+    }
+
+    #section-resume-education {
+      .div-resume-education-schools {
+        margin-top: $lg_margin_spacer_3;
+
+        p {
+          margin: 0 0 $lg_margin_spacer 0;
+        }
+
+        p:last-of-type {
+          margin-bottom: 0;
         }
       }
     }
@@ -1934,6 +1947,10 @@ article {
   article {
     // The copy and content takes up the width of the mobile browser.
     grid-column: 1 / span 2;
+
+    .p-bio-first {
+      margin-top: 0;
+    }
     
     // For images describing commenting contained within the copy.
     figure {
@@ -1942,6 +1959,7 @@ article {
 
     // For images located within the content.
     img, 
+    #figure-bio-quote-container-div
     #figure-bio-quote-div {
       width: 18.5rem;
     }
@@ -1954,8 +1972,8 @@ article {
     
     // Holds the text of the quote
     #figure-bio-quote-container-div {
-      width: 13rem; // 208px
-      height: 8.5rem; // 136px
+      height: 10.5rem; // 168px
+      padding-top: 1.75rem; // 28px
     }
 
     // Adds a space between the bottom of the image of the quote and the portrait 
@@ -1970,82 +1988,68 @@ article {
   /* **** RESUME **** */
 
   article {
-    // Holds the links to allow a visitor to download a copy 
-    // of the resume.
-    .div-resume-info-links{
-      width: 7.75rem; // 124px
-      margin: 0 auto;
+    #section-resume-work #div-resume-work-job_title, 
+    #section-resume-education .div-resume-education-schools, 
+    #section-resume-documents .div-resume-documents-links {
+      margin-top: 1.13rem;
     }
-    
-    // Holds all content relating to the downloading of a resume
-    .section-resume-documents { 
-      // The title of the section, 'Download Resume'.
-      h2 {
-        margin-bottom: 0.75rem; // 12px
-        font-size: 1.5rem;
-        text-align: center;
-      }
 
-      // The text links.
-      a {
-        display: inline-block;
-        font-size: $sm_base_font_size; // 15pt
+    #section-resume-tech_knowledge h2, 
+    #section-resume-soft_knowledge h2, 
+    #section-resume-tech_knowledge h3, 
+    #section-resume-soft_knowledge h3, 
+    #section-resume-work h2, 
+    #section-resume-education h2, 
+    #section-resume-documents h2 {
+      margin-bottom: 0.25rem; // 4px
+      padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
+      border-left: $border_left_orange_3px;
+    }
+
+    #section-resume-work #div-resume-work-job_title {
+      margin-bottom: $lg_margin_spacer_3;
+      padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
+      border-left: $border_left_light_blue_3px;
+    }
+
+    #section-resume-work .div-resume-work-jobs, 
+    #section-resume-education .div-resume-education-schools, 
+    #section-resume-documents .div-resume-documents-links {
+      margin-bottom: $lg_margin_spacer_3;
+      padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
+      border-left: $border_left_dark_blue_3px;
+    }
+
+    .div-resume-list {
+      border-left: $border_left_dark_blue_3px;
+
+      .div-resume-list-items {
+        margin-left: 0.5rem; // 8px
+        padding-left: $lg_padding_left_p;
+
+        span {
+          margin-bottom: 0.5rem; // 8px
+          display: inline-block;
+        }
       }
     }
 
     #section-resume-info {
-      img {
-        width: 15.31rem; // 245px
-      }
-
-      span {
-        width: 5.8rem; // 93px
-        font-size: $sm_info_font_size;
+      #div-resume-info-links {
+        #a-resume-info-link-twitter + .div-spacer-vertical {
+          display: none;
+        }
       }
     }
-
+    
     #section-resume-objective {
-      margin-top: 1.3rem; // 21px
+      margin-top: $sm_body_margin;
     }
 
-    #section-resume-education p, 
-    #section-resume-tech_knowledge span,
-    #section-resume-tech_knowledge p, 
-    #section-resume-soft_knowledge span, 
-    #section-resume-soft_knowledge p {
-      font-size: $sm_resume_p_font_size;
-      line-height: 1.8;
-    }
-
-    #section-resume-education h2, 
-    #section-resume-education p, 
-    #section-resume-tech_knowledge h2, 
     #section-resume-tech_knowledge h3, 
-    #section-resume-tech_knowledge span, 
-    #section-resume-tech_knowledge p, 
-    #section-resume-soft_knowledge h2, 
-    #section-resume-soft_knowledge h3, 
-    #section-resume-soft_knowledge span, 
-    #section-resume-soft_knowledge p {
-      text-align: center;
+    #section-resume-soft_knowledge h3 {
+      border-left: none;
     }
-
-    #section-resume-tech_knowledge, 
-    #section-resume-soft_knowledge {
-      .div-spacer-vertical-list{
-        display: none;
-      }
-    }
-
-    #section-resume-tech_knowledge span, 
-    #section-resume-soft_knowledge span {
-      display: block;
-    }
-
-    /* #section-resume-tech_knowledge .resume-list span:last-of-type, 
-    #section-resume-soft_knowledge .resume-list span:last-of-type {
-      margin-bottom: 2rem // 32px
-    } */
 
     #section-resume-work {
       h2 {
@@ -2064,9 +2068,13 @@ article {
           font-size: $sm_info_font_size;
         }
 
+        span {
+          font-size: $sm_info_font_size;
+        }
+
         a {
           display: block;
-          font-size: $sm_web_address_font_size; // 11pt
+          font-size: $sm_info_font_size;
         }
       }
 
@@ -2074,9 +2082,30 @@ article {
         margin-bottom: $sm_body_margin;
       }
     }
+
+    #section-resume-education {
+      .div-resume-education-schools {
+        p {
+          margin: 0 0 $sm_margin_spacer 0;
+        }
+
+        p:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
   
     #section-resume-download-bottom {
       a {
+        font-size: $sm_base_font_size; // 15pt
+      }
+    }
+    
+    // Holds all content relating to the downloading of a resume
+    #section-resume-documents { 
+      // The text links.
+      a {
+        display: inline-block;
         font-size: $sm_base_font_size; // 15pt
       }
     }
@@ -2310,6 +2339,16 @@ article {
     grid-template-columns: auto 2.37rem; // auto 37px
     margin: 3rem 4rem; // 48px 64px
   }
+  
+  header {
+    h1 {
+      font-size: $med_header_font_size;
+    }
+
+    #header-border-title-bio {
+      width: 3rem; // 48px
+    }
+  }
 
   #header-bio, 
   #header-resume, 
@@ -2334,10 +2373,14 @@ article {
     grid-column: 1 / span 2;
 
     p {
-      width: 61%;
+      width: 32rem; // 512px
       margin: $med_margin_spacer auto;
       font-size: $med_base_font_size;
       line-height: $lg_line_height;
+    }
+
+    .p-bio-first::first-line {
+      font-weight: $bold_font_weight;
     }
 
     img {
@@ -2351,7 +2394,7 @@ article {
     }
 
     figure {
-      width: 80%;
+      width: 100%;
       margin: 3rem auto; // 48px auto
 
       span {
@@ -2365,18 +2408,15 @@ article {
       }
 
       #figure-bio-quote-div {
-        width: 32rem; // 512px
-        height: 19.9rem; // 318px
         margin-bottom: 0;
-        background-size: 33.32rem 19.9rem; // 512px x 318px
       }
 
       #figure-bio-quote-container-div {
-        width: 19.9rem; // 318px
+        width: 32rem; // 318px
         height: 12.4rem; // 198px
 
         q {
-          margin: 13% auto 4% auto;
+          margin: 4rem auto 1rem auto;
           font-size: $med_quote_font_size;
         }
 
@@ -2390,16 +2430,19 @@ article {
           text-align: center;
         }
       }
+
+      #figure-bio-quote-div {
+        margin: 0 auto;
+      }
     }
 
     #figure-bio-portrait img {
-      width: 32rem; // 512px
       display: block;
     }
 
-    .article-border-end {
+    /* .article-border-end {
       margin-left: 29.25rem; // 468px
-    }
+    } */
   }
 
   #section-logo-bio, 
@@ -2717,11 +2760,204 @@ article {
   /* **** BIOGRAPHY **** */ 
 
   article {
+    p {
+      width: 36rem; // 576px
+    }
+
     img, 
-    #figure-bio-quote-div {
-      width: 34rem; // 544px
+    figure #figure-bio-quote-div, 
+    figure #figure-bio-quote-container-div {
+      width: 45rem; // 720px
+    }
+
+    figure {
+      #figure-bio-quote-container-div {
+        height: 23.5rem; // 376px
+        padding-top: 4.25rem; // 68px
+  
+        q {
+          margin: 6rem auto 1.5rem auto; // 96px auto 24px auto
+          font-size: $med_header_font_size;
+        }
+  
+        span {
+          width: 10.5rem; // 168px
+          font-size: $med_base_font_size;
+        }
+      }
+
+      #figure-bio-quote-div {
+        height: 28rem; // 448px
+        margin: 0 auto;
+        background-size: 45rem 28rem; // 720px 448px
+      }
+    }
+    
+    #figure-bio-portrait {
+      img {
+        width: 52rem; // 832px
+      }
+    }
+
+    #article-border-end-bio {
+      left: 41.5rem; // 664px
     }
   } 
+}
+
+
+/* **************************** 
+      iPAD - 768 x 1366
+    *************************** */  
+
+@media (min-width: 415px) and (max-width: 768px)  {
+  
+  /* **** BIOGRAPHY **** */ 
+
+  article {
+    img {
+      width: 33.25rem;  // 532px
+    }
+
+    figure {
+      #figure-bio-quote-container-div {
+        width: 32rem;
+        height: 16.5rem;
+        padding-top: 3rem;
+      }
+      
+      #figure-bio-quote-div {
+        width: 32rem; // 512px
+        height: 19.9rem; // 318px
+        background-size: 33.32rem 19.9rem; // 512px x 318px
+      }
+    }
+
+    #figure-bio-portrait img {
+      width: 40rem; // 640px
+    }
+
+    #article-border-end-bio {
+      left: 31rem;
+    }
+  }
+}
+
+
+/* *********************************
+      SMALL MOBILE DEVICES - < 414
+   ********************************* */
+
+@media (min-width: 320px) and (max-width: 414px)  {
+  
+  /* **** LANDING PAGE **** */
+
+  .nav-other {
+    display: none;
+  }
+
+
+  /* **** BIOGRAPHY **** */
+
+  #body-content {
+    row-gap: $sm_body_margin;
+  }
+
+  article {
+    figure {
+      .figure-border-short {
+        display: none;
+      }
+    }
+  }
+
+
+  /* **** RESUME **** */
+
+  article {
+    .div-resume-list span, 
+    #section-resume-work span {
+      font-size: $sm_base_font_size;
+    }
+
+    #section-resume-info {
+      #div-resume-info-links {
+        margin: $sm_margin_spacer 0;
+
+        a {
+          display: inline-block;
+          margin-bottom: 0.5rem; // 8px
+          font-size: $sm_base_font_size;
+        }
+
+        a:nth-child(7), 
+        a:nth-child(9) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #section-resume-objective {
+      p {
+        margin-top: 0;
+      }
+    }
+
+    #section-resume-tech_knowledge {
+      #span-resume-tech_knowledge-list-css {
+        width: 2.75rem; // 46px
+      }
+    }
+
+    #section-resume-soft_knowledge {
+      #span-resume-soft_knowledge-list-photoshop {
+        width: 9.25rem; // 148px
+      }
+
+      #span-resume-soft_knowledge-list-word {
+        width: 9rem; // 144px
+      }
+
+      #span-resume-soft_knowledge-list-outlook {
+        width: 8.25rem; // 132px
+      }
+    }
+
+    #section-resume-work {
+      h3 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0 0 $sm_margin_spacer 0;
+        display: inline-block;
+      }
+
+      #div-resume-work-job_title {
+        margin-bottom: 1.13rem; // 18px
+      }
+
+      .div-resume-work-jobs {
+        .div-resume-work-job_titles {
+          margin-bottom: 1.25rem; // 20px
+        }
+
+        .div-resume-list {
+          border-left: none;
+
+          .div-spacer-vertical-list {
+            margin-top: 0.5rem; // 8px
+            vertical-align: top;
+          }
+
+          p:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 /* ********************************* 
@@ -2729,77 +2965,127 @@ article {
    ********************************* */
 
    
-   @media (min-width: 376px) and (max-width: 414px)  {
+@media (min-width: 376px) and (max-width: 414px)  {
 
-    /* **** LANDING PAGE **** */
-  
-    header {
-      #header-name {
-        font-size: 3.4rem; // 41pt
+  /* **** LANDING PAGE **** */
+
+  header {
+    #header-name {
+      font-size: 3.4rem; // 41pt
+    }
+
+    #header-border-name {
+      width: 8.1rem; // 130px
+    }
+  } 
+
+
+  /* **** BIOGRAPHY **** */ 
+
+  article {
+    p {
+      line-height: 1.6;
+    }
+
+    img, 
+    #figure-bio-quote-div {
+      width: 22rem; // 352px
+    }
+  } 
+
+
+  /* **** RESUME **** */ 
+
+  article {
+    .div-spacer-horizontal{
+      width: 13.56rem; // 217px
+    }
+
+    .section-resume + .div-spacer-horizontal {
+      margin: 2rem 0 2rem 8.25rem; // 32px 0 32px 132px
+    }
+
+    #div-resume-info-links {
+      width: 15.25rem; // 244px
+    }
+
+    #section-resume-tech_knowledge {
+      #span-resume-tech_knowledge-list-css {
+        width: 3rem; // 48px
       }
-  
-      #header-border-name {
-        width: 8.1rem; // 130px
+
+      #span-resume-tech_knowledge-list-javascript {
+        width: 11rem; // 176px
       }
-    } 
-  
-  
-    /* **** BIOGRAPHY **** */ 
-  
-    article {
-      p {
-        line-height: 1.6;
+
+      #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list {
+        display: none;
       }
-  
-      img, 
-      #figure-bio-quote-div {
-        width: 22rem; // 352px
-      }
-    } 
-  
-  
-    /* **** RESUME **** */ 
-  
-    article {
-      .div-spacer-horizontal{
-        width: 13.56rem; // 217px
-      }
-  
-      #section-resume-work {
-        h2 {
-          text-align: center;
-        }
+
+      #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+        display: none;
       }
     }
-  
-  
-    /* **** CASE STUDIES **** */ 
-  
-    article {
-      .section-case_study-assets {
-        .div-case_study-assets-background img {
-          width: 20.5rem; // 328px
-        }
+
+    #section-resume-soft_knowledge {
+      #span-resume-soft_knowledge-list-photoshop {
+        width: 10.75rem; // 172px
       }
       
-      .section-case_study-takeaways {
-        .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
-          width: 19.75rem; // 316px
-        }
+      #span-resume-soft_knowledge-list-word {
+        width: auto;
+      }
+
+      #span-resume-soft_knowledge-list-outlook {
+        width: 10.25rem; // 164px
+      }
+
+      #span-resume-soft_knowledge-list-photoshop + .div-spacer-vertical-list,
+      #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list,
+      #span-resume-soft_knowledge-list-dreamweaver + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-word + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-indesign + .div-spacer-vertical-list {
+        display: none;
       }
     }
-  
-  
-    /* **** START A CONVERSATION **** */ 
-  
-    #form-conversation {
-      .input-conversation, 
-      .textarea-conversation, 
-      #input-conversation-submit {
-        width: 20rem;
+
+    #section-resume-work {
+      p {
+        width: 19rem; // 304px
       }
     }
   }
+
+
+  /* **** CASE STUDIES **** */ 
+
+  article {
+    .section-case_study-assets {
+      .div-case_study-assets-background img {
+        width: 20.5rem; // 328px
+      }
+    }
+    
+    .section-case_study-takeaways {
+      .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
+        width: 19.75rem; // 316px
+      }
+    }
+  }
+
+
+  /* **** START A CONVERSATION **** */ 
+
+  #form-conversation {
+    .input-conversation, 
+    .textarea-conversation, 
+    #input-conversation-submit {
+      width: 20rem;
+    }
+  }
+}
     
  
 /* ********************************* 
@@ -2813,10 +3099,6 @@ article {
     #header-name {
       font-size: 3rem; // 36pt
     }
-  }
-
-  .nav-other {
-    display: none;
   }
 
 
@@ -2835,6 +3117,45 @@ article {
   article {
     .div-spacer-horizontal{
       width: 12.06rem; // 193px
+    }
+
+    .section-resume + .div-spacer-horizontal {
+      margin: 2rem 0 2rem 7.25rem; // 32px 0 32px 116px
+    }
+
+    #section-resume-tech_knowledge {
+      #span-resume-tech_knowledge-list-css {
+        width: auto;
+      }
+
+      #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list, 
+      #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+        display: none;
+      }
+    }
+
+    #section-resume-soft_knowledge {
+      #span-resume-soft_knowledge-list-photoshop, 
+      #span-resume-soft_knowledge-list-outlook {
+        width: auto;
+      }
+
+      #span-resume-soft_knowledge-list-photoshop + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-illustrator + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-dreamweaver + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-word + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-indesign + .div-spacer-vertical-list {
+        display: none;
+      }
+    }
+
+    #section-resume-work {
+      p {
+        width: 16rem; // 256px
+      }
     }
   }
 
@@ -2866,6 +3187,73 @@ article {
   } 
 }
   
+
+/* ********************************* 
+    ANDROID - 360 x 640
+  ********************************* */
+  
+@media (min-width: 321px) and (max-width: 360px)  {
+
+
+  /* **** RESUME **** */
+
+  article {
+    .div-spacer-horizontal {
+      margin: 2rem 0 2rem 6.75rem; // 32px 0 32px 108px
+    }
+
+    #section-resume-info {
+      img {
+        width: 18.5rem; // 296px
+      }
+      
+      .div-resume-info-links {
+        width: 13rem; // 208px
+      }
+    }
+
+    #section-resume-tech_knowledge {
+      #span-resume-tech_knowledge-list-css {
+        width: auto;
+      }
+
+      #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list, 
+      #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+        display: none;
+      }
+    }
+
+    #section-resume-soft_knowledge {
+      #span-resume-soft_knowledge-list-photoshop, 
+      #span-resume-soft_knowledge-list-outlook {
+        width: auto;
+      }
+
+      #span-resume-soft_knowledge-list-xd {
+        width: 8rem; // 128px
+      }
+
+      #span-resume-soft_knowledge-list-photoshop + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-illustrator + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-dreamweaver + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-word + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-xd + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-indesign + .div-spacer-vertical-list {
+        display: none;
+      }
+    }
+
+    #section-resume-work {
+      p {
+        width: 15rem; // 240px
+      }
+    }
+  }
+
+}
   
 /* ********************************* 
       iPHONE 5 - 320 x 568
@@ -2897,7 +3285,11 @@ article {
       font-size: $ex_sm_h2_font_size;
     }
 
-    p {
+    p, 
+    a, 
+    .div-resume-list span, 
+    #section-resume-work span, 
+    #section-resume-documents a {
       font-size: $ex_sm_resume_p_font_size;
       line-height: $lg_line_height;
     }
@@ -2906,19 +3298,57 @@ article {
       width: 9.31rem; // 149px
     }
 
-    .div-resume-info-links {
-      width: 7rem; // 112px
-
-      a {
-        font-size: $ex_sm_resume_p_font_size;
+    #section-resume-info {
+      #div-resume-info-links {
+        // width: 7rem; // 112px
+  
+        a {
+          margin-bottom: 0.25rem; // 4px
+          font-size: $ex_sm_resume_p_font_size;
+        }
       }
     }
-    
+
+    #section-resume-objective {
+      margin-top: 0;
+    }
+
+    #section-resume-tech_knowledge {
+      #span-resume-tech_knowledge-list-css {
+        width: auto;
+      }
+
+      #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list, 
+      #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+        display: none;
+      }
+    }
+
+    #section-resume-soft_knowledge {
+      #span-resume-soft_knowledge-list-outlook {
+        width: auto;
+      }
+
+      #span-resume-soft_knowledge-list-xd {
+        width: 6.5rem; // 104px
+      }
+
+      #span-resume-soft_knowledge-list-photoshop + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-illustrator + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-dreamweaver + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-word + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-xd + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-indesign + .div-spacer-vertical-list {
+        display: none;
+      }
+    }
 
     #section-resume-work {
-      .div-resume-work-job_titles span, 
-      .div-resume-work-caption {
-        font-size: $ex_sm_resume_span_caption_font_size;
+      p {
+        width: 13rem; // 208px
       }
     }
   } 
