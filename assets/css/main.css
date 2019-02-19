@@ -700,7 +700,17 @@ article .section-case_study-takeaways h3 {
     vertical-align: top; }
   article #section-resume-tech_knowledge span,
   article #section-resume-soft_knowledge span {
+    display: inline-block;
     font-size: 1.5rem; }
+  article #section-resume-soft_knowledge .div-resume-list span {
+    margin-bottom: 0.5rem; }
+  article #section-resume-soft_knowledge .div-resume-list span:nth-child(13),
+  article #section-resume-soft_knowledge .div-resume-list span:nth-child(15),
+  article #section-resume-soft_knowledge .div-resume-list span:nth-child(17) {
+    margin-bottom: 0; }
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list,
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list {
+    display: none; }
   article #section-resume-work {
     margin-top: 2.5rem; }
     article #section-resume-work #div-resume-work-job_title {
@@ -1153,6 +1163,8 @@ article .section-case_study-takeaways h3 {
     margin-bottom: 1.5rem;
     padding: 0.25rem 0 0.5rem 1rem;
     border-left: 0.188rem solid #006fb9; }
+  article #section-resume-work h3 {
+    margin: 0; }
   article .div-resume-list {
     border-left: 0.188rem solid #006fb9; }
     article .div-resume-list .div-resume-list-items {
@@ -1394,48 +1406,58 @@ article .section-case_study-takeaways h3 {
     font-size: 1.75rem; }
   article h3 {
     font-size: 1.4rem; }
-  article .section-resume-documents {
-    text-align: center;
-    /* .resume-documents-spacer-horizontal {
-        width: 0.5rem; // 8px
-        height: 2px;
-        margin: 0.5rem; // 8px
-        display: inline-block;
-        background-color: $light_gray;
-        vertical-align: middle;
-      } */ }
-    article .section-resume-documents h2,
-    article .section-resume-documents .div-resume-info-links {
-      display: inline-block; }
-    article .section-resume-documents h2 {
-      margin-bottom: 0; }
+  article #section-resume-work #div-resume-work-job_title,
+  article #section-resume-education .div-resume-education-schools,
+  article #section-resume-documents .div-resume-documents-links {
+    margin-top: 1.5rem; }
+  article #section-resume-education p,
+  article #section-resume-tech_knowledge span,
+  article #section-resume-soft_knowledge span {
+    font-size: 1.5rem;
+    line-height: 1.6; }
   article #section-resume-info img {
-    width: 24.88rem; }
+    width: 24.88rem;
+    margin: 0 auto; }
   article #section-resume-info span {
     width: 7.25rem;
     font-size: 1.25rem; }
-  article #section-resume-education p,
-  article #section-resume-tech_knowledge span,
-  article #section-resume-tech_knowledge p,
-  article #section-resume-soft_knowledge span,
-  article #section-resume-soft_knowledge p {
-    font-size: 1.5rem;
-    line-height: 1.8; }
-  article #section-resume-education h2 {
-    margin-bottom: 0.75rem; }
-  article #section-resume-work h2 {
-    text-align: center; }
-  article #section-resume-work #p-resume-work-title {
-    margin: 0 auto; }
+  article #section-resume-info #div-resume-info-links {
+    width: 32.75rem;
+    margin: 1.5rem auto 0 auto; }
+    article #section-resume-info #div-resume-info-links a {
+      font-size: 1.5rem; }
+    article #section-resume-info #div-resume-info-links #a-resume-info-link-twitter + .div-spacer-vertical {
+      display: inline-block; }
+  article #section-resume-objective {
+    margin-bottom: 1.5rem;
+    padding: 0.25rem 0 0.5rem 1rem;
+    border-left: 0.188rem solid #006fb9; }
+    article #section-resume-objective p {
+      margin: 0; }
+    article #section-resume-objective p:first-of-type {
+      margin-bottom: 2.25rem; }
+  article #section-resume-work p {
+    display: inline-block; }
   article #section-resume-work .div-resume-work-jobs {
-    width: 22rem;
-    margin: 2rem auto; }
+    margin: 1.5rem auto; }
+  article #section-resume-work .div-resume-work-job_titles,
+  article #section-resume-work .div-resume-work-web_address {
+    margin-bottom: 2rem; }
   article #section-resume-work #div-resume-work-job_title span,
   article #section-resume-work .div-resume-work-job_titles span,
   article #section-resume-work .div-resume-work-web_address span {
     font-size: 1.3rem; }
   article #section-resume-work .div-resume-work-web_address h3, article #section-resume-work .div-resume-work-web_address a {
     font-size: 1.2rem; }
+  article #section-resume-work .div-resume-list {
+    border-left: none; }
+    article #section-resume-work .div-resume-list .div-spacer-vertical-list {
+      margin-top: 0.75rem;
+      vertical-align: top; }
+  article #section-resume-education .div-resume-education-schools p {
+    margin: 0 0 2.25rem 0; }
+  article #section-resume-documents a {
+    font-size: 1.5rem; }
   article #article-border-end-resume {
     margin-left: 8.9rem; }
   /* **** CASE STUDY **** */
@@ -1569,7 +1591,28 @@ article .section-case_study-takeaways h3 {
   article #figure-bio-portrait img {
     width: 52rem; }
   article #article-border-end-bio {
-    left: 41.5rem; } }
+    left: 41.5rem; }
+  /* **** RESUME **** */
+  article .div-spacer-horizontal {
+    width: 32.31rem; }
+  article .section-resume {
+    width: 51rem; }
+  article .section-resume + .div-spacer-horizontal {
+    margin: 3rem 0 3rem 19.5rem; }
+  article #section-resume-objective p {
+    width: 50.88rem; }
+  article #section-resume-tech_knowledge #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+    display: inline-block; }
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-bridge {
+    width: 9.75rem; }
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-git {
+    width: 3rem; }
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list,
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list {
+    display: none; }
+  article #section-resume-work p {
+    width: 46.25rem;
+    margin: 0 0 2.25rem 0; } }
 
 /* **************************** 
       iPAD - 768 x 1366
@@ -1589,7 +1632,35 @@ article .section-case_study-takeaways h3 {
   article #figure-bio-portrait img {
     width: 40rem; }
   article #article-border-end-bio {
-    left: 31rem; } }
+    left: 31rem; }
+  /* **** RESUME **** */
+  article .div-spacer-horizontal {
+    width: 24.88rem; }
+  article .section-resume {
+    width: 38.5rem; }
+  article .section-resume + .div-spacer-horizontal {
+    margin: 3rem 0 3rem 15rem; }
+  article #section-resume-info {
+    margin: 0 auto; }
+  article #section-resume-objective p {
+    width: 38.5rem; }
+  article #section-resume-tech_knowledge #span-resume-tech_knowledge-list-php {
+    width: 3.75rem; }
+  article #section-resume-tech_knowledge #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+    display: none; }
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-code {
+    width: 20.5rem; }
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list,
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list,
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list {
+    display: none; }
+  article #section-resume-work .div-resume-work-jobs {
+    width: 37.25rem; }
+  article #section-resume-work .div-resume-list p {
+    width: 35.25rem;
+    margin: 0 0 2.25rem 0; }
+  article #section-resume-work .div-resume-list p:last-of-type {
+    margin-bottom: 0; } }
 
 /* *********************************
       SMALL MOBILE DEVICES - < 414
@@ -1641,6 +1712,11 @@ article .section-case_study-takeaways h3 {
       margin-top: 0.5rem;
       vertical-align: top; }
     article #section-resume-work .div-resume-work-jobs .div-resume-list p:last-of-type {
+      margin-bottom: 0; }
+  /* **** CASE STUDIES **** */
+  article .section-case_study-takeaways .div-case_study-takeaways-list-item:last-of-type {
+    margin-bottom: 0; }
+    article .section-case_study-takeaways .div-case_study-takeaways-list-item:last-of-type .div-case_study-takeaways-list-copy:last-of-type p:last-of-type {
       margin-bottom: 0; } }
 
 /* ********************************* 
@@ -1804,6 +1880,8 @@ article .section-case_study-takeaways h3 {
     line-height: 1.6; }
   article .div-spacer-horizontal {
     width: 9.31rem; }
+  article .section-resume + .div-spacer-horizontal {
+    margin: 2rem 0 2rem 6.5rem; }
   article #section-resume-info #div-resume-info-links a {
     margin-bottom: 0.25rem;
     font-size: 1.1rem; }
@@ -1814,6 +1892,8 @@ article .section-case_study-takeaways h3 {
   article #section-resume-tech_knowledge #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list,
   article #section-resume-tech_knowledge #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
     display: none; }
+  article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-illustrator {
+    width: 10.25rem; }
   article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-outlook {
     width: auto; }
   article #section-resume-soft_knowledge #span-resume-soft_knowledge-list-xd {
