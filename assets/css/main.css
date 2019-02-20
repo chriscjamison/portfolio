@@ -117,6 +117,7 @@ h4 {
 
 /* **** MAIN NAVIGATION **** */
 nav {
+  opacity: 0;
   /* For all text links within the menu and also the border which appears 
      underneath those links. */
   /* The main menu icon. */
@@ -146,19 +147,24 @@ header {
     display: block; }
   header #header-intro-welcome {
     font-family: abril-display, Garamond, serif;
-    font-weight: 800; }
+    font-weight: 800;
+    opacity: 0; }
   header #header-intro-name {
-    font-weight: 800; }
+    font-weight: 800;
+    opacity: 0; }
   header #header-name {
-    font-size: 2.85rem; }
+    font-size: 2.85rem;
+    opacity: 0; }
     header #header-name span {
       display: inline-block; }
   header #header-border-name {
     background: #ec1a63;
-    background: linear-gradient(90deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%); }
+    background: linear-gradient(90deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%);
+    opacity: 0; }
   header .header-copy {
     font-size: 1.25rem;
-    font-weight: 300; }
+    font-weight: 300;
+    opacity: 0; }
     header .header-copy p:first-of-type {
       margin-top: 0; }
   header .header-border-title {
@@ -166,6 +172,7 @@ header {
 
 /* **** SOCIAL MEDIA LINKS **** */
 #section-social {
+  opacity: 0;
   /* The red border which appears above the social media links 
      on the landing page. */ }
   #section-social #social-border {
@@ -194,6 +201,10 @@ header {
     #section-social #social-links #social-link-a-linkedin {
       width: 2.81rem;
       background-position: 0px -72px; }
+
+/* **** SECTION LOGO **** */
+.section-logo {
+  opacity: 0; }
 
 /* **** BIO **** */
 article p {
@@ -967,9 +978,17 @@ article .section-case_study-takeaways h3 {
   /* **** LANDING PAGE **** */
   #body-landing {
     margin: 6rem;
-    row-gap: 4.5em; }
+    row-gap: 15.25em; }
   header #header-intro-welcome {
     margin-bottom: 1rem; }
+  header #header-intro {
+    position: relative;
+    top: 0.2rem; }
+  header .header-copy {
+    padding-left: 0;
+    position: absolute;
+    top: 5.5rem;
+    left: 35.25rem; }
   #section-logo-landing a img {
     transform: none; }
   /* **** BIO **** */
@@ -1090,7 +1109,7 @@ article .section-case_study-takeaways h3 {
     header #header-border-title-case_study {
       width: 6.8rem; }
     header #header-border-title-conversation {
-      width: 12.8rem; }
+      width: 19.8rem; }
   #section-social {
     grid-column: 1 / span 2; }
   nav {
@@ -1491,8 +1510,7 @@ article .section-case_study-takeaways h3 {
   article .section-case_study-tech_used .div-case_study-tech_used-info-list-item span {
     font-size: 1.4rem; }
   article .section-case_study-assets,
-  article .section-case_study-tech_used,
-  article .section-case_study-takeaways {
+  article .section-case_study-tech_used {
     width: 61%;
     margin: 2rem auto; }
   article .figure-case_study {
@@ -1523,21 +1541,38 @@ article .section-case_study-takeaways h3 {
     font-size: 2rem; }
   article .section-case_study-assets .div-case_study-assets-background img {
     width: 23.5rem; }
-  article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
-    width: 21.5rem; }
-  article .section-case_study-takeaways .div-case_study-takeaways-list-item p {
-    width: 100%; }
-  article .section-case_study-takeaways .div-case_study-takeaways-list-item:last-of-type .div-case_study-takeaways-list-copy:last-of-type p:last-of-type {
-    margin-bottom: 0; }
-  article #article-border-end-case_study {
-    margin-left: 24.5%; }
+  article .section-case_study-takeaways {
+    width: 32rem;
+    margin: 2rem auto; }
+    article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
+      width: 29.75rem; }
+    article .section-case_study-takeaways .div-case_study-takeaways-list-item p {
+      width: 100%; }
+    article .section-case_study-takeaways .div-case_study-takeaways-list-item:last-of-type .div-case_study-takeaways-list-copy:last-of-type p:last-of-type {
+      margin-bottom: 0; }
   /* **** START A CONVERSATION **** */
+  #body-content-conversation {
+    grid-template-columns: auto 2.37rem;
+    margin: 3rem 4rem; }
   #section-conversation-links {
-    width: 21.5rem; }
+    width: 21.5rem;
+    display: none; }
     #section-conversation-links a {
       font-size: 1.5rem; }
     #section-conversation-links #spacer-horizontal-div-conversation {
       margin: 2rem auto 0.25rem auto; }
+  #div-conversation-copy {
+    grid-column: 1 / span 2;
+    margin: 1.5rem auto 1.5rem auto;
+    padding: 0.25rem 0 0.5rem 1rem;
+    border-left: 0.188rem solid #006fb9; }
+    #div-conversation-copy p {
+      margin: 0 0 2.25rem 0;
+      font-size: 1.5rem; }
+    #div-conversation-copy p:first-of-type {
+      margin-top: 0; }
+    #div-conversation-copy p:last-of-type {
+      margin-bottom: 0; }
   #form-conversation {
     grid-row: 3 / span 1;
     width: 24.5rem;
@@ -1612,7 +1647,12 @@ article .section-case_study-takeaways h3 {
     display: none; }
   article #section-resume-work p {
     width: 46.25rem;
-    margin: 0 0 2.25rem 0; } }
+    margin: 0 0 2.25rem 0; }
+  /* **** START A CONVERSATION **** */
+  #div-conversation-copy {
+    width: 42rem; }
+  #section-logo-conversation {
+    margin-top: 2.75rem; } }
 
 /* **************************** 
       iPAD - 768 x 1366
@@ -1660,7 +1700,16 @@ article .section-case_study-takeaways h3 {
     width: 35.25rem;
     margin: 0 0 2.25rem 0; }
   article #section-resume-work .div-resume-list p:last-of-type {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  /* **** CASE STUDY **** */
+  article #figure-case_study-logo img {
+    width: 15.75rem;
+    margin-left: 6.5rem; }
+  #article-border-end-case_study {
+    left: 33.5rem; }
+  /* **** START A CONVERSATION **** */
+  #div-conversation-copy {
+    width: 35.25rem; } }
 
 /* *********************************
       SMALL MOBILE DEVICES - < 414

@@ -218,6 +218,8 @@ h4 {
 /* **** MAIN NAVIGATION **** */
 
 nav {
+  opacity: 0;
+  
   /* For all text links within the menu and also the border which appears 
      underneath those links. */
   .nav-links-text-a, 
@@ -253,16 +255,19 @@ header {
   #header-intro-welcome {
     font-family: $display_font;
     font-weight: $ex_bold_font_weight;
+    opacity: 0;
   }
 
   /* For the intro which appears on the landing page. */
   #header-intro-name {
     font-weight: $ex_bold_font_weight;
+    opacity: 0;
   }
 
   /* For the first and last name which appears on the landing page. */
   #header-name {
     font-size: 2.85rem;
+    opacity: 0;
 
     span {
       display: inline-block;
@@ -273,12 +278,14 @@ header {
   #header-border-name {
     background: $magenta;
     background: linear-gradient(90deg, $orange 0%, $magenta 26%, $light_blue 26%, $dark_blue 100%);
+    opacity: 0;
   }
 
   /* The paragraphs which appear on the landing page. */
   .header-copy {
     font-size: 1.25rem;
     font-weight: $light_font_weight;
+    opacity: 0;
 
     p:first-of-type {
       margin-top: 0;
@@ -295,6 +302,8 @@ header {
 /* **** SOCIAL MEDIA LINKS **** */
 
 #section-social {
+  opacity: 0;
+
   /* The red border which appears above the social media links 
      on the landing page. */
   #social-border {
@@ -335,6 +344,13 @@ header {
       background-position: 0px -72px;
     }
   }
+}
+
+
+/* **** SECTION LOGO **** */
+
+.section-logo {
+  opacity: 0;
 }
 
 
@@ -1631,12 +1647,24 @@ article {
 
   #body-landing {
     margin: 6rem; // 80px
-    row-gap: 4.5em; // 368px
+    row-gap: 15.25em; // 244px
   }
 
   header {
     #header-intro-welcome {
       margin-bottom: 1rem; // 16px
+    }
+    
+    #header-intro {
+      position: relative;
+      top: 0.2rem; // 4px
+    }
+
+    .header-copy {
+      padding-left: 0;
+      position: absolute;
+      top: 5.5rem; // 88px
+      left: 35.25rem; // 564px
     }
   }
 
@@ -1900,7 +1928,7 @@ article {
     }
 
     #header-border-title-conversation  {
-      width: 12.8rem; // 205px
+      width: 19.8rem; // 317px
     }
   }
  
@@ -2255,7 +2283,7 @@ article {
   
   
   /* **** START A CONVERSATION **** */
-
+  
   #form-conversation {
     grid-column: 1 / span 2;
   
@@ -2654,8 +2682,7 @@ article {
     }
 
     .section-case_study-assets, 
-    .section-case_study-tech_used, 
-    .section-case_study-takeaways {
+    .section-case_study-tech_used {
       width: 61%;
       margin: 2rem auto;
     }
@@ -2715,9 +2742,12 @@ article {
     }
 
     .section-case_study-takeaways { 
+      width: 32rem; // 512px
+      margin: 2rem auto; // 32px auto
+
       .div-case_study-takeaways-list-item { 
         .div-case_study-takeaways-list-copy {
-          width: 21.5rem; // 344px
+          width: 29.75rem; // 476px
         }
 
         p {
@@ -2733,18 +2763,19 @@ article {
         }
       }
     }
-
-    #article-border-end-case_study {
-      margin-left: 24.5%;
-    }
   }
 
 
   /* **** START A CONVERSATION **** */
+    
+  #body-content-conversation {
+    grid-template-columns: auto 2.37rem; // auto 37px
+    margin: 3rem 4rem; // 48px 64px
+  }
 
-  
   #section-conversation-links {
     width: 21.5rem; // 344px
+    display: none;
 
     a {
       font-size: $med_base_font_size;
@@ -2752,6 +2783,26 @@ article {
 
     #spacer-horizontal-div-conversation {
       margin: 2rem auto 0.25rem auto; // 32px auto 4px auto
+    }
+  }
+
+  #div-conversation-copy {
+    grid-column: 1 / span 2;
+    margin: $lg_margin_spacer_3 auto $lg_margin_spacer_3 auto;
+    padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
+    border-left: $border_left_dark_blue_3px;
+
+    p {
+      margin: 0 0 $lg_margin_spacer 0;
+      font-size: $med_base_font_size;
+    }
+
+    p:first-of-type {
+      margin-top: 0;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
     }
   }
 
@@ -2907,6 +2958,17 @@ article {
       }
     }
   }
+  
+
+  /* **** START A CONVERSATION **** */ 
+
+  #div-conversation-copy {
+    width: 42rem; // 672px
+  }
+
+  #section-logo-conversation {
+    margin-top: 2.75rem; // 44px
+  }
 }
 
 
@@ -3010,6 +3072,29 @@ article {
         }
       }
     }
+  }
+  
+
+  /* **** CASE STUDY **** */ 
+
+  article {
+    #figure-case_study-logo {
+      img {
+        width: 15.75rem; // 252px
+        margin-left: 6.5rem; // 104px
+      }
+    }
+  }
+
+  #article-border-end-case_study {
+    left: 33.5rem; // 536px
+  }
+  
+
+  /* **** START A CONVERSATION **** */ 
+
+  #div-conversation-copy {
+    width: 35.25rem; // 564px
   }
 }
 
