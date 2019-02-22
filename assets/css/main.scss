@@ -296,6 +296,11 @@ header {
   .header-border-title {
     height: 0.31rem; // 5px
   }
+
+  h1, 
+  .header-border-title {
+    opacity: 0
+  }
 }
 
 
@@ -357,6 +362,8 @@ header {
 /* **** BIO **** */
 
 article {
+  opacity: 0;
+
   p {
     font-weight: $light_font_weight;
     font-size: $sm_base_font_size;
@@ -1920,7 +1927,7 @@ article {
     }
 
     #header-border-title-resume  {
-      width: 4.9rem; // 79px
+      width: 7.5rem; // 120px
     }
 
     #header-border-title-case_study  {
@@ -2389,6 +2396,7 @@ article {
 
   #body-content {
     grid-template-columns: auto 2.37rem; // auto 37px
+    grid-row-gap: $sm_body_margin;
     margin: 3rem 4rem; // 48px 64px
   }
   
@@ -3106,6 +3114,21 @@ article {
 @media (min-width: 320px) and (max-width: 414px)  {
   
   /* **** LANDING PAGE **** */
+
+   header {
+     #header-name {
+       margin-top: 1.25rem; // 20px
+
+       span {
+         display: block;
+         line-height: 1;
+       }
+     }
+   }
+
+  nav {
+    position: static;
+  }
 
   .nav-other {
     display: none;

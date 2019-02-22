@@ -169,6 +169,9 @@ header {
       margin-top: 0; }
   header .header-border-title {
     height: 0.31rem; }
+  header h1,
+  header .header-border-title {
+    opacity: 0; }
 
 /* **** SOCIAL MEDIA LINKS **** */
 #section-social {
@@ -207,57 +210,52 @@ header {
   opacity: 0; }
 
 /* **** BIO **** */
-article p {
-  font-weight: 300;
-  font-size: 1.25rem;
-  line-height: 1.6; }
-
-article .p-p-bio-first {
-  margin-top: 0.5rem; }
-
-article img {
-  display: block; }
-
-article figure span {
-  width: 90%;
-  margin: 0.5rem auto 1.5rem auto;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #f6895b;
-  text-align: center; }
-
-article figure #figure-bio-quote-div {
-  position: relative;
-  background-image: url("/assets/img/bio/bio_quote.jpg"); }
-
-article figure #figure-bio-quote-container-div {
-  margin: 0 auto;
-  position: relative;
-  background: #00afde;
-  background: linear-gradient(135deg, #00afde 20%, #006fb9 80%); }
-  article figure #figure-bio-quote-container-div span {
-    font-size: 0.8rem;
-    font-weight: 400;
-    font-style: normal;
-    color: #fff; }
-
-article figure q {
-  width: 91%;
-  margin: 13% auto 5% auto;
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 800;
-  font-style: italic;
-  color: #fff;
-  text-align: center; }
-
-article .article-border-end {
-  width: 2.25rem;
-  height: 0.31rem;
-  margin-top: 1.25rem;
-  position: relative;
-  background-color: #ec1a63; }
+article {
+  opacity: 0; }
+  article p {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.6; }
+  article .p-p-bio-first {
+    margin-top: 0.5rem; }
+  article img {
+    display: block; }
+  article figure span {
+    width: 90%;
+    margin: 0.5rem auto 1.5rem auto;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #f6895b;
+    text-align: center; }
+  article figure #figure-bio-quote-div {
+    position: relative;
+    background-image: url("/assets/img/bio/bio_quote.jpg"); }
+  article figure #figure-bio-quote-container-div {
+    margin: 0 auto;
+    position: relative;
+    background: #00afde;
+    background: linear-gradient(135deg, #00afde 20%, #006fb9 80%); }
+    article figure #figure-bio-quote-container-div span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      font-style: normal;
+      color: #fff; }
+  article figure q {
+    width: 91%;
+    margin: 13% auto 5% auto;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    font-style: italic;
+    color: #fff;
+    text-align: center; }
+  article .article-border-end {
+    width: 2.25rem;
+    height: 0.31rem;
+    margin-top: 1.25rem;
+    position: relative;
+    background-color: #ec1a63; }
 
 /* **** RESUME **** */
 article .div-spacer-vertical,
@@ -1105,7 +1103,7 @@ article .section-case_study-takeaways h3 {
     header #header-border-title-bio {
       width: 2rem; }
     header #header-border-title-resume {
-      width: 4.9rem; }
+      width: 7.5rem; }
     header #header-border-title-case_study {
       width: 6.8rem; }
     header #header-border-title-conversation {
@@ -1340,6 +1338,7 @@ article .section-case_study-takeaways h3 {
   /* **** BIOGRAPHY **** */
   #body-content {
     grid-template-columns: auto 2.37rem;
+    grid-row-gap: 2rem;
     margin: 3rem 4rem; }
   header h1 {
     font-size: 2rem; }
@@ -1716,6 +1715,11 @@ article .section-case_study-takeaways h3 {
    ********************************* */
 @media (min-width: 320px) and (max-width: 414px) {
   /* **** LANDING PAGE **** */
+  header #header-name {
+    margin-top: 1.25rem; }
+    header #header-name span {
+      display: block;
+      line-height: 1; }
   .nav-other {
     display: none; }
   /* **** BIOGRAPHY **** */
