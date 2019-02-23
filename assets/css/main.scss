@@ -72,6 +72,7 @@ $med_margin_spacer: 1.25rem; // 15px
 $lg_margin_spacer: 2.25rem; // 36px
 $lg_margin_spacer_2: 2.5rem; // 40px
 $lg_margin_spacer_3: 1.5rem; // 24px
+$lg_margin_spacer_4: 1.25rem; // 20px
 $lg_resume_margin_left_1366: 13rem; // 208px
 $lg_resume_margin_left_1600: 18rem; // 208px
 $lg_resume_margin_left_1920: 24.5rem; // 392px
@@ -222,8 +223,8 @@ nav {
   
   /* For all text links within the menu and also the border which appears 
      underneath those links. */
-  .nav-links-text-a, 
-  #nav-border {
+
+  .nav-menu-items {
     display: none;
   }
 
@@ -827,19 +828,24 @@ article {
       transform: none !important;
     }
 
-    .nav-links-text-a {
+    .nav-menu-items {
       display: block;
-      margin-bottom: 1.4rem; // 22px
-      font-size: $lg_base_font_size;
-    }
+      position: relative;
 
-    #nav-border {
-      display: block;
-      // margin-top: 1.75rem; // 28px
+      .nav-links-text-a {
+        display: block;
+        margin-bottom: 1.4rem; // 22px
+        font-size: $lg_base_font_size;
+      }
+  
+      #nav-border {
+        display: block;
+        // margin-top: 1.75rem; // 28px
+      }
     }
   }
 
-  .nav-iphone {
+  .section-nav-iphone {
     display: none;
   }
 
@@ -874,7 +880,7 @@ article {
   /* **** BIO **** */
 
   #body-content {
-    grid-template-columns: auto 2.37rem; // auto 37px
+    grid-template-columns: auto 9.5rem; // auto 152px
   }
 
   header {
@@ -920,21 +926,30 @@ article {
 
   nav {
     #nav-link-menu {
-      width: 2.37rem; // 38px
-      height: 2.37rem; // 38px
-      margin-top: 0.5rem;
+      width: 3.75rem; // 60px
+      height: 3.75rem; // 60px
+      margin: 0.5rem 0 0 5.75rem; // 8px 0 0 92px
       display: block !important;
+      background-position: 0px -120px;
       transform: none !important;
-      margin-top: 0 !important;
     }
 
-    .nav-links-text-a {
-      display: none;
-    }
+    .nav-menu-items {
+      width: 8.75rem; // 140px
+      margin: $lg_margin_spacer_4 0.5rem 0 0; // 20px 8px 0 0
+      position: absolute;
 
-    #nav-border {
-      display: none;
+      .nav-links-text-a {
+        margin-bottom: $lg_margin_spacer_4;
+        display: block;
+        text-align: right;
+      }
+  
+      #nav-border {
+        margin: $lg_margin_spacer_4 0 0 6.5rem; 
+      }
     }
+    
   }
 
   .section-bio, 
@@ -1039,7 +1054,8 @@ article {
     grid-row: 3 / span 1;
     
     a {
-      transform: none;
+      display: block;
+      transform: translate(5.75rem, 0); // 92px
     }
   }
 
@@ -1946,37 +1962,39 @@ article {
  
   // The menu located at the bottom of the browser window.
   nav {
-     grid-column: 1 / span 1;
+    grid-column: 1 / span 1;
 
-    .nav-links-text-a {
-      font-size: $sm_base_font_size;
-      line-height: 1.4;
-    }
-
-    #nav-link-menu {
-      width: 2.37rem;
-      height: 2.5rem;
-      margin-top: 0.5rem;
-    }
-
-    // The link within the main menu, 'Read Bio'. 
-    #nav-link-text-a-bio {
-      width: 3rem;
-    }
-
-    // The link within the main menu, 'View Resume'. 
-    #nav-link-text-a-resume {
-      width: 4.6rem;
-    }
-
-    // The link within the main menu, 'View Case Studies'. 
-    #nav-link-text-a-case_study {
-      width: 6.5rem;
-    }
-
-    // The link within the main menu, 'Start a Conversation. 
-    #nav-link-text-a-conversation {
-      width: 7.5rem;
+    .nav-menu-items {
+      .nav-links-text-a {
+        font-size: $sm_base_font_size;
+        line-height: 1.4;
+      }
+  
+      #nav-link-menu {
+        width: 2.37rem;
+        height: 2.5rem;
+        margin-top: 0.5rem;
+      }
+  
+      // The link within the main menu, 'Read Bio'. 
+      #nav-link-text-a-bio {
+        width: 3rem;
+      }
+  
+      // The link within the main menu, 'View Resume'. 
+      #nav-link-text-a-resume {
+        width: 4.6rem;
+      }
+  
+      // The link within the main menu, 'View Case Studies'. 
+      #nav-link-text-a-case_study {
+        width: 6.5rem;
+      }
+  
+      // The link within the main menu, 'Start a Conversation. 
+      #nav-link-text-a-conversation {
+        width: 7.5rem;
+      }
     }
   }  
 
@@ -2359,7 +2377,7 @@ article {
     grid-row: 1 / span 1;
   }
 
-  .nav-iphone {
+  .section-nav-iphone {
     display: none;
   }
 
@@ -2395,7 +2413,7 @@ article {
   /* **** BIOGRAPHY **** */ 
 
   #body-content {
-    grid-template-columns: auto 2.37rem; // auto 37px
+    grid-template-columns: auto 9.5rem; // auto 452px
     grid-row-gap: $sm_body_margin;
     margin: 3rem 4rem; // 48px 64px
   }
@@ -2777,7 +2795,7 @@ article {
   /* **** START A CONVERSATION **** */
     
   #body-content-conversation {
-    grid-template-columns: auto 2.37rem; // auto 37px
+    grid-template-columns: auto 9.5rem; // auto 152px
     margin: 3rem 4rem; // 48px 64px
   }
 
@@ -3126,7 +3144,7 @@ article {
      }
    }
 
-  nav {
+  .section-nav-iphone {
     position: static;
   }
 

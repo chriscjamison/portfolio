@@ -122,8 +122,7 @@ nav {
      underneath those links. */
   /* The main menu icon. */
   /* The border which appears underneath the text links within the main menu. */ }
-  nav .nav-links-text-a,
-  nav #nav-border {
+  nav .nav-menu-items {
     display: none; }
   nav #nav-link-menu {
     display: block;
@@ -508,13 +507,16 @@ article .section-case_study-takeaways h3 {
     #nav-other-landing #nav-link-menu {
       display: none !important;
       transform: none !important; }
-    #nav-other-landing .nav-links-text-a {
+    #nav-other-landing .nav-menu-items {
       display: block;
-      margin-bottom: 1.4rem;
-      font-size: 1.5rem; }
-    #nav-other-landing #nav-border {
-      display: block; }
-  .nav-iphone {
+      position: relative; }
+      #nav-other-landing .nav-menu-items .nav-links-text-a {
+        display: block;
+        margin-bottom: 1.4rem;
+        font-size: 1.5rem; }
+      #nav-other-landing .nav-menu-items #nav-border {
+        display: block; }
+  .section-nav-iphone {
     display: none; }
   #section-social {
     grid-row: 2 / span 1; }
@@ -533,7 +535,7 @@ article .section-case_study-takeaways h3 {
       transform: translate(0%, 10%); }
   /* **** BIO **** */
   #body-content {
-    grid-template-columns: auto 2.37rem; }
+    grid-template-columns: auto 9.5rem; }
   header #header-bio,
   header #header-resume,
   header #header-case_study,
@@ -558,16 +560,22 @@ article .section-case_study-takeaways h3 {
   #nav-other-conversation {
     grid-column: 2 / span 1; }
   nav #nav-link-menu {
-    width: 2.37rem;
-    height: 2.37rem;
-    margin-top: 0.5rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    margin: 0.5rem 0 0 5.75rem;
     display: block !important;
-    transform: none !important;
-    margin-top: 0 !important; }
-  nav .nav-links-text-a {
-    display: none; }
-  nav #nav-border {
-    display: none; }
+    background-position: 0px -120px;
+    transform: none !important; }
+  nav .nav-menu-items {
+    width: 8.75rem;
+    margin: 1.25rem 0.5rem 0 0;
+    position: absolute; }
+    nav .nav-menu-items .nav-links-text-a {
+      margin-bottom: 1.25rem;
+      display: block;
+      text-align: right; }
+    nav .nav-menu-items #nav-border {
+      margin: 1.25rem 0 0 6.5rem; }
   .section-bio,
   .section-case_study {
     width: 45rem;
@@ -641,7 +649,8 @@ article .section-case_study-takeaways h3 {
     #section-logo-resume a,
     #section-logo-case_study a,
     #section-logo-conversation a {
-      transform: none; }
+      display: block;
+      transform: translate(5.75rem, 0); }
   /* **** RESUME **** */
   article .section-resume {
     width: 45rem;
@@ -1112,20 +1121,20 @@ article .section-case_study-takeaways h3 {
     grid-column: 1 / span 2; }
   nav {
     grid-column: 1 / span 1; }
-    nav .nav-links-text-a {
+    nav .nav-menu-items .nav-links-text-a {
       font-size: 1.25rem;
       line-height: 1.4; }
-    nav #nav-link-menu {
+    nav .nav-menu-items #nav-link-menu {
       width: 2.37rem;
       height: 2.5rem;
       margin-top: 0.5rem; }
-    nav #nav-link-text-a-bio {
+    nav .nav-menu-items #nav-link-text-a-bio {
       width: 3rem; }
-    nav #nav-link-text-a-resume {
+    nav .nav-menu-items #nav-link-text-a-resume {
       width: 4.6rem; }
-    nav #nav-link-text-a-case_study {
+    nav .nav-menu-items #nav-link-text-a-case_study {
       width: 6.5rem; }
-    nav #nav-link-text-a-conversation {
+    nav .nav-menu-items #nav-link-text-a-conversation {
       width: 7.5rem; }
   .section-logo {
     grid-column: 2 / span 1;
@@ -1319,7 +1328,7 @@ article .section-case_study-takeaways h3 {
   .nav-other {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1; }
-  .nav-iphone {
+  .section-nav-iphone {
     display: none; }
   #section-social {
     grid-row: 2 / span 1; }
@@ -1337,7 +1346,7 @@ article .section-case_study-takeaways h3 {
       transform: translate(0%, 240%); }
   /* **** BIOGRAPHY **** */
   #body-content {
-    grid-template-columns: auto 2.37rem;
+    grid-template-columns: auto 9.5rem;
     grid-row-gap: 2rem;
     margin: 3rem 4rem; }
   header h1 {
@@ -1551,7 +1560,7 @@ article .section-case_study-takeaways h3 {
       margin-bottom: 0; }
   /* **** START A CONVERSATION **** */
   #body-content-conversation {
-    grid-template-columns: auto 2.37rem;
+    grid-template-columns: auto 9.5rem;
     margin: 3rem 4rem; }
   #section-conversation-links {
     width: 21.5rem;
@@ -1720,6 +1729,8 @@ article .section-case_study-takeaways h3 {
     header #header-name span {
       display: block;
       line-height: 1; }
+  .section-nav-iphone {
+    position: static; }
   .nav-other {
     display: none; }
   /* **** BIOGRAPHY **** */
