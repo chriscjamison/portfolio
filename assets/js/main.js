@@ -20,8 +20,8 @@ $(document).ready(
         // IF/ELSE statement which will determine the intent a visitor has when clicking on the main menu.
         // If a visitor clicks on the menu icon, the menu will become visible. Otherwise, the browser 
         // will navigate to another webpage.
-        if (webpage_value === "menu") {
-          animateMenu();
+        if (webpage_value === "open_menu" || webpage_value === "close_menu") {
+          animateMenu(webpage_value);
         } else {
           // A String variable which will hold the path to the webpage a visitor wished to visit 
           // is initialized.
@@ -84,16 +84,11 @@ function animateTransitions() {
   url_string = window.location.pathname;
 
   // IF/ELSE statement that sets a flag which determines which content is to made visible.
-  if (url_string === "/" || "index.htm") {
+  if (url_string === "/" || url_string === "index.htm") {
     animateLandingPageElements();
   } else {
-    animatePageElements();
+    animatePageElements(url_string);
   }
-
-// console.log("url_string = " + url_string);
-// console.log("page_type = " + page_type);
-
-
 } /* **** END of animateTranstions **** */
 
 
@@ -167,7 +162,7 @@ function animateLandingPageElements() {
 
 
 
-function animatePageElements() {
+function animatePageElements(url_string) {
 /* 
  *  This function animates the visibility of the HTML elements contained in  
  *  webpages other than the Landing Page.
@@ -177,7 +172,6 @@ function animatePageElements() {
   // will be initialized.
   var header_h1_selector = "";
   var header_border_selector = "";
-  var article_selector = "";
   var section_logo_selector = "";
   var nav_selector = "";
 
@@ -185,7 +179,6 @@ function animatePageElements() {
   // contained in the Landing Page will be initialized.
   var header_h1_element = {};
   var header_border_element = {};
-  var article_element = {};
   var section_logo_element = {};
   var nav_element = {};
 
@@ -193,7 +186,6 @@ function animatePageElements() {
   // the String variables initialized earlier.
   header_h1_selector = "header h1";
   header_border_selector = ".header-border-title";
-  article_selector = "article";
   section_logo_selector = ".section-logo";
   nav_selector = setNavSelector();
 
@@ -201,22 +193,65 @@ function animatePageElements() {
   // on to the Object variables initialized earler.
   header_h1_element = $(header_h1_selector);
   header_border_element = $(header_border_selector);
-  article_element = $(article_selector);
   section_logo_element = $(section_logo_selector);
   nav_element = $(nav_selector);
 
-  // The HTML elements within the Landing Page are made visible.
+  // The HTML elements within the Landing Page are made visible.  
   $(nav_element).fadeTo(700, 1);
-  $(section_logo_element).fadeTo(900, 1);
+
+  // IF/ELSE statement which displays the webpage logo if the browser is not for a handheld device.
+  if (nav_selector === ".nav-other")  {
+    $(section_logo_element).fadeTo(900, 1);
+  }
+  
   $(header_h1_element).fadeTo(900, 1);
-  $(article_element).delay(900).fadeTo(900, 1);
+
+  // IF/ELSE statement which displays the various page HTML elements based on the URL of the webpage.
+  // Additional elements display if the path to the webpage is 'start_a_conversation.htm'.
+  if (url_string === "/start_a_conversation.htm")  {
+    // A String variable which will hold CSS selectors are initialized.
+    var conversation_selector = "";
+
+    // An Object which will hold a jQuery object which refers to elements 
+    // within the webpage is initialized.
+    var conversation_elements = {};
+
+    // IF/ELSE statement which includes a selctor, '#section-converation-links', if the browser is for a handheld browser.
+    if (nav_selector === ".section-nav-iphone") {
+      // CSS selectors which refer to the content soon to be displayed is passed on.
+      conversation_selector = "#section-conversation-links, #div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
+    } else {
+      conversation_selector = "#div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
+    }
+
+    // A jQuery object which refers to the HTML elements soon to be displayed is passed on.
+    conversation_elements = $(conversation_selector);
+
+    $(conversation_elements).delay(900).fadeTo(900, 1);
+  } else {
+    // A String variable which will hold CSS selectors are initialized.
+    var article_selector = "";
+
+    // An Object which will hold a jQuery object which refers to elements 
+    // within the webpage is initialized.
+    var article_element = {};
+
+    // CSS selector which refers to the content soon to be displayed is passed on.
+    article_selector = "article";
+
+    // A jQuery object which refers to the HTML elements soon to be displayed is passed on.
+    article_element = $(article_selector);
+
+    $(article_element).delay(900).fadeTo(900, 1);
+  }
+  
   $(header_border_element).delay(1800).fadeTo(900, 1);
 
 } // END of FUNCTION animatePageElements
 
 
 
-function animateMenu() {
+function animateMenu(webpage_value) {
 /* 
  * This function will animate the visiblity of the menu. 
  */
@@ -252,29 +287,37 @@ function animateMenu() {
   // The menu icon fades away and back in.
   $(menu_icon_element).fadeTo(150, 0);
 
-  // A String variable which will hold the background position value for the menu icon 
+  // An Object variable which will hold CSS properties and values used to style the menu icon 
   // is initialized.
-  var background_position_value = "";
-
-  background_position_value = $(menu_icon_element).css("backgroundPosition");
-
+  menu_items_css = {};
+  
+  menu_items_css = {
+    opacity: 0
+  };
+console.log('webpage_value = ' + webpage_value);
   // IF/ELSE statement which swaps the click state of the menu icon to its base state 
   // to a click state.
-  if (background_position_value === "0px -120px")  {
+  if (webpage_value === "open_menu")  {
     setTimeout(
       function () {
         $(menu_icon_element).css("backgroundPosition", "0px -240px");
+
+        menu_items_css.display = "block";
+
+        $(menu_icon_element).attr("href", "#close_menu");
       }, 175
     );    
-  } else {
+  } else if (webpage_value === "close_menu") {
     setTimeout(
       function () {
         $(menu_icon_element).css("backgroundPosition", "0px -120px");
+        
+        menu_items_css.display = "none";
+        
+        $(menu_icon_element).attr("href", "#open_menu");
       }, 175
     );
   }
-
-  $(menu_icon_element).delay(200).fadeTo(150, 1);
 
   // A String variable which will hold the CSS selector for the menu items is initialized.
   var menu_items_selector = "";
@@ -290,16 +333,16 @@ function animateMenu() {
   // The jQuery object which refers to the menu items is passed on.
   menu_items_element = $(menu_items_selector);
 
-  // An Object variable which will hold CSS properties and values used to style the menu icon 
-  // is initialized.
-  menu_items_css = {};
-
-  menu_items_css = {
-    display: "block", 
-    opacity: 0
-  };
-
-  $(menu_items_element).css(menu_items_css);
+  $(menu_icon_element).delay(200).fadeTo(150, 1);
+console.log("menu_items_css.display = " + menu_items_css.display);
+  
+  setTimeout(
+    function () {
+      console.log("menu_items_css.display = " + menu_items_css.display);
+      $(menu_items_element).css(menu_items_css);    
+    }, 200
+  );
+  
 
   $(menu_items_element).delay(400).fadeTo(150, 1);
 

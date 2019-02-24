@@ -687,6 +687,7 @@ article {
 
 #section-conversation-links {
   margin: 0 auto;
+  opacity: 0;
 
   a {
     display: inline-block;
@@ -714,9 +715,9 @@ article {
 }
 
 // Holds the gray horizontal spacers.
-.div-spacer-horizontal{
+#div-conversation-copy + .div-spacer-horizontal {
   width: 11.63rem; // 186px
-  margin: 2rem auto; // 2rem = 32px
+  margin: 2rem auto; // 32px
 
   .div-spacer-horizontal-gray {
     height: 0.13rem; // 2px
@@ -728,7 +729,14 @@ article {
   }
 }
 
+#div-conversation-copy, 
+#spacer-horizontal-div-conversation {
+  opacity: 0;
+}
+
 #form-conversation {
+  opacity: 0;
+
   .label-conversation {
     display: block;
     margin-bottom: 0.25rem; // 4px
@@ -840,7 +848,6 @@ article {
   
       #nav-border {
         display: block;
-        // margin-top: 1.75rem; // 28px
       }
     }
   }
@@ -1342,12 +1349,6 @@ article {
         display: none;
       }
     }
-/* 
-    .section-case_study {
-      .section-column-1 {
-        margin-left: 0;
-      }
-    } */
 
     .section-case_study + .div-spacer-horizontal {
       margin: 4rem auto; // 64px auto
@@ -1632,7 +1633,7 @@ article {
   /* **** START A CONVERSATION **** */
 
   #body-content-conversation {
-    grid-template-columns: 61.5rem 38.5rem 2.37rem; // 984px 616px 38px
+    grid-template-columns: 62rem 31rem 9.25rem; // 992px 496px 148px
     row-gap: 6rem;
     margin: 6rem;
   }
@@ -3146,9 +3147,24 @@ article {
 
   .section-nav-iphone {
     position: static;
+
+    nav {
+      opacity: 1;
+
+      #nav-link-menu { 
+        width: 2.37rem; // 38px
+        height: 2.37rem; // 38px
+      }
+    }
+
+    .section-logo {
+      grid-column: auto;
+      opacity: 1;
+    }
   }
 
-  .nav-other {
+  .nav-other, 
+  .section-logo-other {
     display: none;
   }
 
@@ -3157,6 +3173,12 @@ article {
 
   #body-content {
     row-gap: $sm_body_margin;
+  }
+
+  header {
+    #header-border-title-conversation {
+      width: 12.9rem; // 206px
+    }
   }
 
   article {
@@ -3270,6 +3292,32 @@ article {
       }
     }
   }
+
+
+  /* **** START A CONVERSATION **** */ 
+
+  #section-conversation-links {
+    grid-column: 1 / span 2;
+    width: 18.5rem; // 296px
+  }
+
+  #div-conversation-copy {
+    grid-column: 1 / span 2;
+
+    p {
+      font-size: $sm_base_font_size;
+      line-height: $lg_line_height;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  #spacer-horizontal-div-conversation {
+    grid-column: 1 / span 2;
+  }
+  
 }
 
 /* ********************************* 
@@ -3572,6 +3620,7 @@ article {
    ********************************* */
 
 @media (max-width: 320px)  {
+
   /* **** LANDING PAGE **** */
   header {
     #header-name {
