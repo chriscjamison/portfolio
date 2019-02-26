@@ -276,7 +276,8 @@ header {
   }
 
   /* The border which appears underneath the first name which appears on the landing page. */
-  #header-border-name {
+  #header-border-name, 
+  #div-menu-iphone-border {
     background: $magenta;
     background: linear-gradient(90deg, $orange 0%, $magenta 26%, $light_blue 26%, $dark_blue 100%);
     opacity: 0;
@@ -939,6 +940,10 @@ article {
       display: block !important;
       background-position: 0px -120px;
       transform: none !important;
+    }
+
+    #nav-link-menu:hover {
+      background-position: 0px -180px;
     }
 
     .nav-menu-items {
@@ -3146,11 +3151,24 @@ article {
    }
 
   .section-nav-iphone {
-    position: static;
+    height: 4.69rem; // 75px
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    opacity: 0;
+
+    #div-menu-iphone-border {
+      width: 100%;
+      height: 0.13rem; // 2px
+      background: $magenta;
+      background: linear-gradient(90deg, $orange 0%, $magenta 26%, $light_blue 26%, $dark_blue 100%);  
+    }
 
     nav {
+      float: left;
+      transform: translate(0, 1rem);
       opacity: 1;
-
+      
       #nav-link-menu { 
         width: 2.37rem; // 38px
         height: 2.37rem; // 38px
@@ -3159,6 +3177,11 @@ article {
 
     .section-logo {
       grid-column: auto;
+      width: 3.75rem; // 60px
+      position: absolute;
+      float: left;
+      right: 0;
+      transform: translate(0, 0.75rem);
       opacity: 1;
     }
   }
@@ -3193,6 +3216,8 @@ article {
   /* **** RESUME **** */
 
   article {
+    margin-bottom: 5rem; // 80px
+
     .div-resume-list span, 
     #section-resume-work span {
       font-size: $sm_base_font_size;
@@ -3326,6 +3351,12 @@ article {
 
    
 @media (min-width: 376px) and (max-width: 414px)  {
+  
+  /* **** MAIN NAVIGATION **** */
+  
+  .section-nav-iphone {
+    width: 22rem; // 352px
+  }
 
   /* **** LANDING PAGE **** */
 
@@ -3454,6 +3485,12 @@ article {
   
 @media (min-width: 361px) and (max-width: 375px)  {
   
+  /* **** MAIN NAVIGATION **** */
+  
+  .section-nav-iphone {
+    width: 19.44rem; // 311px
+  }
+  
   /* **** LANDING PAGE **** */
   header {
     #header-name {
@@ -3554,7 +3591,13 @@ article {
   
 @media (min-width: 321px) and (max-width: 360px)  {
 
+  /* **** MAIN NAVIGATION **** */
 
+  .section-nav-iphone {
+    width: 18.5rem; // 296px
+  }
+
+  
   /* **** RESUME **** */
 
   article {
@@ -3610,9 +3653,17 @@ article {
       p {
         width: 15rem; // 240px
       }
-    }
+    } 
   }
 
+  
+  /* **** CASE STUDY **** */
+  
+  article {
+    #article-border-end-case_study {
+      left: 16.25rem; // 260px
+    }
+  }
 }
   
 /* ********************************* 
@@ -3620,6 +3671,12 @@ article {
    ********************************* */
 
 @media (max-width: 320px)  {
+
+  /* **** MAIN NAVIGATION **** */
+  
+  .section-nav-iphone {
+    width: 16rem; // 256px
+  }
 
   /* **** LANDING PAGE **** */
   header {

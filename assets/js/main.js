@@ -65,12 +65,6 @@ $(window).on("load",
 );
 
 
-$("#nav-link-menu").on("click", 
-  function () { 
-console.log("click");
-  }
-);
-
 function animateTransitions() {
 /* ******** ******** ******** ******** ******** ******** ******** ********  ******** 
  *  animateTransitions triggers jQuery transition effects which allows 
@@ -130,14 +124,6 @@ function animateLandingPageElements() {
   section_social_selector = "#section-social";
   nav_selector = setNavSelector();
 
-  // IF/ELSE statement which sets the value of 'section_logo_selector' to refer to the logo which appears 
-  // on either a handheld device or a tablet or larger.
-  if (nav_selector === ".section-nav-iphone") {
-    section_logo_selector = nav_selector + " .section-logo";
-  } else {
-    section_logo_selector = ".section-logo";
-  }
-  
   // jQuery Objects which refer to the HTML elements with CSS selectors listed above are passed 
   // on to the Object variables initialized earler.
   header_intro_welcome_element = $(header_intro_welcome_selector);
@@ -147,7 +133,6 @@ function animateLandingPageElements() {
   header_copy_element = $(header_copy_selector);
   nav_element = $(nav_selector);
   section_social_element = $(section_social_selector);
-  section_logo_element = $(section_logo_selector);
 
   // The HTML elements within the Landing Page are made visible.
   $(header_intro_welcome_element).fadeTo(700, 1);
@@ -186,24 +171,17 @@ function animatePageElements(url_string) {
   // the String variables initialized earlier.
   header_h1_selector = "header h1";
   header_border_selector = ".header-border-title";
-  section_logo_selector = ".section-logo";
   nav_selector = setNavSelector();
 
   // jQuery Objects which refer to the HTML elements with CSS selectors listed above are passed 
   // on to the Object variables initialized earler.
   header_h1_element = $(header_h1_selector);
   header_border_element = $(header_border_selector);
-  section_logo_element = $(section_logo_selector);
   nav_element = $(nav_selector);
 
   // The HTML elements within the Landing Page are made visible.  
   $(nav_element).fadeTo(700, 1);
 
-  // IF/ELSE statement which displays the webpage logo if the browser is not for a handheld device.
-  if (nav_selector === ".nav-other")  {
-    $(section_logo_element).fadeTo(900, 1);
-  }
-  
   $(header_h1_element).fadeTo(900, 1);
 
   // IF/ELSE statement which displays the various page HTML elements based on the URL of the webpage.
@@ -300,7 +278,15 @@ console.log('webpage_value = ' + webpage_value);
   if (webpage_value === "open_menu")  {
     setTimeout(
       function () {
-        $(menu_icon_element).css("backgroundPosition", "0px -240px");
+
+        // IF/ELSE statement which sets the click state of the menu icon according to 
+        // the type of browser window, handheld device or tablet/desktop.
+        if (nav_selector === ".section-nav-iphone") {
+          $(menu_icon_element).css("backgroundPosition", "0px -80px");
+
+        } else if (nav_selector === ".nav-other") {
+          $(menu_icon_element).css("backgroundPosition", "0px -240px");
+        }
 
         menu_items_css.display = "block";
 
@@ -310,8 +296,15 @@ console.log('webpage_value = ' + webpage_value);
   } else if (webpage_value === "close_menu") {
     setTimeout(
       function () {
-        $(menu_icon_element).css("backgroundPosition", "0px -120px");
-        
+        // IF/ELSE statement which sets the click state of the menu icon according to 
+        // the type of browser window, handheld device or tablet/desktop.
+        if (nav_selector === ".section-nav-iphone") {
+          $(menu_icon_element).css("backgroundPosition", "0px 0px");
+
+        } else if (nav_selector === ".nav-other") {
+          $(menu_icon_element).css("backgroundPosition", "0px -120px");
+        }
+
         menu_items_css.display = "none";
         
         $(menu_icon_element).attr("href", "#open_menu");
