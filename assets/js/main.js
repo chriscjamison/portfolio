@@ -78,7 +78,7 @@ function animateTransitions() {
   url_string = window.location.pathname;
 
   // IF/ELSE statement that sets a flag which determines which content is to made visible.
-  if (url_string === "/" || url_string === "index.htm") {
+  if (url_string === "/" || url_string === "/index.htm") {
     animateLandingPageElements();
   } else {
     animatePageElements(url_string);
@@ -100,7 +100,6 @@ function animateLandingPageElements() {
   var header_border_name_selector = "";
   var header_copy_selector = "";
   var section_social_selector = "";
-  var section_logo_selector = "";
   var nav_selector = "";
 
   // Object variables which will contain the jQuery Objects which refer to HTML elements 
@@ -124,6 +123,14 @@ function animateLandingPageElements() {
   section_social_selector = "#section-social";
   nav_selector = setNavSelector();
 
+  // IF/ELSE statement which sets the value of 'section_logo_selector' to refer to the logo which appears 
+  // on either a handheld device or a tablet or larger.
+  if (nav_selector === ".section-nav-iphone") {
+    section_logo_selector = nav_selector + " .section-logo";
+  } else {
+    section_logo_selector = ".section-logo";
+  }
+  
   // jQuery Objects which refer to the HTML elements with CSS selectors listed above are passed 
   // on to the Object variables initialized earler.
   header_intro_welcome_element = $(header_intro_welcome_selector);
@@ -133,6 +140,7 @@ function animateLandingPageElements() {
   header_copy_element = $(header_copy_selector);
   nav_element = $(nav_selector);
   section_social_element = $(section_social_selector);
+  section_logo_element = $(section_logo_selector);
 
   // The HTML elements within the Landing Page are made visible.
   $(header_intro_welcome_element).fadeTo(700, 1);
@@ -171,17 +179,24 @@ function animatePageElements(url_string) {
   // the String variables initialized earlier.
   header_h1_selector = "header h1";
   header_border_selector = ".header-border-title";
+  section_logo_selector = ".section-logo";
   nav_selector = setNavSelector();
 
   // jQuery Objects which refer to the HTML elements with CSS selectors listed above are passed 
   // on to the Object variables initialized earler.
   header_h1_element = $(header_h1_selector);
   header_border_element = $(header_border_selector);
+  section_logo_element = $(section_logo_selector);
   nav_element = $(nav_selector);
 
   // The HTML elements within the Landing Page are made visible.  
   $(nav_element).fadeTo(700, 1);
 
+  // IF/ELSE statement which displays the webpage logo if the browser is not for a handheld device.
+  if (nav_selector === ".nav-other")  {
+    $(section_logo_element).fadeTo(900, 1);
+  }
+  
   $(header_h1_element).fadeTo(900, 1);
 
   // IF/ELSE statement which displays the various page HTML elements based on the URL of the webpage.
@@ -228,6 +243,206 @@ function animatePageElements(url_string) {
 } // END of FUNCTION animatePageElements
 
 
+function animateiPadPageElements(webpage_value)  {
+/* 
+ * This function will slide the menu options into view within browsers for tablets - 
+ * browsers with a width less than 1024px.
+ */
+
+  // String variables which will hold CSS selectors for various HTML elements are initialized.
+  var header_selector = "";
+  var article_selector = "";
+  var section_logo_selector = "";
+  var nav_selector = "";
+
+  // Object variables which will hold jQuery objects which refer to various HTML elements 
+  // are initialized.
+  var header_element = {};
+  var article_element = {};
+  var section_logo_element = {};
+  var nav_element = {};
+
+  // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
+  header_selector = "header";
+  article_selector = "article";
+  section_logo_selector = ".section-logo";
+  nav_selector = setNavSelector();
+
+  // jQuery objects which refer to various HTML elements to be made visible are passed on.
+  header_element = $(header_selector);
+  article_element = $(article_selector);
+  section_logo_element = $(section_logo_selector);
+  nav_element = $(nav_selector);
+
+  // An Object which will hold CSS properties and values to reposition the menu.
+  var nav_css = {};
+
+  // IF/ELSE statement which will either make the HTML elements holding content visible 
+  // or not visible.
+  if (webpage_value === "open_menu")  {
+    $(header_element).fadeTo(50, 0);
+    $(article_element).fadeTo(50, 0);
+    $(section_logo_element).fadeTo(50, 0);
+
+    // The CSS properties and values which reposition the menu are passed on.
+    nav_css = {
+      position: "absolute", 
+      right: "4rem"
+    };
+
+    $(nav_element).css(nav_css);
+  } else if (webpage_value === "close_menu")  {
+    $(header_element).fadeTo(150, 1);
+    $(article_element).fadeTo(150, 1);
+    $(section_logo_element).fadeTo(150, 1);
+
+    // The CSS properties and values which reposition the menu are passed on.
+    nav_css = {
+      position: "relative", 
+      right: "0"
+    };
+
+    $(nav_element).css("position", "relative");
+  }
+}
+
+
+
+function animateOpenMenu(webpage_value)  {
+/* 
+ * This function will slide the menu options into view.
+ */
+
+  // A String variable which will hold a CSS selector for the menu icon is initialized.
+  var menu_icon_selector = "";
+
+  // An Object variable which will hold a jQuery object which refers to the menu icon 
+  // is initialized.
+  var menu_icon_element = {};
+
+  // The CSS selector for the menu icon is passed on;
+  menu_icon_selector = "#nav-link-menu";
+
+  // A jQuery object which refers to the menu icon is passed on.
+  menu_icon_element = $(menu_icon_selector);
+
+  // A String variable which will hold a CSS selector for the menu is initialized.
+  var nav_selector = "";
+
+  // The CSS selector for the main menu is passed on by using the function, 'setNavSelector', 
+  // to determine if the browser used is for a handheld device or a larger display.
+  nav_selector = setNavSelector();
+
+  // IF/ELSE statement which sets the click state of the menu icon according to 
+  // the type of browser window, handheld device or tablet/desktop.
+  if (nav_selector === ".section-nav-iphone") {
+    $(menu_icon_element).css("backgroundPosition", "0px -80px");
+
+    // An Object variable which holds a jQuery object which refers to the menu 
+    // is initialized.
+    var nav_element = {};
+    
+    // The jQuery object which refers to the menu is passed on. 
+    nav_element = $(nav_selector);
+
+    // The background for the menu will now take up the length of the browser window 
+    // on handheld displays.
+    $(nav_element).addClass("nav-iphone-visible");
+
+  } else if (nav_selector === ".nav-other") {
+    // A Number variable which will hold the width of the browser is initialized.
+    var window_width;
+
+    // The width of the browser is passed on using the jQuery Method, '.width()'.
+    window_width = $(window).width();
+
+    // IF/ELSE statement which will slide the menu icon slightly to the left if the browser 
+    // width is less than 1024px.
+    if (window_width > 414 && window_width <= 1024) {
+      
+      // A String variable which will hold the pathname is initialized.
+      var url_string = "";
+
+      // The pathname of the current webpage is passed on.
+      url_string = window.location.pathname;
+
+      // IF/ELSE statement which animates the opacity of the page elements if the 
+      // current webpage is not the Landing Page.
+      if (url_string !== "/" && url_string !== "/index.htm")  {
+        animateiPadPageElements(webpage_value);
+      }
+
+      // The menu icon is made to appear slightly to the left of its base position.
+      $(menu_icon_element).css("marginLeft", "0");
+    }
+
+    $(menu_icon_element).css("backgroundPosition", "0px -240px");
+  }
+
+  $(menu_icon_element).attr("href", "#close_menu");
+}
+
+
+function animateCloseMenu(webpage_value)  {
+/* 
+ * This function will hide the menu options from view.
+ */
+
+  // A String variable which will hold a CSS selector for the menu icon is initialized.
+  var menu_icon_selector = "";
+
+  // An Object variable which will hold a jQuery object which refers to the menu icon 
+  // is initialized.
+  var menu_icon_element = {};
+
+  // The CSS selector for the menu icon is passed on;
+  menu_icon_selector = "#nav-link-menu";
+
+  // A jQuery object which refers to the menu icon is passed on.
+  menu_icon_element = $(menu_icon_selector);
+
+  // A String variable which will hold a CSS selector for the menu is initialized.
+  var nav_selector = "";
+
+  // The CSS selector for the main menu is passed on by using the function, 'setNavSelector', 
+  // to determine if the browser used is for a handheld device or a larger display.
+  nav_selector = setNavSelector();
+
+  // IF/ELSE statement which sets the click state of the menu icon according to 
+  // the type of browser window, handheld device or tablet/desktop.
+  if (nav_selector === ".section-nav-iphone") {
+    // An Object variable which holds a jQuery object which refers to the menu 
+    // is initialized.
+    var nav_element = {};
+    
+    // The jQuery object which refers to the menu is passed on. 
+    nav_element = $(nav_selector);
+    
+    $(menu_icon_element).css("backgroundPosition", "0px 0px");
+
+    $(nav_element).removeClass("nav-iphone-visible");
+  } else if (nav_selector === ".nav-other") {
+    $(menu_icon_element).css("backgroundPosition", "0px -120px");
+
+    // A Number variable which will hold the width of the browser is initialized.
+    var window_width;
+
+    // The width of the browser is passed on using the jQuery Method, '.width()'.
+    window_width = $(window).width();
+
+    // IF/ELSE statement which will slide the menu icon back to its base position.
+    if (window_width > 414 && window_width <= 1024) {
+
+      // The menu icon is made to return to its base position.
+      $(menu_icon_element).css("marginLeft", "4rem"); // 64px
+
+      // The HTML elements containing content are made visible.
+      animateiPadPageElements(webpage_value);
+    }
+  }
+  
+  $(menu_icon_element).attr("href", "#open_menu");
+}
 
 function animateMenu(webpage_value) {
 /* 
@@ -272,44 +487,63 @@ function animateMenu(webpage_value) {
   menu_items_css = {
     opacity: 0
   };
-console.log('webpage_value = ' + webpage_value);
+
   // IF/ELSE statement which swaps the click state of the menu icon to its base state 
   // to a click state.
   if (webpage_value === "open_menu")  {
     setTimeout(
       function () {
-
-        // IF/ELSE statement which sets the click state of the menu icon according to 
-        // the type of browser window, handheld device or tablet/desktop.
-        if (nav_selector === ".section-nav-iphone") {
-          $(menu_icon_element).css("backgroundPosition", "0px -80px");
-
-        } else if (nav_selector === ".nav-other") {
-          $(menu_icon_element).css("backgroundPosition", "0px -240px");
-        }
-
-        menu_items_css.display = "block";
-
-        $(menu_icon_element).attr("href", "#close_menu");
+        animateOpenMenu(webpage_value);
       }, 175
     );    
+
+    menu_items_css.display = "block";
   } else if (webpage_value === "close_menu") {
     setTimeout(
       function () {
-        // IF/ELSE statement which sets the click state of the menu icon according to 
-        // the type of browser window, handheld device or tablet/desktop.
-        if (nav_selector === ".section-nav-iphone") {
-          $(menu_icon_element).css("backgroundPosition", "0px 0px");
-
-        } else if (nav_selector === ".nav-other") {
-          $(menu_icon_element).css("backgroundPosition", "0px -120px");
-        }
-
-        menu_items_css.display = "none";
-        
-        $(menu_icon_element).attr("href", "#open_menu");
+        animateCloseMenu(webpage_value);
       }, 175
     );
+    
+    menu_items_css.display = "none";
+  }
+
+  // IF/ELSE statement which animates the background of the menu if the browser is for 
+  // a handheld device.
+  if (nav_selector === ".section-nav-iphone") {
+    // A Number variable which will hold the width of the browser is initialized.
+    var window_width;
+
+    // The width of the browser width is passed on using the jQuery Method, '.width()'.
+    window_width = $(window).width();
+
+    // A String variable whicih will hold the new value of the background height 
+    // is initialized.
+    var background_height = "";
+
+    // IF/ELSE statement which will determine the size of the background based on 
+    // the dimensions of the browser.
+    if (window_width <= 320)  {
+      background_height = "35.5rem"; // 568px
+    } else if (window_width > 320 && window_width <= 360) {
+      background_height = "40rem"; // 640px
+    } else if (window_width > 360 && window_width <= 375) {
+      // A Number variable which will hold the height of the browser is initialized.
+      var browser_height;
+
+      // The height of the browser is passed on using the jQuery Method, '.height()'.
+      browser_height = $(window).height();
+
+      // IF/ELSE statement which will determine the height of the background based on 
+      // the height of the browser.
+      if (browser_height === 667) {
+        background_height = "41.75rem"; // 668px
+      } else if (browser_height === 812)  {
+        background_height = "50.75rem"; // 812px
+      }
+    } else if (window_width > 375 && window_width <= 414) {
+      background_height = "46rem"; // 736px
+    }
   }
 
   // A String variable which will hold the CSS selector for the menu items is initialized.
@@ -326,19 +560,29 @@ console.log('webpage_value = ' + webpage_value);
   // The jQuery object which refers to the menu items is passed on.
   menu_items_element = $(menu_items_selector);
 
-  $(menu_icon_element).delay(200).fadeTo(150, 1);
-console.log("menu_items_css.display = " + menu_items_css.display);
+  $(menu_icon_element).delay(350).fadeTo(150, 1);
   
   setTimeout(
     function () {
-      console.log("menu_items_css.display = " + menu_items_css.display);
-      $(menu_items_element).css(menu_items_css);    
-    }, 200
+      $(menu_items_element).css(menu_items_css);
+    }, 350
   );
   
+  // IF/ELSE statement which will animate the background of the menu if the browser 
+  // used is for a handheld device.
+  if (nav_selector === ".section-nav-iphone") {
 
-  $(menu_items_element).delay(400).fadeTo(150, 1);
+    // IF/ELSE statement which for handheld devices lengthens the background of the menu 
+    // or shortens it.
+    if (webpage_value === "close_menu")  {
+      // The default height of the menu is passed on.
+      background_height = "4.69rem"; // 75px      
+    }
 
+    $(nav_element).delay(650).animate({
+      height: background_height
+    }, 350);    
+  } 
 } // END of FUNCTION animateMenu
 
 

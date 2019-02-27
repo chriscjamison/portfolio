@@ -157,7 +157,8 @@ header {
     header #header-name span {
       display: inline-block; }
   header #header-border-name,
-  header #div-menu-iphone-border {
+  header #div-menu-iphone-border,
+  header #div-menu-other-border {
     background: #ec1a63;
     background: linear-gradient(90deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%);
     opacity: 0; }
@@ -1308,7 +1309,7 @@ article .section-case_study-takeaways h3 {
 @media (min-width: 415px) and (max-width: 1024px) {
   /* **** LANDING PAGE **** */
   #body-landing {
-    grid-template-columns: auto 2.37rem;
+    grid-template-columns: auto 8rem;
     row-gap: 11rem; }
   header {
     grid-column: 1 / span 1;
@@ -1325,6 +1326,25 @@ article .section-case_study-takeaways h3 {
       header .header-copy #header-copy-desktop {
         display: none; }
       header .header-copy #header-copy-ipad {
+        display: block; }
+  nav {
+    background-color: #fff; }
+    nav #div-menu-other-border {
+      width: 0.13rem;
+      height: 100%;
+      background: #ec1a63;
+      background: linear-gradient(180deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%); }
+    nav #nav-link-menu {
+      width: 3.75rem;
+      height: 3.75rem;
+      margin-left: 4rem;
+      background-image: url("/assets/img/menu/main_menu.png");
+      background-position: 0px -120px; }
+    nav .nav-menu-items {
+      width: 7.5rem;
+      margin-left: 0.75rem; }
+      nav .nav-menu-items .nav-links-text-a {
+        margin-top: 1rem;
         display: block; }
   .nav-other {
     grid-column: 2 / span 1;
@@ -1347,7 +1367,7 @@ article .section-case_study-takeaways h3 {
       transform: translate(0%, 240%); }
   /* **** BIOGRAPHY **** */
   #body-content {
-    grid-template-columns: auto 9.5rem;
+    grid-template-columns: auto 8rem;
     grid-row-gap: 2rem;
     margin: 3rem 4rem; }
   header h1 {
@@ -1748,6 +1768,11 @@ article .section-case_study-takeaways h3 {
       .section-nav-iphone nav #nav-link-menu {
         width: 2.37rem;
         height: 2.37rem; }
+      .section-nav-iphone nav .nav-menu-items {
+        width: 7rem; }
+        .section-nav-iphone nav .nav-menu-items .nav-links-text-a {
+          margin-top: 1.25rem;
+          display: block; }
     .section-nav-iphone .section-logo {
       grid-column: auto;
       width: 3.75rem;
@@ -1759,6 +1784,8 @@ article .section-case_study-takeaways h3 {
   .nav-other,
   .section-logo-other {
     display: none; }
+  #section-social {
+    margin-bottom: 4rem; }
   /* **** BIOGRAPHY **** */
   #body-content {
     row-gap: 2rem; }
@@ -1833,6 +1860,8 @@ article .section-case_study-takeaways h3 {
   /* **** MAIN NAVIGATION **** */
   .section-nav-iphone {
     width: 22rem; }
+  .nav-iphone-visible {
+    height: 46rem; }
   /* **** LANDING PAGE **** */
   header #header-name {
     font-size: 3.4rem; }
