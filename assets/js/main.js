@@ -30,7 +30,7 @@ $(document).ready(
           // A path to the webpage a visitor wishes to visit is assembled by first setting the domain of the 
           // website, 'http://chriscjamison.com', passing on the value of 'webpage_value' and finally 
           // cocatenating the string, '.htm'.
-          new_url_string = "http://chrisjamison.com/" + webpage_value + ".htm";
+          new_url_string = "http://chriscjamison.com/" + webpage_value + ".htm";
 
           // A String variable which will hold the CSS selector which refers to the content is initialized.
           var body_selector = "";
@@ -283,30 +283,118 @@ function animateiPadPageElements(webpage_value)  {
     $(header_element).fadeTo(50, 0);
     $(article_element).fadeTo(50, 0);
     $(section_logo_element).fadeTo(50, 0);
-
-    // The CSS properties and values which reposition the menu are passed on.
-    nav_css = {
-      position: "absolute", 
-      right: "4rem"
-    };
-
-    $(nav_element).css(nav_css);
   } else if (webpage_value === "close_menu")  {
     $(header_element).fadeTo(150, 1);
     $(article_element).fadeTo(150, 1);
     $(section_logo_element).fadeTo(150, 1);
-
-    // The CSS properties and values which reposition the menu are passed on.
-    nav_css = {
-      position: "relative", 
-      right: "0"
-    };
-
-    $(nav_element).css("position", "relative");
   }
 }
 
 
+
+function animateMenuIcon() {
+  // A String variable which will hold the CSS selector for the menu icon is initialized.
+  var menu_icon_selector = "";
+
+  // An Object variable which will hold the jQuery object which refers to the menu icon 
+  // initialized.
+  var menu_icon_element = {};
+
+  // The CSS selector for the menu icon is assembled by cocatenating the value of 'nav_selector' 
+  // and the selector, '#nav-link-menu' is passed on.
+  menu_icon_selector = nav_selector + " #nav-link-menu";
+
+  // The jQuery object which refers to the menu icon is passed on.
+  menu_icon_element = $(menu_icon_selector);
+
+  // A String variable which will hold the value of the CSS property of 'opacity' for the 
+  // menu icon is initialized.
+  var menu_icon_opacity = "";
+
+  // The value of the CSS property of 'opacity' for the menu icon is passed on.
+  menu_icon_opacity = $(menu_icon_element).css("opacity");
+  // IF/ELSE statement which displays the menu icon if it is not visible, and 
+  // hides the menu icon if it is visible.
+  if (menu_icon_opacity === "1")  {
+    // The menu icon fades away.
+    $(menu_icon_element).fadeTo(150, 0);
+  } else {
+    // The menu icon fades in.
+    $(menu_icon_element).fadeTo(150, 1);
+  }
+}
+// END of FUNCTION animateMenuIcon
+
+
+
+function animateMenuOptions(menu_items_css) {
+/* 
+ * This function will fade the menu options into view.
+ */
+
+  // A String variable which will hold a CSS selector for the menu is initialized.
+  var nav_selector = "";
+
+  // The CSS selector for the main menu is passed on by using the function, 'setNavSelector', 
+  // to determine if the browser used is for a handheld device or a larger display.
+  nav_selector = setNavSelector();
+
+  // A String variable which will hold the CSS selector for the menu items is initialized.
+  var menu_items_selector = "";
+
+  // An Object variable which will hold the jQuery object which refers to the menu items 
+  // is initialized.
+  var menu_items_element = {};
+
+  // The CSS selector for the menu items is assembled by cocatenating the value of 'nav_selector' 
+  // and the selector, '.nav-menu-items' is passed on.
+  menu_items_selector = nav_selector + " .nav-menu-items";
+
+  // The jQuery object which refers to the menu items is passed on.
+  menu_items_element = $(menu_items_selector);
+  
+  setTimeout(
+    function () {
+      animateMenuIcon();
+      $(menu_items_element).css(menu_items_css);
+      
+      // IF/ELSE statement which intializes variables and sets CSS values for a border within the menu 
+      // which only loads on tablet displays.
+      if (nav_selector === ".nav-other")  {
+        
+        // A Number variable which will hold the width of the browser window is initialized.
+        var window_width;
+
+        // The width of the browser window is passed on by using the jQuery Method, '.width()'.
+        window_width = $(window).width();
+
+        // IF/ELSE statement which will create and set variables which will display or hide 
+        // the border within the menu.
+        if (window_width > 414 && window_width <= 1024) {
+
+          // A String variable which will hold the CSS selector for the border within the menu 
+          // is initialized.
+          var menu_border_selctor = "";
+
+          // An Object variable which will hold the jQuery object which referst to the border 
+          // within the menu is initialized.
+          var menu_border_element = {};
+
+          // The CSS selector for the border within the menu is passed on. The selector is 
+          // created by cocatenating the value of 'nav_selector' with '#div-menu-other-border'.
+          menu_border_selctor = nav_selector + " #div-menu-other-border";
+
+          // A jQuery object which refers to the border within the menu is passed on.
+          menu_border_element = $(menu_border_selctor);
+
+          $(menu_border_element).css(menu_items_css);
+        }
+      }
+    }, 350
+  );
+} // END of FUNCTION animateMenuOptions
+
+  
 
 function animateOpenMenu(webpage_value)  {
 /* 
@@ -380,7 +468,8 @@ function animateOpenMenu(webpage_value)  {
   }
 
   $(menu_icon_element).attr("href", "#close_menu");
-}
+} // END of FUNCTION animateOpenMenu
+
 
 
 function animateCloseMenu(webpage_value)  {
@@ -442,7 +531,54 @@ function animateCloseMenu(webpage_value)  {
   }
   
   $(menu_icon_element).attr("href", "#open_menu");
-}
+} // END of FUNCTION animateCloseMenu
+
+
+
+function determineBackgroundHeight()  {
+/* 
+ * This function will determine the height of the background of the menu 
+ * according to the height of the browser window. 
+ */
+
+  // A Number variable which will hold the width of the browser is initialized.
+  var window_width;
+
+  // The width of the browser width is passed on using the jQuery Method, '.width()'.
+  window_width = $(window).width();
+
+  // A String variable whicih will hold the new value of the background height 
+  // is initialized.
+  var background_height = "";
+
+  // IF/ELSE statement which will determine the size of the background based on 
+  // the dimensions of the browser.
+  if (window_width <= 320)  {
+    background_height = "35.5rem"; // 568px
+  } else if (window_width > 320 && window_width <= 360) {
+    background_height = "40rem"; // 640px
+  } else if (window_width > 360 && window_width <= 375) {
+    // A Number variable which will hold the height of the browser is initialized.
+    var browser_height;
+
+    // The height of the browser is passed on using the jQuery Method, '.height()'.
+    browser_height = $(window).height();
+
+    // IF/ELSE statement which will determine the height of the background based on 
+    // the height of the browser.
+    if (browser_height === 667) {
+      background_height = "41.75rem"; // 668px
+    } else if (browser_height === 812)  {
+      background_height = "50.75rem"; // 812px
+    }
+  } else if (window_width > 375 && window_width <= 414) {
+    background_height = "46rem"; // 736px
+  }
+
+  return background_height;
+} // END of FUNCTION determineBackgroundHeight
+
+
 
 function animateMenu(webpage_value) {
 /* 
@@ -459,34 +595,14 @@ function animateMenu(webpage_value) {
   // The CSS selector for the visible menu is passed on by using the function, 'setNavSelector'.
   nav_selector = setNavSelector();
 
-// console.log("nav_selector = " + nav_selector);
   // The jQuery object which refers to the main menu is passed on.
   nav_element = $(nav_selector);
 
-  // A String variable which will hold the CSS selector for the menu icon is initialized.
-  var menu_icon_selector = "";
-
-  // An Object variable which will hold the jQuery object which refers to the menu icon 
-  // initialized.
-  var menu_icon_element = {};
-
-  // The CSS selector for the menu icon is assembled by cocatenating the value of 'nav_selector' 
-  // and the selector, '#nav-link-menu' is passed on.
-  menu_icon_selector = nav_selector + " #nav-link-menu";
-
-  // The jQuery object which refers to the menu icon is passed on.
-  menu_icon_element = $(menu_icon_selector);
-
-  // The menu icon fades away and back in.
-  $(menu_icon_element).fadeTo(150, 0);
+  animateMenuIcon();
 
   // An Object variable which will hold CSS properties and values used to style the menu icon 
   // is initialized.
   menu_items_css = {};
-  
-  menu_items_css = {
-    opacity: 0
-  };
 
   // IF/ELSE statement which swaps the click state of the menu icon to its base state 
   // to a click state.
@@ -495,9 +611,12 @@ function animateMenu(webpage_value) {
       function () {
         animateOpenMenu(webpage_value);
       }, 175
-    );    
+    );
 
-    menu_items_css.display = "block";
+    menu_items_css = {
+      display: "block", 
+      opacity: 1
+    };
   } else if (webpage_value === "close_menu") {
     setTimeout(
       function () {
@@ -505,68 +624,25 @@ function animateMenu(webpage_value) {
       }, 175
     );
     
-    menu_items_css.display = "none";
+    menu_items_css = {
+      display: "none", 
+      opacity: 0
+    };
   }
 
   // IF/ELSE statement which animates the background of the menu if the browser is for 
   // a handheld device.
   if (nav_selector === ".section-nav-iphone") {
-    // A Number variable which will hold the width of the browser is initialized.
-    var window_width;
-
-    // The width of the browser width is passed on using the jQuery Method, '.width()'.
-    window_width = $(window).width();
-
-    // A String variable whicih will hold the new value of the background height 
-    // is initialized.
+    // A String variable which holds the height the background of the menu will be as 
+    // menu options are visible is initiated.
     var background_height = "";
 
-    // IF/ELSE statement which will determine the size of the background based on 
-    // the dimensions of the browser.
-    if (window_width <= 320)  {
-      background_height = "35.5rem"; // 568px
-    } else if (window_width > 320 && window_width <= 360) {
-      background_height = "40rem"; // 640px
-    } else if (window_width > 360 && window_width <= 375) {
-      // A Number variable which will hold the height of the browser is initialized.
-      var browser_height;
-
-      // The height of the browser is passed on using the jQuery Method, '.height()'.
-      browser_height = $(window).height();
-
-      // IF/ELSE statement which will determine the height of the background based on 
-      // the height of the browser.
-      if (browser_height === 667) {
-        background_height = "41.75rem"; // 668px
-      } else if (browser_height === 812)  {
-        background_height = "50.75rem"; // 812px
-      }
-    } else if (window_width > 375 && window_width <= 414) {
-      background_height = "46rem"; // 736px
-    }
+    background_height = determineBackgroundHeight();
   }
 
-  // A String variable which will hold the CSS selector for the menu items is initialized.
-  var menu_items_selector = "";
 
-  // An Object variable which will hold the jQuery object which refers to the menu items 
-  // is initialized.
-  var menu_items_element = {};
-
-  // The CSS selector for the menu items is assembled by cocatenating the value of 'nav_selector' 
-  // and the selector, '.nav-menu-items' is passed on.
-  menu_items_selector = nav_selector + " .nav-menu-items";
-
-  // The jQuery object which refers to the menu items is passed on.
-  menu_items_element = $(menu_items_selector);
-
-  $(menu_icon_element).delay(350).fadeTo(150, 1);
   
-  setTimeout(
-    function () {
-      $(menu_items_element).css(menu_items_css);
-    }, 350
-  );
+  animateMenuOptions(menu_items_css);
   
   // IF/ELSE statement which will animate the background of the menu if the browser 
   // used is for a handheld device.

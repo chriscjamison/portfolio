@@ -839,6 +839,7 @@ article {
     }
 
     .nav-menu-items {
+      margin-top: 0;
       display: block;
       position: relative;
 
@@ -1804,7 +1805,7 @@ article {
 
   #body-landing {
     margin: 3rem; // 48px
-    row-gap: 11rem; // 178px
+    row-gap: 8.75rem; // 140px
   }
 
   header {
@@ -2380,13 +2381,18 @@ article {
   }
 
   nav {
+    position: fixed;
+    right: 4rem;
     background-color: #fff;
-    
+    z-index: 2;
+
     #div-menu-other-border {
-      width: 0.13rem; // 2px
+      width: 0.188rem; // 3px
       height: 100%;
+      float: left;
       background: $magenta;
       background: linear-gradient(180deg, $orange 0%, $magenta 26%, $light_blue 26%, $dark_blue 100%);  
+      opacity: 0;
     }
 
     #nav-link-menu {
@@ -2904,6 +2910,14 @@ article {
     *************************** */  
      
 @media (min-width: 769px) and (max-width: 1024px)  {
+  
+  /* **** MAIN NAVIGATION **** */
+  nav {
+    #div-menu-other-border {
+      height: 79.13rem; // 1,266px
+    }
+  }
+
 
   /* **** LANDING PAGE **** */
 
@@ -3039,7 +3053,15 @@ article {
     *************************** */  
 
 @media (min-width: 415px) and (max-width: 768px)  {
+
+  /* **** MAIN NAVIGATION **** */
+  nav {
+    #div-menu-other-border {
+      height: 58.13rem; // 930px
+    }
+  }
   
+
   /* **** BIOGRAPHY **** */ 
 
   article {

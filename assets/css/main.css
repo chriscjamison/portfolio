@@ -515,6 +515,7 @@ article .section-case_study-takeaways h3 {
       display: none !important;
       transform: none !important; }
     #nav-other-landing .nav-menu-items {
+      margin-top: 0;
       display: block;
       position: relative; }
       #nav-other-landing .nav-menu-items .nav-links-text-a {
@@ -1046,7 +1047,7 @@ article .section-case_study-takeaways h3 {
   /* **** LANDING PAGE **** */
   #body-landing {
     margin: 3rem;
-    row-gap: 11rem; }
+    row-gap: 8.75rem; }
   header #header-intro {
     position: relative;
     top: 0.2rem; }
@@ -1328,12 +1329,17 @@ article .section-case_study-takeaways h3 {
       header .header-copy #header-copy-ipad {
         display: block; }
   nav {
-    background-color: #fff; }
+    position: fixed;
+    right: 4rem;
+    background-color: #fff;
+    z-index: 2; }
     nav #div-menu-other-border {
-      width: 0.13rem;
+      width: 0.188rem;
       height: 100%;
+      float: left;
       background: #ec1a63;
-      background: linear-gradient(180deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%); }
+      background: linear-gradient(180deg, #f6895b 0%, #ec1a63 26%, #00afde 26%, #006fb9 100%);
+      opacity: 0; }
     nav #nav-link-menu {
       width: 3.75rem;
       height: 3.75rem;
@@ -1624,6 +1630,9 @@ article .section-case_study-takeaways h3 {
       iPAD PRO - 1024 x 1366
     *************************** */
 @media (min-width: 769px) and (max-width: 1024px) {
+  /* **** MAIN NAVIGATION **** */
+  nav #div-menu-other-border {
+    height: 79.13rem; }
   /* **** LANDING PAGE **** */
   body,
   #body-content {
@@ -1687,6 +1696,9 @@ article .section-case_study-takeaways h3 {
       iPAD - 768 x 1366
     *************************** */
 @media (min-width: 415px) and (max-width: 768px) {
+  /* **** MAIN NAVIGATION **** */
+  nav #div-menu-other-border {
+    height: 58.13rem; }
   /* **** BIOGRAPHY **** */
   article img {
     width: 33.25rem; }
