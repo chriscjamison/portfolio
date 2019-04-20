@@ -42,6 +42,7 @@ $sm_name_font_size: 2rem; // 24pt
 $sm_base_font_size: 1.25rem; // 15pt
 $sm_info_font_size: 1rem; // 12pt
 $sm_h4_font_size: 1.2rem; // 14pt
+$sm_sub_menu_font_size: 1.1rem; // 13pt
 
 $med_base_font_size: 1.5rem; // 18pt
 $med_h2_font_size: 1.75rem; // 21pt
@@ -61,6 +62,7 @@ $lg_h2_font_size: 2rem; // 24pt
 $lg_h3_font_size: 1.75rem; // 21pt
 $lg_h3_resume_job_font_size: 1.25rem; // 15pt
 $lg_work_exp_span_font_size: 1.3rem; // 16pt
+$lg_sub_menu_font_size: 1.25rem; // 15pt
 
 $sm_body_margin: 2rem; // 24px
 $sm_margin_spacer: 1.25rem; // 15px
@@ -240,6 +242,21 @@ nav {
     width: 2.25rem;
     height: 0.31rem; // 5px
     margin-top: $sm_margin_spacer;
+  }
+
+  #ul-menu-case_studies {
+    height: 0;
+    padding: 0;
+    display: none;
+
+    li {
+      list-style-type: none;
+
+      .nav-links-text-a {
+        display: none;
+        opacity: 0;
+      }
+    }
   }
 }
 
@@ -949,7 +966,7 @@ article {
     }
 
     .nav-menu-items {
-      width: 8.75rem; // 140px
+      width: 9rem; // 144px
       margin: $lg_margin_spacer_4 0.5rem 0 0; // 20px 8px 0 0
       position: absolute;
 
@@ -962,8 +979,15 @@ article {
       #nav-border {
         margin: $lg_margin_spacer_4 0 0 6.5rem; 
       }
+
+      #ul-menu-case_studies {
+        li {
+          .nav-links-text-a {
+            font-size: $lg_sub_menu_font_size;
+          }
+        }
+      }
     }
-    
   }
 
   .section-bio, 
@@ -1097,8 +1121,8 @@ article {
     }
 
     .div-spacer-horizontal {
-      width: 27.94rem;
-      margin: 4rem 0 3rem 0;
+      width: 27.94rem; // 447px
+      margin: 4rem 0 4rem 0; // 64px 0 64px 0
       position: relative;
     }
 
@@ -1641,8 +1665,8 @@ article {
 
   #body-content-conversation {
     grid-template-columns: 62rem 31rem 9.25rem; // 992px 496px 148px
-    row-gap: 6rem;
-    margin: 6rem;
+    row-gap: 6rem; // 96px
+    margin: 6rem; // 96px
   }
 
   #div-conversation-copy {
@@ -1677,7 +1701,7 @@ article {
   /* **** LANDING PAGE **** */
 
   #body-landing {
-    margin: 6rem; // 80px
+    margin: 6rem; // 96px
     row-gap: 15.25em; // 244px
   }
 
@@ -1857,6 +1881,12 @@ article {
   
   /* **** RESUME **** */
 
+  article {
+    .div-spacer-horizontal {
+      left: 34rem; // 544px
+    }
+  }
+
 
   
   /* **** CASE STUDY **** */
@@ -2002,6 +2032,14 @@ article {
       // The link within the main menu, 'Start a Conversation. 
       #nav-link-text-a-conversation {
         width: 7.5rem;
+      }
+    }
+
+    #ul-menu-case_studies {
+      li {
+        .nav-links-text-a {
+          font-size: $sm_sub_menu_font_size;
+        }
       }
     }
   }  
@@ -2334,6 +2372,7 @@ article {
 }
   
    
+
 /* ************************************************ 
       iPAD - 768 x 1024 & iPAD PRO - 1024 x 1366
     *********************************************** */  
@@ -2345,6 +2384,11 @@ article {
   #body-landing {
     grid-template-columns: auto 8rem; // auto 128px
     row-gap: 11rem;
+
+    nav {
+      right: 2rem;
+      background: none;
+    }
   }
 
   header {
@@ -2382,8 +2426,7 @@ article {
 
   nav {
     position: fixed;
-    right: 4rem;
-    background-color: #fff;
+    right: 2rem;
     z-index: 2;
 
     #div-menu-other-border {
@@ -2405,7 +2448,7 @@ article {
 
     .nav-menu-items {
       width: 7.5rem; // 120px
-      margin-left: 0.75rem; // 12px
+      margin-left: 1rem; // 16px
 
       .nav-links-text-a {
         margin-top: 1rem;
@@ -2457,7 +2500,7 @@ article {
   #body-content {
     grid-template-columns: auto 8rem; // auto 128px
     grid-row-gap: $sm_body_margin;
-    margin: 3rem 4rem; // 48px 64px
+    margin: 2rem; // 48px 64px
   }
   
   header {
@@ -2467,6 +2510,10 @@ article {
 
     #header-border-title-bio {
       width: 3rem; // 48px
+    }
+    
+    #header-border-title-case_study {
+      width: 10.3rem; // 165px
     }
   }
 
@@ -2837,21 +2884,12 @@ article {
   /* **** START A CONVERSATION **** */
     
   #body-content-conversation {
-    grid-template-columns: auto 9.5rem; // auto 152px
-    margin: 3rem 4rem; // 48px 64px
+    grid-template-columns: auto 8rem; // auto 136px
+    margin: 2rem; // 48px 64px
   }
 
   #section-conversation-links {
-    width: 21.5rem; // 344px
     display: none;
-
-    a {
-      font-size: $med_base_font_size;
-    }
-
-    #spacer-horizontal-div-conversation {
-      margin: 2rem auto 0.25rem auto; // 32px auto 4px auto
-    }
   }
 
   #div-conversation-copy {
@@ -2874,10 +2912,17 @@ article {
     }
   }
 
-  #form-conversation {
+  #div-conversation-copy + .div-spacer-horizontal {
+    grid-column: 1 / span 2;
     grid-row: 3 / span 1;
+    width: 21.89rem; // 350px
+    margin: 1rem auto 1rem auto; // 16px auto 16px auto
+  }
+
+  #form-conversation {
+    grid-row: 4 / span 1;
     width: 24.5rem; // 392px
-    margin: 0 auto;
+    margin: 1.5rem auto; // 24px auto
 
     .label-conversation {
       font-size: $med_h4_font_size;
@@ -2900,9 +2945,10 @@ article {
   }
 
   #section-logo-conversation {
-    grid-row: 4 / span 1;
+    grid-row: 5 / span 1;
   }
 }
+
 
 
 /* **************************** 
@@ -2913,8 +2959,10 @@ article {
   
   /* **** MAIN NAVIGATION **** */
   nav {
+    right: 6rem; // 96px
+
     #div-menu-other-border {
-      height: 79.13rem; // 1,266px
+      height: 73rem; // 1,168px
     }
   }
 
@@ -2928,11 +2976,15 @@ article {
 
   #body-landing {
     row-gap: 25rem; // 400px
+
+    nav {
+      right: 6rem; // 96px
+    }
   }
 
   .section-logo {
     a {
-      transform: translate(-50%, 240%);
+      transform: translate(0%, 240%);
     }
   }  
   
@@ -3034,18 +3086,61 @@ article {
       }
     }
   }
+
+
+  /* **** CASE STUDIES **** */
+
+  article {
+    .figure-case_study {
+      width: 52rem; // 832px
+
+      img {
+        width: 43.25rem; // 692px;
+      }
+    }
+
+    #figure-case_study-logo {
+      img {
+        width: 25.5rem; // 408px
+        margin-left: 10rem; // 160px
+      }
+    }
+
+    .section-case_study-takeaways {
+      width: 36rem; // 576px
+
+      .div-case_study-takeaways-list-item {
+        .div-case_study-takeaways-list-copy {
+          width: 33rem; // 528px
+        }
+      }
+    }
+
+    #article-border-end-case_study {
+      left: 40.5rem; // 648px
+    }
+  }
   
 
   /* **** START A CONVERSATION **** */ 
 
+  #body-content-conversation {
+    margin: 6rem; // 96px
+  }
+
   #div-conversation-copy {
     width: 42rem; // 672px
+  }
+
+  #div-conversation-copy + .div-spacer-horizontal {
+    width: 32.31rem; // 517px
   }
 
   #section-logo-conversation {
     margin-top: 2.75rem; // 44px
   }
 }
+
 
 
 /* **************************** 
@@ -3057,7 +3152,7 @@ article {
   /* **** MAIN NAVIGATION **** */
   nav {
     #div-menu-other-border {
-      height: 58.13rem; // 930px
+      height: 59rem; // 944px
     }
   }
   
@@ -3066,7 +3161,7 @@ article {
 
   article {
     img {
-      width: 33.25rem;  // 532px
+      width: 37.25rem;  // 596px
     }
 
     figure {
@@ -3084,7 +3179,7 @@ article {
     }
 
     #figure-bio-portrait img {
-      width: 40rem; // 640px
+      width: 44rem; // 704px
     }
 
     #article-border-end-bio {
@@ -3102,10 +3197,11 @@ article {
 
     .section-resume {
       width: 38.5rem; // 616px
+      margin: 2rem auto 1.5rem auto; // 32px auto 24px auto
     }
 
     .section-resume + .div-spacer-horizontal {
-      margin: 3rem 0 3rem 15rem; // 48px 0 48px 240px
+      margin: 3rem 0 3rem 16rem; // 48px 0 48px 256px
     }
 
     #section-resume-info {
@@ -3162,16 +3258,23 @@ article {
   /* **** CASE STUDY **** */ 
 
   article {
+    .figure-case_study {
+      width: 44rem; // 704px
+
+      img {
+        width: 35.25rem; // 564px
+      }
+    }
     #figure-case_study-logo {
       img {
-        width: 15.75rem; // 252px
-        margin-left: 6.5rem; // 104px
+        width: 25.5rem; // 408px
+        margin-left: 5rem; // 80px
       }
     }
   }
 
   #article-border-end-case_study {
-    left: 33.5rem; // 536px
+    left: 35.5rem; // 568px
   }
   
 
@@ -3227,7 +3330,7 @@ article {
       }
 
       .nav-menu-items {
-        width: 7rem; // 112px
+        width: 9.5rem; // 152px
 
         .nav-links-text-a {
           margin-top: $sm_margin_spacer;

@@ -4,7 +4,6 @@ $(document).ready(
   function () {
     $(window).on("hashchange", 
       function () { 
-        
         // A String variable of the URL hash is intialized.
         var url_hash = "";
 
@@ -17,11 +16,14 @@ $(document).ready(
         // The string following the hash character in the URL hash is passed on to 'webpage_value'.
         webpage_value = url_hash.slice(1);
 
-        // IF/ELSE statement which will determine the intent a visitor has when clicking on the main menu.
-        // If a visitor clicks on the menu icon, the menu will become visible. Otherwise, the browser 
-        // will navigate to another webpage.
+        // IF/ELSE statement which will determine the intent a visitor has when clicking a navigation link.
+        // If a visitor clicks on the menu icon, the menu will become visible. If a visitor clicks on 
+        // the link, 'View Case Studies', the sub menu holding links to case studies will become visible. 
+        // Otherwise, the browser will navigate to another webpage.
         if (webpage_value === "open_menu" || webpage_value === "close_menu") {
           animateMenu(webpage_value);
+        } else if (webpage_value === "case_studies")  {
+          animateCaseStudies();
         } else {
           // A String variable which will hold the path to the webpage a visitor wished to visit 
           // is initialized.
@@ -30,7 +32,7 @@ $(document).ready(
           // A path to the webpage a visitor wishes to visit is assembled by first setting the domain of the 
           // website, 'http://chriscjamison.com', passing on the value of 'webpage_value' and finally 
           // cocatenating the string, '.htm'.
-          new_url_string = "http://chriscjamison.com/" + webpage_value + ".htm";
+          new_url_string = "http://chrisjamison.com/" + webpage_value + ".htm";
 
           // A String variable which will hold the CSS selector which refers to the content is initialized.
           var body_selector = "";
@@ -209,14 +211,14 @@ function animatePageElements(url_string) {
     // within the webpage is initialized.
     var conversation_elements = {};
 
-    // IF/ELSE statement which includes a selctor, '#section-converation-links', if the browser is for a handheld browser.
+    // IF/ELSE statement which includes a selector, '#section-converation-links', if the browser is for a handheld browser.
     if (nav_selector === ".section-nav-iphone") {
       // CSS selectors which refer to the content soon to be displayed is passed on.
       conversation_selector = "#section-conversation-links, #div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
     } else {
       conversation_selector = "#div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
     }
-
+    
     // A jQuery object which refers to the HTML elements soon to be displayed is passed on.
     conversation_elements = $(conversation_selector);
 
@@ -249,44 +251,128 @@ function animateiPadPageElements(webpage_value)  {
  * browsers with a width less than 1024px.
  */
 
-  // String variables which will hold CSS selectors for various HTML elements are initialized.
-  var header_selector = "";
-  var article_selector = "";
-  var section_logo_selector = "";
-  var nav_selector = "";
+  // A String variable which will hold the URL of the current webpage is initialized.
+  var url_string = "";
 
-  // Object variables which will hold jQuery objects which refer to various HTML elements 
-  // are initialized.
-  var header_element = {};
-  var article_element = {};
-  var section_logo_element = {};
-  var nav_element = {};
+  // The URL of the current webpage is passed on.
+  url_string = window.location.href;
 
-  // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
-  header_selector = "header";
-  article_selector = "article";
-  section_logo_selector = ".section-logo";
-  nav_selector = setNavSelector();
+  // A String variable which will hold the filename which refers to the 'Start a Conversation' 
+  // webpage is initialized.
+  var start_a_conversation_search_string = "";
 
-  // jQuery objects which refer to various HTML elements to be made visible are passed on.
-  header_element = $(header_selector);
-  article_element = $(article_selector);
-  section_logo_element = $(section_logo_selector);
-  nav_element = $(nav_selector);
+  // A Number variable which will hold the location within 'url_string' that the filename 
+  // which refers to the 'Start a Conversation' webpage is initialized.
+  var start_a_conversation_search_index;
 
-  // An Object which will hold CSS properties and values to reposition the menu.
-  var nav_css = {};
+  // The filename of the webpage which refers to 'Start a Conversation' is passed on.
+  start_a_conversation_search_string = "start_a_conversation.htm";
 
-  // IF/ELSE statement which will either make the HTML elements holding content visible 
-  // or not visible.
-  if (webpage_value === "open_menu")  {
-    $(header_element).fadeTo(50, 0);
-    $(article_element).fadeTo(50, 0);
-    $(section_logo_element).fadeTo(50, 0);
-  } else if (webpage_value === "close_menu")  {
-    $(header_element).fadeTo(150, 1);
-    $(article_element).fadeTo(150, 1);
-    $(section_logo_element).fadeTo(150, 1);
+  // The location within 'url_string' which the filename which refers to 'Start a Conversation' 
+  // is passed on.
+  start_a_conversation_search_index = url_string.indexOf(start_a_conversation_search_string);
+
+  // IF/ELSE statement which determines which DOM elements to fade from view. If the current 
+  // webpage refers to 'Start a Conversation', the jQuery object which refer to DOM elements 
+  // specific to that webpage are initialzed. Otherwise, the jQuery objects referring to 
+  // typical DOM elements are iniitalized.
+  if (start_a_conversation_search_index > -1) {
+    // IF/ELSE statement which will either make the HTML elements holding content visible 
+    // or not visible.
+
+    // String variables which will hold CSS selectors for various HTML elements are initialized.
+    var header_selector = "";
+    var conversation_links_selector = "";
+    var conversation_copy_selector = "";
+    var conversation_border_selector = "";
+    var conversation_form_selector = "";
+
+    // Object variables which will hold jQuery objects which refer to various HTML elements 
+    // are initialized.
+    var header_element = {};
+    var conversation_links_element = {};
+    var conversation_copy_element = {};
+    var conversation_border_element = {};
+    var conversation_form_element = {};
+
+    // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
+    header_selector = "header";
+    conversation_links_selector = "#section-conversation-links";
+    conversation_copy_selector = "#div-conversation-copy";
+    conversation_border_selector = "#spacer-horizontal-div-conversation";
+    conversation_form_selector = "#form-conversation";
+
+    // jQuery objects which refer to various HTML elements to be made visible are passed on.
+    header_element = $(header_selector);
+    conversation_links_element = $(conversation_links_selector);
+    conversation_copy_element = $(conversation_copy_selector);
+    conversation_border_element = $(conversation_border_selector);
+    conversation_form_element = $(conversation_form_selector);
+
+    // IF/ELSE statement which will either make the HTML elements holding content visible 
+    // or not visible.
+    if (webpage_value === "open_menu")  {
+      $(header_element).fadeTo(50, 0);
+
+      // A Number variable which will hold the width of the browser is initialized.
+      var window_width;
+
+      // The width of the browser window is passed on.
+      window_width = $(window).width();
+
+      if (window_width <= 414)  {
+        $(conversation_links_element).fadeTo(50, 0);
+      }
+      
+      $(conversation_copy_element).fadeTo(50, 0);
+      $(conversation_border_element).fadeTo(50, 0);
+      $(conversation_form_element).fadeTo(50, 0);
+      $(section_logo_element).fadeTo(50, 0);
+    } else if (webpage_value === "close_menu")  {
+      $(header_element).fadeTo(150, 1);
+
+      if (window_width <= 414)  {
+        $(conversation_links_element).fadeTo(150, 1);
+      }
+      
+      $(conversation_copy_element).fadeTo(150, 1);
+      $(conversation_border_element).fadeTo(150, 1);
+      $(conversation_form_element).fadeTo(150, 1);
+      $(section_logo_element).fadeTo(150, 1);
+    }
+  } else {    
+    // String variables which will hold CSS selectors for various HTML elements are initialized.
+    var header_selector = "";
+    var article_selector = "";
+    var section_logo_selector = "";
+
+    // Object variables which will hold jQuery objects which refer to various HTML elements 
+    // are initialized.
+    var header_element = {};
+    var article_element = {};
+    var section_logo_element = {};
+
+    // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
+    header_selector = "header";
+    article_selector = "article";
+    section_logo_selector = ".section-logo";
+
+    // jQuery objects which refer to various HTML elements to be made visible are passed on.
+    header_element = $(header_selector);
+    article_element = $(article_selector);
+    section_logo_element = $(section_logo_selector);
+    
+    // IF/ELSE statement which will either make the HTML elements holding content visible 
+    // or not visible.
+    if (webpage_value === "open_menu")  {
+      $(header_element).fadeTo(50, 0);
+      $(article_element).fadeTo(50, 0);
+      $(section_logo_element).fadeTo(50, 0);
+    } else if (webpage_value === "close_menu")  {
+      $(header_element).fadeTo(150, 1);
+      $(article_element).fadeTo(150, 1);
+      $(section_logo_element).fadeTo(150, 1);
+    }
   }
 }
 
@@ -356,6 +442,7 @@ function animateMenuOptions(menu_items_css) {
   setTimeout(
     function () {
       animateMenuIcon();
+
       $(menu_items_element).css(menu_items_css);
       
       // IF/ELSE statement which intializes variables and sets CSS values for a border within the menu 
@@ -374,7 +461,7 @@ function animateMenuOptions(menu_items_css) {
 
           // A String variable which will hold the CSS selector for the border within the menu 
           // is initialized.
-          var menu_border_selctor = "";
+          var menu_border_selector = "";
 
           // An Object variable which will hold the jQuery object which referst to the border 
           // within the menu is initialized.
@@ -382,10 +469,10 @@ function animateMenuOptions(menu_items_css) {
 
           // The CSS selector for the border within the menu is passed on. The selector is 
           // created by cocatenating the value of 'nav_selector' with '#div-menu-other-border'.
-          menu_border_selctor = nav_selector + " #div-menu-other-border";
+          menu_border_selector = nav_selector + " #div-menu-other-border";
 
           // A jQuery object which refers to the border within the menu is passed on.
-          menu_border_element = $(menu_border_selctor);
+          menu_border_element = $(menu_border_selector);
 
           $(menu_border_element).css(menu_items_css);
         }
@@ -424,6 +511,13 @@ function animateOpenMenu(webpage_value)  {
   // IF/ELSE statement which sets the click state of the menu icon according to 
   // the type of browser window, handheld device or tablet/desktop.
   if (nav_selector === ".section-nav-iphone") {
+    // The CSS selector for the menu icon for the iPhone menu is updated.
+    menu_icon_selector = ".section-nav-iphone " + menu_icon_selector;
+
+    // A jQuery object which refers to the menu icon contained within the iPhone 
+    // menu is passed on.
+    menu_icon_element = $(menu_icon_selector);
+
     $(menu_icon_element).css("backgroundPosition", "0px -80px");
 
     // An Object variable which holds a jQuery object which refers to the menu 
@@ -497,16 +591,42 @@ function animateCloseMenu(webpage_value)  {
   // to determine if the browser used is for a handheld device or a larger display.
   nav_selector = setNavSelector();
 
+  // A String variable which will hold the CSS selector which refers to the submenu 
+  // containing links to individual case studies is initialized.
+  var case_studies_links_selector = "";
+
+  // An Object variable which will hold the jQuery object which refers to the submenu 
+  // containing links to individual case studies is initialized.
+  var case_studies_links_element = {};
+
+  // The CSS selector which refers to the submenu is passed on.
+  case_studies_links_selector = "#ul-menu-case_studies";
+
+  // The jQuery object which refers to the submenu is passed on.
+  case_studies_links_element = $(case_studies_links_selector);
+
+  // An Object variable which holds CSS values is initialized.
+  var case_studies_links_css = {};
+
+  // The CSS value which will reset the submenu from view is passed on.
+  case_studies_links_css = {
+    height: "auto", 
+    display: "none"
+  };
+
+  // The submenu is hidden from view.
+  $(case_studies_links_element).css(case_studies_links_css);
+
   // IF/ELSE statement which sets the click state of the menu icon according to 
   // the type of browser window, handheld device or tablet/desktop.
   if (nav_selector === ".section-nav-iphone") {
-    // An Object variable which holds a jQuery object which refers to the menu 
-    // is initialized.
-    var nav_element = {};
-    
-    // The jQuery object which refers to the menu is passed on. 
-    nav_element = $(nav_selector);
-    
+    // The CSS selector for the menu icon for the iPhone menu is updated.
+    menu_icon_selector = ".section-nav-iphone " + menu_icon_selector;
+
+    // A jQuery object which refers to the menu icon contained within the iPhone 
+    // menu is passed on.
+    menu_icon_element = $(menu_icon_selector);
+
     $(menu_icon_element).css("backgroundPosition", "0px 0px");
 
     $(nav_element).removeClass("nav-iphone-visible");
@@ -579,6 +699,162 @@ function determineBackgroundHeight()  {
 } // END of FUNCTION determineBackgroundHeight
 
 
+function animateCaseStudies() {
+/* 
+ * This function will animate the visibility of the sub menu containing links 
+ * to individual case studies.
+ */
+
+  // A String variable which will hold the CSS selector of the individual links 
+  // contained within the submenu is initialzed.
+  var case_studies_links_selector = "";
+ 
+  // A String variable which will hold the CSS selector of the submenu holding 
+  // individual links to case studies is initialized.
+  var ul_selector = "";
+
+  // An Object variable which will hold the jQuery object referring to the <a> 
+  // DOM elements for the links contained within the submenu is initialized.
+  var case_studies_links_element = {};
+
+  // An Object variable which will hold the jQuery object referring to the <ul>
+  // DOM element holding the submenu is initialized.
+  var ul_element = {};
+
+  // The CSS selector of the links contained with the submenu is passed on.
+  case_studies_links_selector = "#ul-menu-case_studies li .nav-links-text-a";
+
+  // The CSS selector of the submenu holding links to individual case studies 
+  // is passed on.
+  ul_selector = "#ul-menu-case_studies";
+
+  // The jQuery object which refers to the links contained within the 
+  // submenu is passed on.
+  case_studies_links_element = $(case_studies_links_selector);
+
+  // The jQuery object which refers to the submenu holding links to individual 
+  // case studies is passed on.
+  ul_element = $(ul_selector);
+
+  // An Object variable which will hold CSS values for the <a> DOM element for the 
+  // submenu, is initialized.
+  ul_css = {};
+
+  // The CSS value for the visibility of the submenu is passed on.
+  ul_css = {
+    display: "block" 
+  };
+
+  // The submenu is made visible. NOTE: None of the <a> DOM elements are visible.
+  $(ul_element).css(ul_css);
+
+  // A Number variable which will hold the width of the browser window is initialized.
+  var window_width;
+
+  // The width of the browser window is passed on.
+  window_width = $(window).width();
+
+  // IF/ELSE statement which will set values of the CSS property, 'height', 
+  // based on the size of the browser window.
+  if (window_width <= 414) {
+    ul_css = {
+      height: "8.5rem" // 136px
+    };
+
+    // The CSS selector of the submenu is updated to include a selector which 
+    // defines the iPhone main menu.
+    ul_selector = "#nav-menu-iphone #nav-menu-items-iphone " + ul_selector;
+
+    // The jQuery object which refers to the submenu contained with the main 
+    // menu for the iPhone is passed on.
+    ul_element = $(ul_selector);
+
+    // The submenu which holds links for individual case studies is made visible.
+    $(ul_element).css("display", "block");
+  } else if (window_width > 414 && window_width <= 1024) {
+    ul_css = {
+      height: "9.5rem" // 152px
+    };
+  } else {
+    ul_css = {
+      height: "10.94rem" // 175px
+    }
+  }
+
+  
+  // A String variable which will hold the URL of the current webpage 
+  // is initialized.
+  var url_string = "";
+
+  // The URL of the current webpage is passed on.
+  url_string = window.location.pathname;
+
+  // IF/ELSE statement which will run a set of commands if the current webpage 
+  // is the landing page.
+  if (url_string === "/" || url_string === "/index.htm")  {
+    // IF/ELSE statement which scrolls the main menu towards the top of the window 
+    // if the width of the browser width is greater than 1600px.
+    if (window_width > 1600)  {
+      // A String variable which will hold the CSS selector which refers to the 
+      // main menu is initialized.
+      var nav_selector = "";
+
+      // An Object variable which will hold the jQuery object which refers to 
+      // the main menu is initialized.
+      var nav_element = {};
+
+      // The CSS selector which refers to the main menu is passed on.
+      nav_selector = "#nav-other-landing";
+
+      // The jQuery object which refers to the main menu is passed on.
+      nav_element = $(nav_selector);
+
+      // An Object variable which will hold CSS values for the main menu is initialized.
+      var nav_css = {};
+
+      // A CSS value which will scroll the main menu towards the top of the browser 
+      // window is passed on.
+      nav_css = {
+        top: "6.56rem" // 105px
+      }
+
+      // The main menu scrolls towards the top of the browser window.
+      $(nav_element).animate(nav_css, 200);
+    }
+  }
+
+  // The height of the submenu is increased so it can contain the <a> elements 
+  // holding the links to case studies.
+  setTimeout(
+    function () {
+      $(ul_element).animate(ul_css, 300);
+    }, 300
+  );
+
+  // An Object variable which will hold CSS values for the <a> DOM elements contained 
+  // within the submenu is initialized.
+  case_studies_links_css = {};
+
+  // The CSS value of the 'display' property of the links contained within the 
+  // submenu is passed on.
+  case_studies_links_css = {
+    display: "block"
+  };
+
+  // The CSS value of the 'display' property of the links contained within the 
+  // submenu is changed to 'block'.
+  $(case_studies_links_element).css(case_studies_links_css);
+
+  // The links contained within the submenu are made visible.
+  setTimeout(
+    function () {
+      $(case_studies_links_element).fadeTo(400, 1);
+    }, 750
+  );
+
+} // END of FUNCTION animateCaseStudies
+
+
 
 function animateMenu(webpage_value) {
 /* 
@@ -639,9 +915,7 @@ function animateMenu(webpage_value) {
 
     background_height = determineBackgroundHeight();
   }
-
-
-  
+    
   animateMenuOptions(menu_items_css);
   
   // IF/ELSE statement which will animate the background of the menu if the browser 
