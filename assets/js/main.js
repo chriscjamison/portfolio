@@ -211,13 +211,8 @@ function animatePageElements(url_string) {
     // within the webpage is initialized.
     var conversation_elements = {};
 
-    // IF/ELSE statement which includes a selector, '#section-converation-links', if the browser is for a handheld browser.
-    if (nav_selector === ".section-nav-iphone") {
-      // CSS selectors which refer to the content soon to be displayed is passed on.
-      conversation_selector = "#section-conversation-links, #div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
-    } else {
-      conversation_selector = "#div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
-    }
+    // The CSS selector which refers to the content to be made visible is passed on.
+    conversation_selector = setConversationSelector();
     
     // A jQuery object which refers to the HTML elements soon to be displayed is passed on.
     conversation_elements = $(conversation_selector);
@@ -243,6 +238,46 @@ function animatePageElements(url_string) {
   $(header_border_element).delay(1800).fadeTo(900, 1);
 
 } // END of FUNCTION animatePageElements
+
+
+
+function setConversationSelector()  {
+/* 
+ * This function will pass on a CSS selector which refers to content which will be made 
+ * visible within the 'Start a Conversation' webpage.
+ */
+
+  // A String variable which will hold the hash of the URL.
+  var url_hash = "";
+
+  // The hash of the URL is passed on.
+  url_hash = window.location.hash;
+  
+  // IF/ELSE statement which will determine if the page currently loading is the default contact form 
+  // or the confirmation message.
+  if (url_hash === "#confirmation") {
+    conversation_selector = "#div-conversation-copy-confirmation";
+  } else {
+    // A Number variable which will hold the width of the browser window is initalized.
+    var window_width;
+
+    // The width of the browser width is passed on to.
+    window_width = $(window).width();
+
+    // IF/ELSE statement which includes a selector, '#section-converation-links', if the browser is for a 
+    // handheld or tablet browser.
+    if (window_width <= 1024) {
+      conversation_selector = "#section-conversation-links, #div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
+    } else {
+      conversation_selector = "#div-conversation-copy, #form-conversation";
+    }
+  }
+
+  // The CSS selector is returned to the calling function.
+  return conversation_selector;
+
+} // END of FUNCTION setConversationSelector
+
 
 
 function animateiPadPageElements(webpage_value)  {
@@ -324,8 +359,12 @@ function animateiPadPageElements(webpage_value)  {
         $(conversation_links_element).fadeTo(50, 0);
       }
       
+      
+      if (window_width <= 1024) {
+        $(conversation_border_element).fadeTo(50, 0);
+      }
+      
       $(conversation_copy_element).fadeTo(50, 0);
-      $(conversation_border_element).fadeTo(50, 0);
       $(conversation_form_element).fadeTo(50, 0);
       $(section_logo_element).fadeTo(50, 0);
     } else if (webpage_value === "close_menu")  {
@@ -334,9 +373,12 @@ function animateiPadPageElements(webpage_value)  {
       if (window_width <= 414)  {
         $(conversation_links_element).fadeTo(150, 1);
       }
+
+      if (window_width <= 1024) {
+        $(conversation_border_element).fadeTo(150, 1);
+      }
       
       $(conversation_copy_element).fadeTo(150, 1);
-      $(conversation_border_element).fadeTo(150, 1);
       $(conversation_form_element).fadeTo(150, 1);
       $(section_logo_element).fadeTo(150, 1);
     }
@@ -959,3 +1001,216 @@ function setNavSelector() {
   return nav_selector;
 
 } // END of FUNCTION setNavSelector
+
+
+
+function verifyFields(input_element, field_status) {
+/* 
+ * This function will verify the integrity of data entered into the contact form.
+ */
+
+  // Object variables which will hold CSS values used to style the <input> elements.
+	var color_base_css = {};
+	var color_valid_css = {};
+	var color_error_css = {};
+  
+  // CSS values for the base state of the <input> fields.
+	color_base_css = {
+		borderColor: "#c1c6db",  
+		backgroundColor: "#fff", 
+		color: "#51545b"
+	};
+	
+	color_valid_css = {
+		borderColor: "#51545b", 
+		backgroundColor: "#fff",
+		color: "#000"
+	};
+	
+	color_error_css = {
+		borderColor: "#f6895b", 
+		backgroundColor: "#fff", 
+		color: "#f6895b"
+	};
+	
+	var field_selector;
+	var field_value;
+	
+	field_selector = $(input_element).attr("id");
+	field_value = $(input_element).val();
+	
+	var default_value_string;
+	var error_value_string;
+
+	switch (field_selector) {
+		case "input-contact-full_name":
+			default_value_string = "_ _ _ _ _  _ _ _ _ _ _ _ _";
+			error_value_string = "Please enter your First and Last Name";
+			
+			if (field_value === error_value_string) { 
+				if (field_status === "focus")	{
+					clearData(input_element, color_valid_css);
+				}	else {
+					resetData(input_element, default_value_string, color_base_css);
+				}
+			}
+			
+			if (field_value === default_value_string) {
+				if (field_status === "focus")	{
+					clearData(input_element, color_valid_css);
+				}	
+			}
+			
+			if (field_value.length === 0) {
+				if (field_status === "blur")	{
+					resetData(input_element, default_value_string, color_base_css);
+				}
+			} else {
+				if (field_value !== default_value_string && 
+					field_status === "blur")	{
+					validateData(input_element, error_value_string, color_valid_css, color_error_css);
+				}	
+			}
+		break; 
+
+		case "input-contact-email_address":
+			default_value_string = "_ _ _ _ _ @ _ _ _ _ _ _ _ . _ _ _";
+			error_value_string = "Please retype your email address";
+			
+			if ((field_value === default_value_string || 
+					 field_value === error_value_string) && 
+				 	(field_status === "focus")) {
+				clearData(input_element, color_valid_css);
+			} else if (field_status === "blur") { 
+				if (field_value.length > 7)	{
+					validateData(input_element, error_value_string, color_valid_css, color_error_css);
+				} else {
+					resetData(input_element, default_value_string, color_base_css);
+				}
+			} 
+		break;
+
+		case "input-contact-message":
+			default_value_string = "Please enter your message here";
+			
+			if (field_value === default_value_string) {
+				if (field_status === "focus")	{
+					clearData(input_element, color_valid_css);
+				}	else {
+					resetData(input_element, default_value_string, color_base_css);
+				}
+			}
+			
+			if (field_value.length === 0) {
+				if (field_status === "blur")	{
+					resetData(input_element, default_value_string, color_base_css);
+				}
+			} else if (field_value !== default_value_string) {
+				$(input_element).css(color_valid_css);
+			}
+		break;
+	}
+}
+
+function validateData(input_element, error_value_string, color_valid_css, color_error_css)	{
+	var field_selector;
+	var field_value;
+	
+	field_selector = $(input_element).attr("id");
+	field_value = $(input_element).val();
+	
+	var search_string;
+	var search_index_num;
+	
+	switch ($(input_element).attr("id"))	{
+		case "input-contact-full_name": 
+
+			search_string = " ";
+			search_index_num = field_value.indexOf(search_string);
+
+			if (search_index_num > 1)	{
+				$(input_element).css(color_valid_css);
+			}	else {
+				$(input_element).css(color_error_css);
+				$(input_element).val(error_value_string);
+			}
+		break;
+
+		case "input-contact-email_address": 
+			var search_string_Array;
+			var email_string;
+
+			search_string_Array = [
+				"@", 
+				".", 
+				"com", 
+				"net", 
+				"org", 
+				"mil", 
+				"edu"
+			];
+
+			email_string = field_value;
+
+			var is_valid_results_Array;
+			var inc;
+
+			is_valid_results_Array = [];
+			inc = 0;
+
+			search_string_Array.forEach(
+				function (item, index)	{
+					var search_string;
+					var search_result_num;
+
+					search_string = item;
+
+
+					search_result_num = email_string.indexOf(search_string);
+
+					if (search_result_num > -1)	{
+						is_valid_results_Array[index] = true;
+					} else {
+						is_valid_results_Array[index] = false;
+					}
+				}
+			);
+						
+			var is_valid;
+			
+			is_valid = false;
+			
+			if (is_valid_results_Array[0] === true &&  
+				 	is_valid_results_Array[1] === true)	{
+				var i;
+			
+				for (i = 2; i < is_valid_results_Array.length; i++)	{
+					if (is_valid_results_Array[i] === true)	{
+						is_valid = true;
+					}
+				}	
+			}	else {
+				is_valid = false;
+			}
+			
+			if (is_valid === true)	{
+				$(input_element).css(color_valid_css);
+			} else {
+				$(input_element).css(color_error_css);
+				$(input_element).val(error_value_string);
+			}
+			
+		break;
+		
+	}
+}
+
+function clearData(input_element, color_valid_css)	{
+	$(input_element).val("");
+	$(input_element).css(color_valid_css);
+}
+
+function resetData(input_element, default_value_string, color_base_css) {
+	$(input_element).css(color_base_css);
+	$(input_element).val(default_value_string);	
+}

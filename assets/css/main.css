@@ -28,6 +28,7 @@ article a,
 article #section-case_study-intro span,
 article .div-case_study-asset-color-info-desc-color span,
 article .div-case_study-tech_used-info-list-item span,
+#div-conversation-copy-confirmation p,
 #div-conversation-copy p,
 form .label-conversation,
 form .input-conversation,
@@ -67,6 +68,7 @@ article p,
 article #section-case_study-intro span,
 article .div-case_study-asset-color-info-desc-color span,
 article .div-case_study-tech_used-info-list-item span,
+#div-conversation-copy-confirmation p,
 #div-conversation-copy p,
 form .label-conversation {
   color: #6d707c; }
@@ -394,7 +396,10 @@ article .section-case_study-assets .div-case_study-assets-background span {
 article .section-case_study-assets #div-case_study-lvusl-asset-font-amboy span,
 article .section-case_study-assets #div-case_study-lvusl-asset-font-cholla_wide span,
 article .section-case_study-assets #div-case_study-lvusl-asset-font-korolev_military_stencil span,
-article .section-case_study-assets #div-case_study-la-asset-font-arial span {
+article .section-case_study-assets #div-case_study-la-asset-font-arial span,
+article .section-case_study-assets #div-case_study-kovl-asset-font-merriweather span,
+article .section-case_study-assets #div-case_study-kovl-asset-font-los_feliz span,
+article .section-case_study-assets #div-case_study-kovl-asset-font-filson_soft span {
   font-size: 1.5rem; }
 
 article .section-case_study-assets #div-case_study-lvusl-asset-font-amboy span {
@@ -403,14 +408,20 @@ article .section-case_study-assets #div-case_study-lvusl-asset-font-amboy span {
 article .section-case_study-assets #div-case_study-lvusl-asset-font-cholla_wide span {
   font-family: cholla-wide; }
 
-article .section-case_study-assets #div-case_study--lvuslasset-font-korolev_military_stencil span {
+article .section-case_study-assets #div-case_study-lvusl-asset-font-korolev_military_stencil span {
   font-family: korolev-military-stencil; }
 
-article .section-case_study-assets #div-case_study-la-asset-font-arial span {
-  font-family: arial; }
+article .section-case_study-assets #div-case_study-kovl-asset-font-merriweather span {
+  font-family: merriweather; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-font-los_feliz span {
+  font-family: los-feliz; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-font-filson_soft span {
+  font-family: filson-soft; }
 
 article .section-case_study-assets .div-case_study-asset-color-info-square {
-  border: 1px solid #c1c6db;
+  border: 0.063rem solid #c1c6db;
   vertical-align: top; }
 
 article .section-case_study-assets #div-case_study-lvusl-asset-color-info-square-yellow {
@@ -436,6 +447,27 @@ article .section-case_study-assets #div-case_study-la-asset-color-info-square-gr
 
 article .section-case_study-assets #div-case_study-la-asset-color-info-square-gray-2 {
   background-color: #d2cdcf; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-color-info-square-blue-1 {
+  background-color: #2b2c30; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-color-info-square-blue-2 {
+  background-color: #2f3e55; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-color-info-square-blue-3 {
+  background-color: #384883; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-color-info-square-blue-4 {
+  background-color: #a5bcbb; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-color-info-square-gray-1 {
+  background-color: #9f9c99; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-color-info-square-gray-2 {
+  background-color: #98a0a5; }
+
+article .section-case_study-assets #div-case_study-kovl-asset-color-info-square-white {
+  background-color: #f4f5f0; }
 
 article .section-case_study-tech_used h3 {
   border-left: 0.188rem solid #006fb9;
@@ -465,6 +497,9 @@ article .section-case_study-takeaways h3 {
     #section-conversation-links .div-spacer-vertical .div-spacer-vertical-gray:nth-child(1) {
       margin-left: 0.55rem; }
 
+#div-conversation-copy-confirmation #p-conversation-signature {
+  font-family: abril-display, Garamond, serif; }
+
 #div-conversation-copy + .div-spacer-horizontal {
   width: 11.63rem;
   margin: 2rem auto; }
@@ -474,8 +509,10 @@ article .section-case_study-takeaways h3 {
   #div-conversation-copy + .div-spacer-horizontal .div-spacer-horizontal-gray:nth-child(1) {
     margin-bottom: 0.25rem; }
 
+#div-conversation-copy-confirmation,
 #div-conversation-copy,
 #spacer-horizontal-div-conversation {
+  display: none;
   opacity: 0; }
 
 #form-conversation {
@@ -845,8 +882,14 @@ article .section-case_study-takeaways h3 {
     article #section-case_study-intro .div-case_study-intro-web_address a {
       margin-top: 0.3rem;
       font-size: 1.5rem; }
+    article #section-case_study-intro #div-case_study-kovl-intro-job_title {
+      margin-right: 26.5rem; }
+    article #section-case_study-intro #div-case_study-kovl-intro-web_address {
+      width: 14.5rem; }
     article #section-case_study-intro .div-spacer-vertical-list {
       display: none; }
+  article .section-case_study-kovl-intro {
+    height: 4.5rem !important; }
   article .section-case_study + .div-spacer-horizontal {
     margin: 4rem auto;
     left: auto; }
@@ -854,7 +897,10 @@ article .section-case_study-takeaways h3 {
   article #figure-case_study-lvusl-revised-employment span,
   article #figure-case_study-la-paper_mockups-2 span,
   article #figure-case_study-la-cms-2 span,
-  article #figure-case_study-la-cms-4 span {
+  article #figure-case_study-la-cms-4 span,
+  article #figure-case_study-kovl-wireframes-2 span,
+  article #figure-case_study-kovl-mockups-2 span,
+  article #figure-case_study-kovl-css-2 span {
     margin: 0 0.75rem 0 0;
     padding-left: 0;
     padding-right: 0.69rem;
@@ -938,10 +984,20 @@ article .section-case_study-takeaways h3 {
         width: 42rem;
         margin: 0 0 2.25rem 0; }
   article #figure-case_study-la-paper_mockups-1 img,
-  article #figure-case_study-la-paper_mockups-2 img {
+  article #figure-case_study-la-paper_mockups-2 img,
+  article #figure-case_study-kovl-wireframes-1 img,
+  article #figure-case_study-kovl-wireframes-2 img,
+  article #figure-case_study-kovl-mockups-1 img,
+  article #figure-case_study-kovl-mockups-2 img,
+  article #figure-case_study-kovl-mockups-3 img {
     width: 26.25rem; }
   article #figure-case_study-la-paper_mockups-1 img,
-  article #figure-case_study-la-paper_mockups-2 span {
+  article #figure-case_study-la-paper_mockups-2 span,
+  article #figure-case_study-kovl-wireframes-1 img,
+  article #figure-case_study-kovl-wireframes-2 span,
+  article #figure-case_study-kovl-mockups-1 img,
+  article #figure-case_study-kovl-mockups-2 span,
+  article #figure-case_study-kovl-mockups-3 img {
     margin-left: 11rem; }
   /* **** START A CONVERSATION **** */
   #body-content-conversation {
@@ -954,9 +1010,11 @@ article .section-case_study-takeaways h3 {
     grid-row: 1 / span 1; }
   #section-conversation-links {
     display: none; }
+  #div-conversation-copy-confirmation,
   #div-conversation-copy {
     grid-column: 1 / span 1;
     grid-row: 2 / span 1; }
+    #div-conversation-copy-confirmation p,
     #div-conversation-copy p {
       margin: 0 auto 2.25rem auto;
       font-size: 1.5rem;
@@ -1009,13 +1067,16 @@ article .section-case_study-takeaways h3 {
     left: 45.25rem; }
   article .div-case_study-takeaways-list-copy p {
     width: 31rem; }
-  article #article-border-end-case_study {
+  article #article-border-end-case_study-lvusl {
     left: 71rem; }
+  article #article-border-end-case_study-kovl {
+    left: 67rem; }
   /* **** START A CONVERSATION **** */
   #body-content-conversation {
     grid-template-columns: 62rem 31rem 9.25rem;
     row-gap: 6rem;
     margin: 6rem; }
+  #div-conversation-copy-confirmation p,
   #div-conversation-copy p {
     width: 35.5rem; }
   #form-conversation .input-conversation,
@@ -1075,6 +1136,7 @@ article .section-case_study-takeaways h3 {
     grid-template-columns: 53rem 29rem 2.37rem;
     row-gap: 5rem;
     margin: 5rem; }
+  #div-conversation-copy-confirmation p,
   #div-conversation-copy p {
     width: 28.5rem; }
   #form-conversation .input-conversation,
@@ -1128,6 +1190,7 @@ article .section-case_study-takeaways h3 {
     grid-template-columns: 43rem 28.5rem 2.37rem;
     row-gap: 3rem;
     margin: 3rem; }
+  #div-conversation-copy-confirmation p,
   #div-conversation-copy p {
     width: 33.5rem; } }
 
@@ -1646,16 +1709,20 @@ article .section-case_study-takeaways h3 {
     margin: 2rem; }
   #section-conversation-links {
     display: none; }
+  #div-conversation-copy-confirmation,
   #div-conversation-copy {
     grid-column: 1 / span 2;
     margin: 1.5rem auto 1.5rem auto;
     padding: 0.25rem 0 0.5rem 1rem;
     border-left: 0.188rem solid #006fb9; }
+    #div-conversation-copy-confirmation p,
     #div-conversation-copy p {
       margin: 0 0 2.25rem 0;
       font-size: 1.5rem; }
+    #div-conversation-copy-confirmation p:first-of-type,
     #div-conversation-copy p:first-of-type {
       margin-top: 0; }
+    #div-conversation-copy-confirmation p:last-of-type,
     #div-conversation-copy p:last-of-type {
       margin-bottom: 0; }
   #div-conversation-copy + .div-spacer-horizontal {
@@ -1762,6 +1829,7 @@ article .section-case_study-takeaways h3 {
   /* **** START A CONVERSATION **** */
   #body-content-conversation {
     margin: 6rem; }
+  #div-conversation-copy-confirmation,
   #div-conversation-copy {
     width: 42rem; }
   #div-conversation-copy + .div-spacer-horizontal {
@@ -1831,6 +1899,7 @@ article .section-case_study-takeaways h3 {
   #article-border-end-case_study {
     left: 35.5rem; }
   /* **** START A CONVERSATION **** */
+  #div-conversation-copy-confirmation,
   #div-conversation-copy {
     width: 35.25rem; } }
 
@@ -1937,11 +2006,14 @@ article .section-case_study-takeaways h3 {
   #section-conversation-links {
     grid-column: 1 / span 2;
     width: 18.5rem; }
+  #div-conversation-copy-confirmation,
   #div-conversation-copy {
     grid-column: 1 / span 2; }
+    #div-conversation-copy-confirmation p,
     #div-conversation-copy p {
       font-size: 1.25rem;
       line-height: 1.6; }
+    #div-conversation-copy-confirmation p:last-of-type,
     #div-conversation-copy p:last-of-type {
       margin-bottom: 0; }
   #spacer-horizontal-div-conversation {

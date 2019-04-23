@@ -60,6 +60,24 @@
         </div>
         <a href="#" title="Email" id="a-conversation-email">Email</a>
       </section>
+      <div id="div-conversation-copy-confirmation">
+        <p>
+          Thank you for sending your message!
+        </p>
+        <p>
+          An email message will be sent to you from no_reply@chriscjamison.com which contains a copy 
+          of your message.
+        </p>
+        <p>
+          I look forward to reading your message. 
+        </p>
+        <p>
+          Enjoy your day, 
+        </p>
+        <p id="p-conversation-signature">
+          Chris Jamison
+        </p>
+     </div>
       <div id="div-conversation-copy">
         <p>
           I thank you for viewing this portfolio.
@@ -83,13 +101,13 @@
         <div class="div-spacer-horizontal-gray">&nbsp;</div>
         <div class="div-spacer-horizontal-gray">&nbsp;</div>
       </div>
-    <form action="#" name="form-conversation" id="form-conversation">
+    <form action="/assets/php/contact_form.php" name="form-conversation" id="form-conversation">
       <label for="full_name" class="label-conversation">Full Name</label>
       <input type="text" value="_ _ _ _ _  _ _ _ _ _ _ _ _" name="full_name" class="input-conversation" id="input-conversation-full_name">
       <label for="email_address" class="label-conversation">Email Address</label>
       <input type="email" value="_ _ _ _ _ @ _ _ _ _ _ _ _ . _ _ _" name="email_address" class="input-conversation" id="input-conversation-email_address">
       <label for="message" class="label-conversation">Message</label>
-      <textarea class="textarea-conversation" id="textarea-conversation-message">Please enter your message here.</textarea>
+      <textarea class="textarea-conversation" id="textarea-conversation-message">Please enter your message here</textarea>
       <input name="submit" value="Press to send your message" id="input-conversation-submit">
     </form>
     

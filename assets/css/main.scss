@@ -30,6 +30,7 @@ $border_left_orange_3px: 0.188rem solid $orange; // 3px
 $border_left_magenta_3px: 0.188rem solid $magenta; // 3px
 $border_left_dark_blue_3px: 0.188rem solid $dark_blue; // 3px
 $border_left_light_blue_3px: 0.188rem solid $light_blue; // 3px
+$border_color_gray: 0.063rem solid $light_gray; // 1px
 
 $ex_sm_h2_font_size: 1.3rem; // 21pt
 $ex_sm_resume_p_font_size: 1.1rem; // 13pt
@@ -113,6 +114,7 @@ article a,
 article #section-case_study-intro span, 
 article .div-case_study-asset-color-info-desc-color span, 
 article .div-case_study-tech_used-info-list-item span, 
+#div-conversation-copy-confirmation p, 
 #div-conversation-copy p, 
 form .label-conversation, 
 form .input-conversation, 
@@ -157,6 +159,7 @@ article p,
 article #section-case_study-intro span, 
 article .div-case_study-asset-color-info-desc-color span, 
 article .div-case_study-tech_used-info-list-item span, 
+#div-conversation-copy-confirmation p, 
 #div-conversation-copy p, 
 form .label-conversation {
   color: $base_gray;
@@ -650,7 +653,10 @@ article {
     #div-case_study-lvusl-asset-font-amboy span, 
     #div-case_study-lvusl-asset-font-cholla_wide span, 
     #div-case_study-lvusl-asset-font-korolev_military_stencil span, 
-    #div-case_study-la-asset-font-arial span {
+    #div-case_study-la-asset-font-arial span, 
+    #div-case_study-kovl-asset-font-merriweather span, 
+    #div-case_study-kovl-asset-font-los_feliz span, 
+    #div-case_study-kovl-asset-font-filson_soft span {
       font-size: $sm_h2_font_size;
     }
 
@@ -662,16 +668,24 @@ article {
       font-family: cholla-wide;
     }
 
-    #div-case_study--lvuslasset-font-korolev_military_stencil span {
+    #div-case_study-lvusl-asset-font-korolev_military_stencil span {
       font-family: korolev-military-stencil;
     }
 
-    #div-case_study-la-asset-font-arial span {
-      font-family: arial;
+    #div-case_study-kovl-asset-font-merriweather span {
+      font-family: merriweather;
+    }
+
+    #div-case_study-kovl-asset-font-los_feliz span {
+      font-family: los-feliz;
+    }
+
+    #div-case_study-kovl-asset-font-filson_soft span {
+      font-family: filson-soft;
     }
 
     .div-case_study-asset-color-info-square {
-      border: 1px solid $light_gray;
+      border: $border_color_gray;
       vertical-align: top;
     }
 
@@ -705,6 +719,34 @@ article {
 
     #div-case_study-la-asset-color-info-square-gray-2 {
       background-color: #d2cdcf;
+    }
+
+    #div-case_study-kovl-asset-color-info-square-blue-1 {
+      background-color: #2b2c30;
+    }
+
+    #div-case_study-kovl-asset-color-info-square-blue-2 {
+      background-color: #2f3e55;
+    }
+
+    #div-case_study-kovl-asset-color-info-square-blue-3 {
+      background-color: #384883;
+    }
+
+    #div-case_study-kovl-asset-color-info-square-blue-4 {
+      background-color: #a5bcbb;
+    }
+
+    #div-case_study-kovl-asset-color-info-square-gray-1 {
+      background-color: #9f9c99;
+    }
+
+    #div-case_study-kovl-asset-color-info-square-gray-2 {
+      background-color: #98a0a5;
+    }
+
+    #div-case_study-kovl-asset-color-info-square-white {
+      background-color: #f4f5f0;
     }
 
   }
@@ -758,6 +800,12 @@ article {
   }
 }
 
+#div-conversation-copy-confirmation {
+  #p-conversation-signature {
+    font-family: $display_font;
+  }
+}
+
 // Holds the gray horizontal spacers.
 #div-conversation-copy + .div-spacer-horizontal {
   width: 11.63rem; // 186px
@@ -773,8 +821,10 @@ article {
   }
 }
 
+#div-conversation-copy-confirmation, 
 #div-conversation-copy, 
 #spacer-horizontal-div-conversation {
+  display: none;
   opacity: 0;
 }
 
@@ -1400,10 +1450,21 @@ article {
         margin-top: 0.3rem; // 5px
         font-size: $lg_base_font_size;
       }
+
+      #div-case_study-kovl-intro-job_title {
+        margin-right: 26.5rem; // 196px
+      }
       
+      #div-case_study-kovl-intro-web_address {
+        width: 14.5rem; // 232px
+      }
       .div-spacer-vertical-list {
         display: none;
       }
+    }
+
+    .section-case_study-kovl-intro {
+      height: 4.5rem !important; // 72px
     }
 
     .section-case_study + .div-spacer-horizontal {
@@ -1415,7 +1476,10 @@ article {
     #figure-case_study-lvusl-revised-employment span, 
     #figure-case_study-la-paper_mockups-2 span, 
     #figure-case_study-la-cms-2 span, 
-    #figure-case_study-la-cms-4 span {
+    #figure-case_study-la-cms-4 span, 
+    #figure-case_study-kovl-wireframes-2 span, 
+    #figure-case_study-kovl-mockups-2 span, 
+    #figure-case_study-kovl-css-2 span {
       margin: 0 0.75rem 0 0; // 0 12px 0 0 
       padding-left: 0;
       padding-right: 0.69rem; // 11px
@@ -1567,12 +1631,22 @@ article {
     }
     
     #figure-case_study-la-paper_mockups-1 img, 
-    #figure-case_study-la-paper_mockups-2 img {
+    #figure-case_study-la-paper_mockups-2 img, 
+    #figure-case_study-kovl-wireframes-1 img, 
+    #figure-case_study-kovl-wireframes-2 img, 
+    #figure-case_study-kovl-mockups-1 img, 
+    #figure-case_study-kovl-mockups-2 img, 
+    #figure-case_study-kovl-mockups-3 img  {
       width: 26.25rem; // 420px
     }
 
     #figure-case_study-la-paper_mockups-1 img, 
-    #figure-case_study-la-paper_mockups-2 span {
+    #figure-case_study-la-paper_mockups-2 span, 
+    #figure-case_study-kovl-wireframes-1 img, 
+    #figure-case_study-kovl-wireframes-2 span, 
+    #figure-case_study-kovl-mockups-1 img, 
+    #figure-case_study-kovl-mockups-2 span, 
+    #figure-case_study-kovl-mockups-3 img {
       margin-left: 11rem; // 176px
     }
 
@@ -1599,6 +1673,7 @@ article {
     display: none;
   }
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     grid-column: 1 / span 1;
     grid-row: 2 / span 1;
@@ -1704,8 +1779,12 @@ article {
       }
     }
 
-    #article-border-end-case_study {
+    #article-border-end-case_study-lvusl {
       left: 71rem; // 1,136px
+    }
+
+    #article-border-end-case_study-kovl {
+      left: 67rem; // 1,072px
     }
   }
 
@@ -1718,6 +1797,7 @@ article {
     margin: 6rem; // 96px
   }
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     p {
       width: 35.5rem; // 568px
@@ -1845,6 +1925,7 @@ article {
     margin: 5rem; // 80px
   }
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     p {
       width: 28.5rem; // 456px
@@ -1959,6 +2040,7 @@ article {
     margin: 3rem; // 48px
   }
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     p {
       width: 33.5rem;
@@ -2945,6 +3027,7 @@ article {
     display: none;
   }
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     grid-column: 1 / span 2;
     margin: $lg_margin_spacer_3 auto $lg_margin_spacer_3 auto;
@@ -3181,6 +3264,7 @@ article {
     margin: 6rem; // 96px
   }
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     width: 42rem; // 672px
   }
@@ -3333,6 +3417,7 @@ article {
 
   /* **** START A CONVERSATION **** */ 
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     width: 35.25rem; // 564px
   }
@@ -3546,6 +3631,7 @@ article {
     width: 18.5rem; // 296px
   }
 
+  #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     grid-column: 1 / span 2;
 
