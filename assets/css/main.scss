@@ -586,7 +586,7 @@ article {
       font-weight: $semibold_font_weight;
     }
 
-    .case_study-intro-web_address {
+    .div-case_study-intro-web_address {
       padding-left: 0.5rem; // 8px
       border-left: 0.188rem solid $dark_blue; // 3px
 
@@ -647,41 +647,66 @@ article {
       }
     }
 
-    #div-case_study-asset-font-amboy span, 
-    #div-case_study-asset-font-cholla_wide span, 
-    #div-case_study-asset-font-korolev_military_stencil span {
+    #div-case_study-lvusl-asset-font-amboy span, 
+    #div-case_study-lvusl-asset-font-cholla_wide span, 
+    #div-case_study-lvusl-asset-font-korolev_military_stencil span, 
+    #div-case_study-la-asset-font-arial span {
       font-size: $sm_h2_font_size;
     }
 
-    #div-case_study-asset-font-amboy span {
-      font-family: amboy;
+    #div-case_study-lvusl-asset-font-amboy span {
+      font-family: amboy-black;
     }
 
-    #div-case_study-asset-font-cholla_wide span {
+    #div-case_study-lvusl-asset-font-cholla_wide span {
       font-family: cholla-wide;
     }
 
-    #div-case_study-asset-font-korolev_military_stencil span {
+    #div-case_study--lvuslasset-font-korolev_military_stencil span {
       font-family: korolev-military-stencil;
-      // font-size: $sm_info_font_size;
+    }
+
+    #div-case_study-la-asset-font-arial span {
+      font-family: arial;
     }
 
     .div-case_study-asset-color-info-square {
-     border: 1px solid $light_gray;
+      border: 1px solid $light_gray;
       vertical-align: top;
     }
 
-    #div-case_study-asset-color-info-square-yellow {
+    #div-case_study-lvusl-asset-color-info-square-yellow {
       background-color: #fff113;
     }
 
-    #div-case_study-asset-color-info-square-blue {
+    #div-case_study-lvusl-asset-color-info-square-blue {
       background-color: #00a1e1;
     }
 
     .div-case_study-asset-color-info-desc-codes h4 {
       margin-bottom: 0 !important;
     }
+
+    #div-case_study-la-asset-color-info-square-blue {
+      background-color: #485081;
+    }
+
+    #div-case_study-la-asset-color-info-square-white {
+      background-color: #ffffff;
+    }
+
+    #div-case_study-la-asset-color-info-square-orange {
+      background-color: #f46400;
+    }
+
+    #div-case_study-la-asset-color-info-square-gray-1 {
+      background-color: #d8ccc3;
+    }
+
+    #div-case_study-la-asset-color-info-square-gray-2 {
+      background-color: #d2cdcf;
+    }
+
   }
 
   .section-case_study-tech_used {
@@ -993,7 +1018,7 @@ article {
   .section-bio, 
   .section-case_study {
     width: 45rem; // 720px
-    margin: 0 auto;
+    margin: 4rem auto; // 64px auto
     padding-left: 1.5rem; // 24px
     border-left: $border_left_orange_3px; 
   }
@@ -1023,7 +1048,7 @@ article {
 
     figure {
       width: 54rem; // 864px
-      margin: 6rem auto; // 96px auto
+      margin: 4rem auto 3rem auto; // 64px auto 48px auto
 
       img {
         margin: 0 auto;
@@ -1357,21 +1382,21 @@ article {
         font-size: $lg_base_font_size;
       }
 
-      .case_study-intro-job_title, 
-      .case_study-intro-web_address {
+      .div-case_study-intro-job_title, 
+      .div-case_study-intro-web_address {
         float: left;
       }
 
-      .case_study-intro-job_title {
+      .div-case_study-intro-job_title {
         margin-right: $lg_resume_margin_right_1920;
       }
 
-      .case_study-intro-web_address {
+      .div-case_study-intro-web_address {
         width: 21.5rem; // 344px
       }
 
-      .case_study-intro-web_address span, 
-      .case_study-intro-web_address a {
+      .div-case_study-intro-web_address span, 
+      .div-case_study-intro-web_address a {
         margin-top: 0.3rem; // 5px
         font-size: $lg_base_font_size;
       }
@@ -1386,16 +1411,18 @@ article {
       left: auto;
     }
 
-    .figure-case_study + .figure-case_study {
-      span {
-        margin: 0 0.75rem 0 0; // 0 12px 0 0 
-        padding-left: 0;
-        padding-right: 0.69rem; // 11px
-        float: left;
-        border-left: none;
-        border-right: $border_left_orange_3px;
-        text-align: right;
-      }
+    #figure-case_study-lvusl-initial-employment span, 
+    #figure-case_study-lvusl-revised-employment span, 
+    #figure-case_study-la-paper_mockups-2 span, 
+    #figure-case_study-la-cms-2 span, 
+    #figure-case_study-la-cms-4 span {
+      margin: 0 0.75rem 0 0; // 0 12px 0 0 
+      padding-left: 0;
+      padding-right: 0.69rem; // 11px
+      float: left;
+      border-left: none;
+      border-right: $border_left_orange_3px;
+      text-align: right;
     }
 
     .figure-case_study {
@@ -1404,12 +1431,12 @@ article {
       }
 
       .div-spacer-horizontal {
-        margin: 4rem auto; // 64px auto
+        margin: 4rem auto 3rem auto; // 64px auto 48px auto
         left: auto;
       }
     }
 
-    #figure-case_study-recap {
+    #figure-case_study-lvusl-recap {
       margin-top: 5.5rem; // 88px
       clear: both;
 
@@ -1418,15 +1445,15 @@ article {
       }
     }
 
-    #figure-case_study-logo {
+    #figure-case_study-lvusl-logo {
       img {
         width: 25rem; // 400px
         margin-left: 12rem; // 192px
       }
     }
 
-    #figure-case_study-intial-employment span, 
-    #figure-case_study-revised-employment span {
+    #figure-case_study-lvusl-intial-employment span, 
+    #figure-case_study-lvusl-revised-employment span {
         width: 5.5rem; // 88px
     }
 
@@ -1473,8 +1500,12 @@ article {
         margin-left: 0.9rem; // 14px
       }
 
-      .div-case_study-asset-color-info:first-of-type {
+      .div-case_study-asset-color-info {
         margin-bottom: $lg_margin_spacer;
+      }
+
+      .div-case_study-asset-color-info:last-of-type {
+        margin-bottom: 0;
       }
 
       .div-case_study-asset-color-info-square {
@@ -1534,10 +1565,17 @@ article {
         }
       }
     }
-
-    #article-border-end-case_study {
-      left: 68.75rem; // 1100px
+    
+    #figure-case_study-la-paper_mockups-1 img, 
+    #figure-case_study-la-paper_mockups-2 img {
+      width: 26.25rem; // 420px
     }
+
+    #figure-case_study-la-paper_mockups-1 img, 
+    #figure-case_study-la-paper_mockups-2 span {
+      margin-left: 11rem; // 176px
+    }
+
   }
 
 
@@ -1638,7 +1676,7 @@ article {
     }
     
     #article-border-end-bio {
-      margin-left: 73rem; // 1168px
+      margin-left: 73rem; // 1,168px
     }
   }
 
@@ -1654,9 +1692,20 @@ article {
 
   /* **** CASE STUDY **** */
 
-  .div-case_study-takeaways-list-copy {
-    p {
-      width: 31rem;
+  article {
+    .section-case_study + .div-spacer-horizontal {
+      margin: 4rem 0 4rem 0; // 64px 0 64px 0
+      left: 45.25rem; // 724px
+    }
+  
+    .div-case_study-takeaways-list-copy {
+      p {
+        width: 31rem;
+      }
+    }
+
+    #article-border-end-case_study {
+      left: 71rem; // 1,136px
     }
   }
 
@@ -1892,8 +1941,12 @@ article {
   /* **** CASE STUDY **** */
 
   article {
-    #article-border-end-case_study {
-      margin-left: 51.5rem; // 824px
+    #article-border-end-case_study-lvusl {
+      left: 56.75rem; // 908px
+    }
+
+    #article-border-end-case_study-la {
+      left: 57.25rem; // 916px
     }
   }
 
@@ -2238,17 +2291,17 @@ article {
   /* **** CASE STUDY **** */
 
   article {
-    #figure-case_study-intial-landing_page, 
-    #figure-case_study-revised-landing_page {
+    #figure-case_study-lvusl-intial-landing_page, 
+    #figure-case_study-lvusl-revised-landing_page {
       margin-bottom: 1.5rem; // 24px
     }
 
-    #figure-case_study-intial-employment, 
-    #figure-case_study-revised-employment {
+    #figure-case_study-lvusl-intial-employment, 
+    #figure-case_study-lvusl-revised-employment {
       margin-top: 1.5rem; // 24px
     }
 
-    #figure-case_study-revised-employment span {
+    #figure-case_study-lvusl-revised-employment span {
       width: 94%;
     }
 
@@ -2752,8 +2805,8 @@ article {
       width: 23.5rem; // 376px
       margin: 0 auto;
       
-      .case_study-intro-job_title span, 
-      .case_study-intro-web_address span {
+      .div-case_study-intro-job_title span, 
+      .div-case_study-intro-web_address span {
         font-size: $med_a_web_address_font_size;
       }
 
@@ -2769,7 +2822,7 @@ article {
         }
       }
 
-      .case_study-intro-web_address {
+      .div-case_study-intro-web_address {
         padding-left: 0;
         display: inline-block;
         border-left: none;
@@ -3099,7 +3152,7 @@ article {
       }
     }
 
-    #figure-case_study-logo {
+    #figure-case_study-lvusl-logo {
       img {
         width: 25.5rem; // 408px
         margin-left: 10rem; // 160px
@@ -3265,7 +3318,7 @@ article {
         width: 35.25rem; // 564px
       }
     }
-    #figure-case_study-logo {
+    #figure-case_study-lvusl-logo {
       img {
         width: 25.5rem; // 408px
         margin-left: 5rem; // 80px
