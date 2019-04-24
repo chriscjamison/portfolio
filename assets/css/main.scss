@@ -114,6 +114,7 @@ article a,
 article #section-case_study-intro span, 
 article .div-case_study-asset-color-info-desc-color span, 
 article .div-case_study-tech_used-info-list-item span, 
+#section-conversation-links a, 
 #div-conversation-copy-confirmation p, 
 #div-conversation-copy p, 
 form .label-conversation, 
@@ -128,7 +129,6 @@ form .textarea-conversation {
 article figure span,
 q, 
 .div-case_study-assets-background span, 
-#section-conversation-links a, 
 form #input-conversation-submit {
   font-family: $link_font;
 }
@@ -847,6 +847,7 @@ article {
   #input-conversation-submit {
     width: 17.5rem;
     padding: 0.9rem 0.5rem 0.8rem 0.5rem; // 14px 8px 13px 8px
+    background-color: #fff;
     border: 0.188rem solid $magenta; // 3px
     font-size: $sm_info_font_size;
     font-weight: $semibold_font_weight;
@@ -2423,8 +2424,8 @@ article {
       }
 
       .div-case_study-asset-color-info-square {
-        width: 9.75rem;
-        height: 9.75rem;
+        width: 8.8rem; // 141px
+        height: 8.8rem; // 141px
       }
     }
 
@@ -3500,7 +3501,7 @@ article {
   /* **** BIOGRAPHY **** */
 
   #body-content {
-    row-gap: $sm_body_margin;
+    row-gap: $sm_margin_spacer;
   }
 
   header {
@@ -3628,7 +3629,11 @@ article {
 
   #section-conversation-links {
     grid-column: 1 / span 2;
-    width: 18.5rem; // 296px
+    width: 18.2rem; // 291px
+
+    a {
+      font-size: $sm_h4_font_size;
+    }
   }
 
   #div-conversation-copy-confirmation, 
@@ -3647,6 +3652,10 @@ article {
 
   #spacer-horizontal-div-conversation {
     grid-column: 1 / span 2;
+  }
+
+  #form-conversation {
+    margin-bottom: 4.5rem; // 72px
   }
   
 }
@@ -3697,6 +3706,12 @@ article {
 
 
   /* **** RESUME **** */ 
+
+  header {
+    #header-border-title-resume {
+      width: 4.9rem; // 78px
+    }
+  }
 
   article {
     .div-spacer-horizontal{
@@ -3784,7 +3799,7 @@ article {
     .input-conversation, 
     .textarea-conversation, 
     #input-conversation-submit {
-      width: 20rem;
+      width: 20.5rem; // 328px
     }
   }
 }
@@ -3908,6 +3923,13 @@ article {
     width: 18.5rem; // 296px
   }
 
+
+  /* **** BIO **** */
+
+  #article-border-end-bio {
+    left: 15rem; // 240px
+  }
+
   
   /* **** RESUME **** */
 
@@ -3971,10 +3993,29 @@ article {
   /* **** CASE STUDY **** */
   
   article {
-    #article-border-end-case_study {
-      left: 16.25rem; // 260px
+    #article-border-end-case_study-lvusl, 
+    #article-border-end-case_study-la {
+      left: 16rem; // 256px
+    }
+
+    #article-border-end-case_study-kovl {
+      left: 15.5rem; // 248px
     }
   }
+
+
+  /* **** START A CONVERSATION **** */
+
+  #body-content-conversation {
+    grid-template-columns: 9.25rem 9.25rem; // 148px 148px
+  }
+
+  #form-conversation .input-conversation, 
+  #form-conversation .textarea-conversation, 
+  #form-conversation #input-conversation-submit {
+    width: 17.2rem; // 275px
+  }
+
 }
   
 /* ********************************* 
@@ -3986,7 +4027,7 @@ article {
   /* **** MAIN NAVIGATION **** */
   
   .section-nav-iphone {
-    width: 16rem; // 256px
+    width: 16.5rem; // 264px
   }
 
   /* **** LANDING PAGE **** */
@@ -4003,6 +4044,10 @@ article {
     img, 
     #figure-bio-quote-div {
       width: 16rem; // 256px
+    }
+
+    #article-border-end-bio {
+      left: 13rem; // 208px
     }
   } 
 
@@ -4138,12 +4183,29 @@ article {
         width: 14rem; // 224px
       }
     }
+
+    #article-border-end-case_study-lvusl {
+      left: 13.25rem; // 212px
+    }
+
+    #article-border-end-case_study-la {
+      left: 13.5rem; // 216px
+    }
+
+    #article-border-end-case_study-kovl {
+      left: 11.25rem; // 180px
+    }
   } 
 
 
   /* **** START A CONVERSATION **** */ 
 
+  #body-content-conversation {
+    grid-template-columns: 8rem 8rem; // 128px 128px
+  }
+
   #section-conversation-links {
+    width: 16rem; // 256px
     a {
       font-size: $sm_info_font_size;
     }

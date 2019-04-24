@@ -56,11 +56,93 @@ $(document).ready(
         }
       }
     );
+
+    $("#input-conversation-full_name, #input-conversation-email_address, #textarea-conversation-message").focusin(
+      function () {
+        var input_element = {};
+        
+        input_element = this;
+
+        verifyFields(input_element, "focus");
+      }
+    );
+    
+    $("#input-conversation-full_name, #input-conversation-email_address, #textarea-conversation-message").focusout(
+      function () {
+        var input_element = {};
+        
+        input_element = this;
+
+        verifyFields(input_element, "blur");
+      }
+    );
+    
+    $("#input-conversation-submit").mouseover(
+      function () {
+        // A String variable which will hold the CSS selector for the Submit button within the contact form 
+        // is initialized.
+        var submit_selector = "";
+    
+        // An Object variable which will hold the jQuery object which refers to the Submit button within 
+        // the contact form is initialized.
+        var submit_element = {};
+    
+        // The CSS selector which refers to the Submit button is passed on.
+        submit_selector = "#input-conversation-submit";
+    
+        // The jQuery object which refers to the Submit button is passed on.
+        submit_element = $(submit_selector);
+    
+        // An Object variable which will hold CSS values which change the appearance of the Submit button 
+        // is initialized.
+        var submit_css = {};
+    
+        // CSS values which change the appearance of the Submit button are passed on.
+        submit_css = {
+          backgroundColor: "#ec1a63", 
+          color: "#fff"
+        };
+    
+        // The appearance of the Submit button is changed.
+        $(submit_element).animate(submit_css, 350);
+      }
+    );
+    
+    $("#input-conversation-submit").mouseout(
+      function () {
+        // A String variable which will hold the CSS selector for the Submit button within the contact form 
+        // is initialized.
+        var submit_selector = "";
+    
+        // An Object variable which will hold the jQuery object which refers to the Submit button within 
+        // the contact form is initialized.
+        var submit_element = {};
+    
+        // The CSS selector which refers to the Submit button is passed on.
+        submit_selector = "#input-conversation-submit";
+    
+        // The jQuery object which refers to the Submit button is passed on.
+        submit_element = $(submit_selector);
+    
+        // An Object variable which will hold CSS values which change the appearance of the Submit button 
+        // is initialized.
+        var submit_css = {};
+    
+        // CSS values which change the appearance of the Submit button are passed on.
+        submit_css = {
+          backgroundColor: "#fff", 
+          borderColor: "#ec1a63", 
+          color: "#ec1a63"
+        };
+    
+        // The appearance of the Submit button is changed.
+        $(submit_css).animate(submit_css, 350);
+      }
+    );
   }
 );
 
-
-$(window).on("load", 
+$(window).on("load",  
   function () { 
     animateTransitions();
   }
@@ -151,8 +233,15 @@ function animateLandingPageElements() {
   $(header_name_element).delay(1800).fadeTo(900, 1);
   $(header_border_name_element).delay(2700).fadeTo(600, 1);
   $(header_copy_element).delay(3550).fadeTo(850, 1);
-  $(nav_element).delay(4550).fadeTo(600, 1);
   $(section_social_element).delay(4550).fadeTo(600, 1);
+  
+  // IF/ELSE statement which delays the moment the main menu becomes visible if the browser is 
+  // for a handheld browser.
+  if (nav_selector === ".section-nav-iphone") {
+    $(nav_element).delay(5550).fadeTo(600, 1);
+  } else {
+    $(nav_element).delay(4550).fadeTo(600, 1);
+  }
 } // END of FUNCTION animateLandingPageElements
 
 
@@ -216,6 +305,52 @@ function animatePageElements(url_string) {
     
     // A jQuery object which refers to the HTML elements soon to be displayed is passed on.
     conversation_elements = $(conversation_selector);
+
+    // A String variable which will hold the hash of the URL is initialized.
+    var url_hash = "";
+
+    // The hash of the URL is passed on.
+    url_hash = window.location.hash;
+
+    // IF/ELSE statement which will make the section containing the default copy invisible 
+    // if the confirmation copy loads.
+    if (url_hash === "#confirmation") {
+      // String variables which will hold the CSS selector which refers to the default copy,  
+      // links, and form are initalized.
+      var copy_selector = "";
+      var links_selector = "";
+      var form_selector = "";
+
+      // Object variables which will hold the jQuery object which refers to the default 
+      // copy, links, and form are initialized.
+      var copy_element = {};
+      var links_element = {};
+      var form_element = {};
+
+      // CSS selectors which refers to the default copy, links, and form are passed on.
+      copy_selector = "#div-conversation-copy";
+      links_selector = "#section-conversation-links";
+      form_selector = "#form-conversation";
+
+      // jQuery objects which refers to the default copy, links, and form are passed on.
+      copy_element = $(copy_selector);
+      links_element = $(links_selector);
+      form_element = $(form_selector);
+
+      // An Object variable which will hold the CSS value which will make the default 
+      // copy, links, and form invisible is initialized.
+      var not_visible_css = {};
+
+      // A CSS value which will make the default copy, links, and form invisible is passed on.
+      not_visible_css = {
+        display: "none"
+      };
+
+      // The default copy, links, and form are made invisible.
+      $(copy_element).css(not_visible_css);
+      $(links_element).css(not_visible_css);
+      $(form_element).css(not_visible_css);
+    }
 
     $(conversation_elements).delay(900).fadeTo(900, 1);
   } else {
@@ -537,12 +672,6 @@ function animateOpenMenu(webpage_value)  {
   // is initialized.
   var menu_icon_element = {};
 
-  // The CSS selector for the menu icon is passed on;
-  menu_icon_selector = "#nav-link-menu";
-
-  // A jQuery object which refers to the menu icon is passed on.
-  menu_icon_element = $(menu_icon_selector);
-
   // A String variable which will hold a CSS selector for the menu is initialized.
   var nav_selector = "";
 
@@ -550,16 +679,14 @@ function animateOpenMenu(webpage_value)  {
   // to determine if the browser used is for a handheld device or a larger display.
   nav_selector = setNavSelector();
 
+  // The CSS selector for the menu icon is passed on;
+  menu_icon_selector = nav_selector + " #nav-link-menu";
+  
+  menu_icon_element = $(menu_icon_selector);
+
   // IF/ELSE statement which sets the click state of the menu icon according to 
   // the type of browser window, handheld device or tablet/desktop.
   if (nav_selector === ".section-nav-iphone") {
-    // The CSS selector for the menu icon for the iPhone menu is updated.
-    menu_icon_selector = ".section-nav-iphone " + menu_icon_selector;
-
-    // A jQuery object which refers to the menu icon contained within the iPhone 
-    // menu is passed on.
-    menu_icon_element = $(menu_icon_selector);
-
     $(menu_icon_element).css("backgroundPosition", "0px -80px");
 
     // An Object variable which holds a jQuery object which refers to the menu 
@@ -632,6 +759,9 @@ function animateCloseMenu(webpage_value)  {
   // The CSS selector for the main menu is passed on by using the function, 'setNavSelector', 
   // to determine if the browser used is for a handheld device or a larger display.
   nav_selector = setNavSelector();
+
+  // The jQuery object which refers to the main menu is passed on.
+  nav_element = $(nav_selector);
 
   // A String variable which will hold the CSS selector which refers to the submenu 
   // containing links to individual case studies is initialized.
@@ -822,7 +952,6 @@ function animateCaseStudies() {
       height: "10.94rem" // 175px
     }
   }
-
   
   // A String variable which will hold the URL of the current webpage 
   // is initialized.
@@ -928,7 +1057,7 @@ function animateMenu(webpage_value) {
     setTimeout(
       function () {
         animateOpenMenu(webpage_value);
-      }, 175
+      }, 800
     );
 
     menu_items_css = {
@@ -936,17 +1065,15 @@ function animateMenu(webpage_value) {
       opacity: 1
     };
   } else if (webpage_value === "close_menu") {
-    setTimeout(
-      function () {
-        animateCloseMenu(webpage_value);
-      }, 175
-    );
+    animateCloseMenu(webpage_value);
     
     menu_items_css = {
       display: "none", 
       opacity: 0
     };
   }
+
+  animateMenuOptions(menu_items_css);
 
   // IF/ELSE statement which animates the background of the menu if the browser is for 
   // a handheld device.
@@ -955,26 +1082,22 @@ function animateMenu(webpage_value) {
     // menu options are visible is initiated.
     var background_height = "";
 
-    background_height = determineBackgroundHeight();
-  }
-    
-  animateMenuOptions(menu_items_css);
-  
-  // IF/ELSE statement which will animate the background of the menu if the browser 
-  // used is for a handheld device.
-  if (nav_selector === ".section-nav-iphone") {
-
     // IF/ELSE statement which for handheld devices lengthens the background of the menu 
     // or shortens it.
     if (webpage_value === "close_menu")  {
       // The default height of the menu is passed on.
       background_height = "4.69rem"; // 75px      
+    } else {
+      background_height = determineBackgroundHeight();
     }
 
-    $(nav_element).delay(650).animate({
-      height: background_height
-    }, 350);    
-  } 
+    setTimeout(
+      function () {
+        $(nav_element).animate({
+          height: background_height
+        }, 500);    
+      }, 125); 
+  }
 } // END of FUNCTION animateMenu
 
 
@@ -1043,9 +1166,9 @@ function verifyFields(input_element, field_status) {
 	var error_value_string;
 
 	switch (field_selector) {
-		case "input-contact-full_name":
+		case "input-conversation-full_name":
 			default_value_string = "_ _ _ _ _  _ _ _ _ _ _ _ _";
-			error_value_string = "Please enter your First and Last Name";
+			error_value_string = "Please enter your first and last name";
 			
 			if (field_value === error_value_string) { 
 				if (field_status === "focus")	{
@@ -1073,7 +1196,7 @@ function verifyFields(input_element, field_status) {
 			}
 		break; 
 
-		case "input-contact-email_address":
+		case "input-conversation-email_address":
 			default_value_string = "_ _ _ _ _ @ _ _ _ _ _ _ _ . _ _ _";
 			error_value_string = "Please retype your email address";
 			
@@ -1090,7 +1213,7 @@ function verifyFields(input_element, field_status) {
 			} 
 		break;
 
-		case "input-contact-message":
+		case "textarea-conversation-message":
 			default_value_string = "Please enter your message here";
 			
 			if (field_value === default_value_string) {
