@@ -33,7 +33,7 @@ article .div-case_study-tech_used-info-list-item span,
 #div-conversation-copy p,
 form .label-conversation,
 form .input-conversation,
-form .textarea-conversation {
+form #textarea-conversation-message {
   font-family: abril-text, Garamond, serif;
   font-weight: 300; }
 
@@ -358,6 +358,11 @@ article #section-case_study-intro .div-case_study-intro-web_address {
   article #section-case_study-intro .div-case_study-intro-web_address a {
     display: block; }
 
+article figure iframe {
+  border: 0.063rem solid #c1c6db; }
+  article figure iframe body div:first-of-type {
+    max-height: auto !important; }
+
 article .section-case_study-assets h3 {
   border-left: 0.188rem solid #006fb9;
   font-family: abril-text, Garamond, serif;
@@ -522,7 +527,7 @@ article .section-case_study-takeaways h3 {
     margin-bottom: 0.25rem;
     font-weight: 700; }
   #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation {
+  #form-conversation #textarea-conversation-message {
     padding: 0.5rem;
     color: #51545b;
     border: 0.188rem solid #c1c6db; }
@@ -671,7 +676,9 @@ article .section-case_study-takeaways h3 {
     article .p-bio-first::first-line {
       font-weight: 700; }
     article img,
-    article #figure-bio-quote-div {
+    article #figure-bio-quote-div,
+    article iframe,
+    article iframe body div:first-of-type {
       width: 46.75rem; }
     article figure {
       width: 54rem;
@@ -687,6 +694,8 @@ article .section-case_study-takeaways h3 {
         border-left: 0.188rem solid #f6895b;
         text-align: left;
         vertical-align: top; }
+    article iframe {
+      height: 26rem; }
     article #figure-bio-quote-div {
       width: 45rem;
       height: 27.81rem;
@@ -1029,7 +1038,7 @@ article .section-case_study-takeaways h3 {
       margin-bottom: 0.5rem;
       font-size: 1.5rem; }
     #form-conversation .input-conversation,
-    #form-conversation .textarea-conversation {
+    #form-conversation #textarea-conversation-message {
       margin-bottom: 2.25rem;
       font-size: 1.5rem; }
   #section-logo-conversation {
@@ -1081,7 +1090,7 @@ article .section-case_study-takeaways h3 {
   #div-conversation-copy p {
     width: 35.5rem; }
   #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation {
+  #form-conversation #textarea-conversation-message {
     width: 27rem; }
   #form-conversation #textarea-conversation-message {
     height: 17rem; }
@@ -1355,8 +1364,6 @@ article .section-case_study-takeaways h3 {
   article #figure-case_study-lvusl-intial-employment,
   article #figure-case_study-lvusl-revised-employment {
     margin-top: 1.5rem; }
-  article #figure-case_study-lvusl-revised-employment span {
-    width: 94%; }
   article .section-case_study-assets {
     margin: 2rem 0; }
     article .section-case_study-assets .div-case_study-assets-fonts,
@@ -1412,16 +1419,15 @@ article .section-case_study-takeaways h3 {
   #form-conversation {
     grid-column: 1 / span 2; }
     #form-conversation .input-conversation,
-    #form-conversation .textarea-conversation {
-      width: 17.5rem;
+    #form-conversation #textarea-conversation-message {
       margin-bottom: 1.25rem;
       font-size: 1.25rem; }
-    #form-conversation .textarea-conversation {
+    #form-conversation #textarea-conversation-message {
       height: 10.8rem; } }
 
-/* ************************************************ 
-      iPAD - 768 x 1024 & iPAD PRO - 1024 x 1366
-    *********************************************** */
+/* ***************************************************************** 
+      iPAD - 768 x 1024, KINDLE FIRE HDX & iPAD PRO - 1024 x 1366
+    **************************************************************** */
 @media (min-width: 415px) and (max-width: 1024px) {
   /* **** LANDING PAGE **** */
   #body-landing {
@@ -1675,13 +1681,20 @@ article .section-case_study-takeaways h3 {
       width: 7rem; }
     article .figure-case_study .figure-border {
       display: none; }
-  article .figure-case_study + .figure-case_study span {
+  article #figure-case_study-lvusl-initial-employment span,
+  article #figure-case_study-lvusl-revised-employment span,
+  article #figure-case_study-la-paper_mockups-2 span,
+  article #figure-case_study-la-cms-2 span,
+  article #figure-case_study-la-cms-4 span,
+  article #figure-case_study-kovl-wireframes-2 span,
+  article #figure-case_study-kovl-mockups-2 span,
+  article #figure-case_study-kovl-css-2 span {
     margin: 0 0.75rem 0 0;
     padding-left: 0;
     padding-right: 0.69rem;
     float: left;
     border-left: none;
-    border-right: 0.31rem solid #f6895b;
+    border-right: 0.188rem solid #f6895b;
     text-align: right; }
   article #figure-case_study-revised-employment span {
     width: 7rem; }
@@ -1695,6 +1708,24 @@ article .section-case_study-takeaways h3 {
     font-size: 2rem; }
   article .section-case_study-assets .div-case_study-assets-background img {
     width: 23.5rem; }
+  article #figure-case_study-lvusl-logo img,
+  article #figure-case_study-la-paper_mockups-1 img,
+  article #figure-case_study-la-paper_mockups-2 img,
+  article #figure-case_study-kovl-wireframes-1 img,
+  article #figure-case_study-kovl-wireframes-2 img,
+  article #figure-case_study-kovl-mockups-1 img,
+  article #figure-case_study-kovl-mockups-2 img,
+  article #figure-case_study-kovl-mockups-3 img {
+    width: 26.25rem; }
+  article #figure-case_study-lvusl-logo img,
+  article #figure-case_study-la-paper_mockups-1 img,
+  article #figure-case_study-la-paper_mockups-2 span,
+  article #figure-case_study-kovl-wireframes-1 img,
+  article #figure-case_study-kovl-wireframes-2 span,
+  article #figure-case_study-kovl-mockups-1 img,
+  article #figure-case_study-kovl-mockups-2 span,
+  article #figure-case_study-kovl-mockups-3 img {
+    margin-left: 4.5rem; }
   article .section-case_study-takeaways {
     width: 32rem;
     margin: 2rem auto; }
@@ -1738,13 +1769,13 @@ article .section-case_study-takeaways h3 {
     #form-conversation .label-conversation {
       font-size: 1.25rem; }
     #form-conversation .input-conversation,
-    #form-conversation .textarea-conversation {
+    #form-conversation #textarea-conversation-message {
       font-size: 1.5rem; }
     #form-conversation .input-conversation,
-    #form-conversation .textarea-conversation,
-    #form-conversation #input-conversation-submit {
+    #form-conversation #textarea-conversation-message {
       width: 23rem; }
     #form-conversation #input-conversation-submit {
+      width: 24.25rem;
       font-size: 1.25rem; }
   #section-logo-conversation {
     grid-row: 5 / span 1; } }
@@ -1752,7 +1783,7 @@ article .section-case_study-takeaways h3 {
 /* **************************** 
       iPAD PRO - 1024 x 1366
     *************************** */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 801px) and (max-width: 1024px) {
   /* **** MAIN NAVIGATION **** */
   nav {
     right: 6rem; }
@@ -1816,6 +1847,10 @@ article .section-case_study-takeaways h3 {
   /* **** CASE STUDIES **** */
   article .figure-case_study {
     width: 52rem; }
+    article .figure-case_study iframe,
+    article .figure-case_study iframe html body .div-resume-work-jobs:first-of-type {
+      width: 43rem;
+      height: 24.19rem; }
     article .figure-case_study img {
       width: 43.25rem; }
   article #figure-case_study-lvusl-logo img {
@@ -1825,8 +1860,12 @@ article .section-case_study-takeaways h3 {
     width: 36rem; }
     article .section-case_study-takeaways .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
       width: 33rem; }
-  article #article-border-end-case_study {
-    left: 40.5rem; }
+  article #article-border-end-case_study-lvusl {
+    left: 40.25rem; }
+  article #article-border-end-case_study-la {
+    left: 42rem; }
+  article #article-border-end-case_study-kovl {
+    left: 41rem; }
   /* **** START A CONVERSATION **** */
   #body-content-conversation {
     margin: 6rem; }
@@ -1837,6 +1876,82 @@ article .section-case_study-takeaways h3 {
     width: 32.31rem; }
   #section-logo-conversation {
     margin-top: 2.75rem; } }
+
+/* ********************************* 
+      KINDLE FIRE HDX - 800 x 1280
+   ********************************* */
+@media (min-width: 769px) and (max-width: 800px) {
+  /* **** MAIN NAVIGATION **** */
+  nav {
+    right: 3rem; }
+    nav #div-menu-other-border {
+      height: 73rem; }
+  /* **** LANDING PAGE **** */
+  body,
+  #body-content {
+    margin: 4rem; }
+  #body-landing {
+    row-gap: 25.25rem; }
+  header .header-copy {
+    font-size: 1.75rem; }
+  /* **** BIOGRAPHY **** */
+  article p {
+    width: 35rem; }
+  article figure img,
+  article figure #figure-bio-quote-div,
+  article figure #figure-bio-quote-container-div {
+    width: 35rem; }
+  article figure #figure-bio-quote-container-div {
+    height: 20.68rem;
+    padding-top: 0.25rem; }
+    article figure #figure-bio-quote-container-div q {
+      margin: 7rem auto 0.5rem auto;
+      font-size: 1.5rem; }
+    article figure #figure-bio-quote-container-div span {
+      font-size: 1.25rem; }
+  article figure #figure-bio-quote-div {
+    height: 20.68rem;
+    background-size: 31rem 20.68rem; }
+  article #figure-bio-portrait img {
+    width: 42rem; }
+  article #article-border-end-bio {
+    left: 35.25rem; }
+  /* **** RESUME **** */
+  article .section-resume,
+  article .section-case_study,
+  article .figure-case_study {
+    width: 42rem; }
+  article #section-resume-objective p {
+    width: 40.75rem; }
+  article .div-spacer-horizontal {
+    width: 26rem !important; }
+  article .div-spacer-horizontal-resume {
+    margin: 2rem 0 2rem 15.25rem !important; }
+  article #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list,
+  article #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list {
+    display: none; }
+  article #section-resume-work p {
+    width: 38rem;
+    margin: 0 0 1.25rem 0; }
+  article #section-resume-work p:last-of-type {
+    margin-bottom: 0; }
+  /* **** CASE STUDIES **** */
+  article iframe,
+  article iframe html body .div-resume-work-jobs:first-of-type {
+    width: 33rem;
+    height: 18.56rem; }
+  article .figure-case_study img {
+    width: 33.25rem; }
+  article #article-border-end-case_study-lvusl {
+    left: 34.5rem; }
+  article #article-border-end-case_study-la {
+    left: 35.75rem; }
+  article #article-border-end-case_study-kovl {
+    left: 34.25rem; }
+  /* **** START A CONVERSATION **** */
+  #div-conversation-copy-confirmation,
+  #div-conversation-copy {
+    width: 35rem; } }
 
 /* **************************** 
       iPAD - 768 x 1366
@@ -1892,13 +2007,21 @@ article .section-case_study-takeaways h3 {
   /* **** CASE STUDY **** */
   article .figure-case_study {
     width: 44rem; }
+    article .figure-case_study iframe,
+    article .figure-case_study iframe html body .div-resume-work-jobs:first-of-type {
+      width: 35rem;
+      height: 19.69rem; }
     article .figure-case_study img {
       width: 35.25rem; }
   article #figure-case_study-lvusl-logo img {
     width: 25.5rem;
     margin-left: 5rem; }
-  #article-border-end-case_study {
+  #article-border-end-case_study-lvusl {
     left: 35.5rem; }
+  #article-border-end-case_study-la {
+    left: 35.25rem; }
+  #article-border-end-case_study-kovl {
+    left: 35rem; }
   /* **** START A CONVERSATION **** */
   #div-conversation-copy-confirmation,
   #div-conversation-copy {
@@ -1999,6 +2122,8 @@ article .section-case_study-takeaways h3 {
       article #section-resume-work .div-resume-work-jobs .div-resume-list p:last-of-type {
         margin-bottom: 0; }
   /* **** CASE STUDIES **** */
+  article #figure-case_study-lvusl-revised-employment span {
+    width: 94%; }
   article .section-case_study-takeaways .div-case_study-takeaways-list-item:last-of-type {
     margin-bottom: 0; }
     article .section-case_study-takeaways .div-case_study-takeaways-list-item:last-of-type .div-case_study-takeaways-list-copy:last-of-type p:last-of-type {
@@ -2016,6 +2141,9 @@ article .section-case_study-takeaways h3 {
     #div-conversation-copy p {
       font-size: 1.25rem;
       line-height: 1.6; }
+    #div-conversation-copy-confirmation p:first-of-type,
+    #div-conversation-copy p:first-of-type {
+      margin-top: 0; }
     #div-conversation-copy-confirmation p:last-of-type,
     #div-conversation-copy p:last-of-type {
       margin-bottom: 0; }
@@ -2084,9 +2212,10 @@ article .section-case_study-takeaways h3 {
     width: 19.75rem; }
   /* **** START A CONVERSATION **** */
   #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation,
+  #form-conversation #textarea-conversation-message {
+    width: 20.5rem; }
   #form-conversation #input-conversation-submit {
-    width: 20.5rem; } }
+    width: 21.9rem; } }
 
 /* ********************************* 
     iPHONE 6/7/8 - 375 x 667
@@ -2134,9 +2263,10 @@ article .section-case_study-takeaways h3 {
     height: 10.25rem; }
   /* **** START A CONVERSATION **** */
   #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation,
+  #form-conversation #textarea-conversation-message {
+    width: 18.1rem; }
   #form-conversation #input-conversation-submit {
-    width: 17.75rem; } }
+    width: 19.45rem; } }
 
 /* ********************************* 
     ANDROID - 360 x 640
@@ -2187,9 +2317,10 @@ article .section-case_study-takeaways h3 {
   #body-content-conversation {
     grid-template-columns: 9.25rem 9.25rem; }
   #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation,
+  #form-conversation #textarea-conversation-message {
+    width: 17.2rem; }
   #form-conversation #input-conversation-submit {
-    width: 17.2rem; } }
+    width: 18.5rem; } }
 
 /* ********************************* 
       iPHONE 5 - 320 x 568
@@ -2285,9 +2416,10 @@ article .section-case_study-takeaways h3 {
     #section-conversation-links a {
       font-size: 1rem; }
   #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation,
-  #form-conversation #input-conversation-submit {
-    width: 15rem; }
+  #form-conversation #textarea-conversation-message {
+    width: 15.1rem; }
   #form-conversation .input-conversation,
-  #form-conversation .textarea-conversation {
-    font-size: 1.1rem; } }
+  #form-conversation #textarea-conversation-message {
+    font-size: 1.1rem; }
+  #form-conversation #input-conversation-submit {
+    width: 16.5rem; } }

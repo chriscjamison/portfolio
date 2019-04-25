@@ -401,8 +401,10 @@ function setConversationSelector()  {
 
     // IF/ELSE statement which includes a selector, '#section-converation-links', if the browser is for a 
     // handheld or tablet browser.
-    if (window_width <= 1024) {
+    if (window_width < 768) {
       conversation_selector = "#section-conversation-links, #div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
+    } else if (window_width >= 768 && window_width <= 1024) {
+      conversation_selector = "#div-conversation-copy, #spacer-horizontal-div-conversation, #form-conversation";
     } else {
       conversation_selector = "#div-conversation-copy, #form-conversation";
     }
@@ -876,7 +878,7 @@ function animateCaseStudies() {
  * This function will animate the visibility of the sub menu containing links 
  * to individual case studies.
  */
-
+console.log("1");
   // A String variable which will hold the CSS selector of the individual links 
   // contained within the submenu is initialzed.
   var case_studies_links_selector = "";

@@ -25,5 +25,5 @@
 ?>
 
 <html>
-  <script>window.location.href = "http://chrisjamison.com/start_a_conversation.htm#confirmation";</script>
+  <script>window.location.href = "http://chriscjamison.com/start_a_conversation.htm#confirmation";</script>
 </html>
