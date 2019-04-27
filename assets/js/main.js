@@ -32,7 +32,7 @@ $(document).ready(
           // A path to the webpage a visitor wishes to visit is assembled by first setting the domain of the 
           // website, 'http://chriscjamison.com', passing on the value of 'webpage_value' and finally 
           // cocatenating the string, '.htm'.
-          new_url_string = "http://chrisjamison.com/" + webpage_value + ".htm";
+          new_url_string = "http://chriscjamison.com/" + webpage_value + ".htm";
 
           // A String variable which will hold the CSS selector which refers to the content is initialized.
           var body_selector = "";
@@ -423,134 +423,159 @@ function animateiPadPageElements(webpage_value)  {
  * browsers with a width less than 1024px.
  */
 
-  // A String variable which will hold the URL of the current webpage is initialized.
-  var url_string = "";
+   // A Number variable which will hold the width of the browser is initialized.
+   var window_width;
 
-  // The URL of the current webpage is passed on.
-  url_string = window.location.href;
+   // The width of the browser is passed on using the jQuery Method, '.width()'.
+   window_width = $(window).width();
+ 
+   // IF/ELSE statement which will slide the menu icon slightly to the left if the browser 
+   // width is less than 1024px.
+   if (window_width > 414 && window_width <= 1024) {
 
-  // A String variable which will hold the filename which refers to the 'Start a Conversation' 
-  // webpage is initialized.
-  var start_a_conversation_search_string = "";
+    // A String variable which will hold the URL of the current webpage is initialized.
+    var url_string = "";
 
-  // A Number variable which will hold the location within 'url_string' that the filename 
-  // which refers to the 'Start a Conversation' webpage is initialized.
-  var start_a_conversation_search_index;
+    // The URL of the current webpage is passed on.
+    url_string = window.location.href;
 
-  // The filename of the webpage which refers to 'Start a Conversation' is passed on.
-  start_a_conversation_search_string = "start_a_conversation.htm";
+    // A String variable which will hold the filename which refers to the 'Start a Conversation' 
+    // webpage is initialized.
+    var start_a_conversation_search_string = "";
 
-  // The location within 'url_string' which the filename which refers to 'Start a Conversation' 
-  // is passed on.
-  start_a_conversation_search_index = url_string.indexOf(start_a_conversation_search_string);
+    // A Number variable which will hold the location within 'url_string' that the filename 
+    // which refers to the 'Start a Conversation' webpage is initialized.
+    var start_a_conversation_search_index;
 
-  // IF/ELSE statement which determines which DOM elements to fade from view. If the current 
-  // webpage refers to 'Start a Conversation', the jQuery object which refer to DOM elements 
-  // specific to that webpage are initialzed. Otherwise, the jQuery objects referring to 
-  // typical DOM elements are iniitalized.
-  if (start_a_conversation_search_index > -1) {
-    // IF/ELSE statement which will either make the HTML elements holding content visible 
-    // or not visible.
+    // The filename of the webpage which refers to 'Start a Conversation' is passed on.
+    start_a_conversation_search_string = "start_a_conversation.htm";
 
-    // String variables which will hold CSS selectors for various HTML elements are initialized.
-    var header_selector = "";
-    var conversation_links_selector = "";
-    var conversation_copy_selector = "";
-    var conversation_border_selector = "";
-    var conversation_form_selector = "";
+    // The location within 'url_string' which the filename which refers to 'Start a Conversation' 
+    // is passed on.
+    start_a_conversation_search_index = url_string.indexOf(start_a_conversation_search_string);
 
-    // Object variables which will hold jQuery objects which refer to various HTML elements 
-    // are initialized.
-    var header_element = {};
-    var conversation_links_element = {};
-    var conversation_copy_element = {};
-    var conversation_border_element = {};
-    var conversation_form_element = {};
+    // IF/ELSE statement which determines which DOM elements to fade from view. If the current 
+    // webpage refers to 'Start a Conversation', the jQuery object which refer to DOM elements 
+    // specific to that webpage are initialzed. Otherwise, the jQuery objects referring to 
+    // typical DOM elements are iniitalized.
+    if (start_a_conversation_search_index > -1) {
+      // IF/ELSE statement which will either make the HTML elements holding content visible 
+      // or not visible.
 
-    // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
-    header_selector = "header";
-    conversation_links_selector = "#section-conversation-links";
-    conversation_copy_selector = "#div-conversation-copy";
-    conversation_border_selector = "#spacer-horizontal-div-conversation";
-    conversation_form_selector = "#form-conversation";
+      // String variables which will hold CSS selectors for various HTML elements are initialized.
+      var header_selector = "";
+      var conversation_links_selector = "";
+      var conversation_copy_selector = "";
+      var conversation_border_selector = "";
+      var conversation_form_selector = "";
 
-    // jQuery objects which refer to various HTML elements to be made visible are passed on.
-    header_element = $(header_selector);
-    conversation_links_element = $(conversation_links_selector);
-    conversation_copy_element = $(conversation_copy_selector);
-    conversation_border_element = $(conversation_border_selector);
-    conversation_form_element = $(conversation_form_selector);
+      // Object variables which will hold jQuery objects which refer to various HTML elements 
+      // are initialized.
+      var header_element = {};
+      var conversation_links_element = {};
+      var conversation_copy_element = {};
+      var conversation_border_element = {};
+      var conversation_form_element = {};
 
-    // IF/ELSE statement which will either make the HTML elements holding content visible 
-    // or not visible.
-    if (webpage_value === "open_menu")  {
-      $(header_element).fadeTo(50, 0);
+      // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
+      header_selector = "header";
+      conversation_links_selector = "#section-conversation-links";
+      conversation_copy_selector = "#div-conversation-copy";
+      conversation_border_selector = "#spacer-horizontal-div-conversation";
+      conversation_form_selector = "#form-conversation";
 
-      // A Number variable which will hold the width of the browser is initialized.
-      var window_width;
+      // jQuery objects which refer to various HTML elements to be made visible are passed on.
+      header_element = $(header_selector);
+      conversation_links_element = $(conversation_links_selector);
+      conversation_copy_element = $(conversation_copy_selector);
+      conversation_border_element = $(conversation_border_selector);
+      conversation_form_element = $(conversation_form_selector);
 
-      // The width of the browser window is passed on.
-      window_width = $(window).width();
+      // IF/ELSE statement which will either make the HTML elements holding content visible 
+      // or not visible.
+      if (webpage_value === "open_menu")  {
+        $(header_element).fadeTo(50, 0);
 
-      if (window_width <= 414)  {
-        $(conversation_links_element).fadeTo(50, 0);
+        // A Number variable which will hold the width of the browser is initialized.
+        var window_width;
+
+        // The width of the browser window is passed on.
+        window_width = $(window).width();
+
+        if (window_width <= 414)  {
+          $(conversation_links_element).fadeTo(50, 0);
+        }
+        
+        
+        if (window_width <= 1024) {
+          $(conversation_border_element).fadeTo(50, 0);
+        }
+        
+        $(conversation_copy_element).fadeTo(50, 0);
+        $(conversation_form_element).fadeTo(50, 0);
+        $(section_logo_element).fadeTo(50, 0);
+      } else if (webpage_value === "close_menu")  {
+        $(header_element).fadeTo(150, 1);
+
+        if (window_width <= 414)  {
+          $(conversation_links_element).fadeTo(150, 1);
+        }
+
+        if (window_width <= 1024) {
+          $(conversation_border_element).fadeTo(150, 1);
+        }
+        
+        $(conversation_copy_element).fadeTo(150, 1);
+        $(conversation_form_element).fadeTo(150, 1);
+        $(section_logo_element).fadeTo(150, 1);
       }
-      
-      
-      if (window_width <= 1024) {
-        $(conversation_border_element).fadeTo(50, 0);
-      }
-      
-      $(conversation_copy_element).fadeTo(50, 0);
-      $(conversation_form_element).fadeTo(50, 0);
-      $(section_logo_element).fadeTo(50, 0);
-    } else if (webpage_value === "close_menu")  {
-      $(header_element).fadeTo(150, 1);
+    } else {    
+      // A String variable which will hold the filename which refers to the landing page.
+      var landing_page_search_string = "";
 
-      if (window_width <= 414)  {
-        $(conversation_links_element).fadeTo(150, 1);
-      }
+      // A Number variable which will hold the location within 'url_string' that the filename 
+      // which refers to the landing page appears.
+      var landing_page_search_index;
 
-      if (window_width <= 1024) {
-        $(conversation_border_element).fadeTo(150, 1);
-      }
-      
-      $(conversation_copy_element).fadeTo(150, 1);
-      $(conversation_form_element).fadeTo(150, 1);
-      $(section_logo_element).fadeTo(150, 1);
-    }
-  } else {    
-    // String variables which will hold CSS selectors for various HTML elements are initialized.
-    var header_selector = "";
-    var article_selector = "";
-    var section_logo_selector = "";
+      // The location within 'url_string' which the filename appears is passed on.
+      landing_page_search_index = url_string.indexOf(landing_page_search_string);
 
-    // Object variables which will hold jQuery objects which refer to various HTML elements 
-    // are initialized.
-    var header_element = {};
-    var article_element = {};
-    var section_logo_element = {};
+      // IF/ELSE statement which will fade the visiblity of content of any page 
+      // besides the landing page.
+      if (landing_page_search_index > -1) {
+        // String variables which will hold CSS selectors for various HTML elements are initialized.
+        var header_selector = "";
+        var article_selector = "";
+        var section_logo_selector = "";
 
-    // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
-    header_selector = "header";
-    article_selector = "article";
-    section_logo_selector = ".section-logo";
+        // Object variables which will hold jQuery objects which refer to various HTML elements 
+        // are initialized.
+        var header_element = {};
+        var article_element = {};
+        var section_logo_element = {};
 
-    // jQuery objects which refer to various HTML elements to be made visible are passed on.
-    header_element = $(header_selector);
-    article_element = $(article_selector);
-    section_logo_element = $(section_logo_selector);
-    
-    // IF/ELSE statement which will either make the HTML elements holding content visible 
-    // or not visible.
-    if (webpage_value === "open_menu")  {
-      $(header_element).fadeTo(50, 0);
-      $(article_element).fadeTo(50, 0);
-      $(section_logo_element).fadeTo(50, 0);
-    } else if (webpage_value === "close_menu")  {
-      $(header_element).fadeTo(150, 1);
-      $(article_element).fadeTo(150, 1);
-      $(section_logo_element).fadeTo(150, 1);
+        // The CSS selectors for the HTML elements to be made visible or not visible are passed on.
+        header_selector = "header";
+        article_selector = "article";
+        section_logo_selector = ".section-logo";
+
+        // jQuery objects which refer to various HTML elements to be made visible are passed on.
+        header_element = $(header_selector);
+        article_element = $(article_selector);
+        section_logo_element = $(section_logo_selector);
+        
+        // IF/ELSE statement which will either make the HTML elements holding content visible 
+        // or not visible.
+        if (webpage_value === "open_menu")  {
+          $(header_element).fadeTo(50, 0);
+          $(article_element).fadeTo(50, 0);
+          $(section_logo_element).fadeTo(50, 0);
+        } else if (webpage_value === "close_menu")  {
+          $(header_element).fadeTo(150, 1);
+          $(article_element).fadeTo(150, 1);
+          $(section_logo_element).fadeTo(150, 1);
+        }
+      }      
     }
   }
 }
@@ -578,9 +603,10 @@ function animateMenuIcon() {
 
   // The value of the CSS property of 'opacity' for the menu icon is passed on.
   menu_icon_opacity = $(menu_icon_element).css("opacity");
+  
   // IF/ELSE statement which displays the menu icon if it is not visible, and 
   // hides the menu icon if it is visible.
-  if (menu_icon_opacity === "1")  {
+  if (menu_icon_opacity !== "0")  {
     // The menu icon fades away.
     $(menu_icon_element).fadeTo(150, 0);
   } else {
@@ -622,40 +648,48 @@ function animateMenuOptions(menu_items_css) {
     function () {
       animateMenuIcon();
 
-      $(menu_items_element).css(menu_items_css);
+      setTimeout(
+        function () {
+          // IF/ELSE statement which intializes variables and sets CSS values for a border within the menu 
+          // which only loads on tablet displays.
+          if (nav_selector === ".nav-other")  {
+            
+            // A Number variable which will hold the width of the browser window is initialized.
+            var window_width;
+
+            // The width of the browser window is passed on by using the jQuery Method, '.width()'.
+            window_width = $(window).width();
+
+            // IF/ELSE statement which will create and set variables which will display or hide 
+            // the border within the menu.
+            if (window_width > 414 && window_width <= 1024) {
+
+              // A String variable which will hold the CSS selector for the border within the menu 
+              // is initialized.
+              var menu_border_selector = "";
+
+              // An Object variable which will hold the jQuery object which referst to the border 
+              // within the menu is initialized.
+              var menu_border_element = {};
+
+              // The CSS selector for the border within the menu is passed on. The selector is 
+              // created by cocatenating the value of 'nav_selector' with '#div-menu-other-border'.
+              menu_border_selector = nav_selector + " #div-menu-other-border";
+
+              // A jQuery object which refers to the border within the menu is passed on.
+              menu_border_element = $(menu_border_selector);
+
+              $(menu_border_element).css(menu_items_css);
+            }
+          }
+        }, 250
+      );
       
-      // IF/ELSE statement which intializes variables and sets CSS values for a border within the menu 
-      // which only loads on tablet displays.
-      if (nav_selector === ".nav-other")  {
-        
-        // A Number variable which will hold the width of the browser window is initialized.
-        var window_width;
-
-        // The width of the browser window is passed on by using the jQuery Method, '.width()'.
-        window_width = $(window).width();
-
-        // IF/ELSE statement which will create and set variables which will display or hide 
-        // the border within the menu.
-        if (window_width > 414 && window_width <= 1024) {
-
-          // A String variable which will hold the CSS selector for the border within the menu 
-          // is initialized.
-          var menu_border_selector = "";
-
-          // An Object variable which will hold the jQuery object which referst to the border 
-          // within the menu is initialized.
-          var menu_border_element = {};
-
-          // The CSS selector for the border within the menu is passed on. The selector is 
-          // created by cocatenating the value of 'nav_selector' with '#div-menu-other-border'.
-          menu_border_selector = nav_selector + " #div-menu-other-border";
-
-          // A jQuery object which refers to the border within the menu is passed on.
-          menu_border_element = $(menu_border_selector);
-
-          $(menu_border_element).css(menu_items_css);
-        }
-      }
+      setTimeout(
+        function () {
+          $(menu_items_element).css(menu_items_css);
+        }, 250
+      );
     }, 350
   );
 } // END of FUNCTION animateMenuOptions
@@ -703,33 +737,10 @@ function animateOpenMenu(webpage_value)  {
     $(nav_element).addClass("nav-iphone-visible");
 
   } else if (nav_selector === ".nav-other") {
-    // A Number variable which will hold the width of the browser is initialized.
-    var window_width;
-
-    // The width of the browser is passed on using the jQuery Method, '.width()'.
-    window_width = $(window).width();
-
-    // IF/ELSE statement which will slide the menu icon slightly to the left if the browser 
-    // width is less than 1024px.
-    if (window_width > 414 && window_width <= 1024) {
-      
-      // A String variable which will hold the pathname is initialized.
-      var url_string = "";
-
-      // The pathname of the current webpage is passed on.
-      url_string = window.location.pathname;
-
-      // IF/ELSE statement which animates the opacity of the page elements if the 
-      // current webpage is not the Landing Page.
-      if (url_string !== "/" && url_string !== "/index.htm")  {
-        animateiPadPageElements(webpage_value);
-      }
-
       // The menu icon is made to appear slightly to the left of its base position.
       $(menu_icon_element).css("marginLeft", "0");
-    }
 
-    $(menu_icon_element).css("backgroundPosition", "0px -240px");
+      $(menu_icon_element).css("backgroundPosition", "0px -240px");
   }
 
   $(menu_icon_element).attr("href", "#close_menu");
@@ -812,17 +823,7 @@ function animateCloseMenu(webpage_value)  {
 
     // The width of the browser is passed on using the jQuery Method, '.width()'.
     window_width = $(window).width();
-
-    // IF/ELSE statement which will slide the menu icon back to its base position.
-    if (window_width > 414 && window_width <= 1024) {
-
-      // The menu icon is made to return to its base position.
-      $(menu_icon_element).css("marginLeft", "4rem"); // 64px
-
-      // The HTML elements containing content are made visible.
-      animateiPadPageElements(webpage_value);
-    }
-  }
+  } 
   
   $(menu_icon_element).attr("href", "#open_menu");
 } // END of FUNCTION animateCloseMenu
@@ -1056,6 +1057,8 @@ function animateMenu(webpage_value) {
   // IF/ELSE statement which swaps the click state of the menu icon to its base state 
   // to a click state.
   if (webpage_value === "open_menu")  {
+    animateiPadPageElements(webpage_value);
+
     setTimeout(
       function () {
         animateOpenMenu(webpage_value);
@@ -1067,12 +1070,18 @@ function animateMenu(webpage_value) {
       opacity: 1
     };
   } else if (webpage_value === "close_menu") {
-    animateCloseMenu(webpage_value);
-    
     menu_items_css = {
       display: "none", 
       opacity: 0
     };
+
+    animateCloseMenu(webpage_value);
+
+    setTimeout(
+      function () {
+        animateiPadPageElements(webpage_value);
+      }, 800
+    );
   }
 
   animateMenuOptions(menu_items_css);
