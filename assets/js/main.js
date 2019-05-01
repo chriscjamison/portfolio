@@ -1,5 +1,16 @@
 /* ****** main.js ****** */
 
+/* **** CONSTANTS **** */
+
+// A Number variable is initialized which will hold the time interval CSS elements which 
+// are animated take.
+var time_value;
+
+// The value in miliseconds that each animation takes place is passed on.
+time_value = 400;
+
+
+
 $(document).ready(
   function () {
     $(window).on("hashchange", 
@@ -46,12 +57,12 @@ $(document).ready(
           // A jQuery object which refers to the <body> HTML element is passed on to 'body_element'.
           body_element = $(body_selector);
 
-          $(body_element).fadeTo(250, 0);
+          $(body_element).fadeTo((time_value * 0.6), 0);
 
           setTimeout(
             function () {
               window.location.href = new_url_string;
-            }, 300
+            }, (time_value * 0.75)
           );
         }
       }
@@ -137,6 +148,68 @@ $(document).ready(
     
         // The appearance of the Submit button is changed.
         $(submit_css).animate(submit_css, 350);
+      }
+    );
+
+    $("#a-case_study-viewing_info-lvps").click(
+      function () {
+        // A Number variable which will hold the width of the browser window.
+        var window_width;
+
+        // The width of the browser window is passed on.
+        window_width = $(window).width();
+
+        // A String variable which holds the URL to send a visitor if they choose to view 
+        // Las Vegas Pro Soccer in a mobile browser
+        var new_url_string = "";
+
+        // IF/ELSE statement which will redirect a visitor to view screenshots if 
+        // the brower is a desktop browser.
+        if (window_width <= 1024)  {
+          // The URL of page a visitor can view screenshots is passed on.
+          new_url_string = "http://chriscjamison.com/lvps/lvps-mobile.htm";
+
+          // The visitor is now redirected.
+          window.location.href = new_url_string;
+        } else {
+          // The URL of page a visitor can view screenshots is passed on.
+          new_url_string = "http://chriscjamison.com/lvps";
+
+          // The visitor is now redirected.
+          window.location.href = new_url_string;
+        }
+      }
+    );
+
+    $("#a-case_study-viewing_info-la").click(
+      function () {
+        // A Number variable which will hold the width of the browser window.
+        var window_width;
+
+        // The width of the browser window is passed on.
+        window_width = $(window).width();
+
+        // A String variable which holds the URL to send a visitor if they choose to view 
+        // http://www.leadersacademy.com.
+        var new_url_string = "";
+
+        // IF/ELSE statement which will redirect a visitor to view http://www.leadersacademy.com if 
+        // the brower is a desktop browser.
+        if (window_width > 1024)  {
+          // The URL of page a visitor on a desktop browser will view http://www.leadersacademy.com 
+          // is passed on.
+          new_url_string = "http://chriscjamison.com/la/la-mobile.htm";
+
+          // The visitor is now redirected.
+          window.location.href = new_url_string;
+        } else {
+          // The URL of page a visitor on a desktop browser will view http://www.leadersacademy.com 
+          // is passed on.
+          new_url_string = "http://www.leadersacademy.com";
+
+          // The visitor is now redirected.
+          window.location.href = new_url_string;
+        }
       }
     );
   }
@@ -227,20 +300,20 @@ function animateLandingPageElements() {
   section_logo_element = $(section_logo_selector);
 
   // The HTML elements within the Landing Page are made visible.
-  $(header_intro_welcome_element).fadeTo(700, 1);
-  $(section_logo_element).fadeTo(900, 1);
-  $(header_intro_name_element).delay(900).fadeTo(900, 1);
-  $(header_name_element).delay(1800).fadeTo(900, 1);
-  $(header_border_name_element).delay(2700).fadeTo(600, 1);
-  $(header_copy_element).delay(3550).fadeTo(850, 1);
-  $(section_social_element).delay(4550).fadeTo(600, 1);
+  $(header_intro_welcome_element).fadeTo((time_value * 2), 1);
+  $(section_logo_element).fadeTo((time_value * 2), 1);
+  $(header_intro_name_element).delay(time_value * 2.5).fadeTo((time_value * 2), 1);
+  $(header_name_element).delay(time_value * 5).fadeTo((time_value * 2), 1);
+  $(header_border_name_element).delay(time_value * 7).fadeTo((time_value * 1.5), 1);
+  $(header_copy_element).delay(time_value * 9.5).fadeTo((time_value * 2.25), 1);
+  $(section_social_element).delay(time_value * 11.5).fadeTo((time_value * 2), 1);
   
   // IF/ELSE statement which delays the moment the main menu becomes visible if the browser is 
   // for a handheld browser.
   if (nav_selector === ".section-nav-iphone") {
-    $(nav_element).delay(5550).fadeTo(600, 1);
+    $(nav_element).delay(time_value * 12.8).fadeTo((time_value * 2), 1);
   } else {
-    $(nav_element).delay(4550).fadeTo(600, 1);
+    $(nav_element).delay(time_value * 11.5).fadeTo((time_value * 2), 1);
   }
 } // END of FUNCTION animateLandingPageElements
 
@@ -281,14 +354,14 @@ function animatePageElements(url_string) {
   nav_element = $(nav_selector);
 
   // The HTML elements within the Landing Page are made visible.  
-  $(nav_element).fadeTo(700, 1);
+  $(nav_element).fadeTo((time_value * 1.75), 1);
 
   // IF/ELSE statement which displays the webpage logo if the browser is not for a handheld device.
   if (nav_selector === ".nav-other")  {
-    $(section_logo_element).fadeTo(900, 1);
+    $(section_logo_element).fadeTo((time_value * 2.25), 1);
   }
   
-  $(header_h1_element).fadeTo(900, 1);
+  $(header_h1_element).fadeTo((time_value * 2.25), 1);
 
   // IF/ELSE statement which displays the various page HTML elements based on the URL of the webpage.
   // Additional elements display if the path to the webpage is 'start_a_conversation.htm'.
@@ -352,7 +425,7 @@ function animatePageElements(url_string) {
       $(form_element).css(not_visible_css);
     }
 
-    $(conversation_elements).delay(900).fadeTo(900, 1);
+    $(conversation_elements).delay(time_value * 2.25).fadeTo((time_value * 2.25), 1);
   } else {
     // A String variable which will hold CSS selectors are initialized.
     var article_selector = "";
@@ -367,10 +440,10 @@ function animatePageElements(url_string) {
     // A jQuery object which refers to the HTML elements soon to be displayed is passed on.
     article_element = $(article_selector);
 
-    $(article_element).delay(900).fadeTo(900, 1);
+    $(article_element).delay(time_value * 2.25).fadeTo((time_value * 2.25), 1);
   }
   
-  $(header_border_element).delay(1800).fadeTo(900, 1);
+  $(header_border_element).delay(time_value * 4.5).fadeTo((time_value * 2.25), 1);
 
 } // END of FUNCTION animatePageElements
 
@@ -437,28 +510,20 @@ function animateiPadPageElements(webpage_value)  {
     var url_string = "";
 
     // The URL of the current webpage is passed on.
-    url_string = window.location.href;
+    url_string = window.location.pathname;
 
     // A String variable which will hold the filename which refers to the 'Start a Conversation' 
     // webpage is initialized.
     var start_a_conversation_search_string = "";
 
-    // A Number variable which will hold the location within 'url_string' that the filename 
-    // which refers to the 'Start a Conversation' webpage is initialized.
-    var start_a_conversation_search_index;
-
     // The filename of the webpage which refers to 'Start a Conversation' is passed on.
     start_a_conversation_search_string = "start_a_conversation.htm";
-
-    // The location within 'url_string' which the filename which refers to 'Start a Conversation' 
-    // is passed on.
-    start_a_conversation_search_index = url_string.indexOf(start_a_conversation_search_string);
 
     // IF/ELSE statement which determines which DOM elements to fade from view. If the current 
     // webpage refers to 'Start a Conversation', the jQuery object which refer to DOM elements 
     // specific to that webpage are initialzed. Otherwise, the jQuery objects referring to 
     // typical DOM elements are iniitalized.
-    if (start_a_conversation_search_index > -1) {
+    if (url_string === start_a_conversation_search_string) {
       // IF/ELSE statement which will either make the HTML elements holding content visible 
       // or not visible.
 
@@ -494,7 +559,7 @@ function animateiPadPageElements(webpage_value)  {
       // IF/ELSE statement which will either make the HTML elements holding content visible 
       // or not visible.
       if (webpage_value === "open_menu")  {
-        $(header_element).fadeTo(50, 0);
+        $(header_element).fadeTo((time_value * 0.1), 0);
 
         // A Number variable which will hold the width of the browser is initialized.
         var window_width;
@@ -503,46 +568,45 @@ function animateiPadPageElements(webpage_value)  {
         window_width = $(window).width();
 
         if (window_width <= 414)  {
-          $(conversation_links_element).fadeTo(50, 0);
+          $(conversation_links_element).fadeTo((time_value * 0.1), 0);
         }
         
         
         if (window_width <= 1024) {
-          $(conversation_border_element).fadeTo(50, 0);
+          $(conversation_border_element).fadeTo((time_value * 0.1), 0);
         }
         
-        $(conversation_copy_element).fadeTo(50, 0);
-        $(conversation_form_element).fadeTo(50, 0);
-        $(section_logo_element).fadeTo(50, 0);
+        $(conversation_copy_element).fadeTo((time_value * 0.1), 0);
+        $(conversation_form_element).fadeTo((time_value * 0.1), 0);
+        $(section_logo_element).fadeTo((time_value * 0.1), 0);
       } else if (webpage_value === "close_menu")  {
-        $(header_element).fadeTo(150, 1);
+        $(header_element).fadeTo((time_value * 0.4), 1);
 
         if (window_width <= 414)  {
-          $(conversation_links_element).fadeTo(150, 1);
+          $(conversation_links_element).fadeTo((time_value * 0.4), 1);
         }
 
         if (window_width <= 1024) {
-          $(conversation_border_element).fadeTo(150, 1);
+          $(conversation_border_element).fadeTo((time_value * 0.4), 1);
         }
         
-        $(conversation_copy_element).fadeTo(150, 1);
-        $(conversation_form_element).fadeTo(150, 1);
-        $(section_logo_element).fadeTo(150, 1);
+        $(conversation_copy_element).fadeTo((time_value * 0.4), 1);
+        $(conversation_form_element).fadeTo((time_value * 0.4), 1);
+        $(section_logo_element).fadeTo((time_value * 0.4), 1);
       }
     } else {    
-      // A String variable which will hold the filename which refers to the landing page.
-      var landing_page_search_string = "";
+      // A String variables which will hold the filename which refers to the landing page.
+      var landing_page_search_string_1 = "";
+      var landing_page_search_string_2 = "";
 
-      // A Number variable which will hold the location within 'url_string' that the filename 
-      // which refers to the landing page appears.
-      var landing_page_search_index;
-
-      // The location within 'url_string' which the filename appears is passed on.
-      landing_page_search_index = url_string.indexOf(landing_page_search_string);
+      // The pathnames of the landing page's HTML file are passed on.
+      landing_page_search_string_1 = "/";
+      landing_page_search_string_2 = "/index.htm";
 
       // IF/ELSE statement which will fade the visiblity of content of any page 
       // besides the landing page.
-      if (landing_page_search_index > -1) {
+      if ((url_string !== landing_page_search_string_1) && 
+          (url_string !== landing_page_search_string_2)) {
         // String variables which will hold CSS selectors for various HTML elements are initialized.
         var header_selector = "";
         var article_selector = "";
@@ -567,13 +631,13 @@ function animateiPadPageElements(webpage_value)  {
         // IF/ELSE statement which will either make the HTML elements holding content visible 
         // or not visible.
         if (webpage_value === "open_menu")  {
-          $(header_element).fadeTo(50, 0);
-          $(article_element).fadeTo(50, 0);
-          $(section_logo_element).fadeTo(50, 0);
+          $(header_element).fadeTo((time_value * 0.1), 0);
+          $(article_element).fadeTo((time_value * 0.1), 0);
+          $(section_logo_element).fadeTo((time_value * 0.1), 0);
         } else if (webpage_value === "close_menu")  {
-          $(header_element).fadeTo(150, 1);
-          $(article_element).fadeTo(150, 1);
-          $(section_logo_element).fadeTo(150, 1);
+          $(header_element).fadeTo((time_value * 0.4), 1);
+          $(article_element).fadeTo((time_value * 0.4), 1);
+          $(section_logo_element).fadeTo((time_value * 0.4), 1);
         }
       }      
     }
@@ -606,12 +670,16 @@ function animateMenuIcon() {
   
   // IF/ELSE statement which displays the menu icon if it is not visible, and 
   // hides the menu icon if it is visible.
-  if (menu_icon_opacity !== "0")  {
+  if (menu_icon_opacity === "1")  {
     // The menu icon fades away.
-    $(menu_icon_element).fadeTo(150, 0);
+    setTimeout(
+      function () {
+        $(menu_icon_element).fadeTo(time_value, 0);
+      }, (time_value * 0.5)
+    );
   } else {
     // The menu icon fades in.
-    $(menu_icon_element).fadeTo(150, 1);
+    $(menu_icon_element).fadeTo(time_value, 1);
   }
 }
 // END of FUNCTION animateMenuIcon
@@ -646,8 +714,6 @@ function animateMenuOptions(menu_items_css) {
   
   setTimeout(
     function () {
-      animateMenuIcon();
-
       setTimeout(
         function () {
           // IF/ELSE statement which intializes variables and sets CSS values for a border within the menu 
@@ -682,16 +748,16 @@ function animateMenuOptions(menu_items_css) {
               $(menu_border_element).css(menu_items_css);
             }
           }
-        }, 250
+        }, (time_value * 0.6)
       );
       
       setTimeout(
         function () {
           $(menu_items_element).css(menu_items_css);
-        }, 250
+        }, (time_value * 0.6)
       );
-    }, 350
-  );
+    }, (time_value * 0.8)
+  ); 
 } // END of FUNCTION animateMenuOptions
 
   
@@ -1002,7 +1068,7 @@ console.log("1");
   setTimeout(
     function () {
       $(ul_element).animate(ul_css, 300);
-    }, 300
+    }, (time_value * 0.75)
   );
 
   // An Object variable which will hold CSS values for the <a> DOM elements contained 
@@ -1022,8 +1088,8 @@ console.log("1");
   // The links contained within the submenu are made visible.
   setTimeout(
     function () {
-      $(case_studies_links_element).fadeTo(400, 1);
-    }, 750
+      $(case_studies_links_element).fadeTo(time_value, 1);
+    }, (time_value * 1.75)
   );
 
 } // END of FUNCTION animateCaseStudies
@@ -1048,8 +1114,6 @@ function animateMenu(webpage_value) {
   // The jQuery object which refers to the main menu is passed on.
   nav_element = $(nav_selector);
 
-  animateMenuIcon();
-
   // An Object variable which will hold CSS properties and values used to style the menu icon 
   // is initialized.
   menu_items_css = {};
@@ -1057,12 +1121,25 @@ function animateMenu(webpage_value) {
   // IF/ELSE statement which swaps the click state of the menu icon to its base state 
   // to a click state.
   if (webpage_value === "open_menu")  {
-    animateiPadPageElements(webpage_value);
+    animateMenuIcon();
+
+    setTimeout(
+      function () {
+        animateiPadPageElements(webpage_value);
+      }, time_value
+    );
+    
 
     setTimeout(
       function () {
         animateOpenMenu(webpage_value);
-      }, 800
+      }, (time_value * 1.5)
+    );
+
+    setTimeout(
+      function () {
+        animateMenuIcon();
+      }, time_value
     );
 
     menu_items_css = {
@@ -1075,12 +1152,14 @@ function animateMenu(webpage_value) {
       opacity: 0
     };
 
+    // animateMenuIcon();
+
     animateCloseMenu(webpage_value);
 
     setTimeout(
       function () {
         animateiPadPageElements(webpage_value);
-      }, 800
+      }, (time_value * 1.5)
     );
   }
 
@@ -1106,8 +1185,9 @@ function animateMenu(webpage_value) {
       function () {
         $(nav_element).animate({
           height: background_height
-        }, 500);    
-      }, 125); 
+        }, (time_value * 1.25));    
+      }, (time_value * 0.6)
+    ); 
   }
 } // END of FUNCTION animateMenu
 

@@ -113,6 +113,7 @@ article a,
 #section-resume-soft_knowledge span, 
 #section-resume-work span, 
 article #section-case_study-intro span, 
+article #section-case_study-intro-la-mobile span, 
 article .div-case_study-asset-color-info-desc-color span, 
 article .div-case_study-tech_used-info-list-item span, 
 #section-conversation-links a, 
@@ -158,6 +159,7 @@ article p,
 #section-resume-soft_knowledge span, 
 #section-resume-work span, 
 article #section-case_study-intro span, 
+article #section-case_study-intro-la-mobile span, 
 article .div-case_study-asset-color-info-desc-color span, 
 article .div-case_study-tech_used-info-list-item span, 
 #div-conversation-copy-confirmation p, 
@@ -556,7 +558,7 @@ article {
       }
     }
 
-    .div-resume-work-web_address {
+    .div-resume-work-viewing_info {
       h3 {
         font-family: $base_font;
       }
@@ -590,7 +592,7 @@ article {
       font-weight: $semibold_font_weight;
     }
 
-    .div-case_study-intro-web_address {
+    .div-case_study-intro-viewing_info {
       padding-left: 0.5rem; // 8px
       border-left: 0.188rem solid $dark_blue; // 3px
 
@@ -1214,15 +1216,17 @@ article {
       margin: 3rem auto;
     }
 
-    .section-resume h2 {
-      font-size: $lg_h2_font_size;
+    .section-resume { 
+      h2 {
+        font-size: $lg_h2_font_size;
+      }
+
+      h3 {
+        margin-bottom: 1rem; // 16px
+        font-size: $lg_base_font_size;
+      }
     }
 
-    .section-resume h3 {
-      margin-bottom: 1rem; // 16px
-      font-size: $lg_base_font_size;
-    }
-    
     // The red horizontal spacers seperating individual technologies are made invisible.
     .div-spacer-horizontal-list {
       display: none;
@@ -1394,7 +1398,7 @@ article {
           }
         }
  
-        .div-resume-work-web_address {  
+        .div-resume-work-viewing_info {  
           h3 {
             font-size: $lg_h3_resume_job_font_size;
           }
@@ -1466,7 +1470,7 @@ article {
       }
 
       .div-case_study-intro-job_title, 
-      .div-case_study-intro-web_address {
+      .div-case_study-intro-viewing_info {
         float: left;
       }
 
@@ -1474,12 +1478,20 @@ article {
         margin-right: $lg_resume_margin_right_1920;
       }
 
-      .div-case_study-intro-web_address {
+      #div-case_study-lvps-intro-job_title {
+        margin-right: 2.5rem; // 40px
+      }
+
+      .div-case_study-intro-viewing_info {
         width: 21.5rem; // 344px
       }
 
-      .div-case_study-intro-web_address span, 
-      .div-case_study-intro-web_address a {
+      #div-case_study-lvps-intro-viewing_info {
+        width: 26rem; // 416px
+      }
+
+      .div-case_study-intro-viewing_info span, 
+      .div-case_study-intro-viewing_info a {
         margin-top: 0.3rem; // 5px
         font-size: $lg_base_font_size;
       }
@@ -1488,11 +1500,30 @@ article {
         margin-right: 26.5rem; // 196px
       }
       
-      #div-case_study-kovl-intro-web_address {
+      #div-case_study-kovl-intro-viewing_info {
         width: 14.5rem; // 232px
       }
       .div-spacer-vertical-list {
         display: none;
+      }
+    }
+
+    #section-case_study-intro-la-mobile {
+      width: 17rem; // 272px
+      margin: 0 auto;
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: $lg_h2_font_size;
+      }
+
+      span {
+        font-size: $lg_base_font_size;
+      }
+
+      .div-case_study-intro-job_title {
+        margin-right: 0;
       }
     }
 
@@ -1681,6 +1712,14 @@ article {
     #figure-case_study-kovl-mockups-2 span, 
     #figure-case_study-kovl-mockups-3 img {
       margin-left: 11rem; // 176px
+    }
+
+    #iframe-case_study-la {
+      width: 25.88rem; // 414px
+      height: 46rem; // 736px
+      margin: 2rem auto;
+      display: block;
+      border: $border_color_gray;
     }
   }
 
@@ -2351,7 +2390,7 @@ article {
       }
       
       // For the link underneath the heading listed as 'Web Address'.
-      .div-resume-work-web_address {
+      .div-resume-work-viewing_info {
         margin-bottom: 1rem; // 32px
         
         h3 {
@@ -2860,17 +2899,17 @@ article {
       }
 
       .div-resume-work-job_titles, 
-      .div-resume-work-web_address {
+      .div-resume-work-viewing_info {
         margin-bottom: 2rem; // 32px
       }
 
       #div-resume-work-job_title span, 
       .div-resume-work-job_titles span, 
-      .div-resume-work-web_address span {
+      .div-resume-work-viewing_info span {
         font-size: $med_resume_span_font_size;
       }
 
-      .div-resume-work-web_address {
+      .div-resume-work-viewing_info {
         h3, a {
           font-size: $med_a_web_address_font_size;
         }
@@ -2915,7 +2954,7 @@ article {
       margin: 0 auto;
       
       .div-case_study-intro-job_title span, 
-      .div-case_study-intro-web_address span {
+      .div-case_study-intro-viewing_info span {
         font-size: $med_a_web_address_font_size;
       }
 
@@ -2931,7 +2970,7 @@ article {
         }
       }
 
-      .div-case_study-intro-web_address {
+      .div-case_study-intro-viewing_info {
         padding-left: 0;
         display: inline-block;
         border-left: none;
@@ -3358,7 +3397,7 @@ article {
     right: 3rem; // 48px
 
     #div-menu-other-border {
-      height: 73rem; // 1,168px
+      height: 72rem; // 1,156px
     }
   }
 
