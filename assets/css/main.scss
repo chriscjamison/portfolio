@@ -431,6 +431,7 @@ article {
       position: relative;
       background: rgb(0,175,222);
       background: linear-gradient(135deg, $light_blue 20%, $dark_blue 80%);
+      border: $border_color_gray;
 
       // For the author of the quote
       span {
@@ -1553,7 +1554,8 @@ article {
       text-align: right;
     }
 
-    .figure-case_study {
+    .figure-case_study, 
+    .figure-bio {
       img {
         margin-left: 0;
       }
@@ -1694,6 +1696,7 @@ article {
       }
     }
     
+    #figure-bio-wireframe img, 
     #figure-case_study-la-paper_mockups-1 img, 
     #figure-case_study-la-paper_mockups-2 img, 
     #figure-case_study-kovl-wireframes-1 img, 
@@ -1704,6 +1707,7 @@ article {
       width: 26.25rem; // 420px
     }
 
+    #figure-bio-wireframe img, 
     #figure-case_study-la-paper_mockups-1 img, 
     #figure-case_study-la-paper_mockups-2 span, 
     #figure-case_study-kovl-wireframes-1 img, 
@@ -2220,7 +2224,7 @@ article {
         margin-top: 0.5rem;
       }
   
-      // The link within the main menu, 'Read Bio'. 
+      // The link within the main menu, 'View Bio'. 
       #nav-link-text-a-bio {
         width: 3rem;
       }
@@ -2258,7 +2262,7 @@ article {
       display: block;
 
       img {
-        width: 3.75rem; // 60px
+        width: 2.8rem; // 42px
         height: auto;
       }
     }
@@ -3062,6 +3066,7 @@ article {
       }
     }
 
+    #figure-bio-wireframe img, 
     #figure-case_study-lvps-logo img, 
     #figure-case_study-la-paper_mockups-1 img, 
     #figure-case_study-la-paper_mockups-2 img, 
@@ -3073,6 +3078,7 @@ article {
       width: 26.25rem; // 420px
     }
 
+    #figure-bio-wireframe img, 
     #figure-case_study-lvps-logo img, 
     #figure-case_study-la-paper_mockups-1 img, 
     #figure-case_study-la-paper_mockups-2 span, 
@@ -3764,7 +3770,7 @@ article {
 
     .section-logo {
       grid-column: auto;
-      width: 3.75rem; // 60px
+      width: 3rem; // 48px
       position: absolute;
       float: left;
       right: 0;

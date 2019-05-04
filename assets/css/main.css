@@ -249,7 +249,8 @@ article {
     margin: 0 auto;
     position: relative;
     background: #00afde;
-    background: linear-gradient(135deg, #00afde 20%, #006fb9 80%); }
+    background: linear-gradient(135deg, #00afde 20%, #006fb9 80%);
+    border: 0.063rem solid #c1c6db; }
     article figure #figure-bio-quote-container-div span {
       font-size: 0.8rem;
       font-weight: 400;
@@ -943,9 +944,11 @@ article .section-case_study-takeaways h3 {
     border-left: none;
     border-right: 0.188rem solid #f6895b;
     text-align: right; }
-  article .figure-case_study img {
+  article .figure-case_study img,
+  article .figure-bio img {
     margin-left: 0; }
-  article .figure-case_study .div-spacer-horizontal {
+  article .figure-case_study .div-spacer-horizontal,
+  article .figure-bio .div-spacer-horizontal {
     margin: 4rem auto 3rem auto;
     left: auto; }
   article #figure-case_study-lvps-recap {
@@ -1018,6 +1021,7 @@ article .section-case_study-takeaways h3 {
       article .section-case_study-takeaways .div-case_study-takeaways-list-copy p {
         width: 42rem;
         margin: 0 0 2.25rem 0; }
+  article #figure-bio-wireframe img,
   article #figure-case_study-la-paper_mockups-1 img,
   article #figure-case_study-la-paper_mockups-2 img,
   article #figure-case_study-kovl-wireframes-1 img,
@@ -1026,6 +1030,7 @@ article .section-case_study-takeaways h3 {
   article #figure-case_study-kovl-mockups-2 img,
   article #figure-case_study-kovl-mockups-3 img {
     width: 26.25rem; }
+  article #figure-bio-wireframe img,
   article #figure-case_study-la-paper_mockups-1 img,
   article #figure-case_study-la-paper_mockups-2 span,
   article #figure-case_study-kovl-wireframes-1 img,
@@ -1300,7 +1305,7 @@ article .section-case_study-takeaways h3 {
     .section-logo a {
       display: block; }
       .section-logo a img {
-        width: 3.75rem;
+        width: 2.8rem;
         height: auto; }
   /* **** BIO **** */
   article {
@@ -1739,6 +1744,7 @@ article .section-case_study-takeaways h3 {
     font-size: 2rem; }
   article .section-case_study-assets .div-case_study-assets-background img {
     width: 23.5rem; }
+  article #figure-bio-wireframe img,
   article #figure-case_study-lvps-logo img,
   article #figure-case_study-la-paper_mockups-1 img,
   article #figure-case_study-la-paper_mockups-2 img,
@@ -1748,6 +1754,7 @@ article .section-case_study-takeaways h3 {
   article #figure-case_study-kovl-mockups-2 img,
   article #figure-case_study-kovl-mockups-3 img {
     width: 26.25rem; }
+  article #figure-bio-wireframe img,
   article #figure-case_study-lvps-logo img,
   article #figure-case_study-la-paper_mockups-1 img,
   article #figure-case_study-la-paper_mockups-2 span,
@@ -2095,7 +2102,7 @@ article .section-case_study-takeaways h3 {
           display: block; }
     .section-nav-iphone .section-logo {
       grid-column: auto;
-      width: 3.75rem;
+      width: 3rem;
       position: absolute;
       float: left;
       right: 0;
