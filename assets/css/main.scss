@@ -128,7 +128,8 @@ form #textarea-conversation-message {
 
 /* Menu links, captions, and quotes */
 .nav-links-text-a, 
-article figure span,
+figcaption, 
+#figure-bio-quote-container-div span, 
 q, 
 .div-case_study-assets-background span, 
 form #input-conversation-submit {
@@ -409,7 +410,7 @@ article {
   // For the images referencing commenting or documenting
   figure {
     // For captions underneath images
-    span {
+    figcaption {
       width: 90%;
       margin: 0.5rem auto 1.5rem auto;
       display: block;
@@ -1084,28 +1085,26 @@ article {
     }
   }
 
-  
-
   article {
     grid-column: 1 / span 2;
 
-  .section-bio, 
-  .section-case_study {
-    width: 45rem; // 720px
-    margin: 4rem auto; // 64px auto
-    padding-left: 1.5rem; // 24px
-    border-left: $border_left_orange_3px; 
-  }
+    .section-bio, 
+    .section-case_study {
+      width: 45rem; // 720px
+      margin: 4rem auto; // 64px auto
+      padding-left: 1.5rem; // 24px
+      border-left: $border_left_orange_3px; 
+    }
 
-  .section-bio:first-of-type, 
-  .section-case_study:first-of-type {
-    margin-top: 0;
-  }
+    .section-bio:first-of-type, 
+    .section-case_study:first-of-type {
+      margin-top: 0;
+    }
 
-  .section-bio-conclusion {
-    border-left: $border_left_magenta_3px;
-  }
-    
+    .section-bio-conclusion {
+      border-left: $border_left_magenta_3px;
+    }
+      
     p {
       margin: $lg_margin_spacer auto;
       font-size: $lg_base_font_size;
@@ -1137,7 +1136,7 @@ article {
         display: inline-block;
       }
 
-      span {
+      figcaption {
         width: 5rem; // 80px
         margin: 0 0 1.5rem 0.5rem; // 0 0 24px 8px
         padding-left: 0.69rem; // 11px
@@ -1188,12 +1187,13 @@ article {
     }
 
     #figure-bio-portrait img {
+      width: 54rem; // 864px
       margin-left: auto;
       margin: 0 auto;
       display: block;
     }
   }
-  
+    
   #section-logo-bio, 
   #section-logo-resume, 
   #section-logo-case_study, 
@@ -1537,14 +1537,14 @@ article {
       left: auto;
     }
 
-    #figure-case_study-lvps-initial-employment span, 
-    #figure-case_study-lvps-revised-employment span, 
-    #figure-case_study-la-paper_mockups-2 span, 
-    #figure-case_study-la-cms-2 span, 
-    #figure-case_study-la-cms-4 span, 
-    #figure-case_study-kovl-wireframes-2 span, 
-    #figure-case_study-kovl-mockups-2 span, 
-    #figure-case_study-kovl-css-2 span {
+    #figure-case_study-lvps-initial-employment figcaption, 
+    #figure-case_study-lvps-revised-employment figcaption, 
+    #figure-case_study-la-paper_mockups-2 figcaption, 
+    #figure-case_study-la-cms-2 figcaption, 
+    #figure-case_study-la-cms-4 figcaption, 
+    #figure-case_study-kovl-wireframes-2 figcaption, 
+    #figure-case_study-kovl-mockups-2 figcaption, 
+    #figure-case_study-kovl-css-2 figcaption {
       margin: 0 0.75rem 0 0; // 0 12px 0 0 
       padding-left: 0;
       padding-right: 0.69rem; // 11px
@@ -1709,11 +1709,11 @@ article {
 
     #figure-bio-wireframe img, 
     #figure-case_study-la-paper_mockups-1 img, 
-    #figure-case_study-la-paper_mockups-2 span, 
+    #figure-case_study-la-paper_mockups-2 figcaption, 
     #figure-case_study-kovl-wireframes-1 img, 
-    #figure-case_study-kovl-wireframes-2 span, 
+    #figure-case_study-kovl-wireframes-2 figcaption, 
     #figure-case_study-kovl-mockups-1 img, 
-    #figure-case_study-kovl-mockups-2 span, 
+    #figure-case_study-kovl-mockups-2 figcaption, 
     #figure-case_study-kovl-mockups-3 img {
       margin-left: 11rem; // 176px
     }
@@ -1775,8 +1775,17 @@ article {
 
     .input-conversation, 
     #textarea-conversation-message {
+      width: 19.5rem; // 312px
       margin-bottom: $lg_margin_spacer;
       font-size: $lg_base_font_size;
+    }
+
+    #textarea-conversation-message {
+      height: 12.1rem; // 194px
+    }
+
+    #input-conversation-submit {
+      width: 20.8rem; // 310px
     }
   }
 
@@ -1784,7 +1793,6 @@ article {
     grid-column: 3 / span 1;
     grid-row: 3 / span 1;
   }
-
 }
 
 
@@ -1941,7 +1949,7 @@ article {
 
   article {
     p {
-      width: 29.69rem; // 475px
+      width: 45rem; // 720px
     }
 
     .p-column-1 {
@@ -1955,7 +1963,7 @@ article {
     }
 
     #article-border-end-bio {
-      margin-left: 58.8rem; // 941px
+      left: 62.5rem; // 1000px
     }
   }
 
@@ -1967,6 +1975,10 @@ article {
   /* **** RESUME **** */
 
   article {
+    .div-spacer-horizontal {
+      left: 36.5rem; // 584px
+    }
+
     #section-resume-objective {
       margin: $lg_margin_spacer 7.25rem $lg_margin_spacer $lg_resume_margin_left_1600;
     }
@@ -1986,8 +1998,17 @@ article {
   /* **** CASE STUDY **** */
 
   article {
-    #article-border-end-case_study {
-      margin-left: 56.5rem; // 904px
+    .section-case_study + .div-spacer-horizontal {
+      left: 6.75rem; // 108px
+    }
+
+    #article-border-end-case_study-lvps {
+      left: 62rem; // 992px
+    }
+
+    #article-border-end-case_study-la, 
+    #article-border-end-case_study-kovl {
+      left: 62.75rem; // 1,004px
     }
   }
 
@@ -1995,7 +2016,7 @@ article {
   /* **** START A CONVERSATION **** */
 
   #body-content-conversation {
-    grid-template-columns: 53rem 29rem 2.37rem; // 848px 464px 38px
+    grid-template-columns: 53rem 22rem 9.5rem; // 848px 352px 152px
     row-gap: 5rem; // 80px
     margin: 5rem; // 80px
   }
@@ -2003,22 +2024,7 @@ article {
   #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     p {
-      width: 28.5rem; // 456px
-    }
-  }
-
-  #form-conversation {
-    .input-conversation, 
-    .textarea-conversation {
-      width: 19.5rem; // 312px
-    }
-
-    #textarea-conversation-message {
-      height: 12.1rem; // 194px
-    }
-
-    #input-conversation-submit {
-      width: 19.5rem; // 312px
+      width: 35rem; // 560px
     }
   }
 }
@@ -2769,7 +2775,7 @@ article {
       width: 100%;
       margin: 3rem auto; // 48px auto
 
-      span {
+      figcaption {
         width: 5rem;
         margin: 0 0 1.5rem 0.5rem; // 0 0 24px 8px
         padding-left: 0.69rem; // 11px
@@ -3014,7 +3020,7 @@ article {
         width: 28rem; // 448px
       }
 
-      span {
+      figcaption {
         width: 7rem; // 112px
       }
 
@@ -3023,14 +3029,14 @@ article {
       }
     }
 
-    #figure-case_study-lvps-initial-employment span, 
-    #figure-case_study-lvps-revised-employment span, 
-    #figure-case_study-la-paper_mockups-2 span, 
-    #figure-case_study-la-cms-2 span, 
-    #figure-case_study-la-cms-4 span, 
-    #figure-case_study-kovl-wireframes-2 span, 
-    #figure-case_study-kovl-mockups-2 span, 
-    #figure-case_study-kovl-css-2 span {
+    #figure-case_study-lvps-initial-employment figcaption, 
+    #figure-case_study-lvps-revised-employment figcaption, 
+    #figure-case_study-la-paper_mockups-2 figcaption, 
+    #figure-case_study-la-cms-2 figcaption, 
+    #figure-case_study-la-cms-4 figcaption, 
+    #figure-case_study-kovl-wireframes-2 figcaption, 
+    #figure-case_study-kovl-mockups-2 figcaption, 
+    #figure-case_study-kovl-css-2 figcaption {
       margin: 0 0.75rem 0 0; // 0 12px 0 0 
       padding-left: 0;
       padding-right: 0.69rem; // 11px
@@ -3040,7 +3046,7 @@ article {
       text-align: right;
     }
 
-    #figure-case_study-revised-employment span {
+    #figure-case_study-revised-employment figcaption {
       width: 7rem; // 112px;
     }
 
@@ -3081,11 +3087,11 @@ article {
     #figure-bio-wireframe img, 
     #figure-case_study-lvps-logo img, 
     #figure-case_study-la-paper_mockups-1 img, 
-    #figure-case_study-la-paper_mockups-2 span, 
+    #figure-case_study-la-paper_mockups-2 figcaption, 
     #figure-case_study-kovl-wireframes-1 img, 
-    #figure-case_study-kovl-wireframes-2 span, 
+    #figure-case_study-kovl-wireframes-2 figcaption, 
     #figure-case_study-kovl-mockups-1 img, 
-    #figure-case_study-kovl-mockups-2 span, 
+    #figure-case_study-kovl-mockups-2 figcaption, 
     #figure-case_study-kovl-mockups-3 img {
       margin-left: 4.5rem; // 72px
     }
@@ -3527,7 +3533,7 @@ article {
         width: 33.25rem; // 532px
       }
 
-      span {
+      figcaption {
         width: 6.75rem; // 108px
       }
     }
