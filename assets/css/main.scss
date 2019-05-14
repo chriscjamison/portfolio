@@ -233,7 +233,8 @@ nav {
   /* For all text links within the menu and also the border which appears 
      underneath those links. */
 
-  .nav-menu-items {
+    #nav-other-landing #nav-menu-items-other, 
+    #nav-other #nav-menu-items-other {
     display: none;
   }
 
@@ -251,7 +252,8 @@ nav {
     margin-top: $sm_margin_spacer;
   }
 
-  #ul-menu-case_studies {
+  #nav-other-landing #ul-menu-case_studies, 
+  #nav-other #ul-menu-case_studies {
     height: 0;
     padding: 0;
     display: none;
@@ -381,7 +383,7 @@ header {
 
 /* **** SECTION LOGO **** */
 
-.section-logo {
+#section-logo {
   opacity: 0;
 }
 
@@ -950,7 +952,7 @@ article {
       transform: none !important;
     }
 
-    .nav-menu-items {
+    #nav-menu-items-other {
       margin-top: 0;
       display: block;
       position: relative;
@@ -967,7 +969,7 @@ article {
     }
   }
 
-  .section-nav-iphone {
+  #section-nav-iphone {
     display: none;
   }
 
@@ -1039,14 +1041,12 @@ article {
     font-size: $lg_base_font_size;
   }
 
-  #nav-other-bio, 
-  #nav-other-resume, 
-  #nav-other-case_study, 
-  #nav-other-conversation {
+  #nav-other {
     grid-column: 2 / span 1;
   }
 
-  nav {
+  
+  #nav-other { 
     #nav-link-menu {
       width: 3.75rem; // 60px
       height: 3.75rem; // 60px
@@ -1060,7 +1060,7 @@ article {
       background-position: 0px -180px;
     }
 
-    .nav-menu-items {
+    #nav-menu-items-other {
       width: 9rem; // 144px
       margin: $lg_margin_spacer_4 0.5rem 0 0; // 20px 8px 0 0
       position: absolute;
@@ -1070,7 +1070,7 @@ article {
         display: block;
         text-align: right;
       }
-  
+
       #nav-border {
         margin: $lg_margin_spacer_4 0 0 6.5rem; 
       }
@@ -1967,7 +1967,7 @@ article {
     }
   }
 
-  .section-logo a img {
+  #section-logo a img {
     transform: translate(-48%, 0%);
   }
 
@@ -2085,7 +2085,7 @@ article {
     }
   }
 
-  .section-logo a img {
+  #section-logo a img {
     transform: translate(-48%, 0%);
   }
 
@@ -2215,52 +2215,58 @@ article {
   }
  
   // The menu located at the bottom of the browser window.
-  nav {
+  #nav-other-landing, 
+  #nav-other, 
+  #nav-menu-iphone {
     grid-column: 1 / span 1;
 
-    .nav-menu-items {
+  #nav-other-landing #nav-menu-items-other, 
+  #nav-other #nav-menu-items-other, 
+  #nav-menu-iphone #nav-menu-items-iphone  {
+    .nav-links-text-a {
+      font-size: $sm_base_font_size;
+      line-height: 1.4;
+    }
+
+    #nav-link-menu {
+      width: 2.37rem;
+      height: 2.5rem;
+      margin-top: 0.5rem;
+    }
+
+    // The link within the main menu, 'View Bio'. 
+    #nav-link-text-a-bio {
+      width: 3rem;
+    }
+
+    // The link within the main menu, 'View Resume'. 
+    #nav-link-text-a-resume {
+      width: 4.6rem;
+    }
+
+    // The link within the main menu, 'View Case Studies'. 
+    #nav-link-text-a-case_study {
+      width: 6.5rem;
+    }
+
+    // The link within the main menu, 'Start a Conversation. 
+    #nav-link-text-a-conversation {
+      width: 7.5rem;
+    }
+  }
+
+  #nav-other-landing #ul-menu-case_studies, 
+  #nav-other #ul-menu-case_studies, 
+  #nav-menu-iphone #ul-menu-case_studies {
+    li {
       .nav-links-text-a {
-        font-size: $sm_base_font_size;
-        line-height: 1.4;
-      }
-  
-      #nav-link-menu {
-        width: 2.37rem;
-        height: 2.5rem;
-        margin-top: 0.5rem;
-      }
-  
-      // The link within the main menu, 'View Bio'. 
-      #nav-link-text-a-bio {
-        width: 3rem;
-      }
-  
-      // The link within the main menu, 'View Resume'. 
-      #nav-link-text-a-resume {
-        width: 4.6rem;
-      }
-  
-      // The link within the main menu, 'View Case Studies'. 
-      #nav-link-text-a-case_study {
-        width: 6.5rem;
-      }
-  
-      // The link within the main menu, 'Start a Conversation. 
-      #nav-link-text-a-conversation {
-        width: 7.5rem;
+        font-size: $sm_sub_menu_font_size;
       }
     }
+  }
+}  
 
-    #ul-menu-case_studies {
-      li {
-        .nav-links-text-a {
-          font-size: $sm_sub_menu_font_size;
-        }
-      }
-    }
-  }  
-
-  .section-logo {
+  #section-logo {
     grid-column: 2 / span 1;
     text-align: right;
     
@@ -2596,7 +2602,7 @@ article {
     grid-template-columns: auto 8rem; // auto 128px
     row-gap: 11rem;
 
-    nav {
+    #nav-other-landing {
       right: 2rem;
       background: none;
     }
@@ -2635,7 +2641,8 @@ article {
     }
   }
 
-  nav {
+  #nav-other-landing, 
+  #nav-other {
     position: fixed;
     right: 2rem;
     z-index: 2;
@@ -2657,7 +2664,7 @@ article {
       background-position: 0px -120px;
     }
 
-    .nav-menu-items {
+    #nav-menu-items-other {
       width: 7.5rem; // 120px
       margin-left: 1rem; // 16px
 
@@ -2668,12 +2675,12 @@ article {
     }
   }
 
-  .nav-other {
+  #nav-other {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
   }
 
-  .section-nav-iphone {
+  #section-nav-iphone {
     display: none;
   }
 
@@ -2697,7 +2704,7 @@ article {
     }
   }
 
-  .section-logo {
+  #section-logo {
     grid-row: 2 / span 1;
 
     a {
@@ -2735,10 +2742,7 @@ article {
     grid-column: 1 / span 1;
   }
 
-  #nav-other-bio, 
-  #nav-other-resume, 
-  #nav-other-case_study, 
-  #nav-other-conversation {
+  #nav-other {
     grid-column: 2 / span 1;
 
     #nav-link-menu {
@@ -3199,7 +3203,8 @@ article {
 @media (min-width: 801px) and (max-width: 1024px)  {
   
   /* **** MAIN NAVIGATION **** */
-  nav {
+  #nav-other-landing, 
+  #nav-other {
     right: 6rem; // 96px
 
     #div-menu-other-border {
@@ -3218,12 +3223,12 @@ article {
   #body-landing {
     row-gap: 25rem; // 400px
 
-    nav {
+    #nav-other-landing {
       right: 6rem; // 96px
     }
   }
 
-  .section-logo {
+  #section-logo {
     a {
       transform: translate(0%, 240%);
     }
@@ -3405,7 +3410,8 @@ article {
 @media (min-width: 769px) and (max-width: 800px)  {
 
   /* **** MAIN NAVIGATION **** */
-  nav {
+  #nav-other-landing, 
+  #nav-other {
     right: 3rem; // 48px
 
     #div-menu-other-border {
@@ -3569,7 +3575,8 @@ article {
 @media (min-width: 415px) and (max-width: 768px)  {
 
   /* **** MAIN NAVIGATION **** */
-  nav {
+  #nav-other-landing, 
+  #nav-other {
     #div-menu-other-border {
       height: 59rem; // 944px
     }
@@ -3740,7 +3747,7 @@ article {
      }
    }
 
-  .section-nav-iphone {
+  #section-nav-iphone {
     height: 4.69rem; // 75px
     position: fixed;
     bottom: 0;
@@ -3754,17 +3761,14 @@ article {
       background: linear-gradient(90deg, $orange 0%, $magenta 26%, $light_blue 26%, $dark_blue 100%);  
     }
 
-    nav {
+    #nav-menu-iphone { 
+      width: 2.37rem; // 38px
+      height: 2.37rem; // 38px
       float: left;
       transform: translate(0, 1rem);
       opacity: 1;
-      
-      #nav-link-menu { 
-        width: 2.37rem; // 38px
-        height: 2.37rem; // 38px
-      }
 
-      .nav-menu-items {
+      #nav-menu-items-iphone {
         width: 9.5rem; // 152px
 
         .nav-links-text-a {
@@ -3774,7 +3778,7 @@ article {
       }
     }
 
-    .section-logo {
+    #section-logo {
       grid-column: auto;
       width: 3rem; // 48px
       position: absolute;
@@ -3785,8 +3789,8 @@ article {
     }
   }
 
-  .nav-other, 
-  .section-logo-other {
+  #nav-other, 
+  #section-logo-other {
     display: none;
   }
 
@@ -3983,7 +3987,7 @@ article {
   
   /* **** MAIN NAVIGATION **** */
   
-  .section-nav-iphone {
+  #section-nav-iphone {
     width: 22rem; // 352px
   }
 
@@ -4130,7 +4134,7 @@ article {
   
   /* **** MAIN NAVIGATION **** */
   
-  .section-nav-iphone {
+  #section-nav-iphone {
     width: 19.44rem; // 311px
   }
   
@@ -4239,7 +4243,7 @@ article {
 
   /* **** MAIN NAVIGATION **** */
 
-  .section-nav-iphone {
+  #section-nav-iphone {
     width: 18.5rem; // 296px
   }
 
@@ -4351,7 +4355,7 @@ article {
 
   /* **** MAIN NAVIGATION **** */
   
-  .section-nav-iphone {
+  #section-nav-iphone {
     width: 16.5rem; // 264px
   }
 
