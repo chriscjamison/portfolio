@@ -121,33 +121,44 @@ h4 {
   margin: 1.5rem 0 0.5rem 31%; }
 
 /* **** MAIN NAVIGATION **** */
-nav {
-  opacity: 0;
-  /* For all text links within the menu and also the border which appears 
-     underneath those links. */
+/* For all text links within the menu and also the border which appears 
+   underneath those links. */
+#section-nav-iphone #nav-menu-items-iphone,
+#nav-other-landing #nav-menu-items-other,
+#nav-other #nav-menu-items-other {
+  display: none;
+  opacity: 0; }
+
+#section-nav-iphone #nav-menu-iphone,
+#nav-other-landing,
+#nav-other {
   /* The main menu icon. */
   /* The border which appears underneath the text links within the main menu. */ }
-  nav #nav-other-landing #nav-menu-items-other,
-  nav #nav-other #nav-menu-items-other {
-    display: none; }
-  nav #nav-link-menu {
+  #section-nav-iphone #nav-menu-iphone #nav-link-menu,
+  #nav-other-landing #nav-link-menu,
+  #nav-other #nav-link-menu {
     display: block;
     background-image: url("/assets/img/menu/main_menu.png");
     background-repeat: no-repeat; }
-  nav #nav-border {
+  #section-nav-iphone #nav-menu-iphone #nav-border,
+  #nav-other-landing #nav-border,
+  #nav-other #nav-border {
     width: 2.25rem;
     height: 0.31rem;
     margin-top: 1.25rem; }
-  nav #nav-other-landing #ul-menu-case_studies,
-  nav #nav-other #ul-menu-case_studies {
+  #section-nav-iphone #nav-menu-iphone #ul-menu-case_studies,
+  #nav-other-landing #ul-menu-case_studies,
+  #nav-other #ul-menu-case_studies {
     height: 0;
     padding: 0;
     display: none; }
-    nav #nav-other-landing #ul-menu-case_studies li,
-    nav #nav-other #ul-menu-case_studies li {
+    #section-nav-iphone #nav-menu-iphone #ul-menu-case_studies li,
+    #nav-other-landing #ul-menu-case_studies li,
+    #nav-other #ul-menu-case_studies li {
       list-style-type: none; }
-      nav #nav-other-landing #ul-menu-case_studies li .nav-links-text-a,
-      nav #nav-other #ul-menu-case_studies li .nav-links-text-a {
+      #section-nav-iphone #nav-menu-iphone #ul-menu-case_studies li .nav-links-text-a,
+      #nav-other-landing #ul-menu-case_studies li .nav-links-text-a,
+      #nav-other #ul-menu-case_studies li .nav-links-text-a {
         display: none;
         opacity: 0; }
 
@@ -225,7 +236,10 @@ header {
       background-position: 0px -72px; }
 
 /* **** SECTION LOGO **** */
-#section-logo {
+#section-nav-iphone #section-logo-iphone-landing,
+#section-nav-iphone #section-logo-iphone,
+#section-logo-other-landing,
+#section-logo-other {
   opacity: 0; }
 
 /* **** BIO **** */
@@ -616,9 +630,11 @@ article .section-case_study-takeaways h3 {
       display: inline-block; }
     #section-social #social-links .social-links-a:last-of-type {
       margin-right: 0; }
-  #section-logo-landing {
+  #section-logo-other-landing,
+  #section-logo-other {
     grid-row: 2 / span 1; }
-    #section-logo-landing a {
+    #section-logo-other-landing a,
+    #section-logo-other a {
       width: 3.75rem;
       margin: 0 auto;
       display: block;
@@ -739,17 +755,13 @@ article .section-case_study-takeaways h3 {
       margin-left: auto;
       margin: 0 auto;
       display: block; }
-  #section-logo-bio,
-  #section-logo-resume,
-  #section-logo-case_study,
-  #section-logo-conversation {
+  #section-logo-other-landing,
+  #section-logo-other {
     width: 3.75rem;
     grid-column: 2 / span 1;
     grid-row: 3 / span 1; }
-    #section-logo-bio a,
-    #section-logo-resume a,
-    #section-logo-case_study a,
-    #section-logo-conversation a {
+    #section-logo-other-landing a,
+    #section-logo-other a {
       display: block;
       transform: translate(5.75rem, 0); }
   /* **** RESUME **** */
@@ -1085,7 +1097,7 @@ article .section-case_study-takeaways h3 {
       height: 12.1rem; }
     #form-conversation #input-conversation-submit {
       width: 20.8rem; }
-  #section-logo-conversation {
+  #section-logo-other-conversation {
     grid-column: 3 / span 1;
     grid-row: 3 / span 1; } }
 
@@ -1159,7 +1171,7 @@ article .section-case_study-takeaways h3 {
     position: absolute;
     top: 5.5rem;
     left: 35.25rem; }
-  #section-logo-landing a img {
+  #section-logo-other-landing a img {
     transform: none; }
   /* **** BIO **** */
   #body-content {
@@ -1173,7 +1185,8 @@ article .section-case_study-takeaways h3 {
     margin-left: 0; }
   article #article-border-end-bio {
     left: 62.5rem; }
-  #section-logo a img {
+  #section-logo-other-landing a img,
+  #section-logo-other a img {
     transform: translate(-48%, 0%); }
   /* **** RESUME **** */
   article .div-spacer-horizontal {
@@ -1217,7 +1230,7 @@ article .section-case_study-takeaways h3 {
     position: absolute;
     top: 2.5rem;
     left: 30.5rem; }
-  #section-logo-landing a img {
+  #section-logo-other-landing a img {
     transform: none; }
   /* **** BIO **** */
   #body-content {
@@ -1229,7 +1242,8 @@ article .section-case_study-takeaways h3 {
     margin-left: 0; }
   article #article-border-end-bio {
     margin-left: 58.7rem; }
-  #section-logo a img {
+  #section-logo-other-landing
+#section-logo-other a img {
     transform: translate(-48%, 0%); }
   /* **** RESUME **** */
   article .div-spacer-horizontal {
@@ -1258,8 +1272,7 @@ article .section-case_study-takeaways h3 {
     header #header-intro span {
       font-size: 1.25rem; }
     header #header-intro #header-intro-welcome {
-      margin-bottom: 1.25rem;
-      font-style: italic; }
+      margin-bottom: 1.25rem; }
     header #header-border-name {
       width: 6.85rem;
       height: 0.31rem; }
@@ -1292,85 +1305,58 @@ article .section-case_study-takeaways h3 {
   #nav-other,
   #nav-menu-iphone {
     grid-column: 1 / span 1; }
-    #nav-other-landing #nav-other-landing #nav-menu-items-other .nav-links-text-a,
-    #nav-other-landing #nav-other #nav-menu-items-other .nav-links-text-a,
-    #nav-other-landing #nav-menu-iphone #nav-menu-items-iphone .nav-links-text-a,
-    #nav-other #nav-other-landing #nav-menu-items-other .nav-links-text-a,
-    #nav-other #nav-other #nav-menu-items-other .nav-links-text-a,
-    #nav-other #nav-menu-iphone #nav-menu-items-iphone .nav-links-text-a,
-    #nav-menu-iphone #nav-other-landing #nav-menu-items-other .nav-links-text-a,
-    #nav-menu-iphone #nav-other #nav-menu-items-other .nav-links-text-a,
-    #nav-menu-iphone #nav-menu-iphone #nav-menu-items-iphone .nav-links-text-a {
-      font-size: 1.25rem;
-      line-height: 1.4; }
-    #nav-other-landing #nav-other-landing #nav-menu-items-other #nav-link-menu,
-    #nav-other-landing #nav-other #nav-menu-items-other #nav-link-menu,
-    #nav-other-landing #nav-menu-iphone #nav-menu-items-iphone #nav-link-menu,
-    #nav-other #nav-other-landing #nav-menu-items-other #nav-link-menu,
-    #nav-other #nav-other #nav-menu-items-other #nav-link-menu,
-    #nav-other #nav-menu-iphone #nav-menu-items-iphone #nav-link-menu,
-    #nav-menu-iphone #nav-other-landing #nav-menu-items-other #nav-link-menu,
-    #nav-menu-iphone #nav-other #nav-menu-items-other #nav-link-menu,
-    #nav-menu-iphone #nav-menu-iphone #nav-menu-items-iphone #nav-link-menu {
+    #nav-other-landing #nav-link-menu,
+    #nav-other #nav-link-menu,
+    #nav-menu-iphone #nav-link-menu {
       width: 2.37rem;
       height: 2.5rem;
       margin-top: 0.5rem; }
-    #nav-other-landing #nav-other-landing #nav-menu-items-other #nav-link-text-a-bio,
-    #nav-other-landing #nav-other #nav-menu-items-other #nav-link-text-a-bio,
-    #nav-other-landing #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-bio,
-    #nav-other #nav-other-landing #nav-menu-items-other #nav-link-text-a-bio,
-    #nav-other #nav-other #nav-menu-items-other #nav-link-text-a-bio,
-    #nav-other #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-bio,
-    #nav-menu-iphone #nav-other-landing #nav-menu-items-other #nav-link-text-a-bio,
-    #nav-menu-iphone #nav-other #nav-menu-items-other #nav-link-text-a-bio,
-    #nav-menu-iphone #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-bio {
+  #nav-menu-iphone #nav-link-menu {
+    margin-top: 0; }
+  #section-nav-iphone #nav-menu-items-iphone,
+  #nav-other-landing #nav-menu-items-other,
+  #nav-other #nav-menu-items-other {
+    display: none; }
+    #section-nav-iphone #nav-menu-items-iphone .nav-links-text-a,
+    #nav-other-landing #nav-menu-items-other .nav-links-text-a,
+    #nav-other #nav-menu-items-other .nav-links-text-a {
+      font-size: 1.25rem;
+      line-height: 1.4; }
+    #section-nav-iphone #nav-menu-items-iphone #nav-link-text-a-bio,
+    #nav-other-landing #nav-menu-items-other #nav-link-text-a-bio,
+    #nav-other #nav-menu-items-other #nav-link-text-a-bio {
       width: 3rem; }
-    #nav-other-landing #nav-other-landing #nav-menu-items-other #nav-link-text-a-resume,
-    #nav-other-landing #nav-other #nav-menu-items-other #nav-link-text-a-resume,
-    #nav-other-landing #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-resume,
-    #nav-other #nav-other-landing #nav-menu-items-other #nav-link-text-a-resume,
-    #nav-other #nav-other #nav-menu-items-other #nav-link-text-a-resume,
-    #nav-other #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-resume,
-    #nav-menu-iphone #nav-other-landing #nav-menu-items-other #nav-link-text-a-resume,
-    #nav-menu-iphone #nav-other #nav-menu-items-other #nav-link-text-a-resume,
-    #nav-menu-iphone #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-resume {
+    #section-nav-iphone #nav-menu-items-iphone #nav-link-text-a-resume,
+    #nav-other-landing #nav-menu-items-other #nav-link-text-a-resume,
+    #nav-other #nav-menu-items-other #nav-link-text-a-resume {
       width: 4.6rem; }
-    #nav-other-landing #nav-other-landing #nav-menu-items-other #nav-link-text-a-case_study,
-    #nav-other-landing #nav-other #nav-menu-items-other #nav-link-text-a-case_study,
-    #nav-other-landing #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-case_study,
-    #nav-other #nav-other-landing #nav-menu-items-other #nav-link-text-a-case_study,
-    #nav-other #nav-other #nav-menu-items-other #nav-link-text-a-case_study,
-    #nav-other #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-case_study,
-    #nav-menu-iphone #nav-other-landing #nav-menu-items-other #nav-link-text-a-case_study,
-    #nav-menu-iphone #nav-other #nav-menu-items-other #nav-link-text-a-case_study,
-    #nav-menu-iphone #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-case_study {
+    #section-nav-iphone #nav-menu-items-iphone #nav-link-text-a-case_study,
+    #nav-other-landing #nav-menu-items-other #nav-link-text-a-case_study,
+    #nav-other #nav-menu-items-other #nav-link-text-a-case_study {
       width: 6.5rem; }
-    #nav-other-landing #nav-other-landing #nav-menu-items-other #nav-link-text-a-conversation,
-    #nav-other-landing #nav-other #nav-menu-items-other #nav-link-text-a-conversation,
-    #nav-other-landing #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-conversation,
-    #nav-other #nav-other-landing #nav-menu-items-other #nav-link-text-a-conversation,
-    #nav-other #nav-other #nav-menu-items-other #nav-link-text-a-conversation,
-    #nav-other #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-conversation,
-    #nav-menu-iphone #nav-other-landing #nav-menu-items-other #nav-link-text-a-conversation,
-    #nav-menu-iphone #nav-other #nav-menu-items-other #nav-link-text-a-conversation,
-    #nav-menu-iphone #nav-menu-iphone #nav-menu-items-iphone #nav-link-text-a-conversation {
+    #section-nav-iphone #nav-menu-items-iphone #nav-link-text-a-conversation,
+    #nav-other-landing #nav-menu-items-other #nav-link-text-a-conversation,
+    #nav-other #nav-menu-items-other #nav-link-text-a-conversation {
       width: 7.5rem; }
-    #nav-other-landing #nav-other-landing #ul-menu-case_studies li .nav-links-text-a,
-    #nav-other-landing #nav-other #ul-menu-case_studies li .nav-links-text-a,
-    #nav-other-landing #nav-menu-iphone #ul-menu-case_studies li .nav-links-text-a,
-    #nav-other #nav-other-landing #ul-menu-case_studies li .nav-links-text-a,
-    #nav-other #nav-other #ul-menu-case_studies li .nav-links-text-a,
-    #nav-other #nav-menu-iphone #ul-menu-case_studies li .nav-links-text-a,
-    #nav-menu-iphone #nav-other-landing #ul-menu-case_studies li .nav-links-text-a,
-    #nav-menu-iphone #nav-other #ul-menu-case_studies li .nav-links-text-a,
-    #nav-menu-iphone #nav-menu-iphone #ul-menu-case_studies li .nav-links-text-a {
-      font-size: 1.1rem; }
-  #section-logo {
+  #nav-other-landing #ul-menu-case_studies li .nav-links-text-a,
+  #nav-other #ul-menu-case_studies li .nav-links-text-a,
+  #section-nav-iphone #nav-menu-iphone #nav-menu-items-iphone #ul-menu-case_studies li .nav-links-text-a {
+    font-size: 1.1rem; }
+  #section-nav-iphone #section-logo-iphone-landing,
+  #section-nav-iphone #section-logo-iphone,
+  #section-logo-other-landing,
+  #section-logo-other {
     grid-column: 2 / span 1;
     text-align: right; }
-    #section-logo a {
+    #section-nav-iphone #section-logo-iphone-landing a,
+    #section-nav-iphone #section-logo-iphone a,
+    #section-logo-other-landing a,
+    #section-logo-other a {
       display: block; }
-      #section-logo a img {
+      #section-nav-iphone #section-logo-iphone-landing a img,
+      #section-nav-iphone #section-logo-iphone a img,
+      #section-logo-other-landing a img,
+      #section-logo-other a img {
         width: 2.8rem;
         height: auto; }
   /* **** BIO **** */
@@ -1597,9 +1583,11 @@ article .section-case_study-takeaways h3 {
       margin-top: 1.5rem; }
     #section-social #social-links .social-links-a:last-of-type {
       margin-bottom: 0; }
-  #section-logo {
+  #section-logo-other-landing,
+  #section-logo-other {
     grid-row: 2 / span 1; }
-    #section-logo a {
+    #section-logo-other-landing a,
+    #section-logo-other a {
       transform: translate(0%, 240%); }
   /* **** BIOGRAPHY **** */
   #body-content {
@@ -1671,15 +1659,11 @@ article .section-case_study-takeaways h3 {
         margin: 0 auto; }
     article #figure-bio-portrait img {
       display: block; }
-  #section-logo-bio,
-  #section-logo-resume,
-  #section-logo-case_study,
-  #section-logo-conversation {
+  #section-logo-other-landing,
+  #section-logo-other {
     grid-row: 3 / span 1; }
-    #section-logo-bio a,
-    #section-logo-resume a,
-    #section-logo-case_study a,
-    #section-logo-conversation a {
+    #section-logo-other-landing a,
+    #section-logo-other a {
       transform: none; }
   /* **** RESUME **** */
   article h2 {
@@ -1880,7 +1864,7 @@ article .section-case_study-takeaways h3 {
     #form-conversation #input-conversation-submit {
       width: 24.25rem;
       font-size: 1.25rem; }
-  #section-logo-conversation {
+  #section-logo-other-conversation {
     grid-row: 5 / span 1; } }
 
 /* **************************** 
@@ -1902,7 +1886,8 @@ article .section-case_study-takeaways h3 {
     row-gap: 25rem; }
     #body-landing #nav-other-landing {
       right: 6rem; }
-  #section-logo a {
+  #section-logo-other-landing a,
+  #section-logo-other a {
     transform: translate(0%, 240%); }
   /* **** BIOGRAPHY **** */
   article p {
@@ -1979,7 +1964,7 @@ article .section-case_study-takeaways h3 {
     width: 42rem; }
   #div-conversation-copy + .div-spacer-horizontal {
     width: 32.31rem; }
-  #section-logo-conversation {
+  #section-logo-other-conversation {
     margin-top: 2.75rem; } }
 
 /* ********************************* 
@@ -2162,22 +2147,26 @@ article .section-case_study-takeaways h3 {
       width: 2.37rem;
       height: 2.37rem;
       float: left;
-      transform: translate(0, 1rem);
+      transform: translate(0, 0.5rem);
       opacity: 1; }
       #section-nav-iphone #nav-menu-iphone #nav-menu-items-iphone {
-        width: 9.5rem; }
+        width: 9.5rem;
+        display: none; }
         #section-nav-iphone #nav-menu-iphone #nav-menu-items-iphone .nav-links-text-a {
           margin-top: 1.25rem;
           display: block; }
-    #section-nav-iphone #section-logo {
-      grid-column: auto;
-      width: 3rem;
-      position: absolute;
-      float: left;
-      right: 0;
-      transform: translate(0, 0.75rem);
-      opacity: 1; }
+  #section-nav-iphone #section-logo-iphone-landing,
+  #section-logo-other-landing,
+  #section-logo-other {
+    grid-column: auto;
+    width: 3rem;
+    position: absolute;
+    float: left;
+    right: 0;
+    transform: translate(0, 0.75rem);
+    opacity: 1; }
   #nav-other,
+  #section-logo-other-landing,
   #section-logo-other {
     display: none; }
   #section-social {

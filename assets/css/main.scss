@@ -227,17 +227,20 @@ h4 {
 
 /* **** MAIN NAVIGATION **** */
 
-nav {
+
+/* For all text links within the menu and also the border which appears 
+   underneath those links. */
+
+#section-nav-iphone #nav-menu-items-iphone, 
+#nav-other-landing #nav-menu-items-other, 
+#nav-other #nav-menu-items-other {
+  display: none;
   opacity: 0;
-  
-  /* For all text links within the menu and also the border which appears 
-     underneath those links. */
+}
 
-    #nav-other-landing #nav-menu-items-other, 
-    #nav-other #nav-menu-items-other {
-    display: none;
-  }
-
+#section-nav-iphone #nav-menu-iphone, 
+#nav-other-landing, 
+#nav-other {
   /* The main menu icon. */
   #nav-link-menu {
     display: block;
@@ -252,8 +255,7 @@ nav {
     margin-top: $sm_margin_spacer;
   }
 
-  #nav-other-landing #ul-menu-case_studies, 
-  #nav-other #ul-menu-case_studies {
+  #ul-menu-case_studies {
     height: 0;
     padding: 0;
     display: none;
@@ -383,7 +385,10 @@ header {
 
 /* **** SECTION LOGO **** */
 
-#section-logo {
+#section-nav-iphone #section-logo-iphone-landing, 
+#section-nav-iphone #section-logo-iphone, 
+#section-logo-other-landing, 
+#section-logo-other {
   opacity: 0;
 }
 
@@ -989,7 +994,8 @@ article {
     }
   }
 
-  #section-logo-landing {
+  #section-logo-other-landing, 
+  #section-logo-other {
     grid-row: 2 / span 1;
 
     a {
@@ -1001,6 +1007,7 @@ article {
   }  
 
   
+
   /* **** BIO **** */
 
   #body-content {
@@ -1194,10 +1201,8 @@ article {
     }
   }
     
-  #section-logo-bio, 
-  #section-logo-resume, 
-  #section-logo-case_study, 
-  #section-logo-conversation {
+  #section-logo-other-landing, 
+  #section-logo-other {
     width: 3.75rem; // 60px
     grid-column: 2 / span 1;
     grid-row: 3 / span 1;
@@ -1789,7 +1794,7 @@ article {
     }
   }
 
-  #section-logo-conversation {
+  #section-logo-other-conversation {
     grid-column: 3 / span 1;
     grid-row: 3 / span 1;
   }
@@ -1935,8 +1940,12 @@ article {
     }
   }
 
-  #section-logo-landing a img {
-    transform: none;
+  #section-logo-other-landing {
+    a {
+      img {
+        transform: none;
+      }
+    }
   }
 
 
@@ -1967,8 +1976,13 @@ article {
     }
   }
 
-  #section-logo a img {
-    transform: translate(-48%, 0%);
+  #section-logo-other-landing, 
+  #section-logo-other { 
+    a { 
+      img {
+        transform: translate(-48%, 0%);
+      }
+    }
   }
 
   
@@ -2057,8 +2071,12 @@ article {
     }
   }
 
-  #section-logo-landing a img {
-    transform: none;
+  #section-logo-other-landing { 
+    a { 
+      img {
+        transform: none;
+      }
+    }
   }
 
 
@@ -2085,8 +2103,13 @@ article {
     }
   }
 
-  #section-logo a img {
-    transform: translate(-48%, 0%);
+  #section-logo-other-landing
+  #section-logo-other { 
+    a { 
+      img {
+        transform: translate(-48%, 0%);
+      }
+    }
   }
 
   
@@ -2151,7 +2174,6 @@ article {
       // The word, 'Welcome', on the landing page
        #header-intro-welcome {
         margin-bottom: $sm_margin_spacer;
-        font-style: italic;
       }
     } 
 
@@ -2220,18 +2242,27 @@ article {
   #nav-menu-iphone {
     grid-column: 1 / span 1;
 
-  #nav-other-landing #nav-menu-items-other, 
-  #nav-other #nav-menu-items-other, 
-  #nav-menu-iphone #nav-menu-items-iphone  {
-    .nav-links-text-a {
-      font-size: $sm_base_font_size;
-      line-height: 1.4;
-    }
-
     #nav-link-menu {
       width: 2.37rem;
       height: 2.5rem;
       margin-top: 0.5rem;
+    }
+  }
+
+  #nav-menu-iphone { 
+    #nav-link-menu {
+      margin-top: 0;
+    }
+  }
+
+  #section-nav-iphone #nav-menu-items-iphone, 
+  #nav-other-landing #nav-menu-items-other, 
+  #nav-other #nav-menu-items-other {
+    display: none;
+
+    .nav-links-text-a {
+      font-size: $sm_base_font_size;
+      line-height: 1.4;
     }
 
     // The link within the main menu, 'View Bio'. 
@@ -2257,16 +2288,18 @@ article {
 
   #nav-other-landing #ul-menu-case_studies, 
   #nav-other #ul-menu-case_studies, 
-  #nav-menu-iphone #ul-menu-case_studies {
+  #section-nav-iphone #nav-menu-iphone #nav-menu-items-iphone #ul-menu-case_studies {
     li {
       .nav-links-text-a {
         font-size: $sm_sub_menu_font_size;
       }
     }
   }
-}  
 
-  #section-logo {
+  #section-nav-iphone #section-logo-iphone-landing, 
+  #section-nav-iphone #section-logo-iphone, 
+  #section-logo-other-landing, 
+  #section-logo-other {
     grid-column: 2 / span 1;
     text-align: right;
     
@@ -2704,7 +2737,8 @@ article {
     }
   }
 
-  #section-logo {
+  #section-logo-other-landing, 
+  #section-logo-other {
     grid-row: 2 / span 1;
 
     a {
@@ -2827,10 +2861,8 @@ article {
     } */
   }
 
-  #section-logo-bio, 
-  #section-logo-resume, 
-  #section-logo-case_study, 
-  #section-logo-conversation {
+  #section-logo-other-landing, 
+  #section-logo-other {
     grid-row: 3 / span 1;
     
     a {
@@ -3189,7 +3221,7 @@ article {
     }
   }
 
-  #section-logo-conversation {
+  #section-logo-other-conversation {
     grid-row: 5 / span 1;
   }
 }
@@ -3228,7 +3260,8 @@ article {
     }
   }
 
-  #section-logo {
+  #section-logo-other-landing, 
+  #section-logo-other {
     a {
       transform: translate(0%, 240%);
     }
@@ -3396,7 +3429,7 @@ article {
     width: 32.31rem; // 517px
   }
 
-  #section-logo-conversation {
+  #section-logo-other-conversation {
     margin-top: 2.75rem; // 44px
   }
 }
@@ -3765,11 +3798,12 @@ article {
       width: 2.37rem; // 38px
       height: 2.37rem; // 38px
       float: left;
-      transform: translate(0, 1rem);
+      transform: translate(0, 0.5rem); // 0 8px
       opacity: 1;
 
       #nav-menu-items-iphone {
         width: 9.5rem; // 152px
+        display: none;
 
         .nav-links-text-a {
           margin-top: $sm_margin_spacer;
@@ -3777,19 +3811,22 @@ article {
         }
       }
     }
-
-    #section-logo {
-      grid-column: auto;
-      width: 3rem; // 48px
-      position: absolute;
-      float: left;
-      right: 0;
-      transform: translate(0, 0.75rem);
-      opacity: 1;
-    }
+  }
+  
+  #section-nav-iphone #section-logo-iphone-landing, 
+  #section-logo-other-landing, 
+  #section-logo-other {
+    grid-column: auto;
+    width: 3rem; // 48px
+    position: absolute;
+    float: left;
+    right: 0;
+    transform: translate(0, 0.75rem);
+    opacity: 1;
   }
 
   #nav-other, 
+  #section-logo-other-landing, 
   #section-logo-other {
     display: none;
   }
