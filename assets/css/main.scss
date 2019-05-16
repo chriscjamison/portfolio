@@ -233,14 +233,16 @@ h4 {
 
 #section-nav-iphone #nav-menu-items-iphone, 
 #nav-other-landing #nav-menu-items-other, 
-#nav-other #nav-menu-items-other {
+#nav-other #nav-menu-items-other, 
+#nav-other-conversation #nav-menu-items-other {
   display: none;
   opacity: 0;
 }
 
 #section-nav-iphone #nav-menu-iphone, 
 #nav-other-landing, 
-#nav-other {
+#nav-other, 
+#nav-other-conversation {
   /* The main menu icon. */
   #nav-link-menu {
     display: block;
@@ -992,6 +994,32 @@ article {
       }
     }
   }
+
+  #section-logo-other-landing, 
+  #section-logo-other, 
+  #section-logo-other-conversation {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    
+    a {
+      margin-left: 5.75rem; // 92px
+      display: block;
+      
+      img {
+        width: 3.75rem; // 60px
+      }
+    }
+  }
+
+  #section-logo-other-landing {
+    grid-row: 2 / span 1;
+
+    img {
+      width: 2.75rem; // 44px
+      display: block;
+      margin: 1.5rem 0 0 3.25rem; // 24px 0 0 52px 
+    }
+  }
 /* 
   #section-logo-other-landing, 
   #section-logo-other-bio, 
@@ -1050,12 +1078,9 @@ article {
     font-size: $lg_base_font_size;
   }
 
-  #nav-other {
-    grid-column: 2 / span 1;
-  }
-
   #nav-other-landing, 
-  #nav-other { 
+  #nav-other, 
+  #nav-other-conversation { 
     #nav-link-menu {
       width: 3.75rem; // 60px
       height: 3.75rem; // 60px
@@ -1093,11 +1118,24 @@ article {
       }
     }
   }
+  
+  #nav-other-landing, 
+  #nav-other {
+    grid-column: 2 / span 1;
+  }
 
   #nav-other-landing {
     #nav-link-menu {
       display: none !important;
     }
+
+    #nav-menu-items-other {
+      margin-top: 0;
+    }
+  }
+
+  #nav-other-conversation {
+    grid-column: 3 / span 1;
   }
 
   article {
@@ -1208,23 +1246,7 @@ article {
       display: block;
     }
   }
-    
-  #section-logo-other-landing, 
-  #section-logo-other, 
-  #section-logo-other-conversation {
-    width: 3.75rem; // 60px
-    grid-column: 2 / span 1;
-    grid-row: 3 / span 1;
-    
-    a {
-      display: block;
-      transform: translate(5.75rem, 0); // 92px
-    }
-  }
 
-  #section-logo-other-landing {
-    grid-row: 2 / span 1;
-  }
 
 
   /* **** RESUME **** */
@@ -1415,6 +1437,10 @@ article {
             margin: 0 0 $lg_margin_spacer_3 0;
             display: inline-block;
           }
+
+          p:last-of-type {
+            margin-bottom: 0;
+          }
         }
  
         .div-resume-work-viewing_info {  
@@ -1498,29 +1524,37 @@ article {
       }
 
       #div-case_study-lvps-intro-job_title {
-        margin-right: 2.5rem; // 40px
+        margin-right: 2rem; // 32px
       }
 
+      #div-case_study-la-intro-job_title {
+        margin-right: 10.5rem; // 168px
+      }
+
+      #div-case_study-kovl-intro-job_title {
+        margin-right: 29rem; // 464px
+      }
+      
       .div-case_study-intro-viewing_info {
         width: 21.5rem; // 344px
       }
 
       #div-case_study-lvps-intro-viewing_info {
+        width: 26.75rem; // 428px
+      }
+      
+      #div-case_study-la-intro-viewing_info {
         width: 26rem; // 416px
       }
 
+      #div-case_study-kovl-intro-viewing_info {
+        width: 12rem; // 192px
+      }
+      
       .div-case_study-intro-viewing_info span, 
       .div-case_study-intro-viewing_info a {
         margin-top: 0.3rem; // 5px
         font-size: $lg_base_font_size;
-      }
-
-      #div-case_study-kovl-intro-job_title {
-        margin-right: 26.5rem; // 196px
-      }
-      
-      #div-case_study-kovl-intro-viewing_info {
-        width: 14.5rem; // 232px
       }
       .div-spacer-vertical-list {
         display: none;
@@ -1579,7 +1613,7 @@ article {
       }
 
       .div-spacer-horizontal {
-        margin: 4rem auto 3rem auto; // 64px auto 48px auto
+        margin: 3rem auto 3rem auto; // 64px auto 48px auto
         left: auto;
       }
     }
@@ -1932,7 +1966,7 @@ article {
 
   #body-landing {
     margin: 6rem; // 96px
-    grid-row-gap: 15.25em; // 244px
+    grid-row-gap: 18.25em; // 292px
   }
 
   header {
@@ -1953,14 +1987,7 @@ article {
     }
   }
 
-  #section-logo-other-landing {
-    a {
-      img {
-        transform: none;
-      }
-    }
-  }
-
+  
 
   /* **** BIO **** */
 
@@ -1989,15 +2016,6 @@ article {
     }
   }
 
-  #section-logo-other-landing, 
-  #section-logo-other, 
-  #section-logo-other-conversation { 
-    a { 
-      img {
-        transform: translate(-48%, 0%);
-      }
-    }
-  }
 
   
   /* **** RESUME **** */
@@ -2068,7 +2086,7 @@ article {
 
   #body-landing {
     margin: 3rem; // 48px
-    grid-row-gap: 12rem; // 192px
+    grid-row-gap: 18.25rem; // 292px
   }
 
   header {
@@ -2084,15 +2102,13 @@ article {
       left: 30.5rem; // 488px
     }
   }
-
+/* 
   #section-logo-other-landing { 
-    a { 
-      img {
-        transform: translate(-80%, 0%);
-      }
+    img {
+      transform: translate(2.75rem, 0.6rem); // 44px 9px
     }
   }
-
+ */
 
   /* **** BIO **** */
 
@@ -2115,7 +2131,7 @@ article {
     #article-border-end-bio {
       margin-left: 58.7rem; // 939px
     }
-  }
+  }/* 
 
   #section-logo-other, 
   #section-logo-other-conversation { 
@@ -2124,7 +2140,7 @@ article {
         transform: translate(-48%, 0%);
       }
     }
-  }
+  } */
 
   
   /* **** RESUME **** */
@@ -2253,6 +2269,7 @@ article {
   // The menu located at the bottom of the browser window.
   #nav-other-landing, 
   #nav-other, 
+  #nav-other-conversation, 
   #nav-menu-iphone {
     grid-column: 1 / span 1;
 
@@ -2271,7 +2288,8 @@ article {
 
   #section-nav-iphone #nav-menu-items-iphone, 
   #nav-other-landing #nav-menu-items-other, 
-  #nav-other #nav-menu-items-other {
+  #nav-other #nav-menu-items-other, 
+  #nav-other-conversation #nav-menu-items-other {
     display: none;
 
     .nav-links-text-a {
@@ -2300,9 +2318,10 @@ article {
     }
   }
 
+  #section-nav-iphone #nav-menu-iphone #nav-menu-items-iphone #ul-menu-case_studies, 
   #nav-other-landing #ul-menu-case_studies, 
   #nav-other #ul-menu-case_studies, 
-  #section-nav-iphone #nav-menu-iphone #nav-menu-items-iphone #ul-menu-case_studies {
+  #nav-other-conversation #ul-menu-case_studies {
     li {
       .nav-links-text-a {
         font-size: $sm_sub_menu_font_size;
@@ -2310,9 +2329,7 @@ article {
     }
   }
 
-  #section-nav-iphone #section-logo-iphone-landing, 
   #section-nav-iphone #section-logo-iphone, 
-  #section-logo-other-landing, 
   #section-logo-other,  
   #section-logo-other-conversation {
     grid-column: 2 / span 1;
@@ -2326,7 +2343,15 @@ article {
         height: auto;
       }
     }
-   }
+  }
+
+  #section-nav-iphone #section-logo-iphone-landing, 
+  #section-logo-other-landing {
+    img {
+      width: 2.8rem; // 42px
+      height: auto;
+    }
+  }
 
 
   /* **** BIO **** */
@@ -2419,18 +2444,14 @@ article {
       h3 {
         margin: 0;
       }
-    }
 
-    .div-resume-list {
-      border-left: $border_left_dark_blue_3px;
+      .div-resume-list {
+        border-left: $border_left_dark_blue_3px;
 
-      .div-resume-list-items {
-        margin-left: 0.5rem; // 8px
-        padding-left: $lg_padding_left_p;
+        .div-resume-list-items {
+          margin-left: 0.5rem; // 8px
+          padding-left: $lg_padding_left_p;
 
-        span {
-          margin-bottom: 0.5rem; // 8px
-          display: inline-block;
         }
       }
     }
@@ -2698,7 +2719,8 @@ article {
   }
 
   #nav-other-landing, 
-  #nav-other {
+  #nav-other, 
+  #nav-other-conversation {
     position: fixed;
     right: 2rem;
     z-index: 2;
@@ -2715,9 +2737,11 @@ article {
     #nav-link-menu {
       width: 3.75rem; // 60px
       height: 3.75rem; // 60px
+      margin-top: 0;
       margin-left: 4rem; // 64px
       background-image: url('/assets/img/menu/main_menu.png');
       background-position: 0px -120px;
+      transform: none;
     }
 
     #nav-menu-items-other {
@@ -2731,7 +2755,8 @@ article {
     }
   }
 
-  #nav-other {
+  #nav-other, 
+  #nav-other-conversation {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
   }
@@ -2802,15 +2827,6 @@ article {
     grid-column: 1 / span 1;
   }
 
-  #nav-other {
-    grid-column: 2 / span 1;
-
-    #nav-link-menu {
-      transform: none;
-      margin-top: 0;
-    }
-  }
-
   article {
     grid-column: 1 / span 2;
 
@@ -2858,7 +2874,6 @@ article {
         height: 12.4rem; // 198px
 
         q {
-          margin: 4rem auto 1rem auto;
           font-size: $med_quote_font_size;
         }
 
@@ -3263,7 +3278,8 @@ article {
   
   /* **** MAIN NAVIGATION **** */
   #nav-other-landing, 
-  #nav-other {
+  #nav-other, 
+  #nav-other-conversation {
     right: 6rem; // 96px
 
     #div-menu-other-border {
@@ -3287,7 +3303,6 @@ article {
     }
   }
 
-  #section-logo-other-landing, 
   #section-logo-other, 
   #section-logo-other-conversation {
     a {
@@ -3472,7 +3487,8 @@ article {
 
   /* **** MAIN NAVIGATION **** */
   #nav-other-landing, 
-  #nav-other {
+  #nav-other, 
+  #nav-other-conversation {
     right: 3rem; // 48px
 
     #div-menu-other-border {
@@ -3637,7 +3653,8 @@ article {
 
   /* **** MAIN NAVIGATION **** */
   #nav-other-landing, 
-  #nav-other {
+  #nav-other, 
+  #nav-other-conversation {
     #div-menu-other-border {
       height: 59rem; // 944px
     }
@@ -3826,7 +3843,7 @@ article {
       width: 2.37rem; // 38px
       height: 2.37rem; // 38px
       float: left;
-      transform: translate(0, 0.5rem); // 0 8px
+      margin: 0.5rem 0 0 0; // 8px 0 0 0
       opacity: 1;
 
       #nav-menu-items-iphone {
@@ -3842,7 +3859,8 @@ article {
   }
 
   #nav-other-landing, 
-  #nav-other {
+  #nav-other, 
+  #nav-other-conversation {
     display: none;
   }
   
@@ -3850,10 +3868,10 @@ article {
   #section-nav-iphone #section-logo-iphone { 
     grid-column: auto;
     width: 3rem; // 48px
+    margin: 0.75rem 0 0 0; // 12px 0 0 0
     position: absolute;
     float: left;
     right: 0;
-    transform: translate(0, 0.75rem);
     opacity: 1;
   }
 

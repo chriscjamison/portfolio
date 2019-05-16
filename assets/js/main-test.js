@@ -150,7 +150,7 @@ $(document).ready(
       }
     );
 
-    $("#a-case_study-viewing_info-lvps").click(
+    $("#a-case_study-viewing_info-lvps, #a-resume-work-viewing_info-lvps").click(
       function () {
         // A Number variable which will hold the width of the browser window.
         var window_width;
@@ -180,7 +180,7 @@ $(document).ready(
       }
     );
 
-    $("#a-case_study-viewing_info-la").click(
+    $("#a-case_study-viewing_info-la, #a-resume-work-viewing_info-la").click(
       function () {
         // A Number variable which will hold the width of the browser window.
         var window_width;
@@ -379,7 +379,20 @@ function animatePageElements(url_string) {
   $(nav_element).fadeTo((time_value * 1.75), 1);
 
   // IF/ELSE statement which displays the webpage logo if the browser is not for a handheld device.
-  if (nav_selector === "#nav-other")  {
+  if (nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation")  {
+
+    // IF statement which will change the CSS selector of the DOM element 'section_logo_element' 
+    // refers to.
+    if (nav_selector === "#nav-other-conversation") {
+      // The CSS selector which refers to the main menu in the webpage which 
+      // the contact form is located is passed on.
+      section_logo_selector = "#section-logo-other-conversation";
+
+      // The jQuery object which refers to the main menu in the webpage which the contact form 
+      // is located is passed on.
+      section_logo_element = $(section_logo_selector);
+    }
+    
     $(section_logo_element).fadeTo((time_value * 2.25), 1);
   } 
   
@@ -784,7 +797,7 @@ function animateMenuOptions(menu_items_css) {
         function () {
           // IF/ELSE statement which intializes variables and sets CSS values for a border within the menu 
           // which only loads on tablet displays.
-          if (nav_selector === "#nav-other" || nav_selector === "#nav-other-landing")  {
+          if (nav_selector !== "#section-nav-iphone")  {
 
             // IF/ELSE statement which will create and set variables which will display or hide 
             // the border within the menu.
@@ -862,7 +875,7 @@ function animateOpenMenu(webpage_value)  {
     // on handheld displays.
     $(nav_element).addClass("nav-iphone-visible");
 
-  } else if (nav_selector === "#nav-other") {
+  } else if (nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation") {
     // A Number variable which will hold the width of the browser window is initialized.
     var window_width;
 
@@ -950,7 +963,7 @@ function animateCloseMenu(webpage_value)  {
     $(menu_icon_element).css("backgroundPosition", "0px 0px");
 
     $(nav_element).removeClass("nav-iphone-visible");
-  } else if (nav_selector === "#nav-other") {
+  } else if (nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation") {
     $(menu_icon_element).css("backgroundPosition", "0px -120px");
 
     // A Number variable which will hold the width of the browser is initialized.
@@ -1319,6 +1332,8 @@ function setNavSelector() {
     // IF/ELSE statement that sets a flag which determines which content is to made visible.
     if (url_string === "/" || url_string === "/index.htm") {
       nav_selector = "#nav-other-landing";
+    } else if (url_string === "/start_a_conversation.htm") {
+      nav_selector = "#nav-other-conversation";
     } else {
       nav_selector = "#nav-other";
     }
