@@ -388,7 +388,8 @@ header {
 #section-nav-iphone #section-logo-iphone-landing, 
 #section-nav-iphone #section-logo-iphone, 
 #section-logo-other-landing, 
-#section-logo-other {
+#section-logo-other, 
+#section-logo-other-conversation {
   opacity: 0;
 }
 
@@ -452,8 +453,6 @@ article {
 
     // For the text of the quote
     q {
-      width: 91%;
-      margin: 13% auto 5% auto;
       display: block;
       font-size: 0.9rem;
       font-weight: $ex_bold_font_weight;
@@ -993,9 +992,12 @@ article {
       }
     }
   }
-
+/* 
   #section-logo-other-landing, 
-  #section-logo-other {
+  #section-logo-other-bio, 
+  #section-logo-other-resume, 
+  #section-logo-other-case_study, 
+  #section-logo-other-conversation {
     grid-row: 2 / span 1;
 
     a {
@@ -1005,7 +1007,7 @@ article {
       transform: translate(0%, 10%);
     }
   }  
-
+ */
   
 
   /* **** BIO **** */
@@ -1052,13 +1054,13 @@ article {
     grid-column: 2 / span 1;
   }
 
-  
+  #nav-other-landing, 
   #nav-other { 
     #nav-link-menu {
       width: 3.75rem; // 60px
       height: 3.75rem; // 60px
       margin: 0.5rem 0 0 5.75rem; // 8px 0 0 92px
-      display: block !important;
+      display: block;
       background-position: 0px -120px;
       transform: none !important;
     }
@@ -1089,6 +1091,12 @@ article {
           }
         }
       }
+    }
+  }
+
+  #nav-other-landing {
+    #nav-link-menu {
+      display: none !important;
     }
   }
 
@@ -1202,7 +1210,8 @@ article {
   }
     
   #section-logo-other-landing, 
-  #section-logo-other {
+  #section-logo-other, 
+  #section-logo-other-conversation {
     width: 3.75rem; // 60px
     grid-column: 2 / span 1;
     grid-row: 3 / span 1;
@@ -1211,6 +1220,10 @@ article {
       display: block;
       transform: translate(5.75rem, 0); // 92px
     }
+  }
+
+  #section-logo-other-landing {
+    grid-row: 2 / span 1;
   }
 
 
@@ -1736,7 +1749,7 @@ article {
   /* **** START A CONVERSATION **** */
 
   #body-content-conversation {
-    column-gap: $lg_margin-spacer;
+    grid-column-gap: $lg_margin-spacer;
   }
 
   #header-conversation {
@@ -1822,7 +1835,7 @@ article {
   /* **** BIO **** */
 
   #body-content {
-    row-gap: 6rem; // 48px
+    grid-row-gap: 6rem; // 48px
     margin: 6rem; // 96px
   }
 
@@ -1881,7 +1894,7 @@ article {
 
   #body-content-conversation {
     grid-template-columns: 62rem 31rem 9.25rem; // 992px 496px 148px
-    row-gap: 6rem; // 96px
+    grid-row-gap: 6rem; // 96px
     margin: 6rem; // 96px
   }
 
@@ -1919,7 +1932,7 @@ article {
 
   #body-landing {
     margin: 6rem; // 96px
-    row-gap: 15.25em; // 244px
+    grid-row-gap: 15.25em; // 244px
   }
 
   header {
@@ -1952,7 +1965,7 @@ article {
   /* **** BIO **** */
 
   #body-content {
-    row-gap: 5rem; // 80px
+    grid-row-gap: 5rem; // 80px
     margin: 5rem; // 80px
   }
 
@@ -1977,7 +1990,8 @@ article {
   }
 
   #section-logo-other-landing, 
-  #section-logo-other { 
+  #section-logo-other, 
+  #section-logo-other-conversation { 
     a { 
       img {
         transform: translate(-48%, 0%);
@@ -2031,7 +2045,7 @@ article {
 
   #body-content-conversation {
     grid-template-columns: 53rem 22rem 9.5rem; // 848px 352px 152px
-    row-gap: 5rem; // 80px
+    grid-row-gap: 5rem; // 80px
     margin: 5rem; // 80px
   }
 
@@ -2054,7 +2068,7 @@ article {
 
   #body-landing {
     margin: 3rem; // 48px
-    row-gap: 8.75rem; // 140px
+    grid-row-gap: 12rem; // 192px
   }
 
   header {
@@ -2074,7 +2088,7 @@ article {
   #section-logo-other-landing { 
     a { 
       img {
-        transform: none;
+        transform: translate(-80%, 0%);
       }
     }
   }
@@ -2083,7 +2097,7 @@ article {
   /* **** BIO **** */
 
   #body-content {
-    row-gap: 3rem; // 48x
+    grid-row-gap: 3rem; // 48x
     margin: 3rem; // 48px
   }
 
@@ -2103,8 +2117,8 @@ article {
     }
   }
 
-  #section-logo-other-landing
-  #section-logo-other { 
+  #section-logo-other, 
+  #section-logo-other-conversation { 
     a { 
       img {
         transform: translate(-48%, 0%);
@@ -2140,7 +2154,7 @@ article {
 
   #body-content-conversation {
     grid-template-columns: 43rem 28.5rem 2.37rem;
-    row-gap: 3rem; // 48px
+    grid-row-gap: 3rem; // 48px
     margin: 3rem; // 48px
   }
 
@@ -2299,7 +2313,8 @@ article {
   #section-nav-iphone #section-logo-iphone-landing, 
   #section-nav-iphone #section-logo-iphone, 
   #section-logo-other-landing, 
-  #section-logo-other {
+  #section-logo-other,  
+  #section-logo-other-conversation {
     grid-column: 2 / span 1;
     text-align: right;
     
@@ -2345,7 +2360,15 @@ article {
     // Holds the text of the quote
     #figure-bio-quote-container-div {
       height: 10.5rem; // 168px
-      padding-top: 1.75rem; // 28px
+      padding: 0.75rem; // 12px
+
+      #figure-bio-quote-container-content-div {
+        width: 11rem; // 176px
+        height: 4.75rem; // 76px
+        margin: auto;
+        position: relative;
+        top: 26%;
+      }
     }
 
     // Adds a space between the bottom of the image of the quote and the portrait 
@@ -2633,7 +2656,7 @@ article {
   
   #body-landing {
     grid-template-columns: auto 8rem; // auto 128px
-    row-gap: 11rem;
+    grid-row-gap: 11rem;
 
     #nav-other-landing {
       right: 2rem;
@@ -2736,16 +2759,19 @@ article {
       }
     }
   }
-
+/* 
   #section-logo-other-landing, 
-  #section-logo-other {
+  #section-logo-other-bio, 
+  #section-logo-other-resume, 
+  #section-logo-other-case_study, 
+  #section-logo-other-conversation {
     grid-row: 2 / span 1;
 
     a {
       transform: translate(0%, 240%);
     }
   } 
-
+ */
 
   /* **** BIOGRAPHY **** */ 
 
@@ -2862,7 +2888,8 @@ article {
   }
 
   #section-logo-other-landing, 
-  #section-logo-other {
+  #section-logo-other, 
+  #section-logo-other-conversation {
     grid-row: 3 / span 1;
     
     a {
@@ -3253,7 +3280,7 @@ article {
   }
 
   #body-landing {
-    row-gap: 25rem; // 400px
+    grid-row-gap: 25rem; // 400px
 
     #nav-other-landing {
       right: 6rem; // 96px
@@ -3261,7 +3288,8 @@ article {
   }
 
   #section-logo-other-landing, 
-  #section-logo-other {
+  #section-logo-other, 
+  #section-logo-other-conversation {
     a {
       transform: translate(0%, 240%);
     }
@@ -3461,7 +3489,7 @@ article {
   }
 
   #body-landing {
-    row-gap: 25.25rem; // 408px
+    grid-row-gap: 25.25rem; // 408px
   }
 
   header {
@@ -3769,16 +3797,16 @@ article {
   
   /* **** LANDING PAGE **** */
 
-   header {
-     #header-name {
-       margin-top: 1.25rem; // 20px
+  header {
+    #header-name {
+      margin-top: 1.25rem; // 20px
 
-       span {
-         display: block;
-         line-height: 1;
-       }
-     }
-   }
+      span {
+        display: block;
+        line-height: 1;
+      }
+    }
+  }
 
   #section-nav-iphone {
     height: 4.69rem; // 75px
@@ -3812,10 +3840,14 @@ article {
       }
     }
   }
+
+  #nav-other-landing, 
+  #nav-other {
+    display: none;
+  }
   
   #section-nav-iphone #section-logo-iphone-landing, 
-  #section-logo-other-landing, 
-  #section-logo-other {
+  #section-nav-iphone #section-logo-iphone { 
     grid-column: auto;
     width: 3rem; // 48px
     position: absolute;
@@ -3825,12 +3857,6 @@ article {
     opacity: 1;
   }
 
-  #nav-other, 
-  #section-logo-other-landing, 
-  #section-logo-other {
-    display: none;
-  }
-
   #section-social {
     margin-bottom: 4rem; // 64px
   }
@@ -3838,7 +3864,7 @@ article {
   /* **** BIOGRAPHY **** */
 
   #body-content {
-    row-gap: $sm_margin_spacer;
+    grid-row-gap: $sm_margin_spacer;
   }
 
   header {
@@ -3853,14 +3879,22 @@ article {
         display: none;
       }
     }
+
+    #figure-bio-quote-container-div {
+      #figure-bio-quote-container-content-div {
+        span {
+          width: 5.75rem; // 92px
+          margin: 0.4rem auto; // 6px auto
+          display: block;
+        }
+      }
+    }
   }
 
 
   /* **** RESUME **** */
 
   article {
-    margin-bottom: 5rem; // 80px
-
     .div-resume-list span, 
     #section-resume-work span {
       font-size: $sm_base_font_size;
@@ -4384,6 +4418,27 @@ article {
   }
 }
   
+
+
+/* ********************************* 
+    iPHONE XS - 375 x 635
+  ********************************* */
+  
+@media (min-width: 361px) and (max-width: 375px)  {
+  article {
+    #article-border-end-case_study-lvps, 
+    #article-border-end-case_study-la {
+      left: 16rem; // 256px
+    }
+
+    #article-border-end-case_study-kovl {
+      left: 15.5rem; // 248px
+    }
+  }
+}
+
+
+  
 /* ********************************* 
       iPHONE 5 - 320 x 568
    ********************************* */
@@ -4395,6 +4450,7 @@ article {
   #section-nav-iphone {
     width: 16.5rem; // 264px
   }
+
 
   /* **** LANDING PAGE **** */
   header {

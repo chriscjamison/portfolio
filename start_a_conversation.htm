@@ -35,10 +35,10 @@
     </header>
 
 <!-- MAIN NAVIGATION FOR DISPLAYS GREATER THAN 414px -->
-    <nav class="nav-other" id="nav-other-conversation">
+    <nav id="nav-other">
       <div id="div-menu-other-border"></div>
       <a href="#open_menu" title="Main Menu" id="nav-link-menu"></a>
-      <div class="nav-menu-items" id="nav-menu-items-other">
+      <div id="nav-menu-items-other">
         <a href="#bio" title="View Bio" class="nav-links-text-a" id="nav-link-text-a-bio">View Bio</a>
         <a href="#resume" title="View Resume" class="nav-links-text-a" id="nav-link-text-a-resume">View Resume</a>
         <a href="#case_studies" title="View Case Studies" class="nav-links-text-a" id="nav-link-text-a-case_studies">View<br>Case Studies</a>
@@ -55,60 +55,60 @@
     </nav>
 
 <!-- BODY COPY -->
-      <section id="section-conversation-links">
-        <a href="#" title="Phone Number" id="a-conversation-phone">Phone</a>
-        <div class="div-spacer-vertical">
-          <div class="div-spacer-vertical-gray">&nbsp;</div>
-          <div class="div-spacer-vertical-gray">&nbsp;</div>
-        </div>
-        <a href="#" title="Contact Form" id="a-conversation-contact_form">Contact Form</a>
-        <div class="div-spacer-vertical">
-          <div class="div-spacer-vertical-gray">&nbsp;</div>
-          <div class="div-spacer-vertical-gray">&nbsp;</div>
-        </div>
-        <a href="#" title="Email" id="a-conversation-email">Email</a>
-      </section>
-      <div id="div-conversation-copy-confirmation">
-        <p>
-          Thank you for sending your message!
-        </p>
-        <p>
-          An email message will be sent to you from no_reply@chriscjamison.com which contains a copy 
-          of your message.
-        </p>
-        <p>
-          I look forward to reading your message. 
-        </p>
-        <p>
-          Enjoy your day, 
-        </p>
-        <p id="p-conversation-signature">
-          Chris Jamison
-        </p>
-     </div>
-      <div id="div-conversation-copy">
-        <p>
-          I thank you for viewing this portfolio.
-        </p>
-        <p>
-          If you want to speak over the phone, later in the afternoon or evening, Pacific Standard Time, 
-          is the best time of day.
-        </p>
-        <p>
-          Please leave a message through my voice mail service if you are unable to speak with me. 
-          I check my voice mail regularly. My goal is to reply within two hours. 
-        </p>
-        <p>
-          Email, along with the contact form below are easy means to contact me.
-        </p>
-        <p>
-          I will send a message back to you sometime during the business day.
-        </p>
+    <section id="section-conversation-links">
+      <a href="#" title="Phone Number" id="a-conversation-phone">Phone</a>
+      <div class="div-spacer-vertical">
+        <div class="div-spacer-vertical-gray">&nbsp;</div>
+        <div class="div-spacer-vertical-gray">&nbsp;</div>
       </div>
-      <div class="div-spacer-horizontal" id="spacer-horizontal-div-conversation">
-        <div class="div-spacer-horizontal-gray">&nbsp;</div>
-        <div class="div-spacer-horizontal-gray">&nbsp;</div>
+      <a href="#" title="Contact Form" id="a-conversation-contact_form">Contact Form</a>
+      <div class="div-spacer-vertical">
+        <div class="div-spacer-vertical-gray">&nbsp;</div>
+        <div class="div-spacer-vertical-gray">&nbsp;</div>
       </div>
+      <a href="#" title="Email" id="a-conversation-email">Email</a>
+    </section>
+    <div id="div-conversation-copy-confirmation">
+      <p>
+        Thank you for sending your message!
+      </p>
+      <p>
+        An email message will be sent to you from no_reply@chriscjamison.com which contains a copy 
+        of your message.
+      </p>
+      <p>
+        I look forward to reading your message. 
+      </p>
+      <p>
+        Enjoy your day, 
+      </p>
+      <p id="p-conversation-signature">
+        Chris Jamison
+      </p>
+    </div>
+    <div id="div-conversation-copy">
+      <p>
+        I thank you for viewing this portfolio.
+      </p>
+      <p>
+        If you want to speak over the phone, later in the afternoon or evening, Pacific Standard Time, 
+        is the best time of day.
+      </p>
+      <p>
+        Please leave a message through my voice mail service if you are unable to speak with me. 
+        I check my voice mail regularly. My goal is to reply within two hours. 
+      </p>
+      <p>
+        Email, along with the contact form below are easy means to contact me.
+      </p>
+      <p>
+        I will send a message back to you sometime during the business day.
+      </p>
+    </div>
+    <div class="div-spacer-horizontal" id="spacer-horizontal-div-conversation">
+      <div class="div-spacer-horizontal-gray">&nbsp;</div>
+      <div class="div-spacer-horizontal-gray">&nbsp;</div>
+    </div>
     <form action="/assets/php/contact_form.php" name="form-conversation" id="form-conversation">
       <label for="full_name" class="label-conversation">Full Name</label>
       <input type="text" value="_ _ _ _ _  _ _ _ _ _ _ _ _" name="full_name" class="input-conversation" id="input-conversation-full_name">
@@ -118,15 +118,13 @@
       <textarea class="textarea-conversation" id="textarea-conversation-message">Please enter your message here</textarea>
       <input type="submit" value="Press to send your message" id="input-conversation-submit">
     </form>
-    
-
 
 <!-- MAIN NAVIGATION AND LOGO FOR DISPLAYS UNDER 414px -->
-    <section class="section-nav-iphone">
+    <section id="section-nav-iphone">
       <div id="div-menu-iphone-border"></div>
-      <nav id="nav-menu-iphone" class="nav-iphone">
+      <nav id="nav-menu-iphone">
         <a href="#open_menu" title="Main Menu" id="nav-link-menu"></a>
-        <div class="nav-menu-items" id="nav-menu-items-iphone">
+        <div id="nav-menu-items-iphone">
           <a href="#bio" title="View Bio" class="nav-links-text-a" id="nav-link-text-a-bio">View Bio</a>
           <a href="#resume" title="View Resume" class="nav-links-text-a" id="nav-link-text-a-resume">View Resume</a>
           <a href="#case_studies" title="View Case Studies" class="nav-links-text-a" id="nav-link-text-a-case_studies">View<br>Case Studies</a>
@@ -141,13 +139,13 @@
           </div>
         </div>
       </nav>
-      <section class="section-logo" id="section-logo-conversation">
+      <section id="section-logo-conversation">
         <a href="#index" title="Home"><img src="/assets/img/logo/logo.svg" alt="Home"></a>
       </section>
     </section>
 
 <!-- LOGO FOR DISPLAYS OVER 414px -->
-    <section class="section-logo section-logo-other" id="section-logo-conversation">
+    <section id="section-logo-conversation">
       <a href="#index" title="Home"><img src="/assets/img/logo/logo.svg" alt="Home"></a>
     </section>
 
