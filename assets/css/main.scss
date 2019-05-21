@@ -2086,7 +2086,7 @@ article {
 
   #body-landing {
     margin: 3rem; // 48px
-    grid-row-gap: 18.25rem; // 292px
+    grid-row-gap: 13rem; // 208px
   }
 
   header {
@@ -2279,13 +2279,13 @@ article {
       margin-top: 0.5rem;
     }
   }
-
+/* 
   #nav-menu-iphone { 
     #nav-link-menu {
       margin-top: 0;
     }
   }
-
+ */
   #section-nav-iphone #nav-menu-items-iphone, 
   #nav-other-landing #nav-menu-items-other, 
   #nav-other #nav-menu-items-other, 
@@ -2414,6 +2414,15 @@ article {
       margin-top: 1.13rem;
     }
 
+    .div-resume-list {
+      border-left: $border_left_dark_blue_3px;
+
+      .div-resume-list-items {
+        padding-left: $lg_padding_left_p;
+
+      }
+    }
+
     #section-resume-tech_knowledge h2, 
     #section-resume-soft_knowledge h2, 
     #section-resume-tech_knowledge h3, 
@@ -2443,16 +2452,6 @@ article {
     #section-resume-work {
       h3 {
         margin: 0;
-      }
-
-      .div-resume-list {
-        border-left: $border_left_dark_blue_3px;
-
-        .div-resume-list-items {
-          margin-left: 0.5rem; // 8px
-          padding-left: $lg_padding_left_p;
-
-        }
       }
     }
 
@@ -2662,6 +2661,11 @@ article {
     #textarea-conversation-message {
       height: 10.8rem; // 173px
     }
+
+    #input-conversation-submit {
+      -webkit-appearance: none;
+      appearance: none;
+    }
   } 
 }
   
@@ -2755,6 +2759,14 @@ article {
     }
   }
 
+  #nav-other-landing {
+    opacity: 0;
+
+    #div-menu-other-border {
+      display: none;
+    }
+  }
+
   #nav-other, 
   #nav-other-conversation {
     grid-column: 2 / span 1;
@@ -2784,19 +2796,18 @@ article {
       }
     }
   }
-/* 
-  #section-logo-other-landing, 
-  #section-logo-other-bio, 
-  #section-logo-other-resume, 
-  #section-logo-other-case_study, 
-  #section-logo-other-conversation {
-    grid-row: 2 / span 1;
 
-    a {
-      transform: translate(0%, 240%);
-    }
+  #section-logo-other {
+    grid-row: 3 / span 1;
+  }
+
+  #section-logo-other-landing {
+    grid-row: 2 / span 1 !important;
+    width: 2.81rem; // 45px
+    margin-top: 325%;
   } 
- */
+
+
 
   /* **** BIOGRAPHY **** */ 
 
@@ -2872,6 +2883,12 @@ article {
       #figure-bio-quote-container-div {
         width: 32rem; // 318px
         height: 12.4rem; // 198px
+        
+        #figure-bio-quote-container-content-div {
+          width: 19rem; // 304px
+          height: 7.5rem; // 120px
+          top: 3.44rem; // 55px
+        }
 
         q {
           font-size: $med_quote_font_size;
@@ -2879,7 +2896,7 @@ article {
 
         span {
           width: 7rem; // 112px
-          margin: 0 auto;
+          margin: 0.5rem auto 0 auto; // 8px auto 0 auto
           padding-left: 0;
           display: block;
           border-left: none;
@@ -2902,7 +2919,6 @@ article {
     } */
   }
 
-  #section-logo-other-landing, 
   #section-logo-other, 
   #section-logo-other-conversation {
     grid-row: 3 / span 1;
@@ -3309,6 +3325,10 @@ article {
       transform: translate(0%, 240%);
     }
   }  
+
+  #section-logo-other-landing {
+    margin: 8.88rem 0 0 7.19rem; // 142px 0 0 115px
+  }
   
   
   /* **** BIOGRAPHY **** */ 
@@ -3388,11 +3408,13 @@ article {
 
     #section-resume-soft_knowledge {
       #span-resume-soft_knowledge-list-bridge {
-        width: 9.75rem; // 156px
+        width: 18.5rem; // 296px
+        display: inline-block;
       }
 
       #span-resume-soft_knowledge-list-git {
-        width: 3rem; // 48px
+        width: 6.5rem; // 104px
+        display: inline-block;
       }
 
       #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
@@ -3589,6 +3611,11 @@ article {
       display: none;
     }
 
+    #span-resume-soft_knowledge-list-bridge {
+      width: 9.5rem; // 152px
+      display: inline-block;
+    }
+
     #section-resume-work {
       p {
         width: 38rem; // 608px
@@ -3651,7 +3678,15 @@ article {
 
 @media (min-width: 415px) and (max-width: 768px)  {
 
+  /* **** LANDING PAGE **** */
+  
+  #body-landing {
+    grid-row-gap: 7rem;
+  }
+
+  
   /* **** MAIN NAVIGATION **** */
+
   #nav-other-landing, 
   #nav-other, 
   #nav-other-conversation {
@@ -3687,7 +3722,7 @@ article {
     }
 
     #article-border-end-bio {
-      left: 31rem;
+      left: 35.25rem; // 568px
     }
   }
 
@@ -3720,7 +3755,8 @@ article {
 
     #section-resume-tech_knowledge {
       #span-resume-tech_knowledge-list-php {
-        width: 3.75rem; // 60px
+        width: 4rem; // 64px
+        display: inline-block;
       }
 
       #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
@@ -3731,6 +3767,7 @@ article {
     #section-resume-soft_knowledge {
       #span-resume-soft_knowledge-list-code {
         width: 20.5rem; // 328px
+        display: inline-block;
       }
 
       #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
@@ -4058,11 +4095,11 @@ article {
 
   #spacer-horizontal-div-conversation {
     grid-column: 1 / span 2;
-  }
+  }/* 
 
   #form-conversation {
     margin-bottom: 4.5rem; // 72px
-  }
+  } */
   
 }
 
@@ -4311,6 +4348,10 @@ article {
 
   /* **** START A CONVERSATION **** */ 
 
+  #body-content-conversation {
+    grid-template-columns: 9.25rem 9.25rem; // 148px 148px
+  }
+
   #form-conversation {
     .input-conversation, 
     #textarea-conversation-message {
@@ -4345,6 +4386,12 @@ article {
 
   
   /* **** RESUME **** */
+
+  header {
+    #header-border-title-resume {
+      width: 4.9rem; // 78px;
+    }
+  }
 
   article {
     .div-spacer-horizontal {

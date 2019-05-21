@@ -34,7 +34,7 @@ $(document).ready(
           animateMenu(webpage_value);
         } else if (webpage_value === "case_studies")  {
           animateCaseStudies();
-        } else {
+        } else if (webpage_value !== "" && webpage_value !== "form-conversation") {
           // A String variable which will hold the path to the webpage a visitor wished to visit 
           // is initialized.
           var new_url_string = "";
@@ -150,13 +150,13 @@ $(document).ready(
       }
     );
 
-    $("#a-case_study-viewing_info-lvps, #a-resume-work-viewing_info-lvps").click(
+    $("#a-case_study-lvps-viewing_info, #a-resume-work-lvps-viewing_info").click(
       function () {
         // A Number variable which will hold the width of the browser window.
         var window_width;
 
         // The width of the browser window is passed on.
-        window_width = $(window).width();
+        window_width = window.innerWidth;
 
         // A String variable which holds the URL to send a visitor if they choose to view 
         // Las Vegas Pro Soccer in a mobile browser
@@ -180,13 +180,13 @@ $(document).ready(
       }
     );
 
-    $("#a-case_study-viewing_info-la, #a-resume-work-viewing_info-la").click(
+    $("#a-case_study-la-viewing_info, #a-resume-work-la-viewing_info").click(
       function () {
         // A Number variable which will hold the width of the browser window.
         var window_width;
 
         // The width of the browser window is passed on.
-        window_width = $(window).width();
+        window_width = window.innerWidth;
 
         // A String variable which holds the URL to send a visitor if they choose to view 
         // http://www.leadersacademy.com.
@@ -293,7 +293,21 @@ function animateLandingPageElements() {
   if (nav_selector === "#section-nav-iphone") {
     section_logo_selector = nav_selector + " #section-logo-iphone-landing";
   } else {
-    menu_items_selector =  nav_selector + " #nav-menu-items-other";
+    // A Number variable which will hold the width of the browser is initialized.
+    var window_width;
+
+    // The width of the browser window is passed on.
+    window_width = window.innerWidth;
+
+    // IF/ELSE statement which passes on a CSS selector which refers to the menu options 
+    // if the browser is not for a tablet browser. Otherwise, the CSS selector refers 
+    // to entire menu.
+    if (window_width > 1024)  {
+      menu_items_selector =  nav_selector + " #nav-menu-items-other";
+    } else {
+      menu_items_selector =  nav_selector;
+    }
+
     section_logo_selector = "#section-logo-other-landing";
   }
   
@@ -379,7 +393,7 @@ function animatePageElements(url_string) {
   $(nav_element).fadeTo((time_value * 1.75), 1);
 
   // IF/ELSE statement which displays the webpage logo if the browser is not for a handheld device.
-  if (nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation")  {
+  if (nav_selector === "#nav-other-landing" || nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation")  {
 
     // IF statement which will change the CSS selector of the DOM element 'section_logo_element' 
     // refers to.
@@ -405,7 +419,7 @@ function animatePageElements(url_string) {
     var window_width;
 
     // The width of the browser window is passed on.
-    window_width = $(window).width();
+    window_width = window.innerWidth;
 
     // IF/ELSE statement which changes the copy of the submit button if the browser is 
     // for a desktop computer.
@@ -538,7 +552,7 @@ function setConversationSelector()  {
     var window_width;
 
     // The width of the browser width is passed on to.
-    window_width = $(window).width();
+    window_width = window.innerWidth;
 
     // IF/ELSE statement which includes a selector, '#section-converation-links', if the browser is for a 
     // handheld or tablet browser.
@@ -568,7 +582,7 @@ function animateiPadPageElements(webpage_value)  {
    var window_width;
 
    // The width of the browser is passed on using the jQuery Method, '.width()'.
-   window_width = $(window).width();
+   window_width = window.innerWidth;
  
    // IF/ELSE statement which will slide the menu icon slightly to the left if the browser 
    // width is less than 1024px.
@@ -585,7 +599,7 @@ function animateiPadPageElements(webpage_value)  {
     var start_a_conversation_search_string = "";
 
     // The filename of the webpage which refers to 'Start a Conversation' is passed on.
-    start_a_conversation_search_string = "start_a_conversation.htm";
+    start_a_conversation_search_string = "/start_a_conversation.htm";
 
     // IF/ELSE statement which determines which DOM elements to fade from view. If the current 
     // webpage refers to 'Start a Conversation', the jQuery object which refer to DOM elements 
@@ -633,7 +647,7 @@ function animateiPadPageElements(webpage_value)  {
         var window_width;
 
         // The width of the browser window is passed on.
-        window_width = $(window).width();
+        window_width = window.innerWidth;
 
         if (window_width <= 414)  {
           $(conversation_links_element).fadeTo((time_value * 0.1), 0);
@@ -776,7 +790,7 @@ function animateMenuOptions(menu_items_css) {
   var window_width;
 
   // The width of the browser window is passed on by using the jQuery Method, '.width()'.
-  window_width = $(window).width();
+  window_width = window.innerWidth;
 
   // IF/ELSE statement which sets the selector for the menu items to match the mobile 
   // menu or the desktop menu based on the width of the browser window.
@@ -791,8 +805,12 @@ function animateMenuOptions(menu_items_css) {
   // The jQuery object which refers to the menu items is passed on.
   menu_items_element = $(menu_items_selector);
   
+  // Timer function which toggles the visibility of the menu options.
   setTimeout(
     function () {
+
+      // Timer function which toggles the visibility of the menu if it appears 
+      // within a mobile browser.
       setTimeout(
         function () {
           // IF/ELSE statement which intializes variables and sets CSS values for a border within the menu 
@@ -803,27 +821,41 @@ function animateMenuOptions(menu_items_css) {
             // the border within the menu.
             if (window_width > 414 && window_width <= 1024) {
 
-              // A String variable which will hold the CSS selector for the border within the menu 
+              // A String variable which will hold the URL of the current webpage 
               // is initialized.
-              var menu_border_selector = "";
+              var url_string = "";
 
-              // An Object variable which will hold the jQuery object which referst to the border 
-              // within the menu is initialized.
-              var menu_border_element = {};
+              // The URL of the current webpage is passed on.
+              url_string = window.location.pathname;
 
-              // The CSS selector for the border within the menu is passed on. The selector is 
-              // created by cocatenating the value of 'nav_selector' with '#div-menu-other-border'.
-              menu_border_selector = nav_selector + " #div-menu-other-border";
+              // IF/ELSE statement which will switch the visiblity of the menu border 
+              // if the current webpage is not the Landing Page.
+              if (url_string !== "/" && url_string !== "/index.htm")  {
 
-              // A jQuery object which refers to the border within the menu is passed on.
-              menu_border_element = $(menu_border_selector);
+                // A String variable which will hold the CSS selector for the border within the menu 
+                // is initialized.
+                var menu_border_selector = "";
 
-              $(menu_border_element).css(menu_items_css);
+                // An Object variable which will hold the jQuery object which referst to the border 
+                // within the menu is initialized.
+                var menu_border_element = {};
+
+                // The CSS selector for the border within the menu is passed on. The selector is 
+                // created by cocatenating the value of 'nav_selector' with '#div-menu-other-border'.
+                menu_border_selector = nav_selector + " #div-menu-other-border";
+
+                // A jQuery object which refers to the border within the menu is passed on.
+                menu_border_element = $(menu_border_selector);
+
+                $(menu_border_element).css(menu_items_css);
+              }
             }
           }
         }, (time_value * 0.6)
       );
       
+      // Timer function which toggles the visiblity of the menu options. It completes its run 
+      // before the menu icon's visibilty changes.
       setTimeout(
         function () {
           $(menu_items_element).css(menu_items_css);
@@ -875,12 +907,12 @@ function animateOpenMenu(webpage_value)  {
     // on handheld displays.
     $(nav_element).addClass("nav-iphone-visible");
 
-  } else if (nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation") {
+  } else if (nav_selector === "#nav-other-landing" || nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation") {
     // A Number variable which will hold the width of the browser window is initialized.
     var window_width;
 
     // The width of the browser window is passed on.
-    window_width = $(window).width();
+    window_width = window.innerWidth;
 
     // IF/ELSE statement which will reposition the menu icon if the browser is for a tablet.
     if (window_width <= 1024) {
@@ -963,14 +995,14 @@ function animateCloseMenu(webpage_value)  {
     $(menu_icon_element).css("backgroundPosition", "0px 0px");
 
     $(nav_element).removeClass("nav-iphone-visible");
-  } else if (nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation") {
+  } else if (nav_selector === "#nav-other-landing" || nav_selector === "#nav-other" || nav_selector === "#nav-other-conversation") {
     $(menu_icon_element).css("backgroundPosition", "0px -120px");
 
     // A Number variable which will hold the width of the browser is initialized.
     var window_width;
 
     // The width of the browser is passed on using the jQuery Method, '.width()'.
-    window_width = $(window).width();
+    window_width = window.innerWidth;
   } 
   
   $(menu_icon_element).attr("href", "#open_menu");
@@ -988,39 +1020,11 @@ function determineBackgroundHeight()  {
   var window_width;
 
   // The width of the browser width is passed on using the jQuery Method, '.width()'.
-  window_width = $(window).width();
+  window_width = window.innerWidth;
 
   // The height of the browser is passed on using the jQuery Method, '.height()'.
   background_height = window.innerHeight;
 
-  /* // A String variable whicih will hold the new value of the background height 
-  // is initialized.
-  var background_height = "";
-
-  // IF/ELSE statement which will determine the size of the background based on 
-  // the dimensions of the browser.
-  if (window_width <= 320)  {
-    background_height = "35.5rem"; // 568px
-  } else if (window_width > 320 && window_width <= 360) {
-    background_height = "40rem"; // 640px
-  } else if (window_width > 360 && window_width <= 375) {
-    // A Number variable which will hold the height of the browser is initialized.
-    var browser_height;
-
-    // The height of the browser is passed on using the jQuery Method, '.height()'.
-    browser_height = window.innerHeight;
-
-    // IF/ELSE statement which will determine the height of the background based on 
-    // the height of the browser.
-    if (browser_height === 667) {
-      background_height = "41.75rem"; // 668px
-    } else if (browser_height === 812)  {
-      background_height = "50.75rem"; // 812px
-    }
-  } else if (window_width > 375 && window_width <= 414) {
-    background_height = "46rem"; // 736px
-  }
- */
   return background_height;
 } // END of FUNCTION determineBackgroundHeight
 
@@ -1078,7 +1082,7 @@ function animateCaseStudies() {
   var window_width;
 
   // The width of the browser window is passed on.
-  window_width = $(window).width();
+  window_width = window.innerWidth;
 
   // IF/ELSE statement which will set values of the CSS property, 'height', 
   // based on the size of the browser window.
@@ -1316,7 +1320,7 @@ function setNavSelector() {
   var window_width;
 
   // A jQuery method is used to collect the width of the browser window. That value is then passed on.
-  window_width = $(window).width();
+  window_width = window.innerWidth;
 
   // IF/ELSE statement which sets the value of 'nav_selector' to '.nav-iphone' for browsers less than 
   // or equal to 414px and '.nav-other' for all other browsers.
