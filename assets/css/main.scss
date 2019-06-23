@@ -1284,6 +1284,7 @@ article {
     #section-resume-tech_knowledge h3, 
     #section-resume-soft_knowledge h3, 
     #section-resume-work h2, 
+    #section-resume-objective h2, 
     #section-resume-education h2, 
     #section-resume-documents h2 {
       margin-bottom: 0.25rem; // 4px
@@ -1297,7 +1298,8 @@ article {
       border-left: $border_left_light_blue_3px;
     }
 
-    #section-resume-work .div-resume-work-jobs, 
+    #section-resume-work .div-resume-work-jobs,
+    #section-resume-objective .div-resume-objective, 
     #section-resume-education .div-resume-education-schools, 
     #section-resume-documents .div-resume-documents-links {
       margin-bottom: $lg_margin_spacer_3;
@@ -1317,19 +1319,6 @@ article {
         margin: 0 auto; // 0 auto
         position: relative;
         left: 9.75rem; // 156px
-      }
-    }
-
-    #section-resume-objective {
-      border-left: $border_left_dark_blue_3px;
-
-      p {
-        margin: 0 0 $lg_margin_spacer_3 0;
-        padding-left: $lg_padding_left_p;
-      }
-
-      p:last-of-type {
-        padding-bottom: 0.5rem;
       }
     }
 
@@ -1447,6 +1436,21 @@ article {
           h3 {
             font-size: $lg_h3_resume_job_font_size;
           }
+        }
+      }
+    }
+
+    #section-resume-objective {
+      .div-resume-objective {
+        margin-top: $lg_margin_spacer_3;
+
+        p {
+          margin: 0 0 $lg_margin_spacer_3 0;
+          padding-left: $lg_padding_left_p;
+        }
+
+        p:last-of-type {
+          padding-bottom: 0.5rem;
         }
       }
     }
@@ -2029,10 +2033,6 @@ article {
       left: 36.5rem; // 584px
     }
 
-    #section-resume-objective {
-      margin: $lg_margin_spacer 7.25rem $lg_margin_spacer $lg_resume_margin_left_1600;
-    }
-
     #section-resume-tech_knowledge {
       margin: 0 11rem $lg_margin_spacer $lg_resume_margin_left_1600;
     }
@@ -2041,6 +2041,10 @@ article {
       #div-resume-work-job-lvps {
         margin: $lg_margin_spacer 10rem $lg_margin_spacer $lg_resume_margin_left_1600;
       }
+    }
+
+    #section-resume-objective {
+      margin: $lg_margin_spacer 7.25rem $lg_margin_spacer $lg_resume_margin_left_1600;
     }
   }
 
@@ -2413,6 +2417,7 @@ article {
 
   article {
     #section-resume-work #div-resume-work-job_title, 
+    #section-resume-objective .div-resume-objective, 
     #section-resume-education .div-resume-education-schools, 
     #section-resume-documents .div-resume-documents-links {
       margin-top: 1.13rem;
@@ -2432,6 +2437,7 @@ article {
     #section-resume-tech_knowledge h3, 
     #section-resume-soft_knowledge h3, 
     #section-resume-work h2, 
+    #section-resume-objective h2, 
     #section-resume-education h2, 
     #section-resume-documents h2 {
       margin-bottom: 0.25rem; // 4px
@@ -2446,6 +2452,7 @@ article {
     }
 
     #section-resume-work .div-resume-work-jobs, 
+    #section-resume-objective .div-resume-objective, 
     #section-resume-education .div-resume-education-schools, 
     #section-resume-documents .div-resume-documents-links {
       margin-bottom: $lg_margin_spacer_3;
@@ -2466,14 +2473,14 @@ article {
         }
       }
     }
-    
-    #section-resume-objective {
-      margin-top: $sm_body_margin;
-    }
 
     #section-resume-tech_knowledge h3, 
     #section-resume-soft_knowledge h3 {
       border-left: none;
+    }
+
+    #section-resume-tech_knowledge {
+      margin-top: $sm_body_margin;
     }
 
     #section-resume-work {
@@ -2945,6 +2952,7 @@ article {
     }
 
     #section-resume-work #div-resume-work-job_title, 
+    #section-resume-objective .div-resume-objective, 
     #section-resume-education .div-resume-education-schools,
     #section-resume-documents .div-resume-documents-links {
        margin-top: $lg_margin_spacer_3;
@@ -2982,21 +2990,6 @@ article {
       }
     }
 
-    #section-resume-objective {
-      margin-bottom: $lg_margin_spacer_3;
-      padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
-      border-left: $border_left_dark_blue_3px;
-
-      p {
-        margin: 0;
-      }
-
-      p:first-of-type {
-        margin-bottom: $lg_margin_spacer;
-      }
-    }
-    
-
     #section-resume-work {
       p {
         display: inline-block;
@@ -3030,9 +3023,22 @@ article {
           margin-top: 0.75rem; // 12px
           vertical-align: top;
         }
-
       }
     }
+
+    
+    #section-resume-objective {     
+      .div-resume-objective {
+        p {
+          margin: 0;
+        }
+  
+        p:first-of-type {
+          margin-bottom: $lg_margin_spacer;
+        }
+      }
+    }
+
 
     #section-resume-education {
       .div-resume-education-schools {
@@ -3404,8 +3410,10 @@ article {
     }
 
     #section-resume-objective {
-      p {
-        width: 50.88rem; // 814px
+      .div-resume-objective {
+        p {
+          width: 50.88rem; // 814px
+        }
       }
     }
 
@@ -3602,8 +3610,10 @@ article {
     }
 
     #section-resume-objective {
-      p {
-        width: 40.75rem; // 652px
+      .div-resume-objective {
+        p {
+          width: 40.75rem; // 652px
+        }
       }
     }
 
@@ -3757,8 +3767,10 @@ article {
     }
 
     #section-resume-objective {
-      p {
-        width: 38.5rem; // 616px
+      .div-resume-objective {
+        p {
+          width: 38.5rem; // 616px
+        }
       }
     }
 
@@ -3990,8 +4002,10 @@ article {
     }
 
     #section-resume-objective {
-      p {
-        margin-top: 0;
+      .div-resume-objective {
+        p {
+          margin-top: 0;
+        }
       }
     }
 
@@ -4643,11 +4657,9 @@ article {
       }
     }
 
-    #section-resume-objective {
-      margin-top: 0;
-    }
-
     #section-resume-tech_knowledge {
+      margin-top: 0;
+
       #span-resume-tech_knowledge-list-css {
         width: auto;
       }
