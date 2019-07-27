@@ -5,7 +5,7 @@
     "From: " . $_POST["full_name"] . "\n\n" . 
     "Email Address: " . $_POST["email_address"] . "\n" . 
     "Message: " . "\n" . $_POST["message"];
-  $headers = 'From: no_reply@kovlradio.com' . "\r\n" .
+  $headers = 'From: no_reply@chriscjamison.com' . "\r\n" .
              'X-Mailer: PHP/' . phpversion();
 
   mail($to, $subject, $message, $headers);
