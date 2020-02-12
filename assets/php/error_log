@@ -1,0 +1,1 @@
+[22-Oct-2019 01:10:53 America/Chicago] PHP Parse error:  syntax error, unexpected '$mail_data' (T_VARIABLE) in /home2/ccjdev/public_html/assets/php/contact_form.php on line 14

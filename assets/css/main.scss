@@ -2257,7 +2257,7 @@ article {
     }
 
     #header-border-title-resume  {
-      width: 7.5rem; // 120px
+      width: 4.9rem; // 78px
     }
 
     #header-border-title-case_study  {
@@ -4203,17 +4203,15 @@ article {
 
     #section-resume-tech_knowledge {
       #span-resume-tech_knowledge-list-css {
-        width: 3rem; // 48px
+        width: 8.75rem; // 140px
+        display: inline-block;
       }
 
       #span-resume-tech_knowledge-list-javascript {
         width: 11rem; // 176px
       }
 
-      #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list {
-        display: none;
-      }
-
+      #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list, 
       #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
         display: none;
       }
@@ -4237,9 +4235,14 @@ article {
       #span-resume-soft_knowledge-list-dreamweaver {
         width: 15.25rem; // 244px
       }
+      
+      #span-resume-soft_knowledge-list-code, 
+      #span-resume-soft_knowledge-list-git {
+        width: 19rem; // 300px
+      }
 
       #span-resume-soft_knowledge-list-outlook {
-        width: auto;
+        width: 15.25rem; // 244px
       }
       
       #span-resume-soft_knowledge-list-indesign {
@@ -4250,7 +4253,10 @@ article {
       #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list,
       #span-resume-soft_knowledge-list-dreamweaver + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-word + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-indesign + .div-spacer-vertical-list {
         display: none;
       }
@@ -4339,7 +4345,8 @@ article {
 
     #section-resume-tech_knowledge {
       #span-resume-tech_knowledge-list-css {
-        width: auto;
+        width: 6.25rem; // 100px
+        display: inline-block;
       }
 
       #span-resume-tech_knowledge-list-css + .div-spacer-vertical-list, 
@@ -4491,6 +4498,7 @@ article {
       #span-resume-soft_knowledge-list-illustrator, 
       #span-resume-soft_knowledge-list-bridge, 
       #span-resume-soft_knowledge-list-dreamweaver, 
+      #span-resume-soft_knowledge-list-git, 
       #span-resume-soft_knowledge-list-outlook {
         display: inline-block;
       }
@@ -4512,12 +4520,17 @@ article {
         width: 11.75rem; // 188px
       }
 
+      #span-resume-soft_knowledge-list-git {
+        width: 15rem; // 240px
+      }
+
 
       #span-resume-soft_knowledge-list-photoshop + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-illustrator + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-dreamweaver + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-word + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-indesign + .div-spacer-vertical-list {
@@ -4675,6 +4688,7 @@ article {
       #span-resume-soft_knowledge-list-illustrator, 
       #span-resume-soft_knowledge-list-bridge, 
       #span-resume-soft_knowledge-list-dreamweaver, 
+      #span-resume-soft_knowledge-list-git,  
       #span-resume-soft_knowledge-list-outlook {
         display: inline-block;
       }
@@ -4693,8 +4707,8 @@ article {
         width: 11.75rem; // 188px
       }
 
-      #span-resume-soft_knowledge-list-outlook {
-        width: 10rem;  // 160px
+      #span-resume-soft_knowledge-list-git {
+        width: 15rem; // 240px
       }
 
       #span-resume-soft_knowledge-list-xd {
@@ -4706,6 +4720,7 @@ article {
       #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-dreamweaver + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-word + .div-spacer-vertical-list, 
       #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list,
       #span-resume-soft_knowledge-list-indesign + .div-spacer-vertical-list {
