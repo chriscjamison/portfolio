@@ -204,7 +204,7 @@ $(document).ready(
         } else {
           // The URL of page a visitor on a desktop browser will view http://www.leadersacademy.com 
           // is passed on.
-          new_url_string = "http://chriscjamison.com/la/skin/skin020/mobile/index.htm";
+          new_url_string = "http://leadersacademy.com/";
 
           // The visitor is now redirected.
           window.location = new_url_string;
