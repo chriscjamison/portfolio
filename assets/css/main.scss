@@ -66,6 +66,7 @@ $lg_h3_resume_job_font_size: 1.25rem; // 15pt
 $lg_work_exp_span_font_size: 1.3rem; // 16pt
 $lg_sub_menu_font_size: 1.25rem; // 15pt
 
+$sm_name_margin: 1rem; // 16px
 $sm_body_margin: 2rem; // 24px
 $sm_margin_spacer: 1.25rem; // 15px
 $sm_title_bottom_spacer: 0.188rem; // 3px
@@ -1306,7 +1307,6 @@ article {
       padding: 0.25rem 0 0.5rem $lg_padding_left_p; // 4px 0 8px 16px
       border-left: $border_left_dark_blue_3px;
     }
-    
 
     #section-resume-info {
       margin: 0 auto 3rem auto;
@@ -1356,6 +1356,12 @@ article {
       font-size: $lg_base_font_size;
     }
 
+    #section-resume-tech_knowledge { 
+      #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+        display: none;
+      }
+    }
+
     #section-resume-soft_knowledge .div-resume-list span {
       margin-bottom: 0.5rem; // 8px
     }
@@ -1368,7 +1374,8 @@ article {
 
     #section-resume-soft_knowledge {
       #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
-      #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list {
+      #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
+      #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list {
         display: none;
       }
     }
@@ -1536,7 +1543,7 @@ article {
       }
 
       #div-case_study-kovl-intro-job_title {
-        margin-right: 29rem; // 464px
+        margin-right: 25.5rem; // 408px
       }
       
       .div-case_study-intro-viewing_info {
@@ -1560,6 +1567,7 @@ article {
         margin-top: 0.3rem; // 5px
         font-size: $lg_base_font_size;
       }
+
       .div-spacer-vertical-list {
         display: none;
       }
@@ -1589,7 +1597,7 @@ article {
     }
 
     .section-case_study + .div-spacer-horizontal {
-      margin: 4rem auto; // 64px auto
+      margin: 4rem 0 4rem 34.37rem; // 64px 0 64px 550px
       left: auto;
     }
 
@@ -1890,7 +1898,7 @@ article {
     }
     
     #article-border-end-bio {
-      margin-left: 73rem; // 1,168px
+      margin-left: 33rem; // 528px
     }
   }
 
@@ -1919,15 +1927,15 @@ article {
     }
 
     #article-border-end-case_study-lvps {
-      left: 71rem; // 1,136px
+      left: 60rem; // 960px
     }
 
     #article-border-end-case_study-la {
-      left: 67.5rem; // 1,080px
+      left: 37.5rem; // 600px
     }
 
     #article-border-end-case_study-kovl {
-      left: 67rem; // 1,072px
+      left: 52.75rem; // 844px
     }
   }
 
@@ -2020,7 +2028,7 @@ article {
     }
 
     #article-border-end-bio {
-      left: 62.5rem; // 1000px
+      left: 24rem; // 384px
     }
   }
 
@@ -2031,20 +2039,6 @@ article {
   article {
     .div-spacer-horizontal {
       left: 36.5rem; // 584px
-    }
-
-    #section-resume-tech_knowledge {
-      margin: 0 11rem $lg_margin_spacer $lg_resume_margin_left_1600;
-    }
-
-    #section-resume-work {
-      #div-resume-work-job-lvps {
-        margin: $lg_margin_spacer 10rem $lg_margin_spacer $lg_resume_margin_left_1600;
-      }
-    }
-
-    #section-resume-objective {
-      margin: $lg_margin_spacer 7.25rem $lg_margin_spacer $lg_resume_margin_left_1600;
     }
   }
 
@@ -2057,12 +2051,15 @@ article {
     }
 
     #article-border-end-case_study-lvps {
-      left: 62rem; // 992px
+      left: 54.75rem; // 876px
     }
 
-    #article-border-end-case_study-la, 
+    #article-border-end-case_study-la {
+      left: 32.5rem; // 520px
+    } 
+
     #article-border-end-case_study-kovl {
-      left: 62.75rem; // 1,004px
+      left: 47.75rem; // 764px
     }
   }
 
@@ -2137,7 +2134,7 @@ article {
     }
 
     #article-border-end-bio {
-      margin-left: 58.7rem; // 939px
+      margin-left: 18.5rem; // 296px
     }
   }/* 
 
@@ -2165,11 +2162,15 @@ article {
 
   article {
     #article-border-end-case_study-lvps {
-      left: 56.75rem; // 908px
+      left: 49.25rem; // 788px
     }
 
     #article-border-end-case_study-la {
-      left: 57.25rem; // 916px
+      left: 27.25rem; // 436px
+    }
+
+    #article-border-end-case_study-kovl {
+      left: 42.5rem; // 680px
     }
   }
 
@@ -2177,7 +2178,7 @@ article {
   /* **** START A CONVERSATION **** */
 
   #body-content-conversation {
-    grid-template-columns: 43rem 28.5rem 2.37rem;
+    grid-template-columns: 43rem 21rem 2.37rem;
     grid-row-gap: 3rem; // 48px
     margin: 3rem; // 48px
   }
@@ -2393,7 +2394,6 @@ article {
     // Holds the text of the quote
     #figure-bio-quote-container-div {
       height: 10.5rem; // 168px
-      padding: 0.75rem; // 12px
 
       #figure-bio-quote-container-content-div {
         width: 11rem; // 176px
@@ -2539,6 +2539,10 @@ article {
       a {
         display: inline-block;
         font-size: $sm_base_font_size; // 15pt
+      }
+
+      .div-resume-documents-links {
+        margin-bottom: 0;
       }
     }
   }
@@ -2897,8 +2901,8 @@ article {
         
         #figure-bio-quote-container-content-div {
           width: 19rem; // 304px
-          height: 7.5rem; // 120px
-          top: 3.44rem; // 55px
+          height: 8rem; // 120px
+          top: 0;
         }
 
         q {
@@ -2906,7 +2910,7 @@ article {
         }
 
         span {
-          width: 7rem; // 112px
+          width: 9rem; // 144px
           margin: 0.5rem auto 0 auto; // 8px auto 0 auto
           padding-left: 0;
           display: block;
@@ -3327,7 +3331,7 @@ article {
   }
 
   #body-landing {
-    grid-row-gap: 25rem; // 400px
+    grid-row-gap: 25.5rem; // 408px
 
     #nav-other-landing {
       right: 6rem; // 96px
@@ -3337,12 +3341,18 @@ article {
   #section-logo-other, 
   #section-logo-other-conversation {
     a {
-      transform: translate(0%, 240%);
+      transform: translate(0%, 5%);
     }
   }  
 
   #section-logo-other-landing {
     margin: 8.88rem 0 0 7.19rem; // 142px 0 0 115px
+  }
+
+  header {
+    #header-border-name {
+      width: 12.5rem; // 200px
+    }
   }
   
   
@@ -3362,10 +3372,15 @@ article {
     figure {
       #figure-bio-quote-container-div {
         height: 23.5rem; // 376px
-        padding-top: 4.25rem; // 68px
+        top: 0;
+
+        #figure-bio-quote-container-content-div {
+          width: 25rem; // 400px
+          top: 0.5rem; // 8px
+        }
   
         q {
-          margin: 6rem auto 1.5rem auto; // 96px auto 24px auto
+          margin: 6rem auto 0.5rem auto; // 96px auto 8px auto
           font-size: $med_header_font_size;
         }
   
@@ -3389,12 +3404,18 @@ article {
     }
 
     #article-border-end-bio {
-      left: 41.5rem; // 664px
+      left: 15.25rem; // 224px
     }
   } 
   
 
   /* **** RESUME **** */ 
+
+  header {
+    #header-border-title-resume {
+      width: 7.5rem; // 120px
+    }
+  }
 
   article {
     .div-spacer-horizontal {
@@ -3430,7 +3451,7 @@ article {
       }
 
       #span-resume-soft_knowledge-list-git {
-        width: 6.5rem; // 104px
+        width: 9rem; // 144px
         display: inline-block;
       }
 
@@ -3483,15 +3504,15 @@ article {
     }
 
     #article-border-end-case_study-lvps {
-      left: 40.25rem; // 644px
+      left: 26.25rem; // 420px
     }
 
     #article-border-end-case_study-la {
-      left: 42rem; // 672px
+      left: 40rem; // 640px
     }
 
     #article-border-end-case_study-kovl {
-      left: 41rem; // 664px
+      left: 22.5rem; // 360px
     }
   }
   
@@ -3544,13 +3565,38 @@ article {
   }
 
   #body-landing {
-    grid-row-gap: 25.25rem; // 408px
+    grid-row-gap: 18rem; // 288px
   }
 
   header {
     .header-copy {
       font-size: $med_header_copy_2_font_size;
     }
+
+    #header-name {
+      span {
+        height: 4.5rem; // 72px
+        display: block;
+      }
+
+      #header-name-span-first {
+        margin: $sm_name_margin 0;
+      }
+
+      #header-name-span-last {
+        margin-bottom: $sm_name_margin;
+      }
+    }
+    
+    #header-border-name {
+      width: 13.1rem; // 210px
+    }
+  }
+
+  #section-logo-other-landing {
+    height: 2.5rem; // 40px
+    margin-top: 0;
+    transform: translateY(9rem); // 144px
   }
 
 
@@ -3573,7 +3619,7 @@ article {
         padding-top: 0.25rem; // 4px
 
         q {
-          margin: 7rem auto 0.5rem auto; // 104px auto 8px auto
+          margin: 6rem auto 0.5rem auto; // 96px auto 8px auto
           font-size: $med_quote_font_size;
         }
 
@@ -3595,7 +3641,7 @@ article {
     }
     
     #article-border-end-bio {
-      left: 35.25rem; // 564px
+      left: 14.5rem; // 232px
     }
   }
 
@@ -3625,13 +3671,23 @@ article {
       margin: 2rem 0 2rem 15.25rem !important; // 32px 0 32px 244px
     }
 
+    #span-resume-tech_knowledge-list-php + .div-spacer-vertical-list {
+      display: none;
+    } 
+
     #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
-    #span-resume-soft_knowledge-list-git + .div-spacer-vertical-list {
+    #span-resume-soft_knowledge-list-code + .div-spacer-vertical-list, 
+    #span-resume-soft_knowledge-list-outlook + .div-spacer-vertical-list {
       display: none;
     }
 
     #span-resume-soft_knowledge-list-bridge {
       width: 9.5rem; // 152px
+      display: inline-block;
+    }
+
+    #span-resume-soft_knowledge-list-code {
+      width: 23rem; // 368px
       display: inline-block;
     }
 
@@ -3668,15 +3724,15 @@ article {
     }
 
     #article-border-end-case_study-lvps {
-      left: 34.5rem; // 552px
+      left: 14rem; // 224px
     }
 
     #article-border-end-case_study-la {
-      left: 35.75rem; // 572px
+      left: 20rem; // 360px
     }
 
     #article-border-end-case_study-kovl {
-      left: 34.25rem; // 548px
+      left: 24.75rem; // 396px
     }
   }
 
@@ -3700,7 +3756,13 @@ article {
   /* **** LANDING PAGE **** */
   
   #body-landing {
-    grid-row-gap: 7rem;
+    grid-row-gap: 12rem; // 708px
+  }
+
+  header {
+    #header-border-name {
+      width: 12.5rem; // 200px
+    }
   }
 
   
@@ -3726,7 +3788,12 @@ article {
       #figure-bio-quote-container-div {
         width: 32rem;
         height: 16.5rem;
-        padding-top: 3rem;
+      }
+
+      #figure-bio-quote-container-content-div { 
+        q {
+          margin-top: 4.5rem; // 72px
+        }
       }
       
       #figure-bio-quote-div {
@@ -3741,7 +3808,7 @@ article {
     }
 
     #article-border-end-bio {
-      left: 35.25rem; // 568px
+      left: 17.25rem; // 276px
     }
   }
 
@@ -3758,7 +3825,8 @@ article {
       margin: 2rem auto 1.5rem auto; // 32px auto 24px auto
     }
 
-    .section-resume + .div-spacer-horizontal {
+    .section-resume + .div-spacer-horizontal, 
+    .section-case_study + .div-spacer-horizontal {
       margin: 3rem 0 3rem 16rem; // 48px 0 48px 256px
     }
 
@@ -3796,7 +3864,7 @@ article {
       }
 
       #span-resume-soft_knowledge-list-outlook {
-        width: 14.75rem; // 236px
+        width: 12.25rem; // 196px
       }
 
       #span-resume-soft_knowledge-list-bridge + .div-spacer-vertical-list, 
@@ -3851,15 +3919,15 @@ article {
   }
 
   #article-border-end-case_study-lvps {
-    left: 35.5rem; // 568px
+    left: 14.7rem; // 236px
   }
 
   #article-border-end-case_study-la {
-    left: 35.25rem; // 564px
+    left: 21rem; // 336px
   }
 
   #article-border-end-case_study-kovl {
-    left: 35rem; // 560px
+    left: 25.75rem; // 412px
   }
   
 
@@ -3888,6 +3956,10 @@ article {
         display: block;
         line-height: 1;
       }
+    }
+
+    #header-border-name {
+      width: 6.6rem; // 106px
     }
   }
 
@@ -3926,7 +3998,8 @@ article {
 
   #nav-other-landing, 
   #nav-other, 
-  #nav-other-conversation {
+  #nav-other-conversation, 
+  #section-logo-other-landing {
     display: none;
   }
   
@@ -3942,6 +4015,7 @@ article {
   }
 
   #section-social {
+    height: 4rem; // 64px
     margin-bottom: 4rem; // 64px
   }
 
@@ -3964,11 +4038,13 @@ article {
       }
     }
 
-    #figure-bio-quote-container-div {
+    #figure-bio-quote-container-div {  
+      height: 12.1rem; // 194px
+      
       #figure-bio-quote-container-content-div {
         span {
           width: 5.75rem; // 92px
-          margin: 0.4rem auto; // 6px auto
+          margin: 0.25rem auto; // 4px auto
           display: block;
         }
       }
@@ -4081,6 +4157,16 @@ article {
       width: 94%;
     }
 
+    #div-case_study-la-asset-color-info-desc-white, 
+    #div-case_study-la-asset-color-info-desc-gray-1, 
+    #div-case_study-la-asset-color-info-desc-gray-2 {
+      .div-case_study-asset-color-info-desc-codes {
+        span {
+          font-size: $sm_info_font_size;
+        }
+      }
+    }
+
     .section-case_study-takeaways {
       .div-case_study-takeaways-list-item:last-of-type {
         margin-bottom: 0;
@@ -4177,6 +4263,23 @@ article {
     #figure-bio-quote-div {
       width: 22rem; // 352px
     }
+
+    #figure-bio-quote-container-content-div {
+      width: 15rem !important; // 240px
+
+      q {
+        font-size: $sm_h4_font_size;
+      }
+
+      span { 
+        width: 6.5rem !important; // 100px
+        font-size: 0.9rem !important;
+      }
+    }
+
+    #article-border-end-bio {
+      left: 14.5rem; // 232px
+    }
   } 
 
 
@@ -4193,7 +4296,8 @@ article {
       width: 13.56rem; // 217px
     }
 
-    .section-resume + .div-spacer-horizontal {
+    .section-resume + .div-spacer-horizontal, 
+    .section-case_study + .div-spacer-horizontal {
       margin: 2rem 0 2rem 8.25rem; // 32px 0 32px 132px
     }
 
@@ -4284,6 +4388,18 @@ article {
         width: 19.75rem; // 316px
       }
     }
+
+    #article-border-end-case_study-lvps {
+      left: 9.75rem; // 156px
+    } 
+
+    #article-border-end-case_study-la {
+      left: 3.25rem; // 52px
+    }
+
+    #article-border-end-case_study-kovl {
+      left: 13.5rem; // 216px
+    }
   }
 
 
@@ -4329,17 +4445,31 @@ article {
     #figure-bio-quote-div {
       width: 19.5rem; // 312px
     }
+
+    #figure-bio-quote-container-content-div {
+      width: 15rem !important; // 240px
+
+      q {
+        font-size: $sm_h4_font_size;
+      }
+
+      span { 
+        width: 6.5rem !important; // 100px
+        font-size: 0.9rem !important;
+      }
+    }
   }
 
 
   /* **** RESUME **** */ 
 
   article {
-    .div-spacer-horizontal{
+    .div-spacer-horizontal {
       width: 12.06rem; // 193px
     }
 
-    .section-resume + .div-spacer-horizontal {
+    .section-resume + .div-spacer-horizontal, 
+    .section-case_study + .div-spacer-horizontal {
       margin: 2rem 0 2rem 7.25rem; // 32px 0 32px 116px
     }
 
@@ -4417,6 +4547,22 @@ article {
         height: 10.25rem; // 164px
       }
     }
+
+    #div-case_study-kovl-asset-color-info-desc-white {
+      .div-case_study-asset-color-info-desc-codes {
+        span {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    #article-border-end-case_study-lvps {
+      left: 7.25rem; // 116px
+    }
+
+    #article-border-end-case_study-kovl {
+      left: 5rem; // 80px
+    }
   }
 
 
@@ -4455,7 +4601,7 @@ article {
   /* **** BIO **** */
 
   #article-border-end-bio {
-    left: 15rem; // 240px
+    left: 3.25rem; // 52px
   }
 
   
@@ -4549,13 +4695,16 @@ article {
   /* **** CASE STUDY **** */
   
   article {
-    #article-border-end-case_study-lvps, 
+    #article-border-end-case_study-lvps {
+      left: 7.5rem; // 120px
+    }
+
     #article-border-end-case_study-la {
-      left: 16rem; // 256px
+      left: 3.5rem; // 256px
     }
 
     #article-border-end-case_study-kovl {
-      left: 15.5rem; // 248px
+      left: 4.75rem; // 76px
     }
   }
 
@@ -4587,13 +4736,8 @@ article {
   
 @media (min-width: 361px) and (max-width: 375px)  {
   article {
-    #article-border-end-case_study-lvps, 
     #article-border-end-case_study-la {
-      left: 16rem; // 256px
-    }
-
-    #article-border-end-case_study-kovl {
-      left: 15.5rem; // 248px
+      left: 3.25rem; // 52px
     }
   }
 }
@@ -4609,7 +4753,7 @@ article {
   /* **** MAIN NAVIGATION **** */
   
   #section-nav-iphone {
-    width: 16.5rem; // 264px
+    width: 16rem; // 256px
   }
 
 
@@ -4620,6 +4764,9 @@ article {
     }
   } 
 
+  article {
+    width: 16rem; 
+  }
 
   /* **** BIOGRAPHY **** */ 
 
@@ -4630,7 +4777,20 @@ article {
     }
 
     #article-border-end-bio {
-      left: 13rem; // 208px
+      left: 2.75rem; // 44px
+    }
+
+    #figure-bio-quote-container-div {
+      #figure-bio-quote-container-content-div {
+        width: 13rem; // 208px
+        height: 5rem; // 80px
+        top: 0;
+
+        q {
+          margin: 3.5rem auto 0 auto; // 56px auto 0 auto
+          font-size: $sm_info_font_size;
+        }
+      }
     }
   } 
 
@@ -4655,7 +4815,8 @@ article {
       width: 9.31rem; // 149px
     }
 
-    .section-resume + .div-spacer-horizontal {
+    .section-resume + .div-spacer-horizontal, 
+    .section-case_study + .div-spacer-horizontal {
       margin: 2rem 0 2rem 6.5rem; // 104px
     }
 
@@ -4666,6 +4827,14 @@ article {
         a {
           margin-bottom: 0.25rem; // 4px
           font-size: $ex_sm_resume_p_font_size;
+        }
+      }
+    }
+
+    #div-case_study-kovl-asset-color-info-desc-white {
+      .div-case_study-asset-color-info-desc-codes {
+        span {
+          font-size: 0.95rem;
         }
       }
     }
@@ -4759,6 +4928,12 @@ article {
       }
     }
 
+    figure {
+      iframe {
+        width: 16rem; // 256px
+      }
+    }
+
     .section-case_study-tech_used {
       h3 {
         font-size: $ex_sm_resume_p_font_size;
@@ -4772,7 +4947,7 @@ article {
       .div-case_study-tech_used-info-list-item {
         margin: 0 0 0.9rem 0.25rem; // 0 0 14px 4px
       }
-    }
+    }    
 
     .section-case_study-takeaways {
       h3 {
@@ -4780,20 +4955,20 @@ article {
       }
 
       .div-case_study-takeaways-list-item .div-case_study-takeaways-list-copy {
-        width: 14rem; // 224px
+        width: 13.9rem; // 224px
       }
     }
 
     #article-border-end-case_study-lvps {
-      left: 13.25rem; // 212px
+      left: 6.25rem; // 100px
     }
 
     #article-border-end-case_study-la {
-      left: 13.5rem; // 216px
+      left: 8.5rem; // 136px
     }
 
     #article-border-end-case_study-kovl {
-      left: 11.25rem; // 180px
+      left: 4.25rem; // 68px
     }
   } 
 
@@ -4815,7 +4990,7 @@ article {
   #form-conversation {
     .input-conversation, 
     #textarea-conversation-message {
-      width: 15.1rem // 242px;
+      width: 14.7rem // 235px;
     }
 
     .input-conversation, 
@@ -4824,7 +4999,7 @@ article {
     }
 
     #input-conversation-submit {
-      width: 16.5rem; // 242px
+      width: 16rem; // 234px
     }
   } 
 }
