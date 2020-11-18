@@ -884,6 +884,20 @@ article {
   }
 }
 
+  
+/* **** ERROR PAGES **** */
+
+header {
+  #header-border-title-error {
+    width: 9.5rem; // 152px
+  }
+}
+
+#body-error {
+  height: calc(100vh - 12rem);
+}
+  
+
 
 /* ********************************* 
       DESKTOP - 1025 - 1920
@@ -1041,15 +1055,21 @@ article {
 
   /* **** BIO **** */
 
-  #body-content {
+  #body-content, 
+  #body-error {
     grid-template-columns: auto 9.5rem; // auto 152px
+  }
+
+  #body-error {
+    grid-template-rows: 5rem 91% 4.5rem;
   }
 
   header {
     #header-bio, 
     #header-resume, 
     #header-case_study, 
-    #header-conversation {
+    #header-conversation, 
+    #header-error {
       grid-column: 1 / span 1;
     }
  
@@ -1143,7 +1163,8 @@ article {
     grid-column: 1 / span 2;
 
     .section-bio, 
-    .section-case_study {
+    .section-case_study, 
+    .section-error {
       width: 45rem; // 720px
       margin: 4rem auto; // 64px auto
       padding-left: 1.5rem; // 24px
@@ -1880,7 +1901,8 @@ article {
   
   /* **** BIO **** */
 
-  #body-content {
+  #body-content, 
+  #body-error {
     grid-row-gap: 6rem; // 48px
     margin: 6rem; // 96px
   }
@@ -2078,6 +2100,15 @@ article {
       width: 35rem; // 560px
     }
   }
+
+  
+  /* **** ERROR PAGES **** */
+
+  #article-border-end-500, 
+  #article-border-end-404 {
+    left: 27.5rem;
+  }
+
 }
 
 
@@ -2189,6 +2220,19 @@ article {
       width: 33.5rem;
     }
   }
+
+
+  /* **** ERROR PAGES **** */
+
+  #article-border-end-404 {
+    left: 20.25rem;
+  }
+
+  #article-border-end-500 {
+    left: 20.25rem;
+  }
+
+  
 }
 
 
@@ -2267,6 +2311,10 @@ article {
 
     #header-border-title-conversation  {
       width: 19.8rem; // 317px
+    }
+
+    #header-border-title-error  {
+      width: 6.1rem; // 98px
     }
   }
  
@@ -2682,6 +2730,17 @@ article {
       appearance: none;
     }
   } 
+  
+
+  /* **** ERROR PAGES **** */
+
+  #body-error {
+    height: auto;
+  }
+    
+  .p-error-first {
+    margin-top: 0;
+  }
 }
   
    
@@ -2826,7 +2885,8 @@ article {
 
   /* **** BIOGRAPHY **** */ 
 
-  #body-content {
+  #body-content, 
+  #body-error {
     grid-template-columns: auto 8rem; // auto 128px
     grid-row-gap: $sm_body_margin;
     margin: 2rem; // 48px 64px
@@ -2844,12 +2904,17 @@ article {
     #header-border-title-case_study {
       width: 10.3rem; // 165px
     }
+
+    #header-border-title-error {
+      width: 9.5rem; // 152px
+    }
   }
 
   #header-bio, 
   #header-resume, 
   #header-case_study, 
-  #header-conversation {
+  #header-conversation, 
+  #header-error {
     grid-column: 1 / span 1;
   }
 
@@ -3301,6 +3366,20 @@ article {
   #section-logo-other-conversation {
     grid-row: 5 / span 1;
   }
+
+
+  /* **** ERROR PAGES **** */
+    
+  #article-border-end-500, 
+  #article-border-end-404 {
+    left: 18rem; // 288px
+  }
+
+  #section-logo-other {
+    position: absolute;
+    bottom: 2rem; // 32px
+    right: 40px;
+  }
 }
 
 
@@ -3326,7 +3405,8 @@ article {
   /* **** LANDING PAGE **** */
 
   body, 
-  #body-content {
+  #body-content, 
+  #body-error {
     margin: 6rem; // 96px
   }
 
@@ -3535,6 +3615,19 @@ article {
   #section-logo-other-conversation {
     margin-top: 2.75rem; // 44px
   }
+  
+  
+  /* **** ERROR PAGES **** */
+
+  #article-border-end-500, 
+  #article-border-end-404 {
+    left: 19rem;
+  }
+
+  #section-logo-other {
+    bottom: 6rem; // 96px
+    right: 105px;
+  }
 }
 
 
@@ -3560,7 +3653,8 @@ article {
   /* **** LANDING PAGE **** */
 
   body, 
-  #body-content {
+  #body-content, 
+  #body-error {
     margin: 4rem; // 64px
   }
 
@@ -3742,6 +3836,14 @@ article {
   #div-conversation-copy-confirmation, 
   #div-conversation-copy {
     width: 35rem; // 560px
+  }
+
+
+  /* **** ERROR PAGES **** */
+
+  #article-border-end-404, 
+  #article-border-end-500 {
+    left: 14.5rem;
   }
 }
 
@@ -4415,6 +4517,14 @@ article {
       width: 21.9rem; // 328px
     }
   }
+
+
+  /* **** ERROR PAGES **** */ 
+
+  #article-border-end-500, 
+  #article-border-end-404 {
+    left: 19.5rem; // 312px
+  }
 }
     
  
@@ -4582,6 +4692,15 @@ article {
       width: 19.45rem; // 289px
     }
   } 
+
+
+  /* **** ERROR PAGES **** */ 
+
+  #article-border-end-500, 
+  #article-border-end-404 {
+    left: 0.75rem; // 12px
+  }
+
 }
   
 
@@ -4724,7 +4843,14 @@ article {
     #input-conversation-submit {
       width: 18.5rem; // 272px
     }
+  } 
 
+
+  /* **** ERROR PAGES **** */
+
+  #article-border-end-500, 
+  #article-border-end-404 {
+    left: 3.5rem; // 56px
   }
 }
   
